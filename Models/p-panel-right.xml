@@ -1,0 +1,279 @@
+<?xml version="1.0"?>
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+
+<PropertyList> 
+	<name>Pilot-Panel-Right</name>
+	<background>Aircraft/A-6E/Models/transparent-bg.rgb</background>
+	<w>1024</w>
+	<h>768</h>
+	<y-offset>0</y-offset>
+
+	<instruments> 
+		<instrument> 
+			<name>Pilot-Panel-Right</name>
+        	<w>1024</w>
+        	<h>768</h>
+        	<w-base>1024</w-base>
+        	<h-base>1024</h-base>
+        	<x>512</x>
+			<y>384</y>  
+			<layers> 
+				<layer> 
+					<name>background</name>
+					<texture> 
+						<path>Aircraft/A-6E/Models/transparent-bg.rgb</path>
+						<!--<path>Aircraft/A-6E/Models/hotspotgrid.rgb</path>-->
+						<x1>0.0</x1>
+						<y1>0.0</y1>
+						<x2>1.0</x2>
+						<y2>1.0</y2>
+					</texture>
+				</layer>
+			</layers>
+			<actions> 
+
+
+				<!-- ######### Hook Lift Button, Hook handle ######### -->
+
+				<action> 
+					<name>Hook Lift Button</name>
+					<button>0</button>
+					<x>-260</x>
+					<y>193</y>
+					<w>50</w>
+					<h>35</h>
+					<binding> 
+						<command>property-assign</command>
+						<property>controls/gear/tailhook</property>
+						<value type="double">0</value>
+					</binding>
+				</action>
+				<action> 
+					<name>Pull Hook Handle</name>
+					<button>0</button>
+					<x>-242</x>
+					<y>112</y>
+					<w>260</w>
+					<h>38</h>
+					<binding> 
+						<command>property-assign</command>
+						<property>controls/gear/tailhook</property>
+						<value type="double">1</value>
+					</binding>
+				</action>
+
+				<!-- ######### VDI Radar Pilots Control ######### -->
+
+				<!-- VDI Display -->
+				<action> 
+					<name>vdi-cont-analog-bt</name>
+					<button>0</button>
+					<x>120</x>
+					<y>-88</y>
+					<w>60</w>
+					<h>32</h>
+					<binding>
+						<command>nasal</command>
+						<script>A6Econtrols.radio_bt_sel("sim/model/A-6E/controls/VDI/display", "contanalog")</script>
+					</binding>
+				</action>
+				<action> 
+					<name>vdi-tc-bt</name>
+					<button>0</button>
+					<x>120</x>
+					<y>-124</y>
+					<w>60</w>
+					<h>32</h>
+					<binding> 
+						<command>nasal</command>
+						<script>A6Econtrols.radio_bt_sel("sim/model/A-6E/controls/VDI/display", "tc")</script>
+					</binding>
+				</action>
+				<action> 
+					<name>vdi-tc-cal-bt</name>
+					<button>0</button>
+					<x>120</x>
+					<y>-160</y>
+					<w>60</w>
+					<h>32</h>
+					<binding> 
+						<command>nasal</command>
+						<script>A6Econtrols.radio_bt_sel("sim/model/A-6E/controls/VDI/display", "tccal")</script>
+					</binding>
+				</action>
+				<action> 
+					<name>vdi-stby-bt</name>
+					<button>0</button>
+					<x>120</x>
+					<y>-196</y>
+					<w>60</w>
+					<h>32</h>
+					<binding> 
+						<command>nasal</command>
+						<script>A6Econtrols.radio_bt_sel("sim/model/A-6E/controls/VDI/display", "stby")</script>
+					</binding>
+				</action>
+				<action> 
+					<name>vdi-off-bt</name>
+					<button>0</button>
+					<x>120</x>
+					<y>-232</y>
+					<w>60</w>
+					<h>32</h>
+					<binding> 
+						<command>nasal</command>
+						<script>A6Econtrols.radio_bt_sel("sim/model/A-6E/controls/VDI/display", "off")</script>
+					</binding>
+				</action>
+
+				<!-- VDI brightness knob -->
+				<action> 
+					<name>vdi-brt-knob-CCW</name>
+					<button>0</button>
+					<x>200</x>
+					<y>-95</y>
+					<w>60</w>
+					<h>40</h>
+					<binding>
+						<command>property-adjust</command>
+						<property>sim/model/A-6E/controls/VDI/brightness</property>
+						<step>-0.05</step>
+						<min>0</min>
+					</binding>
+				</action>
+				<action> 
+					<name>vdi-brt-knob-CW</name>
+					<button>0</button>
+					<x>265</x>
+					<y>-95</y>
+					<w>60</w>
+					<h>40</h>
+					<binding>
+						<command>property-adjust</command>
+						<property>sim/model/A-6E/controls/VDI/brightness</property>
+						<step>0.05</step>
+						<max>1</max>
+					</binding>
+				</action>
+
+
+				<!-- VDI Range Miles -->
+				<!--<action> 
+					<name>3-miles</name>
+					<button>0</button>
+					<x>373</x>
+					<y>-88</y>
+					<w>60</w>
+					<h>32</h>
+					<binding> 
+						<command>nasal</command>
+						<script>A6Econtrols.radio_bt_sel("sim/model/A-6E/controls/VDI/range-miles", "miles3")</script>
+					</binding>
+				</action>
+				<action> 
+					<name>2-miles</name>
+					<button>0</button>
+					<x>373</x>
+					<y>-124</y>
+					<w>60</w>
+					<h>32</h>
+					<binding> 
+						<command>nasal</command>
+						<script>A6Econtrols.radio_bt_sel("sim/model/A-6E/controls/VDI/range-miles", "miles2")</script>
+					</binding>
+				</action>
+				<action> 
+					<name>1.5-miles</name>
+					<button>0</button>
+					<x>373</x>
+					<y>-160</y>
+					<w>60</w>
+					<h>32</h>
+					<binding> 
+						<command>nasal</command>
+						<script>A6Econtrols.radio_bt_sel("sim/model/A-6E/controls/VDI/range-miles", "miles1.5")</script>
+					</binding>
+				</action>
+				<action> 
+					<name>1-miles</name>
+					<button>0</button>
+					<x>373</x>
+					<y>-196</y>
+					<w>60</w>
+					<h>32</h>
+					<binding> 
+						<command>nasal</command>
+						<script>A6Econtrols.radio_bt_sel("sim/model/A-6E/controls/VDI/range-miles", "miles1")</script>
+					</binding>
+				</action>
+				<action> 
+					<name>test</name>
+					<button>0</button>
+					<x>373</x>
+					<y>-232</y>
+					<w>60</w>
+					<h>32</h>
+					<binding> 
+						<command>nasal</command>
+						<script>A6Econtrols.radio_bt_sel("sim/model/A-6E/controls/VDI/range-miles", "test")</script>
+					</binding>
+				</action>-->
+
+				<action> 
+					<name>phd-up</name>
+					<button>0</button>
+					<x>333</x>
+					<y>-265</y>
+					<w>60</w>
+					<h>32</h>
+					<binding> 
+						<command>nasal</command>
+						<script>A6Econtrols.three_pos_sw("sim/model/A-6E/controls/PHD/off-stdby-on", 1)</script>
+					</binding>
+				</action>
+				<action> 
+					<name>phd-down</name>
+					<button>0</button>
+					<x>333</x>
+					<y>-300</y>
+					<w>60</w>
+					<h>32</h>
+					<binding> 
+						<command>nasal</command>
+						<script>A6Econtrols.three_pos_sw("sim/model/A-6E/controls/PHD/off-stdby-on", -1)</script>
+					</binding>
+				</action>
+
+				<action> 
+					<name>track-range-up</name>
+					<button>0</button>
+					<x>225</x>
+					<y>-455</y>
+					<w>55</w>
+					<h>32</h>
+					<binding> 
+						<command>nasal</command>
+						<script>A6Econtrols.PHD_TCrange_sw("sim/model/A-6E/controls/PHD/TCrange-switch", 1)</script>
+					</binding>
+				</action>
+				<action> 
+					<name>track-range-down</name>
+					<button>0</button>
+					<x>225</x>
+					<y>-490</y>
+					<w>55</w>
+					<h>32</h>
+					<binding> 
+						<command>nasal</command>
+						<script>A6Econtrols.PHD_TCrange_sw("sim/model/A-6E/controls/PHD/TCrange-switch", -1)</script>
+					</binding>
+				</action>
+
+
+
+			</actions> 
+
+		</instrument>
+	</instruments>
+</PropertyList>

@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+
+<!--Autopilot Configuration for the A-6E. Based upon the generic FG Autopilot. -->
+
+<PropertyList>
+
+	<!-- Altitude hold.  2 stage cascade controller. -->
+
+	<!-- Stage #1 sets target rate of climb based on diff between current alt -->
+	<!-- and target altitude. -->
+	<pi-simple-controller>
+		<name>Altitude Hold (Altimeter based) Stage 1</name>
+		<debug>false</debug>
+		<enable>
+			<prop>/autopilot/locks/altitude</prop>
+			<value>altitude-hold</value>
+		</enable>
+		<input>
+			<prop>/instrumentation/altimeter/pressure-alt-ft</prop>
+		</input>
+		<reference>
+			<prop>/autopilot/settings/target-altitude-ft</prop>
+		</reference>
+		<output>
+			<prop>/autopilot/internal/target-climb-rate-fps</prop>
+		</output>
+		<config>
+			<Kp>0.3</Kp>          <!-- proportional gain -->
+			<Ki>0.0</Ki>          <!-- integral gain -->
+			<u_min>-16.67</u_min> <!-- minimum output clamp -->
+			<u_max>8.33</u_max>   <!-- maximum output clamp -->
+		</config>
+	</pi-simple-controller>
+
+	<!-- Stage #2 drives the elevator-trim to achieve the desired climb rate. -->
+	<pid-controller>
+		<name>Altitude Hold (Altimeter based) Stage 2</name>
+		<debug>false</debug>
+		<enable>
+			<prop>/autopilot/locks/altitude</prop>
+			<value>altitude-hold</value>
+		</enable>
+		<input>
+			<prop>/velocities/vertical-speed-fps</prop>
+		</input>
+		<reference>
+			<prop>/autopilot/internal/target-climb-rate-fps</prop>
+		</reference>
+		<output>
+			<prop>/controls/flight/elevator-trim</prop>
+		</output>
+		<config>
+			<Kp>-0.01</Kp>      <!-- proportional gain -->
+			<beta>1.0</beta>    <!-- input value weighing factor -->
+			<alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
+			<gamma>0.0</gamma>  <!-- input value weighing factor for -->
+							  	<!-- unfiltered derivative error -->
+			<Ti>10.0</Ti>       <!-- integrator time -->
+			<Td>0.00001</Td>    <!-- derivator time -->
+			<u_min>-1.0</u_min> <!-- minimum output clamp -->
+			<u_max>1.0</u_max>  <!-- maximum output clamp -->
+		</config>
+	</pid-controller>
+
+
+<!-- Wing leveler (Turn Coordinator based)--> 
+	<pid-controller>
+		<name>Wing Leveler</name>
+		<debug>false</debug>
+		<enable>
+			<prop>/autopilot/locks/heading</prop>
+			<value>wing-leveler</value>
+		</enable>
+		<input>
+			<prop>/instrumentation/turn-indicator/indicated-turn-rate</prop>
+		</input>
+		<reference>
+			<value>0.0</value>
+		</reference>
+		<output>
+			<prop>/controls/flight/aileron</prop>
+		</output>
+		<config>
+			<Kp>0.1</Kp>        <!-- proportional gain -->
+			<beta>1.0</beta>    <!-- input value weighing factor -->
+			<alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
+			<gamma>0.0</gamma>  <!-- input value weighing factor for -->
+							  	<!-- unfiltered derivative error -->
+			<Ti>10.0</Ti>       <!-- integrator time -->
+			<Td>0.00001</Td>    <!-- derivator time -->
+			<u_min>-1.0</u_min> <!-- minimum output clamp -->
+			<u_max>1.0</u_max>  <!-- maximum output clamp -->
+		</config>
+	</pid-controller>
+
+<!-- Roll hold (orientation/roll-deg based) --> 
+	<pid-controller>
+		<name>Roll hold</name>
+		<debug>false</debug>
+		<enable>
+			<prop>/autopilot/locks/heading</prop>
+			<value>roll-hold</value>
+		</enable>
+		<input>
+			<prop>/orientation/roll-deg</prop>
+		</input>
+		<reference>
+			<prop>/autopilot/internal/target-roll-deg</prop>
+		</reference>
+		<output>
+			<prop>/controls/flight/aileron</prop>
+		</output>
+		<config>
+			<Kp>0.1</Kp>        <!-- proportional gain -->
+			<beta>1.0</beta>    <!-- input value weighing factor -->
+			<alpha>0.1</alpha>  <!-- low pass filter weighing factor -->
+			<gamma>0.0</gamma>  <!-- input value weighing factor for -->
+							  	<!-- unfiltered derivative error -->
+			<Ti>10.0</Ti>       <!-- integrator time -->
+			<Td>0.00001</Td>    <!-- derivator time -->
+			<u_min>-1.0</u_min> <!-- minimum output clamp -->
+			<u_max>1.0</u_max>  <!-- maximum output clamp -->
+		</config>
+	</pid-controller>
+</PropertyList>

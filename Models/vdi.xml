@@ -1,0 +1,532 @@
+<?xml version="1.0"?>
+
+<!--Vertical Display Indicator A6-E -->
+
+<PropertyList>
+  <path>vdi.ac</path>
+
+  <effect>
+    <inherits-from>Aircraft/A-6E/Effects/mfd-51</inherits-from>
+    <object-name>ground</object-name>
+  </effect>
+  <effect>
+    <inherits-from>Aircraft/A-6E/Effects/mfd-52</inherits-from>
+    <object-name>alt-curtain</object-name>
+  </effect>
+  <effect>
+    <inherits-from>Aircraft/A-6E/Effects/mfd-53</inherits-from>
+    <object-name>sky</object-name>
+  </effect>
+  <effect>
+    <inherits-from>Aircraft/A-6E/Effects/mfd-54</inherits-from>
+    <object-name>horizon-line</object-name>
+  </effect>
+  <effect>
+    <inherits-from>Aircraft/A-6E/Effects/mfd-55</inherits-from>
+    <object-name>drift-marker</object-name>
+  </effect>
+  <effect>
+    <inherits-from>Aircraft/A-6E/Effects/mfd-56</inherits-from>
+    <object-name>vsi-marker</object-name>
+  </effect>
+  <effect>
+    <inherits-from>Aircraft/A-6E/Effects/mfd-57</inherits-from>
+    <object-name>ladder</object-name>
+  </effect>
+  <effect>
+    <inherits-from>Aircraft/A-6E/Effects/mfd-58</inherits-from>
+    <object-name>impact-marker</object-name>
+  </effect>
+  <effect>
+    <inherits-from>Aircraft/A-6E/Effects/mfd-59</inherits-from>
+    <object-name>target-marker</object-name>
+  </effect>
+  <effect>
+    <inherits-from>Aircraft/A-6E/Effects/mfd-60</inherits-from>
+    <object-name>bank-index</object-name>
+  </effect>
+  <effect>
+    <inherits-from>Aircraft/A-6E/Effects/mfd-61</inherits-from>
+    <object-name>afcs-roll</object-name>
+  </effect>
+  <effect>
+    <inherits-from>Aircraft/A-6E/Effects/mfd-62</inherits-from>
+    <object-name>afcs-alt</object-name>
+  </effect>
+  <effect>
+    <inherits-from>Aircraft/A-6E/Effects/mfd-62</inherits-from>
+    <object-name>ra-lts</object-name>
+    <object-name>tc-lts</object-name>
+  </effect>
+
+
+  <!-- vdi on-off -->
+  <animation>
+    <type>select</type>
+    <object-name>video</object-name>
+    <condition>
+      <not>
+        <property>sim/model/A-6E/controls/VDI/display/off</property>
+        <value>off</value>
+      </not>
+    </condition>
+  </animation>
+  <animation>
+    <type>select</type>
+    <object-name>off-screen</object-name>
+    <condition>
+      <property>sim/model/A-6E/controls/VDI/display/off</property>
+      <value>off</value>
+    </condition>
+  </animation>
+
+  <!-- sky -->
+  <animation>
+    <name>sky-roll-rotation</name>
+    <type>rotate</type>
+    <object-name>sky</object-name>
+    <property>orientation/roll-deg</property>
+    <factor>1</factor>
+    <center><z-m>0.0054</z-m></center>
+    <axis><x>1</x></axis>
+  </animation>
+  <animation>
+    <name>sky-pitch-translation</name>
+    <type>translate</type>
+    <object-name>sky</object-name>
+    <property>orientation/pitch-deg</property>
+    <factor>0.00057</factor>
+    <axis><z>-1</z></axis>
+  </animation>
+  <animation>
+    <name>sky-pitch-scale</name>
+    <type>scale</type>
+    <object-name>sky</object-name>
+    <property>orientation/pitch-deg</property>
+    <z-min>0.7</z-min>
+    <z-max>1.3</z-max>
+    <x-factor>0</x-factor>
+    <y-factor>0</y-factor>
+    <z-factor>0.00333</z-factor>
+    <x-offset>1</x-offset>
+    <y-offset>1</y-offset>
+    <z-offset>1</z-offset>
+  </animation>
+  <animation>
+    <name>horizon-line-roll-rotation</name>
+    <type>rotate</type>
+    <object-name>horizon-line</object-name>
+    <property>orientation/roll-deg</property>
+    <factor>1</factor>
+    <center><z-m>0.0054</z-m></center>
+    <axis><x>1</x></axis>
+  </animation>
+  <animation>
+    <name>horizon-line-pitch-translation</name>
+    <type>translate</type>
+    <object-name>horizon-line</object-name>
+    <property>orientation/pitch-deg</property>
+    <factor>0.00057</factor>
+    <axis><z>-1</z></axis>
+  </animation>
+
+  <!-- ground -->
+  <animation>
+    <name>ground-roll-rotation</name>
+    <type>rotate</type>
+    <object-name>ground</object-name>
+    <property>orientation/roll-deg</property>
+    <factor>1</factor>
+    <center><z-m>0.0054</z-m></center>
+    <axis><x>1</x></axis>
+  </animation>
+
+
+  <!-- alt-curtain -->
+  <animation>
+    <name>alt-curtain-select</name>
+    <type>select</type>
+    <object-name>alt-curtain</object-name>
+    <condition>
+      <less-than>
+        <property>position/altitude-agl-ft</property>
+        <value>5000</value>
+      </less-than>
+    </condition>
+  </animation>
+  <animation>
+    <name>alt-curtain-roll-rotation</name>
+    <type>rotate</type>
+    <object-name>alt-curtain</object-name>
+    <property>orientation/roll-deg</property>
+    <factor>1</factor>
+    <center><z-m>0.0054</z-m></center>
+    <axis><x>1</x></axis>
+  </animation>
+  <animation>
+    <name>alt-curtain-alt-translation</name>
+    <type>translate</type>
+    <object-name>alt-curtain</object-name>
+    <property>position/altitude-agl-ft</property>
+    <interpolation>
+      <entry><ind>0</ind><dep>0</dep></entry>
+      <entry><ind>400</ind><dep>0.02</dep></entry>
+      <entry><ind>7000</ind><dep>0.075</dep></entry>
+      <entry><ind>50000</ind><dep>0.075</dep></entry>
+    </interpolation>
+    <axis><z>-1</z></axis>
+  </animation>
+  <animation>
+    <name>alt-curtain-pitch-translation</name>
+    <type>translate</type>
+    <object-name>alt-curtain</object-name>
+    <property>orientation/pitch-deg</property>
+    <factor>0.000734</factor>
+    <min-m>-0.056</min-m>
+    <max-m>0.055</max-m>
+    <axis><z>-1</z></axis>
+  </animation>
+  <animation>
+    <name>alt-curtain-pitch-scale</name>
+    <type>scale</type>
+    <object-name>alt-curtain</object-name>
+    <property>orientation/pitch-deg</property>
+    <z-min>0.3</z-min>
+    <z-max>1</z-max>
+    <x-factor>0</x-factor>
+    <y-factor>0</y-factor>
+    <z-factor>-0.01</z-factor>
+    <x-offset>1</x-offset>
+    <y-offset>1</y-offset>
+    <z-offset>1</z-offset>
+  </animation>
+
+
+  <!-- textures translation -->  
+  <animation>
+    <type>textranslate</type>
+    <object-name>ground</object-name>
+    <property>sim/model/A-6E/instrumentation/ticker</property>
+    <factor>0.0025</factor>
+    <step>1</step>
+    <scroll>1</scroll>
+    <axis><y>1</y></axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>sky</object-name>
+    <property>sim/model/A-6E/instrumentation/ticker</property>
+    <factor>0.0025</factor>
+    <step>1</step>
+    <scroll>1</scroll>
+    <axis><y>-1</y></axis>
+  </animation>
+
+
+  <!-- bank-index -->
+
+  <animation>
+    <name>bank-index-rotation</name>
+    <type>rotate</type>
+    <object-name>bank-index</object-name>
+    <property>orientation/roll-deg</property>
+    <center><z-m>0.0054</z-m></center>
+    <axis><x>-1</x></axis>
+  </animation>
+  <animation>
+    <name>bank-index-translation</name>
+    <type>translate</type>
+    <object-name>bank-index</object-name>
+    <property>orientation/roll-deg</property>
+    <interpolation>
+      <entry><ind>-170</ind><dep>0.003</dep></entry>
+      <entry><ind>-160</ind><dep>0.0043</dep></entry>
+      <entry><ind>-150</ind><dep>0.0079</dep></entry>
+      <entry><ind>-140</ind><dep>0.0136</dep></entry>
+      <entry><ind>-130</ind><dep>0.0205</dep></entry>
+      <entry><ind>-120</ind><dep>0.0258</dep></entry>
+      <entry><ind>-110</ind><dep>0.0249</dep></entry>
+      <entry><ind>-100</ind><dep>0.0228</dep></entry>
+      <entry><ind>-90</ind><dep>0.0238</dep></entry>
+      <entry><ind>-80</ind><dep>0.0228</dep></entry>
+      <entry><ind>-70</ind><dep>0.0249</dep></entry>
+      <entry><ind>-60</ind><dep>0.0258</dep></entry>
+      <entry><ind>-50</ind><dep>0.0205</dep></entry>
+      <entry><ind>-40</ind><dep>0.0136</dep></entry>
+      <entry><ind>-30</ind><dep>0.0079</dep></entry>
+      <entry><ind>-20</ind><dep>0.0043</dep></entry>
+      <entry><ind>-10</ind><dep>0.003</dep></entry>
+      <entry><ind>0</ind><dep>0</dep></entry>
+      <entry><ind>10</ind><dep>0.003</dep></entry>
+      <entry><ind>20</ind><dep>0.0043</dep></entry>
+      <entry><ind>30</ind><dep>0.0079</dep></entry>
+      <entry><ind>40</ind><dep>0.0136</dep></entry>
+      <entry><ind>50</ind><dep>0.0205</dep></entry>
+      <entry><ind>60</ind><dep>0.0258</dep></entry>
+      <entry><ind>70</ind><dep>0.0249</dep></entry>
+      <entry><ind>80</ind><dep>0.0228</dep></entry>
+      <entry><ind>90</ind><dep>0.0238</dep></entry>
+      <entry><ind>100</ind><dep>0.0228</dep></entry>
+      <entry><ind>110</ind><dep>0.0249</dep></entry>
+      <entry><ind>120</ind><dep>0.0258</dep></entry>
+      <entry><ind>130</ind><dep>0.0205</dep></entry>
+      <entry><ind>140</ind><dep>0.0136</dep></entry>
+      <entry><ind>150</ind><dep>0.0079</dep></entry>
+      <entry><ind>160</ind><dep>0.0043</dep></entry>
+      <entry><ind>170</ind><dep>0.003</dep></entry>
+      <entry><ind>180</ind><dep>0</dep></entry>
+    </interpolation>
+    <axis><z>1</z></axis>
+  </animation>
+
+  <!-- vsi-marker -->
+  <animation>
+    <name>vsi-marker-translation</name>
+    <type>translate</type>
+    <object-name>vsi-marker</object-name>
+    <property>velocities/vertical-speed-fps</property>
+    <factor>0.0003721</factor>
+    <min-m>-0.0312</min-m>
+    <max-m>0.0312</max-m>
+    <axis><z>1</z></axis>
+  </animation>
+
+
+  <!-- slip-skid-ball -->
+  <animation>
+    <name>slip-skid-rotation</name>
+    <type>rotate</type>
+    <object-name>slip-skid-ball</object-name>
+    <property>/instrumentation/slip-skid-ball/indicated-slip-skid</property>  
+    <max-deg>20</max-deg>
+    <min-deg>-20</min-deg>
+    <factor>8</factor>
+    <center><z-m>0.0054</z-m></center>
+    <axis><x>-1</x></axis>
+  </animation>
+
+  <!-- velocity marker -->
+  <animation>
+    <name>velocity-marker-translation-y</name><!-- horizontal -->
+    <type>translate</type>
+    <object-name>impact-marker</object-name>
+    <condition>
+      <greater-than>
+        <property>velocities/airspeed-kt</property>
+        <value>45</value>
+      </greater-than>
+    </condition>
+    <property>sim/model/A-6E/instrumentation/vdi/velocity_marker_y</property>
+    <max-m>0.1</max-m>
+    <min-m>-0.1</min-m>
+    <factor>0.1</factor>
+    <axis><y>1</y></axis>
+  </animation>
+  <animation>
+    <name>velocity-marker-translation-z</name><!-- vertical -->
+    <type>translate</type>
+    <object-name>impact-marker</object-name>
+    <condition>
+      <greater-than>
+        <property>velocities/airspeed-kt</property>
+        <value>45</value>
+      </greater-than>
+    </condition>
+    <property>sim/model/A-6E/instrumentation/vdi/velocity_marker_z</property>
+    <max>0.7</max>
+    <min>-0.7</min>
+    <factor>0.1</factor>
+    <axis><z>-1</z></axis>
+  </animation>
+
+  <!-- autopilot -->
+  <animation> 
+    <type>select</type>
+    <object-name>afcs-alt</object-name>
+    <condition>
+      <property>sim/model/A-6E/controls/autopilot/vdi-alt-marker</property>
+    </condition>
+    </animation>
+    <animation> 
+      <type>select</type>
+      <object-name>afcs-roll</object-name>
+    <condition>
+      <property>sim/model/A-6E/controls/autopilot/vdi-roll-marker</property>
+    </condition>
+  </animation>
+
+  <!-- break away signal lights -->
+  <animation> 
+    <type>select</type>
+    <object-name>break-lts</object-name>
+    <condition>
+      <property>sim/model/A-6E/instrumentation/optical-sight/break-lts</property>
+    </condition>
+  </animation>
+
+  <!-- terrain clearance unserviceable lights -->
+  <animation> 
+    <type>select</type>
+    <object-name>tc-lts</object-name>
+    <condition>
+      <not>
+        <property>sim/model/A-6E/instrumentation/terrain-clearance/serviceable</property>
+      </not>
+    </condition>
+  </animation>
+
+  <!-- radar altitude out of range lights -->
+  <animation> 
+    <type>select</type>
+    <object-name>ra-lts</object-name>
+    <condition>
+      <or>
+        <less-than>
+          <property>position/altitude-agl-ft</property>
+          <value>20</value>
+        </less-than>
+        <greater-than>
+          <property>position/altitude-agl-ft</property>
+          <value>5000</value>
+        </greater-than>
+      </or>
+    </condition>
+  </animation>
+
+
+
+  <!-- lighting -->
+
+  <animation>
+    <object-name>casing</object-name>
+    <type>material</type>
+    <condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>0.55</red>
+      <green>0.24</green>
+      <blue>0.10</blue>
+    </emission>
+  </animation>
+  <animation>
+    <object-name>slip-skid-path</object-name>
+    <type>material</type>
+    <condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>0.385</red>
+      <green>0.192</green>
+      <blue>0.08</blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <object-name>sky</object-name>
+    <type>material</type>
+    <emission>
+      <factor-prop>sim/model/A-6E/controls/VDI/brightness</factor-prop>
+      <red>0</red><green>0.8</green><blue>0</blue>
+    </emission>
+  </animation>
+  <animation>
+    <object-name>ground</object-name>
+    <type>material</type>
+    <emission> 
+      <factor-prop>sim/model/A-6E/controls/VDI/brightness</factor-prop>
+      <red>0</red><green>0.8</green><blue>0</blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <object-name>alt-curtain</object-name>
+    <type>material</type>
+    <emission>
+      <factor-prop>sim/model/A-6E/controls/VDI/brightness</factor-prop>
+      <red>0</red><green>0.15</green><blue>0</blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <object-name>bank-index</object-name>
+    <type>material</type>
+    <emission>
+      <factor-prop>sim/model/A-6E/controls/VDI/brightness</factor-prop>
+      <red>0.85</red><green>0.9</green><blue>0.85</blue>
+    </emission>
+  </animation>
+  <animation>
+    <object-name>impact-marker</object-name>
+    <type>material</type>
+    <emission>
+      <factor-prop>sim/model/A-6E/controls/VDI/brightness</factor-prop>
+      <red>0.85</red><green>0.9</green><blue>0.85</blue>
+    </emission>
+  </animation>
+  <animation>
+    <object-name>drift-marker</object-name>
+    <type>material</type>
+    <emission>
+      <factor-prop>sim/model/A-6E/controls/VDI/brightness</factor-prop>
+      <red>0.85</red><green>0.9</green><blue>0.85</blue>
+    </emission>
+  </animation>
+  <animation>
+    <object-name>target-marker</object-name>
+    <type>material</type>
+    <emission>
+      <factor-prop>sim/model/A-6E/controls/VDI/brightness</factor-prop>
+      <red>0.85</red><green>0.9</green><blue>0.85</blue>
+    </emission>
+  </animation>
+  <animation>
+    <object-name>vsi-marker</object-name>
+    <type>material</type>
+    <emission>
+      <factor-prop>sim/model/A-6E/controls/VDI/brightness</factor-prop>
+      <red>0.85</red><green>0.9</green><blue>0.85</blue>
+    </emission>
+  </animation>
+  <animation>
+    <object-name>ladder</object-name>
+    <type>material</type>
+    <emission>
+      <factor-prop>sim/model/A-6E/controls/VDI/brightness</factor-prop>
+      <red>0.85</red><green>0.9</green><blue>0.85</blue>
+    </emission>
+  </animation>
+  <animation>
+    <object-name>afcs-alt</object-name>
+    <type>material</type>
+    <emission>
+      <factor-prop>sim/model/A-6E/controls/VDI/brightness</factor-prop>
+      <red>0.85</red><green>0.9</green><blue>0.85</blue>
+    </emission>
+  </animation>
+  <animation>
+    <object-name>afcs-roll</object-name>
+    <type>material</type>
+    <emission>
+      <factor-prop>sim/model/A-6E/controls/VDI/brightness</factor-prop>
+      <red>0.85</red><green>0.9</green><blue>0.85</blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <object-name>video</object-name>
+    <type>noshadow</type>
+  </animation>
+  <animation>
+    <object-name>vdi</object-name>
+    <type>noshadow</type>
+  </animation>
+
+
+
+  <animation>
+    <type>range</type>
+    <min-m>0</min-m>
+    <max-m>35</max-m>
+  </animation>
+
+</PropertyList>

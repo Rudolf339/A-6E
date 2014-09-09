@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+
+<PropertyList> 
+  <path>fuel-gauge.ac</path>
+
+  <!-- fuel main needle -->
+  <animation>
+    <name>fuel-main</name>
+    <type>rotate</type>
+    <object-name>needle-main</object-name>
+    <property>consumables/fuel/tank[0]/level-lbs</property>
+    <interpolation> 
+      <entry><ind>0</ind><dep>0</dep></entry>
+      <entry><ind>10000</ind><dep>272</dep></entry>
+    </interpolation>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis> 
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <!-- fuel selector needle -->
+  <animation>
+  <name>fuel-r</name>
+    <type>rotate</type>
+    <object-name>needle-select</object-name>
+    <property>sim/model/A-6E/consumables/fuel/selected-tank-lbs</property>
+    <interpolation> 
+      <entry><ind>0</ind><dep>0</dep></entry>
+      <entry><ind>10000</ind><dep>272</dep></entry>
+    </interpolation>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis> 
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+
+
+  <!-- total fuel drum counter -->
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>drum-1</object-name>
+    <property>consumables/fuel/total-fuel-lbs</property>
+    <factor>0.1</factor>
+    <offset>-1</offset>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>drum-2</object-name>
+    <property>consumables/fuel/total-fuel-lbs</property>
+    <factor>0.01</factor>
+    <offset>-10</offset>
+    <step>10</step>
+    <scroll>0.5</scroll>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>drum-3</object-name>
+    <property>consumables/fuel/total-fuel-lbs</property>
+    <factor>0.001</factor>
+    <offset>-100</offset>
+    <step>100</step>
+    <scroll>0.5</scroll>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>drum-4</object-name>
+    <property>consumables/fuel/total-fuel-lbs</property>
+    <factor>0.0001</factor>
+    <offset>-1000</offset>
+    <step>1000</step>
+    <scroll>0.5</scroll>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>drum-5</object-name>
+    <property>consumables/fuel/total-fuel-lbs</property>
+    <factor>0.00001</factor>
+    <offset>-10000</offset>
+    <step>10000</step>
+    <scroll>0.5</scroll>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center>
+    <axis>
+      <x>0</x>
+      <y>-1</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+
+  <!-- lighting -->
+
+  <animation> 
+    <object-name>fuel-gauge</object-name>
+    <type>material</type>
+    <condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>0.55</red>
+      <green>0.24</green>
+      <blue>0.10</blue>
+    </emission>
+  </animation>
+
+
+
+
+  <!-- *** LoD *** -->
+  <animation> 
+    <type>range</type>
+    <min-m>0</min-m>
+    <max-m>35</max-m>
+  </animation>
+</PropertyList>

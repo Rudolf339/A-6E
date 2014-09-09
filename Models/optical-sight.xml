@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+	<path>optical-sight.ac</path>
+
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<object-name>CPT-hud-screen</object-name>
+	</effect>
+
+	<animation>
+		<type>select</type>
+		<object-name>L-fire</object-name>
+		<condition>
+			<property>sim/model/A-6E/instrumentation/warning-lights/L-fire</property>
+		</condition>
+	</animation> 
+
+	<animation>
+		<type>select</type>
+		<object-name>master-caution</object-name>
+		<condition>
+			<property>sim/model/A-6E/instrumentation/warning-lights/master-caution</property>
+		</condition>
+	</animation> 
+
+	<animation>
+		<type>select</type>
+		<object-name>R-fire</object-name>
+		<condition>
+			<property>sim/model/A-6E/instrumentation/warning-lights/R-fire</property>
+		</condition>
+	</animation> 
+
+	<!-- lighting -->
+
+	<animation> 
+		<object-name>optical-device</object-name>
+		<type>material</type>
+		<emission>
+			<factor-prop>sim/model/A-6E/controls/lighting/flood-lts</factor-prop>
+			<red>0.1</red>
+			<green>0.05</green>
+			<blue>0.03</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<object-name>optical-sight</object-name>
+		<type>noshadow</type>
+	</animation>
+
+
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>35</max-m>
+	</animation>
+
+</PropertyList>

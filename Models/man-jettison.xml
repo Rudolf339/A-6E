@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+ <path>man-jettison.ac</path>
+
+
+ 
+<!-- lighting -->
+
+  <animation>
+    <object-name>man-jettison</object-name>
+    <type>material</type>
+    <condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>0.385</red>
+      <green>0.192</green>
+      <blue>0.08</blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>range</type>
+    <min-m>0</min-m>
+    <max-m>15</max-m>
+  </animation>
+
+</PropertyList>

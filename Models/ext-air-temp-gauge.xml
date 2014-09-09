@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+	<name>ext-air-temp-gauge</name>
+	<path>ext-air-temp-gauge.ac</path>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>needle</object-name>
+		<property>environment/temperature-degc</property>
+		<interpolation>
+		<!--        Temp deg           gauge deg -->
+
+			<entry><ind>  -75</ind><dep>  -74</dep></entry>
+			<entry><ind>  -50</ind><dep>  -48</dep></entry>
+			<entry><ind>  -25</ind><dep>  -24</dep></entry>
+			<entry><ind>  0</ind><dep>   0</dep></entry>
+			<entry><ind> 25</ind><dep>   29</dep></entry>
+			<entry><ind> 50</ind><dep>   55</dep></entry>
+			<entry><ind> 75</ind><dep>   82</dep></entry>
+			<entry><ind> 100</ind><dep>   107</dep></entry>
+
+
+		</interpolation>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0.0065</y-m>
+			<z-m>0</z-m>
+		</center>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+
+<!-- lighting -->
+
+	<animation> 
+		<object-name>mount</object-name>
+		<type>material</type>
+		<emission> 
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.45</red>
+			<green>0.34</green>
+			<blue>0.18</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<object-name>face</object-name>
+		<type>material</type>
+		<emission> 
+			<factor-prop>controls/lighting/instruments-norm</factor-prop>
+			<red>0.50</red>
+			<green>0.25</green>
+			<blue>0.18</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<object-name>needle</object-name>
+		<type>material</type>
+		<emission> 
+			<factor-prop>controls/lighting/instruments-norm</factor-prop>
+			<red>0.75</red>
+			<green>0.55</green>
+			<blue>0.35</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<object-name>ext-air-temp-gauge</object-name>
+		<type>noshadow</type>
+	</animation>
+
+
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>35</max-m>
+	</animation>
+
+</PropertyList>

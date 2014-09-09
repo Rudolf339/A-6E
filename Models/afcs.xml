@@ -1,0 +1,210 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+	<path>afcs.ac</path>
+
+
+	<animation>
+		<type>rotate</type>
+		<object-name>on-off-switch</object-name>
+		<property>sim/model/A-6E/controls/autopilot/on-off-switch</property>
+		<factor>44</factor>
+		<center><x-m>-0.0198</x-m><z-m>0.0041</z-m></center>
+		<axis><y>-1</y></axis>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>on-off-switch</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>A6Econtrols.afcs_power()</script>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>auto-stab-augm-switch</object-name>
+		<property>sim/model/A-6E/controls/autopilot/auto-stab-augm-switch</property>
+		<factor>44</factor>
+		<center><x-m>0.0186</x-m><z-m>0.0041</z-m></center>
+		<axis><y>-1</y></axis>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>auto-stab-augm-switch</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>A6Econtrols.afcs_engage_toggle()</script>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>cmd-switch</object-name>
+		<property>sim/model/A-6E/controls/autopilot/cmd-switch</property>
+		<factor>44</factor>
+		<center><y-m>0.0078</y-m><z-m>0.0041</z-m></center>
+		<axis><y>-1</y>
+			<z>0</z></axis>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>cmd-switch</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>A6Econtrols.afcs_cmd()</script>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>alt-push-button</object-name>
+		<property>sim/model/A-6E/controls/autopilot/alt-button</property>
+		<factor>0.007</factor>
+		<axis><z>-1</z></axis>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>alt-push-button</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>A6Econtrols.afcs_alt()</script>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>mach-push-button</object-name>
+		<property>sim/model/A-6E/controls/autopilot/mach-button</property>
+		<factor>0.007</factor>
+		<axis><z>-1</z></axis>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<visible>true</visible>
+		<object-name>mach-push-button</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>A6Econtrols.afcs_mach()</script>
+			</binding>
+		</action>
+	</animation>
+
+
+	<!-- lighting -->
+	<animation>
+		<object-name>mount</object-name>
+		<type>material</type>
+		<emission> 
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.44</red>
+			<green>0.27</green>
+			<blue>0.15</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<object-name>on-off-switch</object-name>
+		<type>material</type>
+		<emission> 
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.44</red>
+			<green>0.27</green>
+			<blue>0.15</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<object-name>auto-stab-augm-switch</object-name>
+		<type>material</type>
+		<emission> 
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.44</red>
+			<green>0.27</green>
+			<blue>0.15</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<object-name>alt-push-button</object-name>
+		<type>material</type>
+		<emission> 
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.44</red>
+			<green>0.27</green>
+			<blue>0.15</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<object-name>mach-push-button</object-name>
+		<type>material</type>
+		<emission> 
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.44</red>
+			<green>0.27</green>
+			<blue>0.15</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<object-name>level-return-push-button</object-name>
+		<type>material</type>
+		<emission> 
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.44</red>
+			<green>0.27</green>
+			<blue>0.15</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<object-name>cmd-switch</object-name>
+		<type>material</type>
+		<emission> 
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.44</red>
+			<green>0.27</green>
+			<blue>0.15</blue>
+		</emission>
+	</animation>
+
+
+
+	<animation>
+		<object-name>afcs</object-name>
+		<type>noshadow</type>
+	</animation>
+
+
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>7</max-m>
+	</animation>
+
+</PropertyList>
