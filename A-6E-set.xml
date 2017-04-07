@@ -23,6 +23,25 @@ Grumman A-6E simulation config.
 		<virtual-cockpit archive="y">false</virtual-cockpit>
 		<chase-distance-m type="double" archive="y">-30.0</chase-distance-m>
 
+		<tags>
+			<tag>bomber</tag>
+			<tag>grumman</tag>
+			<tag>1960s</tag>
+			<tag>1970s</tag>
+			<tag>1980s</tag>
+			<tag>1990s</tag>
+			<tag>vietnam</tag>
+			<tag>gulfwar1</tag>
+			<tag>hud</tag>
+			<tag>ifr</tag>
+			<tag>refuel</tag>
+			<tag>retractable-gear</tag>
+			<tag>tail-hook</tag>
+			<tag>wing-fold</tag>
+			<tag>jet</tag>
+			<tag>single-engine</tag>
+		</tags>
+
  		<gui>
  			<style>
  				<colors>
