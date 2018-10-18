@@ -1,0 +1,223 @@
+<?xml version="1.0"?>
+
+
+
+<PropertyList>
+	<path>doppler.ac</path>
+
+	<!-- angular drift needle -->
+	<animation>
+		<type>rotate</type>
+		<object-name>index</object-name>
+		<property>sim/model/A-6E/instrumentation/doppler/drift-deg</property>
+		<factor>3</factor>  
+		<center>
+			<x-m>-0.0072</x-m>
+			<y-m>0.0193</y-m>
+			<z-m>0</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>-1</z>
+		</axis>
+	</animation>
+
+	<!-- selector knob -->
+	<animation>
+	<type>rotate</type>
+		<object-name>mode-selector</object-name>
+		<property>sim/model/A-6E/controls/instrumentation/doppler/mode-selector</property>
+		<interpolation>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>1</ind><dep>35</dep></entry>
+			<entry><ind>2</ind><dep>67</dep></entry>
+			<entry><ind>3</ind><dep>98</dep></entry>
+			<entry><ind>4</ind><dep>132</dep></entry>
+		</interpolation>
+		<center>
+			<x-m>-0.0007</x-m>
+			<y-m>-0.0470</y-m>
+			<z-m>0</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>-1</z>
+		</axis>
+	</animation>
+
+	<!-- ground speed drum counter -->
+	<animation>
+		<type>textranslate</type>
+		<object-name>drum-1</object-name>
+		<property>sim/model/A-6E/instrumentation/doppler/ground-speed-kt</property>
+		<factor>0.1</factor>
+		<offset>-1</offset>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>drum-2</object-name>
+		<property>sim/model/A-6E/instrumentation/doppler/ground-speed-kt</property>
+		<factor>0.01</factor>
+		<offset>-10</offset>
+		<step>10</step>
+		<scroll>0.5</scroll>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>drum-3</object-name>
+		<property>sim/model/A-6E/instrumentation/doppler/ground-speed-kt</property>
+		<factor>0.001</factor>
+		<offset>-100</offset>
+		<step>100</step>
+		<scroll>0.5</scroll>
+		<center>
+			<x-m>0</x-m>
+			<y-m>0</y-m>
+			<z-m>0</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<!-- memory lamp -->
+	<animation>
+		<type>select</type>
+		<object-name>memory-on</object-name>
+		<condition>
+			<property>sim/model/A-6E/instrumentation/doppler/memory</property>
+		</condition>
+	</animation>
+
+
+	<!-- lighting -->
+
+	<animation> 
+		<object-name>mount</object-name>
+		<object-name>bezel</object-name>
+		<object-name>drift-button</object-name>
+		<object-name>gs-button</object-name>
+		<type>material</type>
+		<emission> 
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.45</red>
+			<green>0.34</green>
+			<blue>0.18</blue>
+		</emission>
+	</animation>
+
+	<animation> 
+		<object-name>memory-on</object-name>
+		<type>material</type>
+		<emission> 
+			<red>1.0</red>
+			<green>1.0</green>
+			<blue>1.0</blue>
+		</emission>
+	</animation>
+
+	<animation> 
+		<object-name>mode-selector</object-name>
+		<type>material</type>
+		<emission> 
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.10</red>
+			<green>0.05</green>
+			<blue>0.025</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<object-name>face</object-name>
+		<type>material</type>
+		<emission> 
+			<factor-prop>controls/lighting/instruments-norm</factor-prop>
+			<red>0.50</red>
+			<green>0.25</green>
+			<blue>0.18</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<type>material</type>
+		<object-name>drum-1</object-name>
+		<emission> 
+			<factor-prop>controls/lighting/instruments-norm</factor-prop>
+			<red>0.50</red>
+			<green>0.25</green>
+			<blue>0.18</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<type>material</type>
+		<object-name>drum-2</object-name>
+		<emission> 
+			<factor-prop>controls/lighting/instruments-norm</factor-prop>
+			<red>0.50</red>
+			<green>0.25</green>
+			<blue>0.18</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<type>material</type>
+		<object-name>drum-3</object-name>
+		<emission> 
+			<factor-prop>controls/lighting/instruments-norm</factor-prop>
+			<red>0.50</red>
+			<green>0.25</green>
+			<blue>0.18</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<object-name>index</object-name>
+		<type>material</type>
+		<emission> 
+			<factor-prop>controls/lighting/instruments-norm</factor-prop>
+			<red>0.75</red>
+			<green>0.55</green>
+			<blue>0.35</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<object-name>doppler</object-name>
+		<type>noshadow</type>
+	</animation>
+
+
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>35</max-m>
+	</animation>
+
+</PropertyList>

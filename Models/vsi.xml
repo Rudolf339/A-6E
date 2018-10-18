@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+
+<!--IVSI (Instantaneous Vertical Speed Indicator)-->
+
+  <PropertyList>
+    <name>vsi</name>
+    <path>vsi.ac</path>
+    <animation>
+    <name>needle</name>
+    <type>rotate</type>
+    <object-name>needle</object-name>
+    <property>velocities/vertical-speed-fps</property>
+    <min>-100.0</min>
+    <max>100.0</max>
+    <scale>1.0</scale>
+    <interpolation>
+      <entry><ind>-100.000</ind><dep>106.0</dep></entry>
+      <entry><ind> -83.333</ind><dep>126.0</dep></entry>
+      <entry><ind> -66.667</ind><dep>146.0</dep></entry>
+      <entry><ind> -50.000</ind><dep>166.0</dep></entry>
+      <entry><ind> -33.333</ind><dep>191.0</dep></entry>
+      <entry><ind> -16.667</ind><dep>223.5</dep></entry>
+      <entry><ind>   0.000</ind><dep>270.0</dep></entry>
+      <entry><ind>  16.667</ind><dep>313.5</dep></entry>
+      <entry><ind>  33.333</ind><dep>348.3</dep></entry>
+      <entry><ind>  40.92088198</ind><dep>360.0</dep></entry>
+      <entry><ind>  40.92088199</ind><dep>  0.0</dep></entry> 
+      <entry><ind>  50.000</ind><dep> 14.0</dep></entry>
+      <entry><ind>  66.667</ind><dep> 34.0</dep></entry>
+      <entry><ind>  83.333</ind><dep> 54.5</dep></entry>
+      <entry><ind> 100.000</ind><dep> 74.0</dep></entry>
+    </interpolation>
+    <center>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </center> 
+    <axis>
+      <x>-1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+    <!-- lighting -->
+  <animation>
+    <object-name>vsi</object-name>
+    <type>material</type>
+    <condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+    <emission>
+       <factor-prop>controls/lighting/instruments-norm</factor-prop>
+       <red>0.55</red>
+      <green>0.24</green>
+      <blue>0.10</blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>range</type>
+    <min-m>0</min-m>
+    <max-m>15</max-m>
+  </animation>
+
+</PropertyList>

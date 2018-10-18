@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+	<PropertyList>
+
+	<path>catapult-grip.ac</path>
+
+	<!-- <animation>
+		<type>rotate</type>
+		<object-name>needle</object-name>
+		<property>orientation/alpha-deg</property>
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+	</animation> -->
+
+
+	<!-- lighting -->
+
+	<!-- <animation> 
+		<object-name>light-master-switch</object-name>
+		<type>material</type>
+		<emission> 
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.45</red>
+			<green>0.34</green>
+			<blue>0.18</blue>
+		</emission>
+	</animation> -->
+
+	<animation>
+		<object-name>cat-grip</object-name>
+		<type>noshadow</type>
+	</animation>
+
+
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>5</max-m>
+	</animation>
+
+</PropertyList>

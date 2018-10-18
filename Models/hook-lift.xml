@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+ <path>hook-lift.ac</path>
+
+  <animation>
+    <type>select</type>
+    <object-name>hook-lift-bt-lighted</object-name>
+    <condition>
+      <less-than>
+        <property>gear/tailhook/position-norm</property>
+        <value>1</value>
+      </less-than>
+      <greater-than>
+        <property>gear/tailhook/position-norm</property>
+        <value>0.01</value>
+      </greater-than>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>hook-lift-bt</object-name>
+    <condition>
+      <or>
+        <less-than>
+          <property>gear/tailhook/position-norm</property>
+          <value>0.01</value>
+        </less-than>
+        <equals>
+          <property>gear/tailhook/position-norm</property>
+          <value>1</value>
+        </equals>
+      </or>
+    </condition>
+  </animation>
+
+<!-- lighting -->
+
+  <animation>
+    <object-name>hook-lift</object-name>
+    <type>material</type>
+    <condition><not><property>sim/rendering/rembrandt/enabled</property></not></condition>
+    <emission>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>0.55</red>
+      <green>0.24</green>
+      <blue>0.10</blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <object-name>hook-lift-bt-lighted</object-name>
+    <type>material</type>
+    <emission>
+      <red>1</red>
+      <green>1</green>
+      <blue>1</blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>range</type>
+    <min-m>0</min-m>
+    <max-m>15</max-m>
+  </animation>
+
+</PropertyList>
