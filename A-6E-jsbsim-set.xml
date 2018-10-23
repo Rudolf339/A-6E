@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!--
+************************************************************************
+Grumman A-6E simulation config.
+
+2007-03-17 Alexis Bory xiii.at.g2ms.com
+************************************************************************
+-->
+
+<PropertyList>
+	<sim>
+
+		<startup>
+			<splash-texture>Aircraft/A-6E/A-6E-splash.rgb</splash-texture>
+		</startup>
+
+		<flight-model>jsbsim</flight-model>
+		<status>alpha</status>
+		<author>Jüttner Domokos</author>
+		<aero>A-6E-jsbsim</aero>
+		<fuel-fraction>0.66</fuel-fraction>
+		<description>Grumman A-6E (JSBSim FDM)</description>
+		<virtual-cockpit archive="y">false</virtual-cockpit>
+		<chase-distance-m type="double" archive="y">-30.0</chase-distance-m>
+
+		<tags>
+			<tag>bomber</tag>
+			<tag>grumman</tag>
+			<tag>1960s</tag>
+			<tag>1970s</tag>
+			<tag>1980s</tag>
+			<tag>1990s</tag>
+			<tag>vietnam</tag>
+			<tag>gulfwar1</tag>
+			<tag>hud</tag>
+			<tag>ifr</tag>
+			<tag>refuel</tag>
+			<tag>retractable-gear</tag>
+			<tag>tail-hook</tag>
+			<tag>wing-fold</tag>
+			<tag>jet</tag>
+			<tag>single-engine</tag>
+		</tags>
+
+		<model>
+			<path>Models/A-6E.ac</path>
+		</model>
+
+		<sound>
+			<path>Sounds/A-6E-sound.xml</path></sound>
+
+	</sim>	
+	
+	<view n="0">
+			<name>Cockpit View</name>
+			<type>lookfrom</type>
+			<internal archive="y">true</internal>
+			<config>
+				<x-offset-m archive="y">-0.40</x-offset-m>
+				<y-offset-m archive="y">1.32</y-offset-m>
+				<z-offset-m archive="y">-1.66</z-offset-m>
+				<pitch-offset-deg>-10</pitch-offset-deg>
+				<default-field-of-view-deg>57</default-field-of-view-deg>
+				<limits>
+					<enabled type="bool">true</enabled>
+					<left>
+						<heading-max-deg type="double">140</heading-max-deg>
+						<x-offset-max-m type="double">0.20</x-offset-max-m>
+						<x-offset-threshold-deg type="double">25</x-offset-threshold-deg>
+					</left>
+					<right>
+						<heading-max-deg type="double">140</heading-max-deg>
+						<x-offset-max-m type="double">0.20</x-offset-max-m>
+						<x-offset-threshold-deg type="double">25</x-offset-threshold-deg>
+					</right>
+				</limits>
+			</config>
+		</view>
+</PropertyList>
