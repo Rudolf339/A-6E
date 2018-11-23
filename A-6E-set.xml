@@ -145,6 +145,14 @@ Grumman A-6E simulation config.
 			</config>
 		</view>
 
+		<consumables>
+			<fuel>
+				<tank n='0'>
+					<name>Main Fuselage</name>
+				</tank>
+			</fuel>
+		</consumables>
+
 		<weight n="0">
 			<name>Left Outboard</name>
 			<tank>2</tank> <!-- FDM tank index on this pylon -->
