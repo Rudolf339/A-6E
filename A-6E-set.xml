@@ -439,9 +439,9 @@ Grumman A-6E simulation config.
 		<A6Echronograph>
 			<file>Aircraft/A-6E/Nasal/chronograph.nas</file>
 		</A6Echronograph>
-		<A6E>
-			<file>Aircraft/A-6E/Nasal/A-6E.nas</file>
-		</A6E>
+		<J52-P8>
+			<file>Aircraft/A-6E/Nasal/J52-P8.nas</file>
+		</J52-P8>
 	</nasal>
 
 
