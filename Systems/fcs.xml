@@ -58,45 +58,23 @@
       </clipto>
   	</summer>
 
-		<aerosurface_scale name="fcs/left-aileron-def-rad">
-      <input>fcs/roll-trim-sum</input>
-      <range>
-        <min>  0.00 </min>
-        <max>  0.89 </max>
-      </range>
-  	</aerosurface_scale>
+		<pure_gain name="fcs/left-aileron-def-rad">
+			<input>fcs/roll-trim-sum</input>
+			<gain>0.89</gain>
+			<clipto>
+				<min> -0.89 </min>
+				<max>  0.00 </max>
+			</clipto>
+		</pure_gain>
 
-		<aerosurface_scale name="fcs/right-aileron-def-rad">
-      <input>-fcs/roll-trim-sum</input>
-      <range>
-        <min>  0.00 </min>
-        <max>  0.89 </max>
-      </range>
-   </aerosurface_scale>
-
-	 <aerosurface_scale name="fcs/left-aileron-def-norm">
-      <input>fcs/left-aileron-def-rad</input>
-      <domain>
-        <min>  0.00 </min>
-        <max>  0.89 </max>
-      </domain>
-      <range>
-        <min> -1 </min>
-        <max>  1 </max>
-      </range>
-   </aerosurface_scale>
-
-	 <aerosurface_scale name="fcs/right-aileron-def-norm">
-      <input>fcs/right-aileron-def-rad</input>
-      <domain>
-        <min>  0.00 </min>
-        <max>  0.89 </max>
-      </domain>
-      <range>
-        <min> -1 </min>
-        <max>  1 </max>
-      </range>
-   </aerosurface_scale>
+		<pure_gain name="fcs/right-aileron-def-rad">
+			<input>fcs/roll-trim-sum</input>
+			<gain>-0.89</gain>
+			<clipto>
+				<min> -0.89 </min>
+				<max>  0.00 </max>
+			</clipto>
+		</pure_gain>
 
   </channel>
 
