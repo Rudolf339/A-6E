@@ -263,12 +263,12 @@
  </ground_reactions>
 
  <system file="Propulsion.xml"/>
- <system file="Aircraft control.xml"/>
- <system file="Landing Gear.xml"/>
+ <system file="Aircraft_control.xml"/>
+ <system file="Landingr_ear.xml"/>
  <system file="Flaps.xml"/>
  <system file="Spoilers.xml"/>
  <system file="Speedbrake.xml"/>
- <system file="Arrestor Hook.xml"/>
+ <system file="Arrestor_Hook.xml"/>
  <system file="Catapult.xml"/>
 
  <flight_control name="FCS: A-6E">
