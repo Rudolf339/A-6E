@@ -17,7 +17,7 @@ Grumman A-6E simulation config.
 		<flight-model>jsb</flight-model>
 		<status>alpha</status>
 		<author>Jüttner Domokos</author>
-		<aero>A-6E-jsbsim</aero>
+		<aero>A-6E</aero>
 		<fuel-fraction>0.66</fuel-fraction>
 		<description>Grumman A-6E (JSBSim FDM)</description>
 		<virtual-cockpit archive="y">false</virtual-cockpit>
