@@ -186,6 +186,7 @@
 
  </propulsion>
 
+ <!--
  <ground_reactions>
 
   <contact type="BOGEY" name="NOSE">
@@ -260,11 +261,12 @@
    <damping_coeff unit="LBS/FT/SEC"> 60000.00 </damping_coeff>
   </contact>
 
- </ground_reactions>
+</ground_reactions> -->
 
+ <ground_reactions file="Systems/ground_reactions.xml"/>
  <system file="Propulsion.xml"/>
  <system file="Aircraft_control.xml"/>
- <system file="Landingr_ear.xml"/>
+ <system file="Landing_Gear.xml"/>
  <system file="Flaps.xml"/>
  <system file="Spoilers.xml"/>
  <system file="Speedbrake.xml"/>
