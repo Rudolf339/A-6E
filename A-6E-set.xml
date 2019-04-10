@@ -204,6 +204,7 @@ Grumman A-6E simulation config.
 
 		<model>
 			<path>Aircraft/A-6E/Models/A-6E-model.xml</path>
+			<fallback-model-index>526</fallback-model-index>
 			<A-6E>
 				<controls>
 					<canopy>
