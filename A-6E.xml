@@ -177,9 +177,7 @@
  <system file="Arrestor_Hook.xml"/>
  <system file="Catapult.xml"/>
 
- <flight_control name="FCS: A-6E">
-
- </flight_control>
+ <flight_control file="Systems/fcs.xml"/>
 
  <aerodynamics>
 
@@ -537,13 +535,13 @@
        </product>
     </function>
 
-    <function name="aero/moment/Roll_aileron">
+    <function name="aero/moment/Roll_left_aileron">
        <description>Roll moment due to aileron</description>
        <product>
           <property>aero/qbar-psf</property>
           <property>metrics/Sw-sqft</property>
           <property>metrics/bw-ft</property>
-          <property>fcs/left-aileron-pos-rad</property>
+          <property>fcs/left-aileron-def-rad</property>
            <table>
             <independentVar lookup="row">velocities/mach</independentVar>
             <tableData>
@@ -553,6 +551,23 @@
           </table>
        </product>
     </function>
+		
+		<function name="aero/moment/Roll_right_aileron">
+       <description>Roll moment due to aileron</description>
+       <product>
+          <property>aero/qbar-psf</property>
+          <property>metrics/Sw-sqft</property>
+          <property>metrics/bw-ft</property>
+          <property>fcs/right-aileron-def-rad</property>
+           <table>
+            <independentVar lookup="row">velocities/mach</independentVar>
+            <tableData>
+              0.0   -0.1200
+              2.0   -0.0300
+            </tableData>
+          </table>
+       </product>
+		 </function>
 
     <function name="aero/moment/Roll_rudder">
        <description>Roll moment due to rudder</description>
