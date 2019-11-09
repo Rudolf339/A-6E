@@ -60,7 +60,7 @@
    <htailarm  unit="FT" >    24.90 </htailarm>
    <vtailarea  unit="FT2">   79.25 </vtailarea>
    <vtailarm  unit="FT" >    24.90 </vtailarm>
-   <location name="AERORP" unit="IN">
+   <location name="AERORP" unit="M">
      <x> 2.281 </x>
      <y> 0.000 </y>
      <z> 0.000 </z>
