@@ -2030,7 +2030,7 @@
 		<type>rotate</type>
 		<object-name>nav_halo_Tail</object-name>
 		<property>surface-positions/rudder-pos-norm</property>
-		<factor>-20</factor>
+		<factor>20</factor>
 		<axis>
 			<x1-m>10.5</x1-m><y1-m>0</y1-m><z1-m>-0.31</z1-m>
 			<x2-m>10.98</x2-m><y2-m>0</y2-m><z2-m>2.03</z2-m>
@@ -2085,7 +2085,7 @@
 		<type>rotate</type>
 		<object-name>nav_halo_Tail_Dim</object-name>
 		<property>surface-positions/rudder-pos-norm</property>
-		<factor>-20</factor>
+		<factor>20</factor>
 		<axis>
 			<x1-m>10.5</x1-m><y1-m>0</y1-m><z1-m>-0.31</z1-m>
 			<x2-m>10.98</x2-m><y2-m>0</y2-m><z2-m>2.03</z2-m>
