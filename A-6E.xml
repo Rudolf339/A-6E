@@ -445,7 +445,7 @@
           <property>aero/qbar-psf</property>
           <property>metrics/Sw-sqft</property>
           <property>metrics/cbarw-ft</property>
-          <property>fcs/elevator-pos-rad</property>
+          <property>fcs/surfaces/elevator-pos-deg</property>
           <table>
             <independentVar lookup="row">velocities/mach</independentVar>
             <tableData>

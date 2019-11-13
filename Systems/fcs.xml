@@ -1,48 +1,70 @@
-<flight_control name="FCS: A-6E">
-
+<flight_control name="FCS A-6E">
+  <property value="60">fcs/rate-limits/elevator</property>
+  <property value="0">fcs/surfaces/flap-pos-norm</property>
   <channel name="Pitch">
 
-    <summer name="fcs/pitch-trim-sum">
+    <summer name="fcs//pitch-trim-sum">
       <input>fcs/elevator-cmd-norm</input>
       <input>fcs/pitch-trim-cmd-norm</input>
       <clipto>
         <min> -1 </min>
-        <max>  1 </max>
+	<max>  1 </max>
       </clipto>
     </summer>
 
-    <aerosurface_scale name="fcs/elevator-def-rad">
+    <aerosurface_scale name="fcs/elevator-limited-deg">
       <input>fcs/pitch-trim-sum</input>
-      <range>
-        <min>  -0.38 </min>
-	<max>   0.07 </max>
+      <range>OB
+        <min>  -9.5 </min>
+	<max>   1.5 </max>
       </range>
       <zero_centered>false</zero_centered>
     </aerosurface_scale>
 
-    <aerosurface_scale name="fcs/elevator-def-deg">
-      <input>fcs/elevator-def-rad</input>
-      <domain>
-	<min> -0.38 </min>
-	<max>  0.07</max>
-      </domain>
+    <aerosurface_scale name="fcs/elevator-full-deg">
+      <input>fcs/pitch-trim-sum</input>
       <range>
-	<min> -21.5 </min>
-	<max>   4.0 </max>
+        <min> -24.0 </min>
+	<max>   1.5 </max>
       </range>
+      <zero_centered>false</zero_centered>
     </aerosurface_scale>
 
-    <aerosurface_scale name="fcs/elevator-def-norm">
-      <input>fcs/elevator-def-rad</input>
+    <switch name="fcs/elevator-correct-deg">
+      <default value="fcs/elevator-full-deg"/>
+      <test value="fcs/elevator-limited-deg">
+	fcs/surfaces/flap-pos-norm == 0
+      </test>
+    </switch>
+
+    <actuator name="fcs/surfaces/elevator-pos-deg">
+      <input>fcs/elevator-correct-deg</input>
+      <lag>24</lag>
+      <rate_limit>fcs/rate-limits/elevator</rate_limit> <!-- guesstimated value, ~1 s travel -->
+      <output>fcs/elevator-pos-norm</output>
+    </actuator>
+      
+    <aerosurface_scale name="fcs/surfaces/elevator-pos-norm">
+      <input>fcs/surfaces/elevator-pos-deg</input>
       <domain>
-        <min> -0.38 </min>
-        <max>  0.07 </max>
+        <min> -24.0 </min>
+	<max>   1.5 </max>
       </domain>
       <range>
         <min> -1 </min>
-        <max>  1 </max>
+	<max>  1 </max>
       </range>
       <zero_centered>false</zero_centered>
+      <output>fcs/elevator-pos-norm</output>
+    </aerosurface_scale>
+
+    <aerosurface_scale name="fcs/surfaces/elevator-pos-rad">
+      <input>fcs/surfaces/elevator-pos-norm</input>
+      <range>
+	<min>-0.733038 </min>
+	<max> 0.0261799</max>
+      </range>
+      <zero-centered>false</zero-centered>
     </aerosurface_scale>
 
   </channel>
@@ -78,7 +100,7 @@
 
   </channel>
 
-  <property value="1">fcs/yaw-damper-enable</property>
+<!--  <property value="1">fcs/yaw-damper-enable</property> -->
   <channel name="Yaw">
 
     <summer name="Rudder Command Sum">
@@ -140,7 +162,7 @@
   </channel>
 
   <channel name="Flaps">
-    <kinematic name="Flaps Control">
+    <kinematic name="fcs/surfaces/flap-pos-deg">
       <input>fcs/flap-cmd-norm</input>
       <traverse>
 	<setting>
@@ -159,7 +181,7 @@
       <output>fcs/flap-pos-deg</output>
     </kinematic>
 
-    <aerosurface_scale name="flap normalization">
+    <aerosurface_scale name="fcs/surfaces/flap-pos-norm">
       <input>fcs/flap-pos-deg</input>
       <domain>
         <min>  0 </min>
