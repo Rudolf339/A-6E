@@ -445,7 +445,7 @@
           <property>aero/qbar-psf</property>
           <property>metrics/Sw-sqft</property>
           <property>metrics/cbarw-ft</property>
-          <property>fcs/surfaces/elevator-pos-deg</property>
+          <property>fcs/surfaces/elevator-pos-rad</property>
           <table>
             <independentVar lookup="row">velocities/mach</independentVar>
             <tableData>
@@ -535,13 +535,13 @@
 	</product>
       </function>
 
-      <function name="aero/moment/Roll_left_aileron">
-	<description>Roll moment due to aileron</description>
+      <function name="aero/moment/Roll_left_flaperon">
+	<description>Roll moment due to flaperon</description>
 	<product>
           <property>aero/qbar-psf</property>
           <property>metrics/Sw-sqft</property>
           <property>metrics/bw-ft</property>
-          <property>fcs/left-aileron-def-rad</property>
+          <property>fcs/surfaces/left-flaperon-pos-rad</property>
           <table>
             <independentVar lookup="row">velocities/mach</independentVar>
             <tableData>
@@ -552,13 +552,13 @@
 	</product>
       </function>
       
-      <function name="aero/moment/Roll_right_aileron">
-	<description>Roll moment due to aileron</description>
+      <function name="aero/moment/Roll_right_flaperon">
+	<description>Roll moment due to flaperon</description>
 	<product>
           <property>aero/qbar-psf</property>
           <property>metrics/Sw-sqft</property>
           <property>metrics/bw-ft</property>
-          <property>fcs/right-aileron-def-rad</property>
+          <property>fcs/surfaces/right-flaperon-pos-rad</property>
           <table>
             <independentVar lookup="row">velocities/mach</independentVar>
             <tableData>
@@ -587,7 +587,7 @@
           <property>metrics/Sw-sqft</property>
           <property>metrics/bw-ft</property>
           <property>fcs/spoilers-pos-norm</property>
-          <property>fcs/left-aileron-pos-rad</property>
+          <property>fcs/surfaces/left-flaperon-pos-rad</property>
           <table>
             <independentVar lookup="row">aero/alpha-rad</independentVar>
             <tableData>
@@ -678,13 +678,13 @@
 	</product>
       </function>
 
-      <function name="aero/moment/Yaw_aileron">
+      <function name="aero/moment/Yaw_flaperon">
 	<description>Adverse yaw</description>
 	<product>
           <property>aero/qbar-psf</property>
           <property>metrics/Sw-sqft</property>
           <property>metrics/bw-ft</property>
-          <property>fcs/left-aileron-pos-rad</property>
+          <property>fcs/surfaces/left-flaperon-pos-rad</property>
           <value> 0.0000 </value>
 	</product>
       </function>

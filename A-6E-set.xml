@@ -16,7 +16,8 @@ Grumman A-6E simulation config.
 
 		<flight-model>jsb</flight-model>
 		<status>alpha</status>
-		<author>Jüttner Domokos</author>
+		<author>Jüttner Domokos (Rudolf)</author>
+		<author>Alexis Bory</author>
 		<aero>A-6E</aero>
 		<fuel-fraction>0.66</fuel-fraction>
 		<description>Grumman A-6E (JSBSim FDM)</description>
@@ -396,12 +397,21 @@ Grumman A-6E simulation config.
 					<script>A6Econtrols.canopyswitch(2)</script>
 				</binding>
 			</key>
+			<key n="25">
+			  <name>Ctrl-y</name>
+			  <desc>Toggle flaperon pop-up</desc>
+			  <binding>
+			    <command>property-toggle</command>
+			    <property>/controls/flight/gnd-spoiler-arm</property>
+			  </binding>
+			</key>
 		</keyboard>
 	</input>
 
 	<controls>
 		<flight>
-			<elevator-trim type="double">0.02</elevator-trim>
+		  <elevator-trim type="double">0.02</elevator-trim>
+		  <gnd-spoiler-arm type="bool">0</gnd-spoiler-arm>
 		</flight>
 		<gear>
 			<brake-parking type="bool">1</brake-parking>
@@ -443,6 +453,13 @@ Grumman A-6E simulation config.
 			<file>Aircraft/A-6E/Nasal/J52-P8.nas</file>
 		</J52-P8>
 	</nasal>
-
+	<fdm>
+	  <jsbsim>
+	    <fcs>
+	      <gnd-spoiler-arm alias="/controls/flight/gnd-spoiler-arm"/>
+	    </fcs>
+	  </jsbsim>
+	</fdm>
+	
 
 </PropertyList>

@@ -1,9 +1,9 @@
 <flight_control name="FCS A-6E">
-  <property value="60">fcs/rate-limits/elevator</property>
+  <property value="30">fcs/rate-limits/elevator</property>
   <property value="0">fcs/surfaces/flap-pos-norm</property>
   <channel name="Pitch">
 
-    <summer name="fcs//pitch-trim-sum">
+    <summer name="fcs/elevator/pitch-trim-sum">
       <input>fcs/elevator-cmd-norm</input>
       <input>fcs/pitch-trim-cmd-norm</input>
       <clipto>
@@ -12,17 +12,17 @@
       </clipto>
     </summer>
 
-    <aerosurface_scale name="fcs/elevator-limited-deg">
-      <input>fcs/pitch-trim-sum</input>
-      <range>OB
+    <aerosurface_scale name="fcs/elevator/elevator-limited-deg">
+      <input>fcs/elevator/pitch-trim-sum</input>
+      <range>
         <min>  -9.5 </min>
 	<max>   1.5 </max>
       </range>
       <zero_centered>false</zero_centered>
     </aerosurface_scale>
 
-    <aerosurface_scale name="fcs/elevator-full-deg">
-      <input>fcs/pitch-trim-sum</input>
+    <aerosurface_scale name="fcs/elevator/elevator-full-deg">
+      <input>fcs/elevator/pitch-trim-sum</input>
       <range>
         <min> -24.0 </min>
 	<max>   1.5 </max>
@@ -30,16 +30,15 @@
       <zero_centered>false</zero_centered>
     </aerosurface_scale>
 
-    <switch name="fcs/elevator-correct-deg">
-      <default value="fcs/elevator-full-deg"/>
-      <test value="fcs/elevator-limited-deg">
+    <switch name="fcs/elevator/elevator-correct-deg">
+      <default value="fcs/elevator/elevator-full-deg"/>
+      <test value="fcs/elevator/elevator-limited-deg">
 	fcs/surfaces/flap-pos-norm == 0
       </test>
     </switch>
 
     <actuator name="fcs/surfaces/elevator-pos-deg">
-      <input>fcs/elevator-correct-deg</input>
-      <lag>24</lag>
+      <input>fcs/elevator/elevator-correct-deg</input>
       <rate_limit>fcs/rate-limits/elevator</rate_limit> <!-- guesstimated value, ~1 s travel -->
       <output>fcs/elevator-pos-norm</output>
     </actuator>
@@ -69,9 +68,10 @@
 
   </channel>
 
+  <property value="250">fcs/rate-limits/flaperon</property>
   <channel name="Roll">
 
-    <summer name="fcs/roll-trim-sum">
+    <summer name="fcs/flaperon/roll-trim-sum">
       <input>fcs/aileron-cmd-norm</input>
       <input>fcs/roll-trim-cmd-norm</input>
       <clipto>
@@ -80,23 +80,106 @@
       </clipto>
     </summer>
 
-    <pure_gain name="fcs/left-aileron-def-rad">
+    <pure_gain name="fcs/flaperon/left-flaperon-cmd-deg">
       <input>fcs/roll-trim-sum</input>
-      <gain>0.89</gain>
+      <gain>51</gain>
       <clipto>
-	<min> -0.89 </min>
-	<max>  0.00 </max>
+	<min> -51 </min>
+	<max>  0  </max>
       </clipto>
     </pure_gain>
 
-    <pure_gain name="fcs/right-aileron-def-rad">
+    <switch name="fcs/flaperon/left-flaperon-sum-deg">
+      <default value="fcs/flaperon/left-flaperon-cmd-deg"/>
+      <test value="-39" logic="AND">
+	fcs/gnd-spoiler-arm == 1
+	gear/unit[1]/WOW == 1
+	fcs/throttle-cmd-norm == 0
+	fcs/throttle-cmd-norm[1] == 0
+      </test>
+      <test value="0">
+	fcs/flaperon/roll-trim-sum gt 0
+      </test>
+    </switch>
+
+    <actuator name="fcs/surfaces/left-flaperon-pos-deg">
+      <input>fcs/flaperon/left-flaperon-sum-deg</input>
+      <rate_limit>fcs/rate-limits/flaperon</rate_limit>
+      <output>fcs/left-aileron-pos-deg</output>
+    </actuator>
+
+    <aerosurface_scale name="fcs/surfaces/left-flaperon-pos-norm">
+      <input>fcs/surfaces/left-flaperon-pos-deg</input>
+      <domain>
+	<min>-51</min>
+	<max>0</max>
+      </domain>
+      <range>
+	<min>-1</min>
+	<max>0</max>
+      </range>
+      <output>fcs/left-aileron-pos-norm</output>
+    </aerosurface_scale>
+
+    <aerosurface_scale name="fcs/surfaces/left-flaperon-pos-rad">
+      <input>fcs/surfaces/left-flaperon-pos-norm</input>
+      <range>
+	<min>-0.890118</min>
+	<max>0</max>
+      </range>
+      <output>fcs/left-aileron-pos-rad</output>
+    </aerosurface_scale>
+
+    <pure_gain name="fcs/flaperon/right-flaperon-cmd-deg">
       <input>fcs/roll-trim-sum</input>
-      <gain>-0.89</gain>
+      <gain>-51</gain>
       <clipto>
-	<min> -0.89 </min>
-	<max>  0.00 </max>
+	<min> -51 </min>
+	<max>  0  </max>
       </clipto>
     </pure_gain>
+
+    <switch name="fcs/flaperon/right-flaperon-sum-deg">
+      <default value="fcs/flaperon/right-flaperon-cmd-deg"/>
+      <test value="-39" logic="AND">
+	fcs/gnd-spoiler-arm == 1
+	gear/unit[1]/WOW == 1
+	fcs/throttle-cmd-norm == 0
+	fcs/throttle-cmd-norm[1] == 0
+      </test>
+      <test value="0">
+	fcs/flaperon/roll-trim-sum lt 0
+      </test>
+    </switch>
+
+    <actuator name="fcs/surfaces/right-flaperon-pos-deg">
+      <input>fcs/flaperon/right-flaperon-sum-deg</input>
+      <rate_limit>fcs/rate-limits/flaperon</rate_limit>
+      <output>fcs/surfaces/right-flaperon-pos-deg</output>
+      <output>fcs/right-aileron-pos-deg</output>
+    </actuator>
+
+    <aerosurface_scale name="fcs/surfaces/right-flaperon-pos-norm">
+      <input>fcs/surfaces/right-flaperon-pos-deg</input>
+      <domain>
+	<min>-51</min>
+	<max>0</max>
+      </domain>
+      <range>
+	<min>-1</min>
+	<max>0</max>
+      </range>
+      <output>fcs/right-aileron-pos-norm</output>
+    </aerosurface_scale>
+
+    <aerosurface_scale name="fcs/surfaces/right-flaperon-pos-rad">
+      <input>fcs/surfaces/right-flaperon-pos-norm</input>
+      <range>
+	<min>-0.890118</min>
+	<max>0</max>
+      </range>
+      <output>fcs/right-aileron-pos-rad</output>
+    </aerosurface_scale>
 
   </channel>
 
