@@ -288,7 +288,7 @@
 		<object-name>W-L-Int-Flap</object-name>
 		<object-name>W-L-Ext-Flap</object-name>
 		<property>surface-positions/flap-pos-norm</property>
-		<factor>35</factor>
+		<factor>40</factor>
 		<axis>
 			<x1-m>4.1665</x1-m>
 			<y1-m>-7.0295</y1-m>
@@ -336,7 +336,7 @@
 		<object-name>W-R-Int-Flap</object-name>
 		<object-name>W-R-Ext-Flap</object-name>
 		<property>surface-positions/flap-pos-norm</property>
-		<factor>35</factor>
+		<factor>40</factor>
 		<axis>
 			<x1-m>2.8738</x1-m>
 			<y1-m>1.3690</y1-m>

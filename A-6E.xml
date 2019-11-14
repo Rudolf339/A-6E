@@ -171,7 +171,6 @@
   <system file="Propulsion.xml"/>
   <system file="Aircraft_control.xml"/>
   <system file="Landing_Gear.xml"/>
-  <system file="Flaps.xml"/>
   <system file="Spoilers.xml"/>
   <system file="Speedbrake.xml"/>
   <system file="Arrestor_Hook.xml"/>
