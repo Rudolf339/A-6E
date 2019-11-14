@@ -3,6 +3,29 @@
   <property value="0">fcs/surfaces/flap-pos-norm</property>
   <channel name="Pitch">
 
+    <aerosurface_scale name="fcs/elevator/pitch-trim-limit-limit">
+      <input>fcs/pitch-trim-cmd-norm</input>
+      <range>
+	<min>-1</min>
+	<max>0.5</max>
+      </range>
+    </aerosurface_scale>
+
+    <aerosurface_scale name="fcs/elevator/pitch-trim-limit-full">
+      <input>fcs/pitch-trim-cmd-norm</input>
+      <range>
+	<min>-1</min>
+	<max>0.916</max> <!-- 22 deg max out of 24 -->
+      </range>
+    </aerosurface_scale>
+
+    <switch name="fcs/elevator/pitch-trim-full">
+      <default value="fcs/elevator/pitch-trim-limit-limit"/>
+      <test value="fcs/elevator/pitch-trim-limit-full">
+	fcs/flap-cmd-norm != 0
+      </test>
+    </switch>
+
     <summer name="fcs/elevator/pitch-trim-sum">
       <input>fcs/elevator-cmd-norm</input>
       <input>fcs/pitch-trim-cmd-norm</input>
@@ -81,7 +104,7 @@
     </summer>
 
     <pure_gain name="fcs/flaperon/left-flaperon-cmd-deg">
-      <input>fcs/roll-trim-sum</input>
+      <input>fcs/flaperon/roll-trim-sum</input>
       <gain>51</gain>
       <clipto>
 	<min> -51 </min>
@@ -131,7 +154,7 @@
     </aerosurface_scale>
 
     <pure_gain name="fcs/flaperon/right-flaperon-cmd-deg">
-      <input>fcs/roll-trim-sum</input>
+      <input>fcs/flaperon/roll-trim-sum</input>
       <gain>-51</gain>
       <clipto>
 	<min> -51 </min>
@@ -323,8 +346,8 @@
 
   </channel>
 
-  <property value="1">fcs/rate-limits/speedbrake-ext</property>
-  <property value="6">fcs/rate-limits/speedbrake-rtr</property>
+  <property value="6">fcs/rate-limits/speedbrake-ext</property>
+  <property value="12">fcs/rate-limits/speedbrake-rtr</property>
   <channel name="Speedbrake">
     <pure_gain name="fcs/speedbrake/speedbrake-cmd-deg">
       <input>fcs/speedbrake-cmd-norm</input>      
@@ -344,11 +367,15 @@
     
     <actuator name="fcs/surfaces/speedbrake-pos-deg">
       <input>fcs/speedbrake/speedbrake-sum-deg</input>
-      <rate-limit>fcs/rate-limits/speedbrake-ext</rate-limit>
-      <!--
-      <rate-limit sense="incr">fcs/rate-limits/speedbrake-ext</rate-limit>
+      <lag>30</lag>
+      <rate-limit sence="incr">fcs/rate-limits/speedbrake-ext</rate-limit>
       <rate-limit sense="decr">fcs/rate-limits/speedbrake-rtr</rate-limit>
-      -->
+      <bias>0</bias>
+      <hysteresis_width>0</hysteresis_width>
+      <clipto>
+	<min>0</min>
+	<max>60</max>
+      </clipto>
       <output>fcs/speedbrake-pos-deg</output>
     </actuator>
 
