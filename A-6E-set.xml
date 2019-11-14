@@ -397,12 +397,22 @@ Grumman A-6E simulation config.
 					<script>A6Econtrols.canopyswitch(2)</script>
 				</binding>
 			</key>
+			
 			<key n="25">
 			  <name>Ctrl-y</name>
 			  <desc>Toggle flaperon pop-up</desc>
 			  <binding>
 			    <command>property-toggle</command>
 			    <property>/controls/flight/gnd-spoiler-arm</property>
+			  </binding>
+			</key>
+
+			<key n="89">
+			  <name>Y</name>
+			  <desc>Toggle spin assist</desc>
+			  <binding>
+			    <command>property-toggle</command>
+			    <property>/controls/flight/spin-assist</property>
 			  </binding>
 			</key>
 		</keyboard>
@@ -412,6 +422,7 @@ Grumman A-6E simulation config.
 		<flight>
 		  <elevator-trim type="double">0.02</elevator-trim>
 		  <gnd-spoiler-arm type="bool">0</gnd-spoiler-arm>
+		  <spin-assist type="bool">0</spin-assist>
 		</flight>
 		<gear>
 			<brake-parking type="bool">1</brake-parking>
@@ -457,6 +468,7 @@ Grumman A-6E simulation config.
 	  <jsbsim>
 	    <fcs>
 	      <gnd-spoiler-arm alias="/controls/flight/gnd-spoiler-arm"/>
+	      <spin-assist alias="/controls/flight/spin-assist"/>
 	    </fcs>
 	  </jsbsim>
 	</fdm>

@@ -224,7 +224,7 @@
 		<type>rotate</type>
 		<object-name>rudder</object-name>
 		<property>surface-positions/rudder-pos-norm</property>
-		<factor>-20</factor>
+		<factor>35</factor>
 		<axis>
 			<x1-m>10.5</x1-m>
 			<y1-m>0</y1-m>
@@ -238,7 +238,7 @@
 		<type>rotate</type>
 		<object-name>tail-light</object-name>
 		<property>surface-positions/rudder-pos-norm</property>
-		<factor>-20</factor>
+		<factor>35</factor>
 		<axis>
 			<x1-m>10.5</x1-m>
 			<y1-m>0</y1-m>

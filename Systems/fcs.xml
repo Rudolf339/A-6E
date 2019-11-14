@@ -183,10 +183,11 @@
 
   </channel>
 
-<!--  <property value="1">fcs/yaw-damper-enable</property> -->
+  <!--  <property value="1">fcs/yaw-damper-enable</property> -->
+  <property value="60">fcs/rate-limits/rudder</property>
   <channel name="Yaw">
 
-    <summer name="Rudder Command Sum">
+    <summer name="fcs/rudder/rudder-cmd-sum">
       <input>fcs/rudder-cmd-norm</input>
       <input>fcs/yaw-trim-cmd-norm</input>
       <clipto>
@@ -216,30 +217,56 @@
       </clipto>
     </summer>
 -->
-    <aerosurface_scale name="Rudder Control">
-      <input>fcs/rudder-command-sum</input>
-      <domain>
-        <min> -1.1 </min>
-        <max>  1.1 </max>
-      </domain>
+    <aerosurface_scale name="fcs/rudder/rudder-full-deg">
+      <input>fcs/rudder/rudder-cmd-sum</input>
       <range>
-        <min> -0.35 </min>
-        <max>  0.35 </max>
+        <min> -35 </min>
+        <max>  35 </max>
       </range>
-      <output>fcs/rudder-pos-rad</output>
     </aerosurface_scale>
 
-    <aerosurface_scale name="rudder normalization">
-      <input>fcs/rudder-pos-rad</input>
+    <aerosurface_scale name="fcs/rudder/rudder-limited-deg">
+      <input>fcs/rudder/rudder-cmd-sum</input>
+      <range>
+	<min>-4</min>
+	<max> 4</max>
+      </range>
+    </aerosurface_scale>
+
+    <switch name="fcs/rudder/rudder-sum-deg">
+      <default value="fcs/rudder/rudder-limited-deg"/>
+      <test value="fcs/rudder/rudder-full-deg" logic="OR">
+	fcs/flap-pos-norm != 0
+	fcs/spin-assist == 1
+      </test>
+    </switch>
+
+    <actuator name="fcs/surfaces/rudder-pos-deg">
+      <input>fcs/rudder/rudder-sum-deg</input>
+      <rate_limit>fcs/rate-limits/rudder</rate_limit>
+      <output>fcs/rudder-pos-deg</output>
+    </actuator>
+    
+    <aerosurface_scale name="fcs/surfaces/rudder-pos-norm">
+      <input>fcs/rudder-pos-deg</input>
       <domain>
-        <min> -0.35 </min>
-        <max>  0.35 </max>
+        <min>-35 </min>
+        <max> 35 </max>
       </domain>
       <range>
         <min> -1 </min>
         <max>  1 </max>
       </range>
       <output>fcs/rudder-pos-norm</output>
+    </aerosurface_scale>
+
+    <aerosurface_scale name="fcs/surfaces/rudder-pos-rad">
+      <input>fcs/surfaces/rudder-pos-norm</input>
+      <range>
+	<min>-0.610865</min>
+	<max> 0.610865</max>
+      </range>
+      <output>fcs/rudder-pos-rad</output>
     </aerosurface_scale>
 
   </channel>
