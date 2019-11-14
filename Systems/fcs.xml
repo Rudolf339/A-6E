@@ -315,7 +315,7 @@
 	</setting>
 	<setting>
           <position> 1 </position>
-          <time>     5 </time>
+          <time>     7 </time>
 	</setting>
       </traverse>
       <output>gear/gear-pos-norm</output>
