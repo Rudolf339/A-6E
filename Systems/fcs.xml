@@ -323,21 +323,40 @@
 
   </channel>
 
+  <property value="1">fcs/rate-limits/speedbrake-ext</property>
+  <property value="6">fcs/rate-limits/speedbrake-rtr</property>
   <channel name="Speedbrake">
-    <kinematic name="Speedbrake Control">
-      <input>fcs/speedbrake-cmd-norm</input>
-      <traverse>
-	<setting>
-          <position> 0 </position>
-          <time>     0 </time>
-	</setting>
-	<setting>
-          <position> 1 </position>
-          <time>     1 </time>
-	</setting>
-      </traverse>
+    <pure_gain name="fcs/speedbrake-cmd-deg">
+      <input>fcs/speedbrake-cmd-norm</input>      
+      <gain>60</gain>
+      <clipto>
+	<min>0</min>
+	<max>60</max>
+      </clipto>
+    </pure_gain>
+    
+    <actuator name="fcs/surfaces/speedbrake-pos-deg">
+      <input>fcs/speedbrake-cmd-deg</input>
+      <rate-limit>fcs/rate-limits/speedbrake-ext</rate-limit>
+      <!--
+      <rate-limit sense="incr">fcs/rate-limits/speedbrake-ext</rate-limit>
+      <rate-limit sense="decr">fcs/rate-limits/speedbrake-rtr</rate-limit>
+      -->
+      <output>fcs/speedbrake-pos-deg</output>
+    </actuator>
+
+    <aerosurface_scale name="fcs/surfaces/speedbrake-pos-norm">
+      <input>fcs/surfaces/speedbrake-pos-deg</input>
+      <domain>
+	<min>0</min>
+	<max>60</max>
+      </domain>
+      <range>
+	<min>0</min>
+	<max>1</max>
+      </range>
       <output>fcs/speedbrake-pos-norm</output>
-    </kinematic>
+    </aerosurface_scale>
 
   </channel>
 

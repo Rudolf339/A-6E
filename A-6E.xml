@@ -170,9 +170,6 @@
   <ground_reactions file="Systems/ground_reactions.xml"/>
   <system file="Propulsion.xml"/>
   <system file="Aircraft_control.xml"/>
-  <system file="Landing_Gear.xml"/>
-  <system file="Spoilers.xml"/>
-  <system file="Speedbrake.xml"/>
   <system file="Arrestor_Hook.xml"/>
   <system file="Catapult.xml"/>
 
@@ -238,17 +235,6 @@
           <property>metrics/Sw-sqft</property>
           <property>fcs/flap-pos-deg</property>
           <value> 0.0102 </value>
-	</product>
-      </function>
-
-
-      <function name="aero/force/Lift_spoilers">
-	<description>Delta Lift due to spoilers</description>
-	<product>
-          <property>aero/qbar-psf</property>
-          <property>metrics/Sw-sqft</property>
-          <property>fcs/spoilers-pos-norm</property>
-          <value> 0.0000 </value>
 	</product>
       </function>
 
@@ -346,17 +332,6 @@
           <property>metrics/Sw-sqft</property>
           <property>fcs/flap-pos-deg</property>
           <value> 0.0022 </value>
-        </product>
-      </function>
-
-
-      <function name="aero/force/Drag_spoilers">
-	<description>Drag due to spoilers</description>
-        <product>
-          <property>aero/qbar-psf</property>
-          <property>metrics/Sw-sqft</property>
-          <property>fcs/spoilers-pos-norm</property>
-          <value> 0.0139 </value>
         </product>
       </function>
 
@@ -576,25 +551,6 @@
           <property>metrics/bw-ft</property>
           <property>fcs/rudder-pos-rad</property>
           <value> 0.0100 </value>
-	</product>
-      </function>
-
-      <function name="aero/moment/Roll_spoilers">
-	<description>Roll moment due to spoilers</description>
-	<product>
-          <property>aero/qbar-psf</property>
-          <property>metrics/Sw-sqft</property>
-          <property>metrics/bw-ft</property>
-          <property>fcs/spoilers-pos-norm</property>
-          <property>fcs/surfaces/left-flaperon-pos-rad</property>
-          <table>
-            <independentVar lookup="row">aero/alpha-rad</independentVar>
-            <tableData>
-              -0.175   0.0000
-              0.0     0.2400
-              0.175   0.0000
-            </tableData>
-          </table>
 	</product>
       </function>
 
