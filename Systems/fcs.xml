@@ -92,7 +92,7 @@
     <switch name="fcs/flaperon/left-flaperon-sum-deg">
       <default value="fcs/flaperon/left-flaperon-cmd-deg"/>
       <test value="-39" logic="AND">
-	fcs/gnd-spoiler-arm == 1
+	fcs/flaperon/gnd-spoiler-arm == 1
 	gear/unit[1]/WOW == 1
 	fcs/throttle-cmd-norm == 0
 	fcs/throttle-cmd-norm[1] == 0
@@ -142,7 +142,7 @@
     <switch name="fcs/flaperon/right-flaperon-sum-deg">
       <default value="fcs/flaperon/right-flaperon-cmd-deg"/>
       <test value="-39" logic="AND">
-	fcs/gnd-spoiler-arm == 1
+	fcs/flaperon/gnd-spoiler-arm == 1
 	gear/unit[1]/WOW == 1
 	fcs/throttle-cmd-norm == 0
 	fcs/throttle-cmd-norm[1] == 0
@@ -237,7 +237,7 @@
       <default value="fcs/rudder/rudder-limited-deg"/>
       <test value="fcs/rudder/rudder-full-deg" logic="OR">
 	fcs/flap-pos-norm != 0
-	fcs/spin-assist == 1
+	fcs/rudder/spin-assist == 1
       </test>
     </switch>
 
@@ -326,7 +326,7 @@
   <property value="1">fcs/rate-limits/speedbrake-ext</property>
   <property value="6">fcs/rate-limits/speedbrake-rtr</property>
   <channel name="Speedbrake">
-    <pure_gain name="fcs/speedbrake-cmd-deg">
+    <pure_gain name="fcs/speedbrake/speedbrake-cmd-deg">
       <input>fcs/speedbrake-cmd-norm</input>      
       <gain>60</gain>
       <clipto>
@@ -334,9 +334,16 @@
 	<max>60</max>
       </clipto>
     </pure_gain>
+
+    <switch name="fcs/speedbrake/speedbrake-sum-deg">
+      <default value="fcs/speedbrake/speedbrake-cmd-deg"/>
+      <test value="0">
+	fcs/speedbrake/speedbrake-test == 1
+      </test>
+    </switch>
     
     <actuator name="fcs/surfaces/speedbrake-pos-deg">
-      <input>fcs/speedbrake-cmd-deg</input>
+      <input>fcs/speedbrake/speedbrake-sum-deg</input>
       <rate-limit>fcs/rate-limits/speedbrake-ext</rate-limit>
       <!--
       <rate-limit sense="incr">fcs/rate-limits/speedbrake-ext</rate-limit>

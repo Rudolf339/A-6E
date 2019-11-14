@@ -423,6 +423,7 @@ Grumman A-6E simulation config.
 		  <elevator-trim type="double">0.02</elevator-trim>
 		  <gnd-spoiler-arm type="bool">0</gnd-spoiler-arm>
 		  <spin-assist type="bool">0</spin-assist>
+		  <speedbrake-test type="bool">0</speedbrake-test>
 		</flight>
 		<gear>
 			<brake-parking type="bool">1</brake-parking>
@@ -467,8 +468,15 @@ Grumman A-6E simulation config.
 	<fdm>
 	  <jsbsim>
 	    <fcs>
-	      <gnd-spoiler-arm alias="/controls/flight/gnd-spoiler-arm"/>
-	      <spin-assist alias="/controls/flight/spin-assist"/>
+	      <flaperon>
+		<gnd-spoiler-arm alias="/controls/flight/gnd-spoiler-arm"/>
+	      </flaperon>
+	      <rudder>
+		<spin-assist alias="/controls/flight/spin-assist"/>
+	      </rudder>
+	      <speedbrake>
+		<speedbrake-test alias="/controls/flight/speedbrake-test"/>
+	      </speedbrake>
 	    </fcs>
 	  </jsbsim>
 	</fdm>
