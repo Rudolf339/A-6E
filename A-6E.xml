@@ -169,7 +169,6 @@
 
   <ground_reactions file="Systems/ground_reactions.xml"/>
   <system file="Propulsion.xml"/>
-  <system file="Aircraft_control.xml"/>
   <system file="Arrestor_Hook.xml"/>
   <system file="Catapult.xml"/>
 
