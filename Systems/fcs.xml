@@ -218,6 +218,29 @@
   <property value="60">fcs/rate-limits/rudder</property>
   <channel name="Yaw">
 
+    <aerosurface_scale name="fcs/rudder/rudder-trim-limited">
+      <input>fcs/yaw-trim-cmd-norm</input>
+      <range>
+	<min>-0.0784</min>
+	<max>0.0784</max>
+      </range>
+    </aerosurface_scale>
+
+    <aerosurface_scale name="fcs/rudder/rudder-trim-full">
+      <input>fcs/yaw-trim-cmd-norm</input>
+      <range>
+	<min>-0.2</min>
+	<max>0.2</max>
+      </range>
+    </aerosurface_scale>
+
+    <switch name="fcs/rudder/rudder-trim-norm">
+      <default value="fcs/rudder/rudder-trim-limited"/>
+      <test value="fcs/rudder/rudder-trim-full">
+	fcs/flap-pos-norm != 0
+      </test>
+    </switch>
+    
     <summer name="fcs/rudder/rudder-cmd-sum">
       <input>fcs/rudder-cmd-norm</input>
       <input>fcs/yaw-trim-cmd-norm</input>
