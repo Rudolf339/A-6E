@@ -346,8 +346,8 @@
 
   </channel>
 
-  <property value="6">fcs/rate-limits/speedbrake-ext</property>
-  <property value="12">fcs/rate-limits/speedbrake-rtr</property>
+  <property value="12">fcs/rate-limits/speedbrake-ext</property>
+  <property value="24">fcs/rate-limits/speedbrake-rtr</property>
   <channel name="Speedbrake">
     <pure_gain name="fcs/speedbrake/speedbrake-cmd-deg">
       <input>fcs/speedbrake-cmd-norm</input>      
@@ -367,15 +367,8 @@
     
     <actuator name="fcs/surfaces/speedbrake-pos-deg">
       <input>fcs/speedbrake/speedbrake-sum-deg</input>
-      <lag>30</lag>
-      <rate-limit sence="incr">fcs/rate-limits/speedbrake-ext</rate-limit>
-      <rate-limit sense="decr">fcs/rate-limits/speedbrake-rtr</rate-limit>
-      <bias>0</bias>
-      <hysteresis_width>0</hysteresis_width>
-      <clipto>
-	<min>0</min>
-	<max>60</max>
-      </clipto>
+      <rate_limit sense="incr">fcs/rate-limits/speedbrake-ext</rate_limit>
+      <rate_limit sense="decr">fcs/rate-limits/speedbrake-rtr</rate_limit>
       <output>fcs/speedbrake-pos-deg</output>
     </actuator>
 
