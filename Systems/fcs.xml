@@ -1,5 +1,5 @@
 <flight_control name="FCS A-6E">
-  <property value="30">fcs/rate-limits/elevator</property>
+  <property value="30">fcs/rate-limits/elevator</property> <!-- guestimated value. ~1 sec travel -->
   <property value="0">fcs/surfaces/flap-pos-norm</property>
   <channel name="Pitch">
 
@@ -30,7 +30,7 @@
       <input>fcs/elevator-cmd-norm</input>
       <input>fcs/pitch-trim-cmd-norm</input>
       <clipto>
-        <min> -1 </min>
+	<min> -1 </min>
 	<max>  1 </max>
       </clipto>
     </summer>
@@ -62,7 +62,7 @@
 
     <actuator name="fcs/surfaces/elevator-pos-deg">
       <input>fcs/elevator/elevator-correct-deg</input>
-      <rate_limit>fcs/rate-limits/elevator</rate_limit> <!-- guesstimated value, ~1 s travel -->
+      <rate_limit>fcs/rate-limits/elevator</rate_limit>
       <output>fcs/elevator-pos-norm</output>
     </actuator>
       
@@ -91,12 +91,20 @@
 
   </channel>
 
-  <property value="250">fcs/rate-limits/flaperon</property>
+  <property value="350">fcs/rate-limits/flaperon</property>
   <channel name="Roll">
+
+    <aerosurface_scale name="fcs/flaperon/roll-trim-limited">
+      <input>fcs/roll-trim-cmd-norm</input>
+      <range>
+	<min>-0.1764</min> <!-- 9/51 -->
+	<max>0.1764</max>
+      </range>
+    </aerosurface_scale>
 
     <summer name="fcs/flaperon/roll-trim-sum">
       <input>fcs/aileron-cmd-norm</input>
-      <input>fcs/roll-trim-cmd-norm</input>
+      <input>fcs/flaperon/roll-trim-limited</input>
       <clipto>
         <min> -1 </min>
         <max>  1 </max>
