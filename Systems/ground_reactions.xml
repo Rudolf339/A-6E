@@ -1,5 +1,35 @@
 <ground_reactions>
 
+  <!--
+      ; N = -2.84
+      ; M = 2.7
+      ; CG = 2.25
+      ; m = 12700
+      ; Fs = m*9.81
+      ; Fn = abs(CG-M)/(abs(N)+abs(M))*Fs
+      ; Fm = abs(CG-N)/(abs(N)+abs(M))*Fs
+      ; Fn
+      ~10119.88267148014440433213
+      ; Fm
+      ~114467.11732851985559566787
+      ; Ln = 0.43
+      ; Lm = 0.73
+      ; Cn = Fn/(Ln/10)
+      ; Cm = Fm/(Lm/10)
+      ; Cn
+      ~235346.10863907312568214256 ~235300
+      ; Cm
+      ~1568042.70313040898076257356 ~1568000 -> 784000
+      ; Cdn = Cn*20
+      ; Cdn = Cn*0.2
+      ; Cdm = Cm*0.2
+      ; Cdn
+      ~47069.22172781462513642851 ~47000
+      ; Cdm
+      ~313608.54062608179615251471 ~313600  -> 156800
+;
+
+  -->
   <contact type="BOGEY" name="NOSE">
    <location unit="M">
      <x>  -2.84 </x>
@@ -9,9 +39,9 @@
    <static_friction>  0.80 </static_friction>
    <dynamic_friction> 0.50 </dynamic_friction>
    <rolling_friction> 0.02 </rolling_friction>
-   <spring_coeff unit="N/M">     168000.00 </spring_coeff>
-   <damping_coeff unit="N/M/SEC"> 8075.00 </damping_coeff>
-   <max_steer unit="DEG"> 5.00 </max_steer>
+   <spring_coeff unit="N/M">235300</spring_coeff>
+   <damping_coeff unit="N/M/SEC">47000</damping_coeff>
+   <max_steer unit="DEG"> 56.00 </max_steer>
    <brake_group>NONE</brake_group>
    <retractable>1</retractable>
   </contact>
@@ -25,8 +55,8 @@
    <static_friction>  0.80 </static_friction>
    <dynamic_friction> 0.50 </dynamic_friction>
    <rolling_friction> 0.02 </rolling_friction>
-   <spring_coeff unit="N/M">     800000.00 </spring_coeff>
-   <damping_coeff unit="N/M/SEC"> 10125.00 </damping_coeff>
+   <spring_coeff unit="N/M">784000</spring_coeff>
+   <damping_coeff unit="N/M/SEC">50800</damping_coeff>
    <max_steer unit="DEG">0</max_steer>
    <brake_group>LEFT</brake_group>
    <retractable>1</retractable>
@@ -41,8 +71,8 @@
    <static_friction>  0.80 </static_friction>
    <dynamic_friction> 0.50 </dynamic_friction>
    <rolling_friction> 0.02 </rolling_friction>
-   <spring_coeff unit="N/M">     800000.00 </spring_coeff>
-   <damping_coeff unit="LBS/FT/SEC"> 10125.00 </damping_coeff>
+   <spring_coeff unit="N/M">784000</spring_coeff>
+   <damping_coeff unit="LBS/FT/SEC">50800</damping_coeff>
    <max_steer unit="DEG">0</max_steer>
    <brake_group>RIGHT</brake_group>
    <retractable>1</retractable>
