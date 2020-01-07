@@ -63,9 +63,9 @@
     <actuator name="fcs/surfaces/elevator-pos-deg">
       <input>fcs/elevator/elevator-correct-deg</input>
       <rate_limit>fcs/rate-limits/elevator</rate_limit>
-      <output>fcs/elevator-pos-norm</output>
+      <output>fcs/elevator-pos-deg</output>
     </actuator>
-      
+
     <aerosurface_scale name="fcs/surfaces/elevator-pos-norm">
       <input>fcs/surfaces/elevator-pos-deg</input>
       <domain>
@@ -88,7 +88,7 @@
       </range>
       <zero-centered>false</zero-centered>
     </aerosurface_scale>
-
+    
   </channel>
 
   <property value="350">fcs/rate-limits/flaperon</property>
