@@ -354,7 +354,7 @@
           <property>aero/qbar-psf</property>
           <property>metrics/Sw-sqft</property>
           <property>aero/beta-rad</property>
-          <value> -0.3461 </value>
+          <value> 0.3461 </value>
 	</product>
       </function>
       <function name="aero/force/Side_roll_rate">
