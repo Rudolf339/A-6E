@@ -1701,7 +1701,7 @@
 		<object-name>UC-N-Tyre</object-name>
 		<object-name>UC-N-Hub</object-name>
 		<property>surface-positions/rudder-pos-norm</property>
-		<factor>-30</factor>
+		<factor>56</factor>
 		<center>
 			<x-m>-2.94</x-m>
 			<y-m>0</y-m>
@@ -1717,7 +1717,7 @@
 		<type>rotate</type>
 		<object-name>UC-N-CatapultStrop</object-name>
 		<property>surface-positions/rudder-pos-norm</property>
-		<factor>-30</factor>
+		<factor>56</factor>
 		<center>
 			<x-m>-2.94</x-m>
 			<y-m>0</y-m>
