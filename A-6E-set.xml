@@ -480,6 +480,10 @@ Grumman A-6E simulation config.
 	    </fcs>
 	  </jsbsim>
 	</fdm>
+
+	<surface-positions>
+	  <slats-pos-norm alias="/fdm/jsbsim/fcs/surfaces/slats-pos-norm"/>
+	</surface-positions>
 	
 
 </PropertyList>
