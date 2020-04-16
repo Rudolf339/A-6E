@@ -353,7 +353,7 @@
 		<type>rotate</type>
 		<object-name>W-L-Ext-slat</object-name>
 		<object-name>W-L-Int-slat</object-name>
-		<property>surface-positions/flap-pos-norm</property>
+		<property>surface-positions/slats-pos-norm</property>
 		<factor>25</factor>
 		<axis>
 			<x1-m>-0.00900000000000034</x1-m>
@@ -368,7 +368,7 @@
 		<type>rotate</type>
 		<object-name>W-L-Ext-slat</object-name>
 		<object-name>W-L-Int-slat</object-name>
-		<property>surface-positions/flap-pos-norm</property>
+		<property>surface-positions/slats-pos-norm</property>
 		<factor>-1</factor>
 		<axis>
 			<x1-m>4.797</x1-m>
@@ -385,7 +385,7 @@
 		<type>rotate</type>
 		<object-name>W-R-Ext-slat</object-name>
 		<object-name>W-R-Int-slat</object-name>
-		<property>surface-positions/flap-pos-norm</property>
+		<property>surface-positions/slats-pos-norm</property>
 		<factor>25</factor>
 		<axis>
 			<x1-m>3.404</x1-m>
@@ -400,7 +400,7 @@
 		<type>rotate</type>
 		<object-name>W-R-Ext-slat</object-name>
 		<object-name>W-R-Int-slat</object-name>
-		<property>surface-positions/flap-pos-norm</property>
+		<property>surface-positions/slats-pos-norm</property>
 		<factor>-1</factor>
 		<axis>
 			<x1-m>6.7772</x1-m>
