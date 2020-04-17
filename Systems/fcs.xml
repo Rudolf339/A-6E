@@ -450,4 +450,129 @@
 
   </channel>
 
+  <property value="0">fcs/wing-fold/handle-cmd</property>
+  <property value="1">fcs/wing-fold/lockpin-cmd</property>
+  <property value="0">fcs/wing-fold/handle</property>
+  <property value="1">fcs/wing-fold/lockpin</property>
+  <channel name="Wing fold">
+    <fcs_function name="fcs/wing-fold/handle">
+      <function>
+    	<ifthen>
+    	  <eq>
+    	    <property>fcs/wing-fold/handle-cmd</property>
+    	    <value>1</value>
+    	  </eq>
+    	  <ifthen>
+    	    <and>
+    	      <eq>
+    		<property>fcs/wing-fold/handle</property>
+    		<value>0</value>
+    	      </eq>
+    	      <eq>
+    		<property>fcs/aileron-cmd-norm</property>
+    		<value>0</value>
+    	      </eq>
+    	      <eq>
+    		<property>fcs/surfaces/flap-pos-norm</property>
+    		<value>0</value>
+    	      </eq>
+    	      <eq>
+    		<property>fcs/surfaces/slats-pos-norm</property>
+    		<value>0</value>
+    	      </eq>
+    	    </and>
+    	    <value>1</value>
+    	    <ifthen>
+    	      <and>
+    		<eq>
+    		  <property>fcs/wing-fold/handle</property>
+    		  <value>1</value>
+    		</eq>
+    		<eq>
+    		  <property>fcs/wing-fold/lockpin</property>
+    		  <value>0</value>
+    		</eq>
+    	      </and>
+    	      <value>2</value>
+    	      <property>fcs/wing-fold/handle</property>
+    	    </ifthen>
+    	  </ifthen>
+    	  <ifthen>
+    	    <eq>
+    	      <property>fcs/wing-fold/handle-cmd</property>
+    	      <value>-1</value>
+    	    </eq>
+    	    <ifthen>
+    	      <eq>
+    		<property>fcs/wing-fold/handle</property>
+    		<value>2</value>
+    	      </eq>
+    	      <value>1</value>
+    	      <ifthen>
+    		<and>
+    		  <eq>
+    		    <property>fcs/wing-fold/handle</property>
+    		    <value>1</value>
+    		  </eq>
+    		  <eq>
+    		    <property>fcs/wing-fold/lockpin</property>
+    		    <value>1</value>
+    		  </eq>
+    		</and>
+    		<value>0</value>
+    		<property>fcs/wing-fold/handle</property>
+    	      </ifthen>
+	    </ifthen>
+	    <property>fcs/wing-fold/handle</property>
+    	  </ifthen>
+    	</ifthen>
+      </function>
+    </fcs_function>
+
+    <fcs_function name="fcs/wing-fold/lockpin">
+      <function>
+	<ifthen>
+	  <and>
+	    <eq>
+	      <property>fcs/wing-fold/lockpin-cmd</property>
+	      <value>1</value>
+	    </eq>
+	    <eq>
+	      <property>fcs/wing-fold/handle</property>
+	      <value>1</value>
+	    </eq>
+	  </and>
+	  <value>1</value>
+	  <ifthen>
+	    <and>
+	      <eq>
+		<property>fcs/wing-fold/lockpin-cmd</property>
+		<value>-1</value>
+	      </eq>
+	      <eq>
+		<property>fcs/wing-fold/handle</property>
+		<value>1</value>
+	      </eq>
+	    </and>
+	    <value>0</value>
+	    <property>fcs/wing-fold/lockpin</property>
+	  </ifthen>
+	</ifthen>
+      </function>
+    </fcs_function>
+
+    <switch name="fcs/wing-fold/wing-fold-cmd">
+      <default value="0"/>
+      <test value="1">
+	fcs/wing-fold/handle == 2
+      </test>
+    </switch>
+
+    <actuator name="fcs/wing-fold/wing-fold-pos">
+      <input>fcs/wing-fold/wing-fold-cmd</input>
+      <rate_limit>0.1</rate_limit>
+      <output>fcs/wing-fold-pos-norm</output>
+    </actuator>
+  </channel>
+  
 </flight_control>
