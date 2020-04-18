@@ -42,6 +42,12 @@ Grumman A-6E simulation config.
 			<tag>single-engine</tag>
 		</tags>
 
+		<state include="States/take-off-overlay.xml" />
+		<state include="States/carrier-take-off-overlay.xml" />
+		<state include="States/cruise-overlay.xml" />
+		<state include="States/carrier-landing-overlay.xml" />
+		<state include="States/landing-overlay.xml" />
+
  		<gui>
  			<style>
  				<colors>
