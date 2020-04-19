@@ -399,7 +399,7 @@ Grumman A-6E simulation config.
 		  <speedbrake-test type="bool">0</speedbrake-test>
 		  <wing-fold>
 		    <handle-cmd type="int">0</handle-cmd>
-		    <lockpin-cmd type="int">0</lockpin-cmd>
+		    <lockpin-cmd type="int">1</lockpin-cmd>
 		  </wing-fold>
 		</flight>
 		<gear>

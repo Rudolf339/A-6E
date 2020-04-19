@@ -185,6 +185,16 @@ var wf_switch_return = func {
 	wf_sw.setValue(-1);
 }
 
+var lockpinToggle = func {
+    var p = getprop("/fdm/jsbsim/fcs/wing-fold/lockpin");
+    if ( p == 1 ) {
+	var l = -1;
+    } else {
+	var l = 1;
+    }
+    setprop("/controls/flight/wing-fold/lockpin-cmd", l);
+}
+    
 var wf_hdl_anim = func {
 	var pos = arg[1] + arg[0]/20;
 	var limit = arg[2];

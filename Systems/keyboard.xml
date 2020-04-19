@@ -26,4 +26,54 @@
     </binding>
   </key>
 
+  <key n="102">
+    <name>f</name>
+    <desc>lower wing-fold handle</desc>
+    <binding>
+      <command>property-assign</command>
+      <property>/controls/flight/wing-fold/handle-cmd</property>
+      <value>-1</value>
+    </binding>
+    <mod-up>
+      <binding>
+	<command>property-assign</command>
+	<property>/controls/flight/wing-fold/handle-cmd</property>
+	<value>0</value>
+      </binding>
+    </mod-up>
+  </key>
+
+  <key n="70">
+    <name>F</name>
+    <desc>lower wing-fold handle</desc>
+    <binding>
+      <command>property-assign</command>
+      <property>/controls/flight/wing-fold/handle-cmd</property>
+      <value>1</value>
+    </binding>
+    <mod-up>
+      <binding>
+	<command>property-assign</command>
+	<property>/controls/flight/wing-fold/handle-cmd</property>
+	<value>0</value>
+      </binding>
+    </mod-up>
+  </key>
+
+  <key n="6">
+    <name>ctrl-f</name>
+    <desc>toggle wing-fold lockpin</desc>
+    <binding>
+      <command>nasal</command>
+      <script>A6Econtrols.lockpinToggle();</script>
+    </binding>
+    <mod-up>
+      <binding>
+	<command>propert-assign</command>
+	<property>/controls/lockpin-cmd</property>
+	<valu>0</valu>
+      </binding>
+    </mod-up>
+  </key>
+  
 </PropertyList>
