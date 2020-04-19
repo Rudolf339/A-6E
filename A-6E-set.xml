@@ -388,34 +388,7 @@ Grumman A-6E simulation config.
 	</systems>
 
 	<input>
-		<keyboard include="/Input/Keyboard/carrier-bindings.xml">
-			<key n="99">
-				<name>c</name>
-				<desc>Canopy open/close command</desc>
-				<binding>
-					<command>nasal</command>
-					<script>A6Econtrols.canopyswitch(2)</script>
-				</binding>
-			</key>
-			
-			<key n="25">
-			  <name>Ctrl-y</name>
-			  <desc>Toggle flaperon pop-up</desc>
-			  <binding>
-			    <command>property-toggle</command>
-			    <property>/controls/flight/gnd-spoiler-arm</property>
-			  </binding>
-			</key>
-
-			<key n="89">
-			  <name>Y</name>
-			  <desc>Toggle spin assist</desc>
-			  <binding>
-			    <command>property-toggle</command>
-			    <property>/controls/flight/spin-assist</property>
-			  </binding>
-			</key>
-		</keyboard>
+	  <keyboard include="Systems/keyboard.xml"/>
 	</input>
 
 	<controls>
@@ -424,6 +397,10 @@ Grumman A-6E simulation config.
 		  <gnd-spoiler-arm type="bool">0</gnd-spoiler-arm>
 		  <spin-assist type="bool">0</spin-assist>
 		  <speedbrake-test type="bool">0</speedbrake-test>
+		  <wing-fold>
+		    <handle-cmd type="int">0</handle-cmd>
+		    <lockpin-cmd type="int">0</lockpin-cmd>
+		  </wing-fold>
 		</flight>
 		<gear>
 			<brake-parking type="bool">1</brake-parking>
@@ -477,6 +454,10 @@ Grumman A-6E simulation config.
 	      <speedbrake>
 		<speedbrake-test alias="/controls/flight/speedbrake-test"/>
 	      </speedbrake>
+	      <wing-fold>
+		<handle-cmd alias="/controls/flight/wing-fold/handle-cmd"/>
+		<lockpin-cmd alias="/controls/flight/wing-fold/lockpin-cmd"/>
+	      </wing-fold>
 	    </fcs>
 	  </jsbsim>
 	</fdm>

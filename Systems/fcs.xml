@@ -450,12 +450,14 @@
 
   </channel>
 
+  <!--
   <property value="0">fcs/wing-fold/handle-cmd</property>
   <property value="1">fcs/wing-fold/lockpin-cmd</property>
+  -->
   <property value="0">fcs/wing-fold/handle</property>
   <property value="1">fcs/wing-fold/lockpin</property>
   <channel name="Wing fold">
-    <fcs_function name="fcs/wing-fold/handle">
+    <fcs_function name="fcs/wing-fold/handle-l">
       <function>
     	<ifthen>
     	  <eq>
@@ -465,7 +467,7 @@
     	  <ifthen>
     	    <and>
     	      <eq>
-    		<property>fcs/wing-fold/handle</property>
+    		<property>fcs/wing-fold/handle-l</property>
     		<value>0</value>
     	      </eq>
     	      <eq>
@@ -485,7 +487,7 @@
     	    <ifthen>
     	      <and>
     		<eq>
-    		  <property>fcs/wing-fold/handle</property>
+    		  <property>fcs/wing-fold/handle-l</property>
     		  <value>1</value>
     		</eq>
     		<eq>
@@ -494,7 +496,7 @@
     		</eq>
     	      </and>
     	      <value>2</value>
-    	      <property>fcs/wing-fold/handle</property>
+    	      <property>fcs/wing-fold/handle-l</property>
     	    </ifthen>
     	  </ifthen>
     	  <ifthen>
@@ -504,14 +506,14 @@
     	    </eq>
     	    <ifthen>
     	      <eq>
-    		<property>fcs/wing-fold/handle</property>
+    		<property>fcs/wing-fold/handle-l</property>
     		<value>2</value>
     	      </eq>
     	      <value>1</value>
     	      <ifthen>
     		<and>
     		  <eq>
-    		    <property>fcs/wing-fold/handle</property>
+    		    <property>fcs/wing-fold/handle-l</property>
     		    <value>1</value>
     		  </eq>
     		  <eq>
@@ -520,14 +522,19 @@
     		  </eq>
     		</and>
     		<value>0</value>
-    		<property>fcs/wing-fold/handle</property>
+    		<property>fcs/wing-fold/handle-l</property>
     	      </ifthen>
 	    </ifthen>
-	    <property>fcs/wing-fold/handle</property>
+	    <property>fcs/wing-fold/handle-l</property>
     	  </ifthen>
     	</ifthen>
       </function>
     </fcs_function>
+
+    <actuator name="fcs/wing-fold/handle">
+      <input>fcs/wing-fold/handle-l</input>
+      <rate_limit>2</rate_limit>
+    </actuator>
 
     <fcs_function name="fcs/wing-fold/lockpin">
       <function>
