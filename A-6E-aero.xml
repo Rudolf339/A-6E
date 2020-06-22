@@ -182,6 +182,7 @@
           <value> 0.3461 </value>
 	</product>
       </function>
+      
       <function name="aero/force/Side_roll_rate">
 	<description>Side force due to roll rate</description>
 	<product>
@@ -402,7 +403,7 @@
           </table>
 	</product>
       </function>
-
+      
       <function name="aero/moment/Yaw_beta">
 	<description>Yaw moment due to beta</description>
 	<product>
@@ -414,6 +415,7 @@
 	</product>
       </function>
 
+      
       <function name="aero/moment/Yaw_roll_rate">
 	<description>Yaw moment due to roll rate</description>
 	<product>
@@ -425,15 +427,15 @@
           <table>
             <independentVar lookup="row">aero/Re</independentVar>
             <tableData>
-              16998866  -1.9922
-              18698754  -0.1580
-              25498298  -0.0702
-              33714708  -0.0402
+              16998866  -0.19922
+              18698754  -0.01580
+              25498298  -0.00702
+              33714708  -0.00402
             </tableData>
           </table>
 	</product>
       </function>
-
+      
       <function name="aero/moment/Yaw_damp">
 	<description>Yaw moment due to yaw rate</description>
 	<product>
@@ -445,7 +447,7 @@
           <value> -0.1605 </value>
 	</product>
       </function>
-
+      
       <function name="aero/moment/Yaw_rudder">
 	<description>Yaw moment due to rudder</description>
 	<product>

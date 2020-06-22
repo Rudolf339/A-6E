@@ -61,7 +61,7 @@
     <vtailarea  unit="FT2">   79.25 </vtailarea>
     <vtailarm  unit="FT" >    24.90 </vtailarm>
     <location name="AERORP" unit="M">
-      <x> 2.281 </x>
+      <x> 1.846 </x>
       <y> 0.000 </y>
       <z> 0.000 </z>
     </location>
@@ -83,17 +83,17 @@
     <izz unit="SLUG*FT2">  139927.00 </izz>
     <emptywt unit="LBS" >  25980.00 </emptywt>
     <location name="CG" unit="M">
-      <x> 2.25 </x>
+      <x> 1.68 </x>
       <y> 0.00 </y>
       <z> 0.00 </z>
     </location>
     <pointmass name="Payload">
       <description> 21600.00 LBS should bring model up to entered max weight </description>
       <weight unit="LBS"> 0 </weight>
-      <location name="POINTMASS" unit="IN">
-	<x>   355.20 </x>
-	<y>     0.00 </y>
-	<z>   -16.35 </z>
+      <location name="POINTMASS" unit="M">
+	<x> 1.68 </x>
+	<y> 0.00 </y>
+	<z> 0.00 </z>
       </location>
     </pointmass>
   </mass_balance>
@@ -206,4 +206,12 @@
 
   </external_reactions>
 
+  <output name="/home/domokos/.fgfs/Export/A-6_jsbout.csv" type="CSV" rate="10">
+    <property caption="alpha-deg">aero/alpha-deg</property>
+    <property caption="alphadot-rad_sec">aero/alphadot-rad_sec</property>
+    <property caption="beta-deg">aero/beta-deg</property>
+    <property caption="betadot-rad_sec">aero/betadot-rad_sec</property>
+    <property caption="yaw-roll-rate">aero/moment/Yaw_roll_rate</property>
+    <property caption="yaw-damp">aero/moment/Yaw_damp</property>
+  </output>
 </fdm_config>
