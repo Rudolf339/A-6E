@@ -247,9 +247,9 @@
           <property>fcs/surfaces/elevator-pos-rad</property>
           <table>
             <independentVar lookup="row">velocities/mach</independentVar>
-            <tableData>
-              0.0    -1.3097
-              2.0    -0.3274
+            <tableData> <!-- 3x -->
+              0.0    -3.9291
+              2.0    -0.9822
             </tableData>
           </table>
 	</product>
@@ -344,8 +344,8 @@
           <table>
             <independentVar lookup="row">velocities/mach</independentVar>
             <tableData>
-              0.0    0.1200
-              2.0    0.0300
+              0.0    0.0800
+              2.0    0.0200
             </tableData>
           </table>
 	</product>
@@ -361,8 +361,8 @@
           <table>
             <independentVar lookup="row">velocities/mach</independentVar>
             <tableData>
-              0.0   -0.1200
-              2.0   -0.0300
+              0.0   -0.0800
+              2.0   -0.0200
             </tableData>
           </table>
 	</product>
