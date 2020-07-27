@@ -84,8 +84,8 @@
     <aerosurface_scale name="fcs/surfaces/elevator-pos-rad">
       <input>fcs/surfaces/elevator-pos-norm</input>
       <range>
-	<min>-0.733038 </min>
-	<max> 0.0261799</max>
+	<min>-0.41888 </min>
+	<max> 0.02617</max>
       </range>
       <zero-centered>false</zero-centered>
     </aerosurface_scale>
