@@ -41,7 +41,8 @@
    <rolling_friction> 0.02 </rolling_friction>
    <spring_coeff unit="N/M">235300</spring_coeff>
    <damping_coeff unit="N/M/SEC">47000</damping_coeff>
-   <max_steer unit="DEG"> 56.00 </max_steer>
+   <max_steer unit="DEG">360</max_steer>
+   <!-- actually 56, controlled in Systems/fcs.xml -->
    <brake_group>NONE</brake_group>
    <retractable>1</retractable>
   </contact>

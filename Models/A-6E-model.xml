@@ -1700,8 +1700,8 @@
 		<object-name>UC-N-StrutStear</object-name>
 		<object-name>UC-N-Tyre</object-name>
 		<object-name>UC-N-Hub</object-name>
-		<property>surface-positions/rudder-pos-norm</property>
-		<factor>56</factor>
+		<property>surface-positions/nsw-pos-deg</property>
+		<factor>1</factor>
 		<center>
 			<x-m>-2.94</x-m>
 			<y-m>0</y-m>
@@ -1716,8 +1716,8 @@
 	<animation>
 		<type>rotate</type>
 		<object-name>UC-N-CatapultStrop</object-name>
-		<property>surface-positions/rudder-pos-norm</property>
-		<factor>56</factor>
+		<property>surface-positions/nsw-pos-deg</property>
+		<factor>1</factor>
 		<center>
 			<x-m>-2.94</x-m>
 			<y-m>0</y-m>

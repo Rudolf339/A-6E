@@ -26,18 +26,18 @@
 	fcs/flap-cmd-norm != 0
       </test>
     </switch>
-	
-	<fcs_function name="fcs/elevator/elevator-max-deg">
-		<function>
-			 <table>
-				<independentVar lookup="row">fcs/surfaces/flap-pos-norm</independentVar>
-				<tableData>
-					0	 0.39583333333
-					0.75    1
-				</tableData>
-			</table>
-		</function>
-	</fcs_function>
+    
+    <fcs_function name="fcs/elevator/elevator-max-deg">
+	<function>
+	    <table>
+		<independentVar lookup="row">fcs/surfaces/flap-pos-norm</independentVar>
+		<tableData>
+		    0	 0.39583333333
+		    0.75    1
+		</tableData>
+	    </table>
+	</function>
+    </fcs_function>
 
     <summer name="fcs/elevator/pitch-trim-sum">
       <input>fcs/elevator-cmd-norm</input>
@@ -387,6 +387,8 @@
     </aerosurface_scale>
   </channel>
 
+  <property value="80">fcs/rate-limits/nsw-steer</property>
+  
   <channel name="Landing Gear">
     <kinematic name="Gear Control">
       <input>gear/gear-cmd-norm</input>
@@ -403,6 +405,32 @@
       <output>gear/gear-pos-norm</output>
     </kinematic>
 
+    <fcs_function name="fcs/steer-cmd">
+	<function>
+	    <ifthen>
+		<eq>
+		    <property>/controls/gear/nose-wheel-steering</property>
+		    <value>1</value>
+		</eq>
+		<product>
+		    <property>fcs/rudder-cmd-norm</property>
+		    <value>-56</value>
+		</product>
+		<value>0</value>
+	    </ifthen>
+	</function>
+	<clipto>
+	    <min>-63</min>
+	    <max>63</max>
+	</clipto>
+    </fcs_function>
+	    
+    <actuator name="trash/fcs/steer-pos-deg">
+	<input>fcs/steer-cmd</input>
+	<rate_limit>fcs/rate-limits/nsw-steer</rate_limit>
+	<output>fcs/steer-pos-deg</output>
+    </actuator>
+    
   </channel>
 
   <property value="12">fcs/rate-limits/speedbrake-ext</property>

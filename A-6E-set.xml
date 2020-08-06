@@ -388,7 +388,50 @@ Grumman A-6E simulation config.
 	</systems>
 
 	<input>
-	  <keyboard include="Systems/keyboard.xml"/>
+	    <keyboard include="/Input/Keyboard/carrier-bindings.xml">
+		<key n="99">
+		    <name>c</name>
+		    <desc>Canopy open/close command</desc>
+		    <binding>
+			<command>nasal</command>
+			<script>A6Econtrols.canopyswitch(2)</script>
+		    </binding>
+		</key>
+		
+		<key n="25">
+		    <name>Ctrl-y</name>
+		    <desc>Toggle flaperon pop-up</desc>
+		    <binding>
+			<command>property-toggle</command>
+			<property>/controls/flight/gnd-spoiler-arm</property>
+		    </binding>
+		</key>
+
+		<key n="89">
+		    <name>Y</name>
+		    <desc>Toggle spin assist</desc>
+		    <binding>
+			<command>property-toggle</command>
+			<property>/controls/flight/spin-assist</property>
+		    </binding>
+		</key>
+		<key n="110">
+		    <name>n</name>
+		    <decs>NSW steering</decs>
+		    <binding>
+			<command>property-assign</command>
+			<property>/controls/gear/nose-wheel-steering</property>
+			<value>1</value>
+		    </binding>
+		    <mod-up>
+			<binding>
+			    <command>property-assign</command>
+			    <property>/controls/gear/nose-wheel-steering</property>
+			    <value>0</value>
+			</binding>
+		    </mod-up>
+		</key>
+	    </keyboard>
 	</input>
 
 	<controls>
@@ -443,27 +486,30 @@ Grumman A-6E simulation config.
 		</J52-P8>
 	</nasal>
 	<fdm>
-	  <jsbsim>
-	    <fcs>
-	      <flaperon>
-		<gnd-spoiler-arm alias="/controls/flight/gnd-spoiler-arm"/>
-	      </flaperon>
-	      <rudder>
-		<spin-assist alias="/controls/flight/spin-assist"/>
-	      </rudder>
-	      <speedbrake>
-		<speedbrake-test alias="/controls/flight/speedbrake-test"/>
-	      </speedbrake>
-	      <wing-fold>
-		<handle-cmd alias="/controls/flight/wing-fold/handle-cmd"/>
-		<lockpin-cmd alias="/controls/flight/wing-fold/lockpin-cmd"/>
-	      </wing-fold>
-	    </fcs>
-	  </jsbsim>
+	    <jsbsim>
+		<fcs>
+		    <flaperon>
+			<gnd-spoiler-arm alias="/controls/flight/gnd-spoiler-arm"/>
+		    </flaperon>
+		    <rudder>
+			<spin-assist alias="/controls/flight/spin-assist"/>
+		    </rudder>
+		    <speedbrake>
+			<speedbrake-test alias="/controls/flight/speedbrake-test"/>
+		    </speedbrake>
+		</fcs>
+		<gear>
+		    <unit>
+			<castered>0</castered>
+		    </unit>
+		</gear>
+		    
+	    </jsbsim>
 	</fdm>
 
 	<surface-positions>
-	  <slats-pos-norm alias="/fdm/jsbsim/fcs/surfaces/slats-pos-norm"/>
+	    <slats-pos-norm alias="/fdm/jsbsim/fcs/surfaces/slats-pos-norm"/>
+	    <nsw-pos-deg alias="/fdm/jsbsim/fcs/steer-pos-deg"/>
 	</surface-positions>
 	
 
