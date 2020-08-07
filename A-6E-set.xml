@@ -446,7 +446,8 @@ Grumman A-6E simulation config.
 		  </wing-fold>
 		</flight>
 		<gear>
-			<brake-parking type="bool">1</brake-parking>
+		    <brake-parking type="bool">1</brake-parking>
+		    <nose-wheel-steering type="bool">0</nose-wheel-steering>
 		</gear>
 		<lighting>
 			<beacon>0</beacon>
