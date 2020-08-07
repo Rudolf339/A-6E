@@ -17,6 +17,13 @@
               0.60  0.8303
             </tableData>
           </table>
+	  <difference>
+	      <value>1</value>
+	      <product>
+		  <property>fcs/wing-fold/wing-fold-pos</property>
+		  <value>0.9</value>
+	      </product>
+	  </difference>
 	</product>
       </function>
 
