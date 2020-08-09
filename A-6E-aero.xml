@@ -241,7 +241,7 @@
           <property>metrics/Sw-sqft</property>
           <property>metrics/cbarw-ft</property>
           <property>aero/alpha-rad</property>
-          <value> -0.3 </value> <!-- -0.9734 -->
+          <value> -0.1 </value> <!-- -0.9734 -->
 	</product>
       </function>
 
@@ -255,8 +255,8 @@
           <table>
             <independentVar lookup="row">velocities/mach</independentVar>
             <tableData> <!-- -1.3097 -0.3274 -->
-              0.0    -1.8
-              2.0    -0.5
+              0.0    -1.2
+              2.0    -0.3
             </tableData>
           </table>
 	</product>
@@ -418,7 +418,7 @@
           <property>metrics/Sw-sqft</property>
           <property>metrics/bw-ft</property>
           <property>aero/beta-rad</property>
-          <value> 0.1626 </value>
+          <value> 0.1926 </value> <!-- 0.1626 -->
 	</product>
       </function>
 
@@ -430,7 +430,9 @@
           <property>metrics/Sw-sqft</property>
           <property>metrics/bw-ft</property>
           <property>aero/bi2vel</property>
-          <property>velocities/p-rad_sec</property>
+          <property>velocities/r-aero-rad_sec</property>
+	  <value>-1.1</value>
+	  <!--
           <table>
             <independentVar lookup="row">aero/Re</independentVar>
             <tableData>
@@ -440,6 +442,7 @@
               33714708  -0.00402
             </tableData>
           </table>
+	  -->
 	</product>
       </function>
       
