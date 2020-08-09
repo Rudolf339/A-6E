@@ -2,30 +2,59 @@
   <aerodynamics>
 
     <axis name="LIFT">
-      
-      <function name="aero/force/Lift_alpha">
-	<description>Lift due to alpha</description>
-	<product>
-          <property>aero/qbar-psf</property>
-          <property>metrics/Sw-sqft</property>
-          <table>
-            <independentVar lookup="row">aero/alpha-rad</independentVar>
-            <tableData>
-              -0.20 -0.5783
-              0.00  0.3213
-              0.28  1.5937
-              0.60  0.8303
-            </tableData>
-          </table>
-	  <difference>
-	      <value>1</value>
-	      <product>
-		  <property>fcs/wing-fold/wing-fold-pos</property>
-		  <value>0.9</value>
-	      </product>
-	  </difference>
-	</product>
-      </function>
+	<function name="aero/CL_base">
+	    <table>
+		<independentVar lookup="row">velocities/mach</independentVar>
+		<independentVar lookup="column">aero/alpha-deg</independentVar>
+		<independentVar lookup="table">aero/beta-deg</independentVar>
+		<tableData breakPoint="-10.00000">
+                    -10.00     -5.00      0.00      5.00     10.00     15.00     20.00     30.00   
+		    0.20000  -0.46626  -0.14142   0.18638   0.50290   0.80325   1.06794   1.27781   1.53861
+		    0.50000  -0.48987  -0.14836   0.19778   0.53330   0.84679   1.12899   1.35162   1.62595
+		    0.90000  -0.59932  -0.17903   0.24915   0.66373   1.05782   1.41080   1.70226   2.04367
+		</tableData>
+		
+		<tableData breakPoint="0.00000">
+                    -10.00     -5.00      0.00      5.00     10.00     15.00     20.00     30.00   
+		    0.20000  -0.47423  -0.14206   0.18760   0.51448   0.81327   1.09116   1.32133   1.58419
+		    0.50000  -0.49969  -0.14899   0.19880   0.54670   0.86248   1.15250   1.39540   1.67712
+		    0.90000  -0.61760  -0.18222   0.24979   0.68395   1.09109   1.45447   1.75634   2.11040
+		</tableData>
+		
+		<tableData breakPoint="10.00000">
+                    -10.00     -5.00      0.00      5.00     10.00     15.00     20.00     30.00   
+		    0.20000  -0.46625  -0.14142   0.18638   0.50290   0.80325   1.06794   1.27781   1.53862
+		    0.50000  -0.48987  -0.14836   0.19778   0.53330   0.84679   1.12899   1.35163   1.62595
+		    0.90000  -0.59932  -0.17903   0.24914   0.66373   1.05782   1.41080   1.70226   2.04367
+		</tableData>
+	    </table>
+	</function>
+	
+	<function name="aero/force/Lift_alpha">
+	    <description>Lift due to alpha</description>
+	    <product>
+		<property>aero/qbar-psf</property>
+		<property>metrics/Sw-sqft</property>
+		<!-- aeromatic
+		     <table>
+		     <independentVar lookup="row">aero/alpha-rad</independentVar>
+		     <tableData>
+		     -0.20 -0.5783
+		     0.00  0.3213
+		     0.28  1.5937
+		     0.60  0.8303
+		     </tableData>
+		     </table> -->
+		<property>aero/CL_base</property>
+		<difference>
+		    <value>1</value>
+		    <product>
+			<property>fcs/wing-fold/wing-fold-pos</property>
+			<value>0.9</value>
+		    </product>
+		</difference>
+	    </product>
+	</function>
 
       <function name="aero/force/Lift_pitch_rate">
         <description>Lift due to pitch rate</description>
@@ -59,14 +88,81 @@
 	</product>
       </function>
 
+      <function name="aero/CL_flap_30">
+	  <table>
+	      <independentVar lookup="row">velocities/mach</independentVar>
+	      <independentVar lookup="column">aero/alpha-deg</independentVar>
+	      <independentVar lookup="table">aero/beta-deg</independentVar>
+	      <tableData breakPoint="-10.00000">
+                  -10.00     -5.00      0.00      5.00     10.00     15.00     20.00     30.00   
+		  0.20000   0.63936   0.62483   0.60197   0.58967   0.54008   0.49139   0.44446   0.31332
+		  0.50000   0.68550   0.67176   0.64376   0.62242   0.57842   0.51044   0.46434   0.33325
+		  0.90000   0.95115   0.93050   0.90215   0.85809   0.79212   0.72203   0.63488   0.44758
+	      </tableData>
+
+	      <tableData breakPoint="0.00000">
+                  -10.00     -5.00      0.00      5.00     10.00     15.00     20.00     30.00   
+		  0.20000   0.65170   0.63377   0.60676   0.57550   0.54055   0.50175   0.44541   0.34588
+		  0.50000   0.70042   0.68110   0.65549   0.62108   0.59475   0.53343   0.47866   0.36017
+		  0.90000   0.97735   0.94427   0.91650   0.87783   0.81976   0.74732   0.65105   0.46747
+	      </tableData>
+
+	      <tableData breakPoint="10.00000">
+                  -10.00     -5.00      0.00      5.00     10.00     15.00     20.00     30.00   
+		  0.20000   0.63935   0.62483   0.60197   0.58968   0.54009   0.49139   0.44446   0.31331
+		  0.50000   0.68550   0.67176   0.64375   0.62241   0.57843   0.51043   0.46432   0.33325
+		  0.90000   0.95115   0.93049   0.90215   0.85809   0.79212   0.72204   0.63488   0.44758
+	      </tableData>
+
+	  </table>
+      </function>
+
+      <function name="aero/CL_flap_40">
+	  <table>
+	      <independentVar lookup="row">velocities/mach</independentVar>
+	      <independentVar lookup="column">aero/alpha-deg</independentVar>
+	      <independentVar lookup="table">aero/beta-deg</independentVar>
+	      <tableData breakPoint="-10.00000">
+                  -10.00     -5.00      0.00      5.00     10.00     15.00     20.00     30.00   
+		  0.20000   0.74930   0.72702   0.69683   0.67700   0.62071   0.55829   0.50356   0.35183
+		  0.50000   0.80039   0.78366   0.74563   0.71879   0.67015   0.58665   0.52721   0.37151
+		  0.90000   1.11299   1.08643   1.04432   0.98850   0.90773   0.81739   0.71874   0.49825
+	      </tableData>
+
+	      <tableData breakPoint="0.00000">
+                  -10.00     -5.00      0.00      5.00     10.00     15.00     20.00     30.00   
+		  0.20000   0.76139   0.73837   0.70418   0.66692   0.61982   0.56841   0.50484   0.38534
+		  0.50000   0.81895   0.79281   0.76122   0.71442   0.67027   0.60575   0.54032   0.40231
+		  0.90000   1.14502   1.10169   1.06437   1.01214   0.93802   0.84914   0.73406   0.52051
+	      </tableData>
+
+	      <tableData breakPoint="10.00000">
+                  -10.00     -5.00      0.00      5.00     10.00     15.00     20.00     30.00   
+		  0.20000   0.74929   0.72702   0.69684   0.67699   0.62071   0.55829   0.50356   0.35182
+		  0.50000   0.80040   0.78366   0.74563   0.71871   0.67016   0.58664   0.52719   0.37152
+		  0.90000   1.11299   1.08643   1.04432   0.98850   0.90774   0.81740   0.71874   0.49827
+	      </tableData>
+
+	  </table>
+      </function>
+
+      <function name="aero/CL_flap">
+	  <interpolate1d>
+	      <property>fcs/surfaces/flap-pos-deg</property>
+	      <value>0</value> <value>0</value>
+	      <value>30</value> <property>aero/CL_flap_30</property>
+	      <value>40</value> <property>aero/CL_flap_40</property>
+	  </interpolate1d>
+      </function>
+
       <function name="aero/force/Lift_flap">
 	<description>Delta Lift due to flaps</description>
 	<product>
           <property>aero/qbar-psf</property>
           <property>metrics/Sw-sqft</property>
-          <property>fcs/flap-pos-deg</property>
-          <value> 0.0102 </value>
-	</product>
+          <!-- <value> 0.0102 </value> -->
+	  <property>aero/CL_flap</property>
+	</product> 
       </function>
 
     </axis>
