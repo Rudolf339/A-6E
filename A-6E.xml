@@ -174,7 +174,7 @@
 
   <flight_control file="Systems/fcs.xml"/>
 
-  <aerodynamics file="A-6E-aero.xml"/>
+  <aerodynamics file="A-6E_vspaero.xml"/>
 
   <external_reactions>
 
