@@ -3072,29 +3072,28 @@
     </function>
     
     <axis name="LIFT">
-	<function name="aero/force/Lift_alpha">
+	<function name="aero/force/Lift_combined">
 	    <description>Lift due to alpha</description>
 	    <product>
 		<property>aero/qbar-psf</property>
 		<property>metrics/Sw-sqft</property>
-		<!-- aeromatic
-		     <table>
-		     <independentVar lookup="row">aero/alpha-rad</independentVar>
-		     <tableData>
-		     -0.20 -0.5783
-		     0.00  0.3213
-		     0.28  1.5937
-		     0.60  0.8303
-		     </tableData>
-		     </table> -->
-		<property>aero/CL_base</property>
-		<difference>
-		    <value>1</value>
+		<sum>
 		    <product>
-			<property>fcs/wing-fold/wing-fold-pos</property>
-			<value>0.9</value>
+			<property>aero/CL_base</property>
+			<difference>
+			    <value>1</value>
+			    <product>
+				<property>fcs/wing-fold/wing-fold-pos</property>
+				<value>0.9</value>
+			    </product>
+			</difference>
 		    </product>
-		</difference>
+		    <property>aero/CL_elevator</property>
+		    <property>aero/CL_right-flaperon</property>
+		    <property>aero/CL_left-flaperon</property>
+		    <property>aero/CL_slats</property>
+		    <property>aero/CL_flap</property>
+		</sum>
 	    </product>
 	</function>
 
@@ -3120,100 +3119,23 @@
             </product>
 	</function>
 
-	<function name="aero/force/Lift_elevator">
-	    <description>Lift due to Elevator Deflection</description>
-	    <product>
-		<property>aero/qbar-psf</property>
-		<property>metrics/Sw-sqft</property>
-		<property>fcs/elevator-pos-rad</property>
-		<value> 0.3777 </value>
-	    </product>
-	</function>
-
-	<function name="aero/force/Lift_flap">
-	    <description>Delta Lift due to flaps</description>
-	    <product>
-		<property>aero/qbar-psf</property>
-		<property>metrics/Sw-sqft</property>
-		<!-- <value> 0.0102 </value> -->
-		<property>aero/CL_flap</property>
-	    </product> 
-	</function>
-
     </axis>
 
     <axis name="DRAG">
 
-	<function name="aero/force/Drag_basic">
+	<function name="aero/force/Drag_combined">
 	    <description>Drag at zero lift</description>
 	    <product>
 		<property>aero/qbar-psf</property>
 		<property>metrics/Sw-sqft</property>
-		<table>
-		    <independentVar lookup="row">aero/alpha-rad</independentVar>
-		    <tableData>
-			-1.57    1.4086
-			-0.28    0.0684
-			0.00    0.0139
-			0.28    0.0684
-			1.57    1.4086
-		    </tableData>
-		</table>
-	    </product>
-	</function>
-
-	<function name="aero/force/Drag_induced">
-	    <description>Induced drag</description>
-            <product>
-		<property>aero/qbar-psf</property>
-		<property>metrics/Sw-sqft</property>
-		<property>aero/cl-squared</property>
-		<value> 0.0667 </value>
-            </product>
-	</function>
-
-	<function name="aero/force/Drag_mach">
-	    <description>Drag due to mach</description>
-            <product>
-		<property>aero/qbar-psf</property>
-		<property>metrics/Sw-sqft</property>
-		<table>
-		    <independentVar lookup="row">velocities/mach</independentVar>
-		    <tableData>
-			0.00    0.0000
-			0.81    0.0000
-			1.10    0.0230
-			1.80    0.0150
-		    </tableData>
-		</table>
-            </product>
-	</function>
-
-	<function name="aero/force/Drag_beta">
-	    <description>Drag due to sideslip</description>
-	    <product>
-		<property>aero/qbar-psf</property>
-		<property>metrics/Sw-sqft</property>
-		<table>
-		    <independentVar lookup="row">aero/beta-rad</independentVar>
-		    <tableData>
-			-1.57    1.2300
-			-0.26    0.0500
-			0.00    0.0000
-			0.26    0.0500
-			1.57    1.2300
-		    </tableData>
-		</table>
-	    </product>
-	</function>
-
-	<function name="aero/force/Drag_elevator">
-	    <description>Drag due to Elevator Deflection</description>
-	    <product>
-		<property>aero/qbar-psf</property>
-		<property>metrics/Sw-sqft</property>
-		<abs><property>fcs/elevator-pos-rad</property></abs>
-		<value> 0.0400 </value>
+		<sum>
+		    <property>aero/CDtot_base</property>
+		    <property>aero/CDtot_elevator</property>
+		    <property>aero/CDtot_right-flaperon</property>
+		    <property>aero/CDtot_left-flaperon</property>
+		    <property>aero/CDtot_slats</property>
+		    <property>aero/CDtot_flap</property>
+		</sum>
 	    </product>
 	</function>
 
@@ -3224,16 +3146,6 @@
 		<property>metrics/Sw-sqft</property>
 		<property>gear/gear-pos-norm</property>
 		<value> 0.0200 </value>
-            </product>
-	</function>
-
-	<function name="aero/force/Drag_flap">
-	    <description>Drag due to flaps</description>
-            <product>
-		<property>aero/qbar-psf</property>
-		<property>metrics/Sw-sqft</property>
-		<property>fcs/flap-pos-deg</property>
-		<value> 0.0022 </value>
             </product>
 	</function>
 
