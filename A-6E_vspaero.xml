@@ -3072,6 +3072,18 @@
     </function>
     
     <axis name="LIFT">
+
+	<function name="aero/force/CL">
+	    <sum>
+		<property>aero/CL_base</property>
+		<property>aero/CL_elevator</property>
+		<property>aero/CL_right-flaperon</property>
+		<property>aero/CL_left-flaperon</property>
+		<property>aero/CL_slats</property>
+		<property>aero/CL_flap</property>
+	    </sum>
+	</function>
+	
 	<function name="aero/force/Lift_combined">
 	    <description>Lift due to alpha</description>
 	    <product>
@@ -3079,7 +3091,7 @@
 		<property>metrics/Sw-sqft</property>
 		<sum>
 		    <product>
-			<property>aero/CL_base</property>
+			<property>aero/force/CL</property>
 			<difference>
 			    <value>1</value>
 			    <product>
@@ -3088,11 +3100,6 @@
 			    </product>
 			</difference>
 		    </product>
-		    <property>aero/CL_elevator</property>
-		    <property>aero/CL_right-flaperon</property>
-		    <property>aero/CL_left-flaperon</property>
-		    <property>aero/CL_slats</property>
-		    <property>aero/CL_flap</property>
 		</sum>
 	    </product>
 	</function>
@@ -3123,19 +3130,23 @@
 
     <axis name="DRAG">
 
+	<function name="aero/force/CDtot">
+	    <sum>
+		<property>aero/CDtot_base</property>
+		<property>aero/CDtot_elevator</property>
+		<property>aero/CDtot_right-flaperon</property>
+		<property>aero/CDtot_left-flaperon</property>
+		<property>aero/CDtot_slats</property>
+		<property>aero/CDtot_flap</property>
+	    </sum>
+	</function>
+	
 	<function name="aero/force/Drag_combined">
 	    <description>Drag at zero lift</description>
 	    <product>
 		<property>aero/qbar-psf</property>
 		<property>metrics/Sw-sqft</property>
-		<sum>
-		    <property>aero/CDtot_base</property>
-		    <property>aero/CDtot_elevator</property>
-		    <property>aero/CDtot_right-flaperon</property>
-		    <property>aero/CDtot_left-flaperon</property>
-		    <property>aero/CDtot_slats</property>
-		    <property>aero/CDtot_flap</property>
-		</sum>
+		<property>aero/force/CDtot</property>
 	    </product>
 	</function>
 
