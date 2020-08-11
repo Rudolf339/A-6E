@@ -3228,6 +3228,25 @@
 
     <axis name="PITCH">
 
+	<function name="aero/moment/CMy">
+	    <sum>
+		<property>aero/CMy_base</property>
+		<property>aero/CMy_elevator</property>
+		<property>aero/CMy_flap</property>
+		<property>aero/CMy_slats</property>
+	    </sum>
+	</function>
+
+	<function name="aero/moment/Pitch_combined">
+	    <description>Pitch moment due to alpha</description>
+	    <product>
+		<property>aero/qbar-psf</property>
+		<property>metrics/Sw-sqft</property>
+		<property>metrics/cbarw-ft</property>
+		<property>aero/moment/CMy</property>
+	    </product>
+	</function>
+
 	<function name="aero/moment/Pitch_alpha">
 	    <description>Pitch moment due to alpha</description>
 	    <product>
@@ -3235,7 +3254,7 @@
 		<property>metrics/Sw-sqft</property>
 		<property>metrics/cbarw-ft</property>
 		<property>aero/alpha-rad</property>
-		<value> -0.1 </value> <!-- -0.9734 -->
+		<value> -0.1 </value>
 	    </product>
 	</function>
 
@@ -3248,7 +3267,7 @@
 		<property>fcs/surfaces/elevator-pos-rad</property>
 		<table>
 		    <independentVar lookup="row">velocities/mach</independentVar>
-		    <tableData> <!-- -1.3097 -0.3274 -->
+		    <tableData>
 			0.0    -1.2
 			2.0    -0.3
 		    </tableData>
