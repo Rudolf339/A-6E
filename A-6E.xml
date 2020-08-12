@@ -98,75 +98,7 @@
 	</pointmass>
     </mass_balance>
 
-    <propulsion>
-
-	<engine file="J52-P8">
-	    <location unit="IN">
-		<x>   355.20 </x>
-		<y>   -20.00 </y>
-		<z>   -12.00 </z>
-	    </location>
-	    <orient unit="DEG">
-		<pitch>     0.00 </pitch>
-		<roll>     0.00 </roll>
-		<yaw>     0.00 </yaw>
-	    </orient>
-	    <feed> 0 </feed>
-
-	    <thruster file="direct">
-		<sense> 1 </sense>
-		<location unit="IN">
-		    <x>   355.20 </x>
-		    <y>   -20.00 </y>
-		    <z>   -12.00 </z>
-		</location>
-		<orient unit="DEG">
-		    <pitch>     0.00 </pitch>
-		    <roll>     0.00 </roll>
-		    <yaw>     0.00 </yaw>
-		</orient>
-	    </thruster>
-	</engine>
-
-	<engine file="J52-P8">
-	    <location unit="IN">
-		<x>   355.20 </x>
-		<y>    20.00 </y>
-		<z>   -12.00 </z>
-	    </location>
-	    <orient unit="DEG">
-		<pitch>     0.00 </pitch>
-		<roll>     0.00 </roll>
-		<yaw>     0.00 </yaw>
-	    </orient>
-	    <feed> 0 </feed>
-
-	    <thruster file="direct">
-		<sense> 1 </sense>
-		<location unit="IN">
-		    <x>   355.20 </x>
-		    <y>    20.00 </y>
-		    <z>   -12.00 </z>
-		</location>
-		<orient unit="DEG">
-		    <pitch>     0.00 </pitch>
-		    <roll>     0.00 </roll>
-		    <yaw>     0.00 </yaw>
-		</orient>
-	    </thruster>
-	</engine>
-
-	<tank type="FUEL" number="0">
-	    <location unit="M">
-		<x> 2.25 </x>
-		<y> 0.00 </y>
-		<z> 0.00 </z>
-	    </location>
-	    <capacity unit="LBS"> 4140.00 </capacity>
-	    <contents unit="LBS"> 2070.00 </contents>
-	</tank>
-    </propulsion>
-
+    <propulsion file="Systems/jsb-propulsion.xml"/>
     <ground_reactions file="Systems/ground_reactions.xml"/>
     <system file="Propulsion.xml"/>
     <system file="Arrestor_Hook.xml"/>
