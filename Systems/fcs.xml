@@ -2,6 +2,8 @@
 <flight_control name="FCS A-6E">
   <property value="30">fcs/rate-limits/elevator</property> <!-- guestimated value. ~1 sec travel -->
   <property value="0">fcs/surfaces/flap-pos-norm</property>
+  <property value="0">fcs/wing-fold/handle</property>
+  <property value="1">fcs/wing-fold/lockpin</property>
   <channel name="Pitch">
 
     <aerosurface_scale name="fcs/elevator/pitch-trim-limit-limit">
@@ -125,8 +127,9 @@
 	fcs/throttle-cmd-norm == 0
 	fcs/throttle-cmd-norm[1] == 0
       </test>
-      <test value="0">
-	fcs/flaperon/roll-trim-sum gt 0
+      <test logic="OR" value="0">
+	  fcs/flaperon/roll-trim-sum gt 0
+	  fcs/wing-fold/handle ne 0
       </test>
     </switch>
 
@@ -175,8 +178,9 @@
 	fcs/throttle-cmd-norm == 0
 	fcs/throttle-cmd-norm[1] == 0
       </test>
-      <test value="0">
-	fcs/flaperon/roll-trim-sum lt 0
+      <test logic="OR" value="0">
+	  fcs/flaperon/roll-trim-sum lt 0
+	  fcs/wing-fold/handle ne 0
       </test>
     </switch>
 
@@ -323,37 +327,44 @@
   </channel>
   
   <channel name="Flap">
-    <kinematic name="fcs/flap-pos-deg">
-      <input>fcs/flap-cmd-norm</input>
-      <traverse>
-	<setting>
-          <position>  0 </position>
-          <time>      0 </time>
-	</setting>
-	<setting>
-          <position> 30 </position>
-          <time>      8 </time>
-	</setting>
-	<setting>
-          <position> 40 </position>
-          <time>      12 </time>
-	</setting>
-      </traverse>
-      <output>fcs/surfaces/flap-pos-deg</output>
-    </kinematic>
+      <switch name="fcs/flap-cmd">
+	  <default value="fcs/flap-cmd-norm"/>
+	  <test value="0">
+	      fcs/wing-fold/handle ne 0
+	  </test>
+      </switch>
+      
+      <kinematic name="fcs/flap-pos-deg">
+	  <input>fcs/flap-cmd</input>
+	  <traverse>
+	      <setting>
+		  <position>  0 </position>
+		  <time>      0 </time>
+	      </setting>
+	      <setting>
+		  <position> 30 </position>
+		  <time>      8 </time>
+	      </setting>
+	      <setting>
+		  <position> 40 </position>
+		  <time>      12 </time>
+	      </setting>
+	  </traverse>
+	  <output>fcs/surfaces/flap-pos-deg</output>
+      </kinematic>
 
-    <aerosurface_scale name="fcs/surfaces/flap-pos-norm">
-      <input>fcs/flap-pos-deg</input>
-      <domain>
-	<min>  0 </min>
-	<max> 40 </max>
-      </domain>
-      <range>
-	<min> 0 </min>
-	<max> 1 </max>
-      </range>
-      <output>fcs/flap-pos-norm</output>
-    </aerosurface_scale>
+      <aerosurface_scale name="fcs/surfaces/flap-pos-norm">
+	  <input>fcs/flap-pos-deg</input>
+	  <domain>
+	      <min>  0 </min>
+	      <max> 40 </max>
+	  </domain>
+	  <range>
+	      <min> 0 </min>
+	      <max> 1 </max>
+	  </range>
+	  <output>fcs/flap-pos-norm</output>
+      </aerosurface_scale>
   </channel>
 
   <!-- slats -->
@@ -478,8 +489,6 @@
   <property value="0">fcs/wing-fold/handle-cmd</property>
   <property value="1">fcs/wing-fold/lockpin-cmd</property>
   -->
-  <property value="0">fcs/wing-fold/handle</property>
-  <property value="1">fcs/wing-fold/lockpin</property>
   <channel name="Wing fold">
     <fcs_function name="fcs/wing-fold/handle-l">
       <function>
