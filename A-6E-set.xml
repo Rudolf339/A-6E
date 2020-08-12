@@ -332,10 +332,10 @@ Grumman A-6E simulation config.
 		</model>
 
 		<aoa-indexer>
-			<too-slow-deg>9</too-slow-deg>  <!-- target +1.5 deg -->
-			<slow-deg>8</slow-deg>          <!-- target +0.5 deg -->
-			<fast-deg>7</fast-deg>          <!-- target -0.5 deg -->
-			<too-fast-deg>6</too-fast-deg>  <!-- target -1.5 deg -->
+			<too-slow-deg>27</too-slow-deg>  <!-- target +5 units -->
+			<slow-deg>24</slow-deg>          <!-- target +2 units -->
+			<fast-deg>20</fast-deg>          <!-- target -2 units -->
+			<too-fast-deg>17</too-fast-deg>  <!-- target -5 units -->
 		</aoa-indexer>
 
 		<help>

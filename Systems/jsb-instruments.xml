@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<system name="instrumentation">
+    <channel name="AOA">
+	<pure_gain name="systems/instrument/aoa-unit">
+	    <input>aero/alpha-deg</input>
+	    <gain>2.83053</gain>
+	</pure_gain>
+    </channel>
+</system>

@@ -13,8 +13,8 @@
 				<value>23</value>
 			</greater-than>-->
 			<greater-than>
-				<property>orientation/alpha-deg</property>
-			<property>sim/aoa-indexer/too-slow-deg</property>
+				<property>fdm/jsbsim/systems/instrument/aoa-unit</property>
+				<property>sim/aoa-indexer/too-slow-deg</property>
 			</greater-than>
 			<equals>
 				<property>gear/gear[0]/position-norm</property>
@@ -32,11 +32,11 @@
 				<value>23</value>
 			</greater-than>-->
 			<less-than>
-				<property>orientation/alpha-deg</property>
+				<property>fdm/jsbsim/systems/instrument/aoa-unit</property>
 				<property>sim/aoa-indexer/too-slow-deg</property>
 			</less-than>
 			<greater-than>
-				<property>orientation/alpha-deg</property>
+				<property>fdm/jsbsim/systems/instrument/aoa-unit</property>
 				<property>sim/aoa-indexer/slow-deg</property>
 			</greater-than>
 			<equals>
@@ -55,11 +55,11 @@
 				<value>23</value>
 			</greater-than>-->
 			<less-than>
-				<property>orientation/alpha-deg</property>
+				<property>fdm/jsbsim/systems/instrument/aoa-unit</property>
 				<property>sim/aoa-indexer/slow-deg</property>
 			</less-than>
 			<greater-than>
-				<property>orientation/alpha-deg</property>
+				<property>fdm/jsbsim/systems/instrument/aoa-unit</property>
 				<property>sim/aoa-indexer/fast-deg</property>
 			</greater-than>
 			<equals>
@@ -78,11 +78,11 @@
 				<value>23</value>
 			</greater-than>-->
 			<less-than>
-				<property>orientation/alpha-deg</property>
+				<property>fdm/jsbsim/systems/instrument/aoa-unit</property>
 				<property>sim/aoa-indexer/fast-deg</property>
 			</less-than>
 			<greater-than>
-				<property>orientation/alpha-deg</property>
+				<property>fdm/jsbsim/systems/instrument/aoa-unit</property>
 				<property>sim/aoa-indexer/too-fast-deg</property>
 			</greater-than>
 			<equals>
@@ -101,7 +101,7 @@
 				<value>23</value>
 			</greater-than>-->
 			<less-than>
-				<property>orientation/alpha-deg</property>
+				<property>fdm/jsbsim/systems/instrument/aoa-unit</property>
 				<property>sim/aoa-indexer/too-fast-deg</property>
 			</less-than>
 			<equals>

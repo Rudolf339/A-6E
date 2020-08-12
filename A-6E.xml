@@ -5,213 +5,214 @@
 	    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	    xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
 
-  <fileheader>
-    <author> Aeromatic v 3.3.0 </author>
-    <filecreationdate> 03 Apr 2019 </filecreationdate>
-    <version>$Revision: 1.68 $</version>
-    <description> Models a A-6E. </description>
-  </fileheader>
+    <fileheader>
+	<author> Aeromatic v 3.3.0 </author>
+	<filecreationdate> 03 Apr 2019 </filecreationdate>
+	<version>$Revision: 1.68 $</version>
+	<description> Models a A-6E. </description>
+    </fileheader>
 
-  <!--
-      File:     A-6E.xml
-      Inputs:
-      name:          A-6E
-      type:          2 engine transonic/supersonic fighter
-      stall speed:   145.00kts
-      max weight:    60000.00 lb
-      length:        54.50 ft
-      wing: 
-      span:         53.00 ft
-      area:         528.90 sq-ft
-      mean chord:   10.90 ft
-      aspect ratio: 5.31:1
-      taper ratio:  0.31:1
-      incidence:    2.00 degrees
-      dihedral:     -1.00 degrees
-      sweep:        25.00 degrees
+    <!--
+	File:     A-6E.xml
+	Inputs:
+	name:          A-6E
+	type:          2 engine transonic/supersonic fighter
+	stall speed:   145.00kts
+	max weight:    60000.00 lb
+	length:        54.50 ft
+	wing: 
+	span:         53.00 ft
+	area:         528.90 sq-ft
+	mean chord:   10.90 ft
+	aspect ratio: 5.31:1
+	taper ratio:  0.31:1
+	incidence:    2.00 degrees
+	dihedral:     -1.00 degrees
+	sweep:        25.00 degrees
+        
+        no. engines:   2
+        engine type:   Turbine Engine
+        engine layout: middle fuselage
+        
+        control type:   Conventional with Yaw Damper
+        
+        gear type:     tricycle
+        steering type: steering
+        retractable?:  yes
+        
+        Outputs:
+        wing loading:  113.44 lb/sq-ft
+        payload:       21600.00 lbs
+        CL-alpha:      4.50 per radian
+        CL-0:          0.32
+        CL-max:        1.59
+        CD-0:          0.01
+        K:             0.12
+        Mcrit:         0.81
+    -->
 
-      no. engines:   2
-      engine type:   Turbine Engine
-      engine layout: middle fuselage
-      
-      control type:   Conventional with Yaw Damper
-
-      gear type:     tricycle
-      steering type: steering
-      retractable?:  yes
-
-      Outputs:
-      wing loading:  113.44 lb/sq-ft
-      payload:       21600.00 lbs
-      CL-alpha:      4.50 per radian
-      CL-0:          0.32
-      CL-max:        1.59
-      CD-0:          0.01
-      K:             0.12
-      Mcrit:         0.81
-  -->
-
-  <metrics>
-    <wingarea  unit="FT2">   528.90 </wingarea>
-    <wingspan  unit="FT" >    53.00 </wingspan>
-    <wing_incidence>           2.00 </wing_incidence>
-    <chord     unit="FT" >    10.90 </chord>
-    <htailarea unit="FT2">   117.00 </htailarea>
-    <htailarm  unit="FT" >    24.90 </htailarm>
-    <vtailarea  unit="FT2">   79.25 </vtailarea>
-    <vtailarm  unit="FT" >    24.90 </vtailarm>
-    <location name="AERORP" unit="M">
-      <x> 1.846 </x>
-      <y> 0.000 </y>
-      <z> 0.000 </z>
-    </location>
-    <location name="EYEPOINT" unit="IN">
-      <x>   130.80 </x>
-      <y>     0.00 </y>
-      <z>    38.00 </z>
-    </location>
-    <location name="VRP" unit="IN">
-      <x>     0.0 </x>
-      <y>     0.0 </y>
-      <z>     0.0 </z>
-    </location>
-  </metrics>
-
-  <mass_balance>
-    <ixx unit="SLUG*FT2">  53320.00 </ixx>
-    <iyy unit="SLUG*FT2">  87273.00 </iyy>
-    <izz unit="SLUG*FT2">  139927.00 </izz>
-    <emptywt unit="LBS" >  25980.00 </emptywt>
-    <location name="CG" unit="M">
-      <x> 1.68 </x>
-      <y> 0.00 </y>
-      <z> 0.00 </z>
-    </location>
-    <pointmass name="Payload">
-      <description> 21600.00 LBS should bring model up to entered max weight </description>
-      <weight unit="LBS"> 0 </weight>
-      <location name="POINTMASS" unit="M">
-	<x> 1.68 </x>
-	<y> 0.00 </y>
-	<z> 0.00 </z>
-      </location>
-    </pointmass>
-  </mass_balance>
-
-  <propulsion>
-
-    <engine file="J52-P8">
-      <location unit="IN">
-	<x>   355.20 </x>
-	<y>   -20.00 </y>
-	<z>   -12.00 </z>
-      </location>
-      <orient unit="DEG">
-	<pitch>     0.00 </pitch>
-	<roll>     0.00 </roll>
-        <yaw>     0.00 </yaw>
-      </orient>
-      <feed> 0 </feed>
-
-      <thruster file="direct">
-	<sense> 1 </sense>
-	<location unit="IN">
-	  <x>   355.20 </x>
-	  <y>   -20.00 </y>
-	  <z>   -12.00 </z>
+    <metrics>
+	<wingarea  unit="FT2">   528.90 </wingarea>
+	<wingspan  unit="FT" >    53.00 </wingspan>
+	<wing_incidence>           2.00 </wing_incidence>
+	<chord     unit="FT" >    10.90 </chord>
+	<htailarea unit="FT2">   117.00 </htailarea>
+	<htailarm  unit="FT" >    24.90 </htailarm>
+	<vtailarea  unit="FT2">   79.25 </vtailarea>
+	<vtailarm  unit="FT" >    24.90 </vtailarm>
+	<location name="AERORP" unit="M">
+	    <x> 1.846 </x>
+	    <y> 0.000 </y>
+	    <z> 0.000 </z>
 	</location>
-	<orient unit="DEG">
-	  <pitch>     0.00 </pitch>
-          <roll>     0.00 </roll>
-          <yaw>     0.00 </yaw>
-	</orient>
-      </thruster>
-    </engine>
-
-    <engine file="J52-P8">
-      <location unit="IN">
-	<x>   355.20 </x>
-	<y>    20.00 </y>
-	<z>   -12.00 </z>
-      </location>
-      <orient unit="DEG">
-	<pitch>     0.00 </pitch>
-	<roll>     0.00 </roll>
-        <yaw>     0.00 </yaw>
-      </orient>
-      <feed> 0 </feed>
-
-      <thruster file="direct">
-	<sense> 1 </sense>
-	<location unit="IN">
-	  <x>   355.20 </x>
-	  <y>    20.00 </y>
-	  <z>   -12.00 </z>
+	<location name="EYEPOINT" unit="IN">
+	    <x>   130.80 </x>
+	    <y>     0.00 </y>
+	    <z>    38.00 </z>
 	</location>
-	<orient unit="DEG">
-	  <pitch>     0.00 </pitch>
-          <roll>     0.00 </roll>
-          <yaw>     0.00 </yaw>
-	</orient>
-      </thruster>
-    </engine>
+	<location name="VRP" unit="IN">
+	    <x>     0.0 </x>
+	    <y>     0.0 </y>
+	    <z>     0.0 </z>
+	</location>
+    </metrics>
 
-    <tank type="FUEL" number="0">
-      <location unit="M">
-	<x> 2.25 </x>
-	<y> 0.00 </y>
-	<z> 0.00 </z>
-      </location>
-      <capacity unit="LBS"> 4140.00 </capacity>
-      <contents unit="LBS"> 2070.00 </contents>
-    </tank>
-  </propulsion>
+    <mass_balance>
+	<ixx unit="SLUG*FT2">  53320.00 </ixx>
+	<iyy unit="SLUG*FT2">  87273.00 </iyy>
+	<izz unit="SLUG*FT2">  139927.00 </izz>
+	<emptywt unit="LBS" >  25980.00 </emptywt>
+	<location name="CG" unit="M">
+	    <x> 1.68 </x>
+	    <y> 0.00 </y>
+	    <z> 0.00 </z>
+	</location>
+	<pointmass name="Payload">
+	    <description> 21600.00 LBS should bring model up to entered max weight </description>
+	    <weight unit="LBS"> 0 </weight>
+	    <location name="POINTMASS" unit="M">
+		<x> 1.68 </x>
+		<y> 0.00 </y>
+		<z> 0.00 </z>
+	    </location>
+	</pointmass>
+    </mass_balance>
 
-  <ground_reactions file="Systems/ground_reactions.xml"/>
-  <system file="Propulsion.xml"/>
-  <system file="Arrestor_Hook.xml"/>
-  <system file="Catapult.xml"/>
+    <propulsion>
 
-  <flight_control file="Systems/fcs.xml"/>
+	<engine file="J52-P8">
+	    <location unit="IN">
+		<x>   355.20 </x>
+		<y>   -20.00 </y>
+		<z>   -12.00 </z>
+	    </location>
+	    <orient unit="DEG">
+		<pitch>     0.00 </pitch>
+		<roll>     0.00 </roll>
+		<yaw>     0.00 </yaw>
+	    </orient>
+	    <feed> 0 </feed>
 
-  <aerodynamics file="A-6E_vspaero.xml"/>
+	    <thruster file="direct">
+		<sense> 1 </sense>
+		<location unit="IN">
+		    <x>   355.20 </x>
+		    <y>   -20.00 </y>
+		    <z>   -12.00 </z>
+		</location>
+		<orient unit="DEG">
+		    <pitch>     0.00 </pitch>
+		    <roll>     0.00 </roll>
+		    <yaw>     0.00 </yaw>
+		</orient>
+	    </thruster>
+	</engine>
 
-  <external_reactions>
+	<engine file="J52-P8">
+	    <location unit="IN">
+		<x>   355.20 </x>
+		<y>    20.00 </y>
+		<z>   -12.00 </z>
+	    </location>
+	    <orient unit="DEG">
+		<pitch>     0.00 </pitch>
+		<roll>     0.00 </roll>
+		<yaw>     0.00 </yaw>
+	    </orient>
+	    <feed> 0 </feed>
 
-    <force name="hook" frame="BODY">
-      <location unit="FT">
-	<x> 49.595 </x>
-	<y> 0 </y>
-	<z> -1.09</z>
-      </location>
-      <direction>
-	<x>-0.9995</x>
-	<y> 0 </y>
-	<z> 0.01 </z>
-      </direction>
-    </force>
+	    <thruster file="direct">
+		<sense> 1 </sense>
+		<location unit="IN">
+		    <x>   355.20 </x>
+		    <y>    20.00 </y>
+		    <z>   -12.00 </z>
+		</location>
+		<orient unit="DEG">
+		    <pitch>     0.00 </pitch>
+		    <roll>     0.00 </roll>
+		    <yaw>     0.00 </yaw>
+		</orient>
+	    </thruster>
+	</engine>
 
-    <force name="catapult" frame="BODY">
-      <location unit="IN">
-	<x> 85.02 </x>
-	<y> 0 </y>
-	<z> -78.48 </z>
-      </location>
-      <direction>
-	<x> 1 </x>
-	<y> 0 </y>
-	<z> 0 </z>
-      </direction>
-    </force>
+	<tank type="FUEL" number="0">
+	    <location unit="M">
+		<x> 2.25 </x>
+		<y> 0.00 </y>
+		<z> 0.00 </z>
+	    </location>
+	    <capacity unit="LBS"> 4140.00 </capacity>
+	    <contents unit="LBS"> 2070.00 </contents>
+	</tank>
+    </propulsion>
 
-  </external_reactions>
+    <ground_reactions file="Systems/ground_reactions.xml"/>
+    <system file="Propulsion.xml"/>
+    <system file="Arrestor_Hook.xml"/>
+    <system file="Catapult.xml"/>
+    <system file="jsb-instruments"/>
+    
+    <flight_control file="Systems/fcs.xml"/>
 
-  <output name="/home/domokos/.fgfs/Export/A-6_jsbout.csv" type="CSV" rate="10">
-    <property caption="alpha-deg">aero/alpha-deg</property>
-    <property caption="alphadot-rad_sec">aero/alphadot-rad_sec</property>
-    <property caption="beta-deg">aero/beta-deg</property>
-    <property caption="betadot-rad_sec">aero/betadot-rad_sec</property>
-    <property caption="yaw-roll-rate">aero/moment/Yaw_roll_rate</property>
-    <property caption="yaw-damp">aero/moment/Yaw_damp</property>
-  </output>
+    <aerodynamics file="A-6E_vspaero.xml"/>
+
+    <external_reactions>
+
+	<force name="hook" frame="BODY">
+	    <location unit="FT">
+		<x> 49.595 </x>
+		<y> 0 </y>
+		<z> -1.09</z>
+	    </location>
+	    <direction>
+		<x>-0.9995</x>
+		<y> 0 </y>
+		<z> 0.01 </z>
+	    </direction>
+	</force>
+
+	<force name="catapult" frame="BODY">
+	    <location unit="IN">
+		<x> 85.02 </x>
+		<y> 0 </y>
+		<z> -78.48 </z>
+	    </location>
+	    <direction>
+		<x> 1 </x>
+		<y> 0 </y>
+		<z> 0 </z>
+	    </direction>
+	</force>
+
+    </external_reactions>
+
+    <output name="/home/domokos/.fgfs/Export/A-6_jsbout.csv" type="CSV" rate="10">
+	<property caption="alpha-deg">aero/alpha-deg</property>
+	<property caption="alphadot-rad_sec">aero/alphadot-rad_sec</property>
+	<property caption="beta-deg">aero/beta-deg</property>
+	<property caption="betadot-rad_sec">aero/betadot-rad_sec</property>
+	<property caption="yaw-roll-rate">aero/moment/Yaw_roll_rate</property>
+	<property caption="yaw-damp">aero/moment/Yaw_damp</property>
+    </output>
 </fdm_config>

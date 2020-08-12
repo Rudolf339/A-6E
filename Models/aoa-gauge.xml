@@ -8,10 +8,9 @@
   <animation>
     <type>rotate</type>
     <object-name>needle</object-name>
-    <property>orientation/alpha-deg</property>
+    <property>fdm/jsbsim/systems/instrument/aoa-unit</property>
+    <!--
     <interpolation>
-      <!--        AoA deg           gauge deg -->
-
       <entry><ind>  -2.5</ind><dep>  270</dep></entry>
       <entry><ind>  -2</ind><dep>  245</dep></entry>
       <entry><ind>  0</ind><dep>   182,5</dep></entry>
@@ -21,8 +20,9 @@
       <entry><ind> 13</ind><dep>   49</dep></entry>
       <entry><ind> 16</ind><dep>   41,5</dep></entry>
       <entry><ind> 30</ind><dep>   27,5</dep></entry> 
-
     </interpolation>
+    -->  
+    <factor>-9</factor>
     <axis>
       <x>-1</x>
       <y>0</y>
