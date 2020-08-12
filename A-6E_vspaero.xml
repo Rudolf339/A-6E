@@ -3089,18 +3089,16 @@
 	    <product>
 		<property>aero/qbar-psf</property>
 		<property>metrics/Sw-sqft</property>
-		<sum>
-		    <product>
-			<property>aero/force/CL</property>
-			<difference>
-			    <value>1</value>
-			    <product>
-				<property>fcs/wing-fold/wing-fold-pos</property>
-				<value>0.9</value>
-			    </product>
-			</difference>
-		    </product>
-		</sum>
+		<product>
+		    <property>aero/force/CL</property>
+		    <difference>
+			<value>1</value>
+			<product>
+			    <property>fcs/wing-fold/wing-fold-pos</property>
+			    <value>0.9</value>
+			</product>
+		    </difference>
+		</product>
 	    </product>
 	</function>
 
@@ -3230,8 +3228,6 @@
 
 	<function name="aero/moment/CMy">
 	    <sum>
-		<property>aero/CMy_base</property>
-		<property>aero/CMy_elevator</property>
 		<property>aero/CMy_flap</property>
 		<property>aero/CMy_slats</property>
 	    </sum>
