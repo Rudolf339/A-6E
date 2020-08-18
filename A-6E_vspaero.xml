@@ -3298,7 +3298,31 @@
     </axis>
 
     <axis name="ROLL">
+	<function name="aero/moment/CMx">
+	    <sum>
+		<!-- <property>aero/CMx_base</property> -->
+		<property>aero/CMx_rudder</property>
+		<product>
+		    <sum>
+			<property>aero/CMx_left-flaperon</property>
+			<property>aero/CMx_right-flaperon</property>
+		    </sum>
+		    <value>-1</value>
+		</product>
+	    </sum>
+	</function>
 
+	<function name="aero/moment/Roll_combined">
+	    <description>Roll moment</description>
+	    <product>
+		<property>aero/qbar-psf</property>
+		<property>metrics/Sw-sqft</property>
+		<property>metrics/bw-ft</property>
+		<property>aero/moment/CMx</property>
+	    </product>
+	</function>
+	
+	<!--
 	<function name="aero/moment/Roll_beta">
 	    <description>Roll moment due to beta</description>
 	    <product>
@@ -3317,7 +3341,7 @@
 		</table>
 	    </product>
 	</function>
-
+	-->
 	<function name="aero/moment/Roll_damp">
 	    <description>Roll moment due to roll rate</description>
 	    <product>
@@ -3349,40 +3373,6 @@
 		</table>
 	    </product>
 	</function>
-
-	<function name="aero/moment/Roll_left_flaperon">
-	    <description>Roll moment due to flaperon</description>
-	    <product>
-		<property>aero/qbar-psf</property>
-		<property>metrics/Sw-sqft</property>
-		<property>metrics/bw-ft</property>
-		<property>aero/CMx_left-flaperon</property>
-		<value>-1</value>
-	    </product>
-	</function>
-
-	<function name="aero/moment/Roll_right_flaperon">
-	    <description>Roll moment due to flaperon</description>
-	    <product>
-		<property>aero/qbar-psf</property>
-		<property>metrics/Sw-sqft</property>
-		<property>metrics/bw-ft</property>
-		<property>aero/CMx_right-flaperon</property>
-		<value>-1</value>
-	    </product>
-	</function>
-
-	<function name="aero/moment/Roll_rudder">
-	    <description>Roll moment due to rudder</description>
-	    <product>
-		<property>aero/qbar-psf</property>
-		<property>metrics/Sw-sqft</property>
-		<property>metrics/bw-ft</property>
-		<property>fcs/rudder-pos-rad</property>
-		<property>aero/CMx_rudder</property>
-	    </product>
-	</function>
-
     </axis>
 
     <axis name="YAW">
@@ -3390,7 +3380,10 @@
 	<function name="aero/moment/CMz">
 	    <sum>
 		<property>aero/CMz_base</property>
-		<value>0</value>
+		<product>
+		    <property>aero/CMz_rudder</property>
+		    <value>-1</value>
+		</product>
 	    </sum>
 	</function>
 	
@@ -3403,18 +3396,6 @@
 		<property>aero/moment/CMz</property>
 	    </product>
 	</function>
-		
-	<function name="aero/moment/Yaw_beta">
-	    <description>Yaw moment due to beta</description>
-	    <product>
-		<property>aero/qbar-psf</property>
-		<property>metrics/Sw-sqft</property>
-		<property>metrics/bw-ft</property>
-		<property>aero/beta-rad</property>
-		<value> 0.1926 </value> <!-- 0.1626 -->
-	    </product>
-	</function>
-
 	
 	<function name="aero/moment/Yaw_roll_rate">
 	    <description>Yaw moment due to roll rate</description>
@@ -3448,21 +3429,6 @@
 		<property>aero/bi2vel</property>
 		<property>velocities/r-aero-rad_sec</property>
 		<value> -0.1605 </value>
-	    </product>
-	</function>
-
-	<function name="aero/moment/Yaw_rudder">
-	    <description>Yaw moment due to rudder</description>
-	    <product>
-		<property>aero/qbar-psf</property>
-		<property>metrics/Sw-sqft</property>
-		<property>metrics/bw-ft</property>
-		<!--
-		    <property>fcs/rudder-pos-rad</property>
-		    <value> -0.0990 </value>
-		-->
-		<property>aero/CMz_rudder</property>
-		<value>-1</value>
 	    </product>
 	</function>
 
