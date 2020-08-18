@@ -74,7 +74,7 @@ Grumman A-6E simulation config.
 				<y-offset-m archive="y">1.32</y-offset-m>
 				<z-offset-m archive="y">-1.66</z-offset-m>
 				<pitch-offset-deg>-10</pitch-offset-deg>
-				<default-field-of-view-deg>57</default-field-of-view-deg>
+				<default-field-of-view-deg>100</default-field-of-view-deg>
 				<limits>
 					<enabled type="bool">true</enabled>
 					<left>
