@@ -497,6 +497,10 @@ Grumman A-6E simulation config.
 		    <speedbrake>
 			<speedbrake-test alias="/controls/flight/speedbrake-test"/>
 		    </speedbrake>
+		    <wing-fold>
+			<handle-cmd alias="/controls/flight/wing-fold/handle-cmd"/>
+			<lockpin-cmd alias="/controls/flight/wing-fold/lockpin-cmd"/>
+		    </wing-fold>
 		</fcs>
 		<gear>
 		    <unit>
