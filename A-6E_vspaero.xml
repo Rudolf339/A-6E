@@ -3322,38 +3322,6 @@
 		<property>aero/moment/CMx</property>
 	    </product>
 	</function>
-	
-	<!--
-	<function name="aero/moment/Roll_beta">
-	    <description>Roll moment due to beta</description>
-	    <product>
-		<property>aero/qbar-psf</property>
-		<property>metrics/Sw-sqft</property>
-		<property>metrics/bw-ft</property>
-		<property>aero/beta-rad</property>
-		<table>
-		    <independentVar lookup="row">aero/alpha-rad</independentVar>
-		    <independentVar lookup="column">aero/Re</independentVar>
-		    <tableData>
-			16998866 18698754 25498298 33714708
-			-0.0349  -0.2820  -0.0206  -0.0110  -0.0139
-			0.3491  -1.9915  -0.2130  -0.2334  -0.3118
-		    </tableData>
-		</table>
-	    </product>
-	</function>
-	-->
-	<function name="aero/moment/Roll_damp">
-	    <description>Roll moment due to roll rate</description>
-	    <product>
-		<property>aero/qbar-psf</property>
-		<property>metrics/Sw-sqft</property>
-		<property>metrics/bw-ft</property>
-		<property>aero/bi2vel</property>
-		<property>velocities/p-aero-rad_sec</property>
-		<value> -0.2862 </value>
-	    </product>
-	</function>
 
 	<function name="aero/moment/Roll_yaw">
 	    <description>Roll moment due to yaw rate</description>
