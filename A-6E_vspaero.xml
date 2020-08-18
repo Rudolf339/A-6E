@@ -3230,6 +3230,7 @@
 	    <sum>
 		<property>aero/CMy_flap</property>
 		<property>aero/CMy_slats</property>
+		<property>aero/s/cmmq</property>
 	    </sum>
 	</function>
 
@@ -3302,6 +3303,7 @@
 	    <sum>
 		<!-- <property>aero/CMx_base</property> -->
 		<property>aero/CMx_rudder</property>
+		<property>aero/s/cmlr</property>
 		<product>
 		    <sum>
 			<property>aero/CMx_left-flaperon</property>
@@ -3323,25 +3325,25 @@
 	    </product>
 	</function>
 
-	<function name="aero/moment/Roll_yaw">
-	    <description>Roll moment due to yaw rate</description>
-	    <product>
-		<property>aero/qbar-psf</property>
-		<property>metrics/Sw-sqft</property>
-		<property>metrics/bw-ft</property>
-		<property>aero/bi2vel</property>
-		<property>velocities/r-aero-rad_sec</property>
-		<table>
-		    <independentVar lookup="row">aero/alpha-rad</independentVar>
-		    <independentVar lookup="column">aero/Re</independentVar>
-		    <tableData>
-			16998866 18698754 25498298 33714708
-			-0.0349   0.5714   0.0731   0.0492   0.0411
-			0.3491   4.5147   0.5049   0.4810   0.4729
-		    </tableData>
-		</table>
-	    </product>
-	</function>
+	<!-- <function name="aero/moment/Roll_yaw"> -->
+	<!--     <description>Roll moment due to yaw rate</description> -->
+	<!--     <product> -->
+	<!-- 	<property>aero/qbar-psf</property> -->
+	<!-- 	<property>metrics/Sw-sqft</property> -->
+	<!-- 	<property>metrics/bw-ft</property> -->
+	<!-- 	<property>aero/bi2vel</property> -->
+	<!-- 	<property>velocities/r-aero-rad_sec</property> -->
+	<!-- 	<table> -->
+	<!-- 	    <independentVar lookup="row">aero/alpha-rad</independentVar> -->
+	<!-- 	    <independentVar lookup="column">aero/Re</independentVar> -->
+	<!-- 	    <tableData> -->
+	<!-- 		16998866 18698754 25498298 33714708 -->
+	<!-- 		-0.0349   0.5714   0.0731   0.0492   0.0411 -->
+	<!-- 		0.3491   4.5147   0.5049   0.4810   0.4729 -->
+	<!-- 	    </tableData> -->
+	<!-- 	</table> -->
+	<!--     </product> -->
+	<!-- </function> -->
     </axis>
 
     <axis name="YAW">
@@ -3351,6 +3353,8 @@
 		<property>aero/CMz_base</property>
 		<property>aero/CMz_left-flaperon</property>
 		<property>aero/CMz_right-flaperon</property>
+		<!-- <property>aero/s/cmnr</property> -->
+		<property>aero/s/cmnp</property>
 		<product>
 		    <property>aero/CMz_rudder</property>
 		    <value>-1</value>
@@ -3379,6 +3383,7 @@
 	    </product>
 	</function>
 
+	
 	<function name="aero/moment/Yaw_roll_rate">
 	    <description>Yaw moment due to roll rate</description>
 	    <product>
@@ -3390,28 +3395,6 @@
 		<value>-1.1</value>
 	    </product>
 	</function>
-	
-	<function name="aero/moment/Yaw_damp">
-	    <description>Yaw moment due to yaw rate</description>
-	    <product>
-		<property>aero/qbar-psf</property>
-		<property>metrics/Sw-sqft</property>
-		<property>metrics/bw-ft</property>
-		<property>aero/bi2vel</property>
-		<property>velocities/r-aero-rad_sec</property>
-		<value> -0.1605 </value>
-	    </product>
-	</function>
 
-	<function name="aero/moment/Yaw_flaperon">
-	    <description>Adverse yaw</description>
-	    <product>
-		<property>aero/qbar-psf</property>
-		<property>metrics/Sw-sqft</property>
-		<property>metrics/bw-ft</property>
-		<property>fcs/surfaces/left-flaperon-pos-rad</property>
-		<value> 0.0000 </value>
-	    </product>
-	</function>
     </axis>
 </aerodynamics>
