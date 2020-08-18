@@ -3306,6 +3306,7 @@
 		    <sum>
 			<property>aero/CMx_left-flaperon</property>
 			<property>aero/CMx_right-flaperon</property>
+			<property>aero/s/cmlp</property>
 		    </sum>
 		    <value>-1</value>
 		</product>
@@ -3380,6 +3381,8 @@
 	<function name="aero/moment/CMz">
 	    <sum>
 		<property>aero/CMz_base</property>
+		<property>aero/CMz_left-flaperon</property>
+		<property>aero/CMz_right-flaperon</property>
 		<product>
 		    <property>aero/CMz_rudder</property>
 		    <value>-1</value>
@@ -3417,17 +3420,6 @@
 		<property>aero/bi2vel</property>
 		<property>velocities/r-aero-rad_sec</property>
 		<value>-1.1</value>
-		<!--
-		    <table>
-		    <independentVar lookup="row">aero/Re</independentVar>
-		    <tableData>
-		    16998866  -0.19922
-		    18698754  -0.01580
-		    25498298  -0.00702
-		    33714708  -0.00402
-		    </tableData>
-		    </table>
-		-->
 	    </product>
 	</function>
 	
