@@ -62,8 +62,8 @@
 	    <y> 0.00 </y>
 	    <z> 0.00 </z>
 	</location>
-	<capacity unit="LBS"> 4140.00 </capacity>
-	<contents unit="LBS"> 2070.00 </contents>
+	<capacity unit="LBS">15939</capacity>
+	<contents unit="LBS">10000</contents>
     </tank>
 </propulsion>
 
