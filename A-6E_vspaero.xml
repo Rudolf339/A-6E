@@ -3396,7 +3396,18 @@
 		<property>aero/moment/CMz</property>
 	    </product>
 	</function>
-	
+
+	<function name="aero/moment/Yaw_beta">
+	    <description>Yaw moment due to beta</description>
+	    <product>
+		<property>aero/qbar-psf</property>
+		<property>metrics/Sw-sqft</property>
+		<property>metrics/bw-ft</property>
+		<property>aero/beta-rad</property>
+		<value> 0.1926 </value> <!-- 0.1626 -->
+	    </product>
+	</function>
+
 	<function name="aero/moment/Yaw_roll_rate">
 	    <description>Yaw moment due to roll rate</description>
 	    <product>
