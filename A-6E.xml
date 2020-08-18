@@ -139,12 +139,4 @@
 
     </external_reactions>
 
-    <output name="/home/domokos/.fgfs/Export/A-6_jsbout.csv" type="CSV" rate="10">
-	<property caption="alpha-deg">aero/alpha-deg</property>
-	<property caption="alphadot-rad_sec">aero/alphadot-rad_sec</property>
-	<property caption="beta-deg">aero/beta-deg</property>
-	<property caption="betadot-rad_sec">aero/betadot-rad_sec</property>
-	<property caption="yaw-roll-rate">aero/moment/Yaw_roll_rate</property>
-	<property caption="yaw-damp">aero/moment/Yaw_damp</property>
-    </output>
 </fdm_config>
