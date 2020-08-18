@@ -340,23 +340,28 @@ Grumman A-6E simulation config.
 
 		<help>
 		    <title>Grumman A-6E</title>
+		    <!--
 		    <line>Cruise Speed:      412 kt @ 25000 ft (90% throttle)</line>
 		    <line>Max speed:         565 kt at see level</line>
 		    <line>Min Speed:         120 (full flaps)</line>
 		    <line>Stall:             110 kt (clean)</line>
-		    <line>Take off:          150 kt</line>
-		    <line>    Flaps:         TO (30°)</line>
-		    <line>Approach:          155/170 kt</line>
-		    <line>Landing:           115/140 kt</line>
-		    <line>    Flaps:         LD (40°)</line>
+		    -->
+		    <line>Take off:</line>
+		    <line>    Flaps:         TO (30)</line>
+		    <line>    Rotate:        ~120 kt</line>
+		    <line>Approach, landinh:</line>
+		    <line>    Onspeed:       22 units AoA</line>
+		    <line>    Flaps:         LD (40)</line>
 		    <key>
 			<name>c</name>
 			<desc>Canopy open/close command</desc>
 		    </key>
+		    <!--
 		    <key>
 			<name>C</name>
 			<desc>Catapult launch command</desc>
-		    </key>
+			</key>
+			-->
 		    <key>
 			<name>k/j</name>
 			<desc>Speed Brakes open/close</desc>
@@ -376,6 +381,10 @@ Grumman A-6E simulation config.
 		    <key>
 			<name>Y</name>
 			<desc>Toggle spin assist</desc>
+		    </key>
+		    <key>
+			<name>n</name>
+			<desc>Enable NSW steering</desc>
 		    </key>
 		    <!--
 		    <key>
