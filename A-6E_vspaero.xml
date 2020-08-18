@@ -3379,7 +3379,7 @@
 		<property>metrics/Sw-sqft</property>
 		<property>metrics/bw-ft</property>
 		<property>fcs/rudder-pos-rad</property>
-		<property>aero/CMy_rudder</property>
+		<property>aero/CMx_rudder</property>
 	    </product>
 	</function>
 
@@ -3387,27 +3387,23 @@
 
     <axis name="YAW">
 
-	<!-- Stall initiator -->
-
-	<function name="aero/moment/Yaw_alpha">
-	    <description>Yaw moment due to alpha</description>
+	<function name="aero/moment/CMz">
+	    <sum>
+		<property>aero/CMz_base</property>
+		<value>0</value>
+	    </sum>
+	</function>
+	
+	<function name="aero/moment/Yaw_combined">
+	    <description>Yaw moment</description>
 	    <product>
 		<property>aero/qbar-psf</property>
 		<property>metrics/Sw-sqft</property>
 		<property>metrics/bw-ft</property>
-		<property>aero/alpha-rad</property>
-		<table>
-		    <independentVar lookup="row">aero/beta-rad</independentVar>
-		    <independentVar lookup="column">aero/Re</independentVar>
-		    <tableData>
-			16998866 18698754
-			-0.3491  -1.0000   0.0000
-			0.3491   1.0000   0.0000
-		    </tableData>
-		</table>
+		<property>aero/moment/CMz</property>
 	    </product>
 	</function>
-	
+		
 	<function name="aero/moment/Yaw_beta">
 	    <description>Yaw moment due to beta</description>
 	    <product>
