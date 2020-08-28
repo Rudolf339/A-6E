@@ -8,360 +8,360 @@ Grumman A-6E simulation config.
 -->
 
 <PropertyList>
-	<sim>
+    <sim>
 
-		<startup>
-			<splash-texture>Aircraft/A-6E/A-6E-splash.rgb</splash-texture>
-		</startup>
+	<startup>
+	    <splash-texture>Aircraft/A-6E/A-6E-splash.rgb</splash-texture>
+	</startup>
 
-		<flight-model>jsb</flight-model>
-		<status>alpha</status>
-		<author>Jüttner Domokos (Rudolf)</author>
-		<author>Alexis Bory</author>
-		<aero>A-6E</aero>
-		<fuel-fraction>0.66</fuel-fraction>
-		<description>Grumman A-6E (JSBSim FDM)</description>
-		<virtual-cockpit archive="y">false</virtual-cockpit>
-		<chase-distance-m type="double" archive="y">-30.0</chase-distance-m>
+	<flight-model>jsb</flight-model>
+	<status>alpha</status>
+	<author>Jüttner Domokos (Rudolf)</author>
+	<author>Alexis Bory</author>
+	<aero>A-6E</aero>
+	<fuel-fraction>0.66</fuel-fraction>
+	<description>Grumman A-6E (JSBSim FDM)</description>
+	<virtual-cockpit archive="y">false</virtual-cockpit>
+	<chase-distance-m type="double" archive="y">-30.0</chase-distance-m>
 
-		<tags>
-			<tag>bomber</tag>
-			<tag>grumman</tag>
-			<tag>1960s</tag>
-			<tag>1970s</tag>
-			<tag>1980s</tag>
-			<tag>1990s</tag>
-			<tag>vietnam</tag>
-			<tag>gulfwar1</tag>
-			<tag>hud</tag>
-			<tag>ifr</tag>
-			<tag>refuel</tag>
-			<tag>retractable-gear</tag>
-			<tag>tail-hook</tag>
-			<tag>wing-fold</tag>
-			<tag>jet</tag>
-			<tag>single-engine</tag>
-		</tags>
+	<tags>
+	    <tag>bomber</tag>
+	    <tag>grumman</tag>
+	    <tag>1960s</tag>
+	    <tag>1970s</tag>
+	    <tag>1980s</tag>
+	    <tag>1990s</tag>
+	    <tag>vietnam</tag>
+	    <tag>gulfwar1</tag>
+	    <tag>hud</tag>
+	    <tag>ifr</tag>
+	    <tag>refuel</tag>
+	    <tag>retractable-gear</tag>
+	    <tag>tail-hook</tag>
+	    <tag>wing-fold</tag>
+	    <tag>jet</tag>
+	    <tag>single-engine</tag>
+	</tags>
 
 	
-		<gui>
- 			<style>
- 				<colors>
- 					<splash-screen>
- 						<red>0.5</red>
- 						<green>0.55</green>
- 						<blue>0.55</blue>
- 					</splash-screen>
- 				</colors>
- 			</style>
- 		</gui>
-		<!--		
-		<rendering>
-			<redout>
-				<parameters>
-					<blackout-complete-g>7.9</blackout-complete-g>
-					<blackout-onset-g>5.5</blackout-onset-g>
-				</parameters>
-			</redout>
-		</rendering>
--->
-		<view n="0">
-			<name>Cockpit View</name>
-			<type>lookfrom</type>
-			<internal archive="y">true</internal>
-			<config>
-				<x-offset-m archive="y">-0.40</x-offset-m>
-				<y-offset-m archive="y">1.32</y-offset-m>
-				<z-offset-m archive="y">-1.66</z-offset-m>
-				<pitch-offset-deg>-10</pitch-offset-deg>
-				<default-field-of-view-deg>100</default-field-of-view-deg>
-				<limits>
-					<enabled type="bool">true</enabled>
-					<left>
-						<heading-max-deg type="double">140</heading-max-deg>
-						<x-offset-max-m type="double">0.20</x-offset-max-m>
-						<x-offset-threshold-deg type="double">25</x-offset-threshold-deg>
-					</left>
-					<right>
-						<heading-max-deg type="double">140</heading-max-deg>
-						<x-offset-max-m type="double">0.20</x-offset-max-m>
-						<x-offset-threshold-deg type="double">25</x-offset-threshold-deg>
-					</right>
-				</limits>
-			</config>
-		</view>
-		<view n="1">
-			<config>
-				<target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
-				<pitch-offset-deg>0</pitch-offset-deg>
-			</config>
-		</view>
-		<view n="2">
-			<config>
-				<y-offset-m archive="y" type="double">6.0</y-offset-m>
-				<z-offset-m archive="y">-19.7</z-offset-m>
-				<target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
-			</config>
-		</view>
-		<view n="3">
-			<config>
-				<target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
-			</config>
-		</view>
-		<view n="5">
-			<config>
-				<target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
-			</config>
-		</view>
-		<view n="6">
-			<config>
-				<target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
-			</config>
-		</view>
-		<view n="100">
-			<name>Navigator View</name>
-			<type>lookfrom</type>
-			<internal archive="y">true</internal>
-			<config>
-				<from-model type="bool">true</from-model>
-				<ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
-				<x-offset-m archive="y">0.40</x-offset-m>
-				<y-offset-m archive="y">1.32</y-offset-m>
-				<z-offset-m archive="y">-1.46</z-offset-m>
-				<pitch-offset-deg>-10</pitch-offset-deg>
-				<default-field-of-view-deg>57</default-field-of-view-deg>
-				<limits>
-					<enabled type="bool">true</enabled>
-					<left>
-						<heading-max-deg type="double">140</heading-max-deg>
-						<x-offset-max-m type="double">0.20</x-offset-max-m>
-						<x-offset-threshold-deg type="double">25</x-offset-threshold-deg>
-					</left>
-					<right>
-						<heading-max-deg type="double">140</heading-max-deg>
-						<x-offset-max-m type="double">0.20</x-offset-max-m>
-						<x-offset-threshold-deg type="double">25</x-offset-threshold-deg>
-					</right>
-				</limits>
-			</config>
-		</view>
+	<gui>
+	    <style>
+ 		<colors>
+ 		    <splash-screen>
+ 			<red>0.5</red>
+ 			<green>0.55</green>
+ 			<blue>0.55</blue>
+ 		    </splash-screen>
+ 		</colors>
+	    </style>
+	</gui>
+	<!--		
+	    <rendering>
+	    <redout>
+	    <parameters>
+	    <blackout-complete-g>7.9</blackout-complete-g>
+	    <blackout-onset-g>5.5</blackout-onset-g>
+	    </parameters>
+	    </redout>
+	    </rendering>
+	-->
+	<view n="0">
+	    <name>Cockpit View</name>
+	    <type>lookfrom</type>
+	    <internal archive="y">true</internal>
+	    <config>
+		<x-offset-m archive="y">-0.40</x-offset-m>
+		<y-offset-m archive="y">1.32</y-offset-m>
+		<z-offset-m archive="y">-1.66</z-offset-m>
+		<pitch-offset-deg>-10</pitch-offset-deg>
+		<default-field-of-view-deg>100</default-field-of-view-deg>
+		<limits>
+		    <enabled type="bool">true</enabled>
+		    <left>
+			<heading-max-deg type="double">140</heading-max-deg>
+			<x-offset-max-m type="double">0.20</x-offset-max-m>
+			<x-offset-threshold-deg type="double">25</x-offset-threshold-deg>
+		    </left>
+		    <right>
+			<heading-max-deg type="double">140</heading-max-deg>
+			<x-offset-max-m type="double">0.20</x-offset-max-m>
+			<x-offset-threshold-deg type="double">25</x-offset-threshold-deg>
+		    </right>
+		</limits>
+	    </config>
+	</view>
+	<view n="1">
+	    <config>
+		<target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
+		<pitch-offset-deg>0</pitch-offset-deg>
+	    </config>
+	</view>
+	<view n="2">
+	    <config>
+		<y-offset-m archive="y" type="double">6.0</y-offset-m>
+		<z-offset-m archive="y">-19.7</z-offset-m>
+		<target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
+	    </config>
+	</view>
+	<view n="3">
+	    <config>
+		<target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
+	    </config>
+	</view>
+	<view n="5">
+	    <config>
+		<target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
+	    </config>
+	</view>
+	<view n="6">
+	    <config>
+		<target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
+	    </config>
+	</view>
+	<view n="100">
+	    <name>Navigator View</name>
+	    <type>lookfrom</type>
+	    <internal archive="y">true</internal>
+	    <config>
+		<from-model type="bool">true</from-model>
+		<ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
+		<x-offset-m archive="y">0.40</x-offset-m>
+		<y-offset-m archive="y">1.32</y-offset-m>
+		<z-offset-m archive="y">-1.46</z-offset-m>
+		<pitch-offset-deg>-10</pitch-offset-deg>
+		<default-field-of-view-deg>57</default-field-of-view-deg>
+		<limits>
+		    <enabled type="bool">true</enabled>
+		    <left>
+			<heading-max-deg type="double">140</heading-max-deg>
+			<x-offset-max-m type="double">0.20</x-offset-max-m>
+			<x-offset-threshold-deg type="double">25</x-offset-threshold-deg>
+		    </left>
+		    <right>
+			<heading-max-deg type="double">140</heading-max-deg>
+			<x-offset-max-m type="double">0.20</x-offset-max-m>
+			<x-offset-threshold-deg type="double">25</x-offset-threshold-deg>
+		    </right>
+		</limits>
+	    </config>
+	</view>
 
-		<consumables>
-			<fuel>
-				<tank n='0'>
-					<name>Main Fuselage</name>
-				</tank>
-			</fuel>
-		</consumables>
+	<consumables>
+	    <fuel>
+		<tank n='0'>
+		    <name>Main Fuselage</name>
+		</tank>
+	    </fuel>
+	</consumables>
 
-		<weight n="0">
-			<name>Left Outboard</name>
-			<tank>2</tank> <!-- FDM tank index on this pylon -->
-			<weight-lb>0</weight-lb>
-			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>test</name><lbs>500</lbs></opt>
-			<opt><name>300 Gallons Fuel Tank</name><lbs>2016</lbs><gals>300</gals></opt>
-		</weight>
-		<weight n="1">
-			<name>Left Inboard</name>
-			<tank>3</tank> <!-- FDM tank index on this pylon -->
-			<weight-lb>0</weight-lb>
-			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs>  </opt>
-			<opt><name>test</name><lbs>500</lbs></opt>
-			<opt><name>300 Gallons Fuel Tank</name><lbs>2016</lbs><gals>300</gals></opt>
-		</weight>
-		<weight n="2">
-			<name>Center Fuselage</name>
-			<tank>4</tank> <!-- FDM tank index on this pylon -->
-			<weight-lb>0</weight-lb>
-			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs>  </opt>
-			<opt><name>test</name><lbs>500</lbs></opt>
-			<opt><name>300 Gallons Fuel Tank</name><lbs>2016</lbs><gals>300</gals></opt>
-		</weight>
-		<weight n="3">
-			<name>Right Inboard</name>
-			<tank>5</tank> <!-- FDM tank index on this pylon -->
-			<weight-lb>0</weight-lb>
-			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs>  </opt>
-			<opt><name>test</name><lbs>500</lbs></opt>
-			<opt><name>300 Gallons Fuel Tank</name><lbs>2016</lbs><gals>300</gals></opt>
-		</weight>
-		<weight n="4">
-			<name>Right Outboard</name>
-			<tank>6</tank> <!-- FDM tank index on this pylon -->
-			<weight-lb>0</weight-lb>
-			<selected>none</selected>
-			<opt><name>none</name><lbs>0</lbs></opt>
-			<opt><name>test</name><lbs>500</lbs></opt>
-			<opt><name>300 Gallons Fuel Tank</name><lbs>2016</lbs><gals>300</gals></opt>
-		</weight>
+	<weight n="0">
+	    <name>Left Outboard</name>
+	    <tank>2</tank> <!-- FDM tank index on this pylon -->
+	    <weight-lb>0</weight-lb>
+	    <selected>none</selected>
+	    <opt><name>none</name><lbs>0</lbs></opt>
+	    <opt><name>test</name><lbs>500</lbs></opt>
+	    <opt><name>300 Gallons Fuel Tank</name><lbs>2016</lbs><gals>300</gals></opt>
+	</weight>
+	<weight n="1">
+	    <name>Left Inboard</name>
+	    <tank>3</tank> <!-- FDM tank index on this pylon -->
+	    <weight-lb>0</weight-lb>
+	    <selected>none</selected>
+	    <opt><name>none</name><lbs>0</lbs>  </opt>
+	    <opt><name>test</name><lbs>500</lbs></opt>
+	    <opt><name>300 Gallons Fuel Tank</name><lbs>2016</lbs><gals>300</gals></opt>
+	</weight>
+	<weight n="2">
+	    <name>Center Fuselage</name>
+	    <tank>4</tank> <!-- FDM tank index on this pylon -->
+	    <weight-lb>0</weight-lb>
+	    <selected>none</selected>
+	    <opt><name>none</name><lbs>0</lbs>  </opt>
+	    <opt><name>test</name><lbs>500</lbs></opt>
+	    <opt><name>300 Gallons Fuel Tank</name><lbs>2016</lbs><gals>300</gals></opt>
+	</weight>
+	<weight n="3">
+	    <name>Right Inboard</name>
+	    <tank>5</tank> <!-- FDM tank index on this pylon -->
+	    <weight-lb>0</weight-lb>
+	    <selected>none</selected>
+	    <opt><name>none</name><lbs>0</lbs>  </opt>
+	    <opt><name>test</name><lbs>500</lbs></opt>
+	    <opt><name>300 Gallons Fuel Tank</name><lbs>2016</lbs><gals>300</gals></opt>
+	</weight>
+	<weight n="4">
+	    <name>Right Outboard</name>
+	    <tank>6</tank> <!-- FDM tank index on this pylon -->
+	    <weight-lb>0</weight-lb>
+	    <selected>none</selected>
+	    <opt><name>none</name><lbs>0</lbs></opt>
+	    <opt><name>test</name><lbs>500</lbs></opt>
+	    <opt><name>300 Gallons Fuel Tank</name><lbs>2016</lbs><gals>300</gals></opt>
+	</weight>
 
 
-		<sound>
-			<audible>true</audible>
-			<path>Aircraft/A-6E/Sounds/A-6E-sound.xml</path>
-		</sound>
+	<sound>
+	    <audible>true</audible>
+	    <path>Aircraft/A-6E/Sounds/A-6E-sound.xml</path>
+	</sound>
 
-		<systems>
-			<autopilot>
-				<path>Aircraft/A-6E/Systems/A-6E-autopilot.xml</path>
-			</autopilot>
-		</systems>
+	<systems>
+	    <autopilot>
+		<path>Aircraft/A-6E/Systems/A-6E-autopilot.xml</path>
+	    </autopilot>
+	</systems>
 
-		<model>
-			<path>Aircraft/A-6E/Models/A-6E-model.xml</path>
-			<A-6E>
-				<controls>
-					<canopy>
-						<canopy-switch type="int">-1</canopy-switch>
-					</canopy>
+	<model>
+	    <path>Aircraft/A-6E/Models/A-6E-model.xml</path>
+	    <A-6E>
+		<controls>
+		    <canopy>
+			<canopy-switch type="int">-1</canopy-switch>
+		    </canopy>
 
-					<flight>
-						<CG-trim-fwd type="double">0</CG-trim-fwd>
-						<CG-trim-aft type="double">5000</CG-trim-aft>
-					</flight>
-					<gear>
-						<ld-gear-handle-anim type="double">0</ld-gear-handle-anim>
-					</gear>
-					<instrumentation>
-						<doppler>
-							<mode-selector type="int">0</mode-selector>
-						</doppler>
-					</instrumentation>
-					<lighting>
-						<pylons-lts type="int">1</pylons-lts>
-						<index-norm type="double">0.8</index-norm>
-						<tail-lt type="int">2</tail-lt>
-						<wings-lts type="int">2</wings-lts>
-						<formation-lts type="int">0</formation-lts>
-						<flood-lts type="double">0.25</flood-lts>
-					</lighting>
-					<PHD>
-						<TCrange-switch type="int">2</TCrange-switch>
-						<TCrealistic-shadow type="bool">1</TCrealistic-shadow>
-						<off-stdby-on type="int">2</off-stdby-on>
-					</PHD>
-					<autopilot>
-						<on-off-switch type="bool">0</on-off-switch>
-						<auto-stab-augm-switch type="bool">0</auto-stab-augm-switch>
-						<alt-button type="bool">0</alt-button>
-						<mach-button type="bool">0</mach-button>
-						<cmd-switch type="bool">0</cmd-switch>
-						<vdi-alt-marker type="bool">0</vdi-alt-marker>
-						<vdi-roll-marker type="bool">0</vdi-roll-marker>
-					</autopilot>
-					<VDI>
-						<display>
-							<contanalog type="bool">false</contanalog>
-							<tc type="bool">true</tc>
-							<tccal type="bool">false</tccal>
-							<stby type="bool">false</stby>
-							<off type="bool">false</off>
-						</display>
-						<range-miles>
-							<miles3 type="bool">true</miles3>
-							<miles2 type="bool">false</miles2>
-							<miles1.5 type="bool">false</miles1.5>
-							<miles1 type="bool">false</miles1>
-							<test type="bool">false</test>
-						</range-miles>
-						<brightness type="double">0.6</brightness>
-					</VDI>
-					<wing-fold>
-						<button-position type="int">0</button-position>
-						<handle-position type="double">0.0</handle-position>
-						<switch-position type="int">1</switch-position> <!-- 1=lock, -1=unlock -->
-					</wing-fold>
-				</controls>
-				<instrumentation>
-					<doppler>
-						<drift-deg type="double">0.0</drift-deg>
-						<ground-speed-kt type="double">0.0</ground-speed-kt>
-						<memory type="bool">true</memory>
-					</doppler>
-					<engines-gauges>
-						<L-rpm-on type="bool">true</L-rpm-on>
-						<R-rpm-on type="bool">true</R-rpm-on>
-						<L-egt-on type="bool">true</L-egt-on>
-						<R-egt-on type="bool">true</R-egt-on>
-						<L-ff-on type="bool">true</L-ff-on>
-						<R-ff-on type="bool">true</R-ff-on>
-					</engines-gauges>
-					<g-meter>
-						<g-max archive="y" type="double">1</g-max>
-						<g-min archive="y" type="double">1</g-min>
-					</g-meter>
-					<optical-sight>
-						<break-lts type="bool">0</break-lts>
-					</optical-sight>
-					<PHD>
-						<TCrange type="double">1.5</TCrange>
-						<h-deviation type="double">0.0</h-deviation>
-						<v-deviation type="double">0.0</v-deviation>
-						<plots-out-of-range type="bool">0</plots-out-of-range>
-					</PHD>
-					<radar-altimeter>
-						<limit-bug type="double">250</limit-bug>
-					</radar-altimeter>
-					<airspeed-indicator>
-						<safe-speed-limit-bug type="double">480</safe-speed-limit-bug>
-					</airspeed-indicator>
-					<tacan>
-						<nogo-lamp type="bool">false</nogo-lamp>
-						<go-lamp type="bool">false</go-lamp>
-						<mode type="int">0</mode>
-					</tacan>
-					<terrain-clearance>
-						<serviceable type="bool">1</serviceable>
-					</terrain-clearance>
-					<ticker archive="n" type="double">0</ticker>
-					<warning-lights>
-						<master-caution type="bool">false</master-caution>
-						<L-fire type="bool">false</L-fire>
-						<R-fire type="bool">false</R-fire>
-					</warning-lights>
-				</instrumentation>
-				<lighting>
-					<warn-medium-lights-switch type="bool">true</warn-medium-lights-switch>
-				</lighting>
-			</A-6E>
-		</model>
+		    <flight>
+			<CG-trim-fwd type="double">0</CG-trim-fwd>
+			<CG-trim-aft type="double">5000</CG-trim-aft>
+		    </flight>
+		    <gear>
+			<ld-gear-handle-anim type="double">0</ld-gear-handle-anim>
+		    </gear>
+		    <instrumentation>
+			<doppler>
+			    <mode-selector type="int">0</mode-selector>
+			</doppler>
+		    </instrumentation>
+		    <lighting>
+			<pylons-lts type="int">1</pylons-lts>
+			<index-norm type="double">0.8</index-norm>
+			<tail-lt type="int">2</tail-lt>
+			<wings-lts type="int">2</wings-lts>
+			<formation-lts type="int">0</formation-lts>
+			<flood-lts type="double">0.25</flood-lts>
+		    </lighting>
+		    <PHD>
+			<TCrange-switch type="int">2</TCrange-switch>
+			<TCrealistic-shadow type="bool">1</TCrealistic-shadow>
+			<off-stdby-on type="int">2</off-stdby-on>
+		    </PHD>
+		    <autopilot>
+			<on-off-switch type="bool">0</on-off-switch>
+			<auto-stab-augm-switch type="bool">0</auto-stab-augm-switch>
+			<alt-button type="bool">0</alt-button>
+			<mach-button type="bool">0</mach-button>
+			<cmd-switch type="bool">0</cmd-switch>
+			<vdi-alt-marker type="bool">0</vdi-alt-marker>
+			<vdi-roll-marker type="bool">0</vdi-roll-marker>
+		    </autopilot>
+		    <VDI>
+			<display>
+			    <contanalog type="bool">false</contanalog>
+			    <tc type="bool">true</tc>
+			    <tccal type="bool">false</tccal>
+			    <stby type="bool">false</stby>
+			    <off type="bool">false</off>
+			</display>
+			<range-miles>
+			    <miles3 type="bool">true</miles3>
+			    <miles2 type="bool">false</miles2>
+			    <miles1.5 type="bool">false</miles1.5>
+			    <miles1 type="bool">false</miles1>
+			    <test type="bool">false</test>
+			</range-miles>
+			<brightness type="double">0.6</brightness>
+		    </VDI>
+		    <wing-fold>
+			<button-position type="int">0</button-position>
+			<handle-position type="double">0.0</handle-position>
+			<switch-position type="int">1</switch-position> <!-- 1=lock, -1=unlock -->
+		    </wing-fold>
+		</controls>
+		<instrumentation>
+		    <doppler>
+			<drift-deg type="double">0.0</drift-deg>
+			<ground-speed-kt type="double">0.0</ground-speed-kt>
+			<memory type="bool">true</memory>
+		    </doppler>
+		    <engines-gauges>
+			<L-rpm-on type="bool">true</L-rpm-on>
+			<R-rpm-on type="bool">true</R-rpm-on>
+			<L-egt-on type="bool">true</L-egt-on>
+			<R-egt-on type="bool">true</R-egt-on>
+			<L-ff-on type="bool">true</L-ff-on>
+			<R-ff-on type="bool">true</R-ff-on>
+		    </engines-gauges>
+		    <g-meter>
+			<g-max archive="y" type="double">1</g-max>
+			<g-min archive="y" type="double">1</g-min>
+		    </g-meter>
+		    <optical-sight>
+			<break-lts type="bool">0</break-lts>
+		    </optical-sight>
+		    <PHD>
+			<TCrange type="double">1.5</TCrange>
+			<h-deviation type="double">0.0</h-deviation>
+			<v-deviation type="double">0.0</v-deviation>
+			<plots-out-of-range type="bool">0</plots-out-of-range>
+		    </PHD>
+		    <radar-altimeter>
+			<limit-bug type="double">250</limit-bug>
+		    </radar-altimeter>
+		    <airspeed-indicator>
+			<safe-speed-limit-bug type="double">480</safe-speed-limit-bug>
+		    </airspeed-indicator>
+		    <tacan>
+			<nogo-lamp type="bool">false</nogo-lamp>
+			<go-lamp type="bool">false</go-lamp>
+			<mode type="int">0</mode>
+		    </tacan>
+		    <terrain-clearance>
+			<serviceable type="bool">1</serviceable>
+		    </terrain-clearance>
+		    <ticker archive="n" type="double">0</ticker>
+		    <warning-lights>
+			<master-caution type="bool">false</master-caution>
+			<L-fire type="bool">false</L-fire>
+			<R-fire type="bool">false</R-fire>
+		    </warning-lights>
+		</instrumentation>
+		<lighting>
+		    <warn-medium-lights-switch type="bool">true</warn-medium-lights-switch>
+		</lighting>
+	    </A-6E>
+	</model>
 
-		<aoa-indexer>
-			<too-slow-deg>27</too-slow-deg>  <!-- target +5 units -->
-			<slow-deg>24</slow-deg>          <!-- target +2 units -->
-			<fast-deg>20</fast-deg>          <!-- target -2 units -->
-			<too-fast-deg>17</too-fast-deg>  <!-- target -5 units -->
-		</aoa-indexer>
+	<aoa-indexer>
+	    <too-slow-deg>27</too-slow-deg>  <!-- target +5 units -->
+	    <slow-deg>24</slow-deg>          <!-- target +2 units -->
+	    <fast-deg>20</fast-deg>          <!-- target -2 units -->
+	    <too-fast-deg>17</too-fast-deg>  <!-- target -5 units -->
+	</aoa-indexer>
 
-		<help>
-		    <title>Grumman A-6E</title>
-		    <!--
-		    <line>Cruise Speed:      412 kt @ 25000 ft (90% throttle)</line>
-		    <line>Max speed:         565 kt at see level</line>
-		    <line>Min Speed:         120 (full flaps)</line>
-		    <line>Stall:             110 kt (clean)</line>
-		    -->
-		    <line>Take off:</line>
-		    <line>    Flaps:         TO (30)</line>
-		    <line>    Rotate:        ~120 kt</line>
-		    <line>Approach, landinh:</line>
-		    <line>    Onspeed:       22 units AoA</line>
-		    <line>    Flaps:         LD (40)</line>
-		    <key>
-			<name>c</name>
-			<desc>Canopy open/close command</desc>
-		    </key>
-		    <!--
+	<help>
+	    <title>Grumman A-6E</title>
+	    <!--
+		<line>Cruise Speed:      412 kt @ 25000 ft (90% throttle)</line>
+		<line>Max speed:         565 kt at see level</line>
+		<line>Min Speed:         120 (full flaps)</line>
+		<line>Stall:             110 kt (clean)</line>
+		-->
+		<line>Take off:</line>
+		<line>    Flaps:         TO (30)</line>
+		<line>    Rotate:        ~120 kt</line>
+		<line>Approach, landinh:</line>
+		<line>    Onspeed:       22 units AoA</line>
+		<line>    Flaps:         LD (40)</line>
+		<key>
+		    <name>c</name>
+		    <desc>Canopy open/close command</desc>
+		</key>
+		<!--
 		    <key>
 			<name>C</name>
 			<desc>Catapult launch command</desc>
-			</key>
-			-->
+		    </key>
+		    -->
 		    <key>
 			<name>k/j</name>
 			<desc>Speed Brakes open/close</desc>
@@ -369,171 +369,171 @@ Grumman A-6E simulation config.
 		    <!--<key>
 			<name>L</name>
 			<desc>Carrier Launch-bar engage</desc>
-			</key>
-			<key>
+		    </key>
+		    <key>
 			<name>o/O</name>
 			<desc>Hook up/down</desc>
 			</key> -->
-		    <key>
-			<name>ctrl+Y</name>
-			<desc>Toggle flaperon pop-up</desc>
-		    </key>
-		    <key>
-			<name>Y</name>
-			<desc>Toggle spin assist</desc>
-		    </key>
-		    <key>
-			<name>n</name>
-			<desc>Enable NSW steering</desc>
-		    </key>
-		    <!--
-		    <key>
-			<name>f/F</name>
-			<desc>Wing Fold up/down</desc>
-		    </key>-->
-		</help>
+			<key>
+			    <name>ctrl+Y</name>
+			    <desc>Toggle flaperon pop-up</desc>
+			</key>
+			<key>
+			    <name>Y</name>
+			    <desc>Toggle spin assist</desc>
+			</key>
+			<key>
+			    <name>n</name>
+			    <desc>Enable NSW steering</desc>
+			</key>
+			<!--
+			    <key>
+				<name>f/F</name>
+				<desc>Wing Fold up/down</desc>
+				</key>-->
+	</help>
 
 
-	</sim>
-	<canopy>
-		<position-norm type="double">1</position-norm>
-	</canopy>
+    </sim>
+    <canopy>
+	<position-norm type="double">1</position-norm>
+    </canopy>
 
-	<systems>
-		<refuel>
-			<type>probe</type>
-		</refuel>
-	</systems>
+    <systems>
+	<refuel>
+	    <type>probe</type>
+	</refuel>
+    </systems>
+    
+    <input>
+	<keyboard include="/Input/Keyboard/carrier-bindings.xml">
+	    <key n="99">
+		<name>c</name>
+		<desc>Canopy open/close command</desc>
+		<binding>
+		    <command>nasal</command>
+		    <script>A6Econtrols.canopyswitch(2)</script>
+		</binding>
+	    </key>
+	    
+	    <key n="25">
+		<name>Ctrl-y</name>
+		<desc>Toggle flaperon pop-up</desc>
+		<binding>
+		    <command>property-toggle</command>
+		    <property>/controls/flight/gnd-spoiler-arm</property>
+		</binding>
+	    </key>
 
-	<input>
-	    <keyboard include="/Input/Keyboard/carrier-bindings.xml">
-		<key n="99">
-		    <name>c</name>
-		    <desc>Canopy open/close command</desc>
-		    <binding>
-			<command>nasal</command>
-			<script>A6Econtrols.canopyswitch(2)</script>
-		    </binding>
-		</key>
-		
-		<key n="25">
-		    <name>Ctrl-y</name>
-		    <desc>Toggle flaperon pop-up</desc>
-		    <binding>
-			<command>property-toggle</command>
-			<property>/controls/flight/gnd-spoiler-arm</property>
-		    </binding>
-		</key>
-
-		<key n="89">
-		    <name>Y</name>
-		    <desc>Toggle spin assist</desc>
-		    <binding>
-			<command>property-toggle</command>
-			<property>/controls/flight/spin-assist</property>
-		    </binding>
-		</key>
-		<key n="110">
-		    <name>n</name>
-		    <decs>NSW steering</decs>
+	    <key n="89">
+		<name>Y</name>
+		<desc>Toggle spin assist</desc>
+		<binding>
+		    <command>property-toggle</command>
+		    <property>/controls/flight/spin-assist</property>
+		</binding>
+	    </key>
+	    <key n="110">
+		<name>n</name>
+		<decs>NSW steering</decs>
+		<binding>
+		    <command>property-assign</command>
+		    <property>/controls/gear/nose-wheel-steering</property>
+		    <value>1</value>
+		</binding>
+		<mod-up>
 		    <binding>
 			<command>property-assign</command>
 			<property>/controls/gear/nose-wheel-steering</property>
-			<value>1</value>
+			<value>0</value>
 		    </binding>
-		    <mod-up>
-			<binding>
-			    <command>property-assign</command>
-			    <property>/controls/gear/nose-wheel-steering</property>
-			    <value>0</value>
-			</binding>
-		    </mod-up>
-		</key>
-	    </keyboard>
-	</input>
+		</mod-up>
+	    </key>
+	</keyboard>
+    </input>
 
-	<controls>
-		<flight>
-		  <elevator-trim type="double">0.02</elevator-trim>
-		  <gnd-spoiler-arm type="bool">0</gnd-spoiler-arm>
-		  <spin-assist type="bool">0</spin-assist>
-		  <speedbrake-test type="bool">0</speedbrake-test>
-		  <wing-fold>
-		    <handle-cmd type="int">0</handle-cmd>
-		    <lockpin-cmd type="int">1</lockpin-cmd>
-		  </wing-fold>
-		</flight>
-		<gear>
-		    <brake-parking type="bool">1</brake-parking>
-		    <nose-wheel-steering type="bool">0</nose-wheel-steering>
-		</gear>
-		<lighting>
-			<beacon>0</beacon>
-			<taxi-light>0</taxi-light>
-		</lighting>
-	</controls>
-	<instrumentation>
-		<radar>
-			<minimized type="bool">0</minimized>
-			<range type="double">32</range>
-			<range-control type="int">5</range-control>
-			<serviceable type="bool">1</serviceable>
-			<switch type="string">ON</switch>
-		</radar>
-	</instrumentation>
-	<nasal>
-		<A6E>
-			<file>Aircraft/A-6E/Nasal/A-6E.nas</file>
-		</A6E>
-		<doppler>
-			<file>Aircraft/A-6E/Nasal/doppler.nas</file>
-		</doppler>
-		<phd>
-			<file>Aircraft/A-6E/Nasal/phd.nas</file>
-		</phd>
-		<A6Econtrols>
-			<file>Aircraft/A-6E/Nasal/A-6Econtrols.nas</file>
-		</A6Econtrols>
-		<aar>
-			<file>Aircraft/Generic/aar.nas</file>
-		</aar>
-		<A6Echronograph>
-			<file>Aircraft/A-6E/Nasal/chronograph.nas</file>
-		</A6Echronograph>
-		<J52-P8>
-			<file>Aircraft/A-6E/Nasal/J52-P8.nas</file>
-		</J52-P8>
-	</nasal>
-	<fdm>
-	    <jsbsim>
-		<fcs>
-		    <flaperon>
-			<gnd-spoiler-arm alias="/controls/flight/gnd-spoiler-arm"/>
-		    </flaperon>
-		    <rudder>
-			<spin-assist alias="/controls/flight/spin-assist"/>
-		    </rudder>
-		    <speedbrake>
-			<speedbrake-test alias="/controls/flight/speedbrake-test"/>
-		    </speedbrake>
-		    <wing-fold>
-			<handle-cmd alias="/controls/flight/wing-fold/handle-cmd"/>
-			<lockpin-cmd alias="/controls/flight/wing-fold/lockpin-cmd"/>
-		    </wing-fold>
-		</fcs>
-		<gear>
-		    <unit>
-			<castered>0</castered>
-		    </unit>
-		</gear>
-		    
-	    </jsbsim>
-	</fdm>
+    <controls>
+	<flight>
+	    <elevator-trim type="double">0.02</elevator-trim>
+	    <gnd-spoiler-arm type="bool">0</gnd-spoiler-arm>
+	    <spin-assist type="bool">0</spin-assist>
+	    <speedbrake-test type="bool">0</speedbrake-test>
+	    <wing-fold>
+		<handle-cmd type="int">0</handle-cmd>
+		<lockpin-cmd type="int">1</lockpin-cmd>
+	    </wing-fold>
+	</flight>
+	<gear>
+	    <brake-parking type="bool">1</brake-parking>
+	    <nose-wheel-steering type="bool">0</nose-wheel-steering>
+	</gear>
+	<lighting>
+	    <beacon>0</beacon>
+	    <taxi-light>0</taxi-light>
+	</lighting>
+    </controls>
+    <instrumentation>
+	<radar>
+	    <minimized type="bool">0</minimized>
+	    <range type="double">32</range>
+	    <range-control type="int">5</range-control>
+	    <serviceable type="bool">1</serviceable>
+	    <switch type="string">ON</switch>
+	</radar>
+    </instrumentation>
+    <nasal>
+	<A6E>
+	    <file>Aircraft/A-6E/Nasal/A-6E.nas</file>
+	</A6E>
+	<doppler>
+	    <file>Aircraft/A-6E/Nasal/doppler.nas</file>
+	</doppler>
+	<phd>
+	    <file>Aircraft/A-6E/Nasal/phd.nas</file>
+	</phd>
+	<A6Econtrols>
+	    <file>Aircraft/A-6E/Nasal/A-6Econtrols.nas</file>
+	</A6Econtrols>
+	<aar>
+	    <file>Aircraft/Generic/aar.nas</file>
+	</aar>
+	<A6Echronograph>
+	    <file>Aircraft/A-6E/Nasal/chronograph.nas</file>
+	</A6Echronograph>
+	<J52-P8>
+	    <file>Aircraft/A-6E/Nasal/J52-P8.nas</file>
+	</J52-P8>
+    </nasal>
+    <fdm>
+	<jsbsim>
+	    <fcs>
+		<flaperon>
+		    <gnd-spoiler-arm alias="/controls/flight/gnd-spoiler-arm"/>
+		</flaperon>
+		<rudder>
+		    <spin-assist alias="/controls/flight/spin-assist"/>
+		</rudder>
+		<speedbrake>
+		    <speedbrake-test alias="/controls/flight/speedbrake-test"/>
+		</speedbrake>
+		<wing-fold>
+		    <handle-cmd alias="/controls/flight/wing-fold/handle-cmd"/>
+		    <lockpin-cmd alias="/controls/flight/wing-fold/lockpin-cmd"/>
+		</wing-fold>
+	    </fcs>
+	    <gear>
+		<unit>
+		    <castered>0</castered>
+		</unit>
+	    </gear>
+	    
+	</jsbsim>
+    </fdm>
 
-	<surface-positions>
-	    <slats-pos-norm alias="/fdm/jsbsim/fcs/surfaces/slats-pos-norm"/>
-	    <nsw-pos-deg alias="/fdm/jsbsim/fcs/steer-pos-deg"/>
-	</surface-positions>
-	
+    <surface-positions>
+	<slats-pos-norm alias="/fdm/jsbsim/fcs/surfaces/slats-pos-norm"/>
+	<nsw-pos-deg alias="/fdm/jsbsim/fcs/steer-pos-deg"/>
+    </surface-positions>
+    
 
 </PropertyList>

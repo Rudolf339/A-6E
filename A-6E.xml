@@ -87,13 +87,53 @@
 	    <y> 0.00 </y>
 	    <z> 0.00 </z>
 	</location>
-	<pointmass name="Payload">
-	    <description> 21600.00 LBS should bring model up to entered max weight </description>
+	
+	<pointmass name="Pylon 1">
+	    <description>left outboard pylon</description>
 	    <weight unit="LBS"> 0 </weight>
 	    <location name="POINTMASS" unit="M">
-		<x> 1.68 </x>
-		<y> 0.00 </y>
-		<z> 0.00 </z>
+		<x> 1.90</x>
+		<y>-3.66</y>
+		<z>-0.63</z>
+	    </location>
+	</pointmass>
+	<pointmass name="Pylon 2">
+	    <description>left inboard pylon</description>
+	    <weight unit="LBS"> 0 </weight>
+	    <location name="POINTMASS" unit="M">
+		<x> 1.90</x>
+		<y>-2.48</y>
+		<z>-0.63</z>
+	    </location>
+	</pointmass>
+	
+	<pointmass name="Pylon 3">
+	    <description>center pylon</description>
+	    <weight unit="LBS"> 0 </weight>
+	    <location name="POINTMASS" unit="M">
+		<x> 1.40</x>
+		<y> 0.00</y>
+		<z>-1.22</z>
+	    </location>
+	</pointmass>
+
+	<pointmass name="Pylon 4">
+	    <description>right inboard pylon</description>
+	    <weight unit="LBS"> 0 </weight>
+	    <location name="POINTMASS" unit="M">
+		<x> 1.90</x>
+		<y> 2.48</y>
+		<z>-0.63</z>
+	    </location>
+	</pointmass>
+
+	<pointmass name="Pylon 5">
+	    <description>right outboard pylon</description>
+	    <weight unit="LBS"> 0 </weight>
+	    <location name="POINTMASS" unit="M">
+		<x> 1.90</x>
+		<y> 3.66</y>
+		<z>-0.63</z>
 	    </location>
 	</pointmass>
     </mass_balance>
