@@ -18,50 +18,80 @@
 		<type>select</type>
 		<object-name>tank-1</object-name>
 		<condition>
+		    <and>
 			<equals>
-				<property>sim/weight[0]/selected</property>
-				<value>300 Gallons Fuel Tank</value>
+			    <property>/sim/multiplay/generic/string</property>
+			    <value>aero300</value>
 			</equals>
+			<equals>
+			    <property>/sim/multiplay/generic/int[3]</property>
+			    <value>1</value>
+			</equals>
+		    </and>
 		</condition>
 	</animation>
 	<animation>
 		<type>select</type>
 		<object-name>tank-2</object-name>
 		<condition>
+		    <and>
 			<equals>
-				<property>sim/weight[1]/selected</property>
-				<value>300 Gallons Fuel Tank</value>
+			    <property>/sim/multiplay/generic/string[1]</property>
+			    <value>aero300</value>
 			</equals>
+			<equals>
+			    <property>/sim/multiplay/generic/int[4]</property>
+			    <value>1</value>
+			</equals>
+		    </and>
 		</condition>
 	</animation>
 	<animation>
 		<type>select</type>
 		<object-name>tank-3</object-name>
 		<condition>
+		    <and>
 			<equals>
-				<property>sim/weight[2]/selected</property>
-				<value>300 Gallons Fuel Tank</value>
+			    <property>/sim/multiplay/generic/string[2]</property>
+			    <value>aero300</value>
 			</equals>
+			<equals>
+			    <property>/sim/multiplay/generic/int[5]</property>
+			    <value>1</value>
+			</equals>
+		    </and>
 		</condition>
 	</animation>
 	<animation>
 		<type>select</type>
 		<object-name>tank-4</object-name>
 		<condition>
+		    <and>
 			<equals>
-				<property>sim/weight[3]/selected</property>
-				<value>300 Gallons Fuel Tank</value>
+			    <property>/sim/multiplay/generic/string[3]</property>
+			    <value>aero300</value>
 			</equals>
+			<equals>
+			    <property>/sim/multiplay/generic/int[6]</property>
+			    <value>1</value>
+			</equals>
+		    </and>
 		</condition>
 	</animation>
 	<animation>
 		<type>select</type>
 		<object-name>tank-5</object-name>
 		<condition>
+		    <and>
 			<equals>
-				<property>sim/weight[4]/selected</property>
-				<value>300 Gallons Fuel Tank</value>
+			    <property>/sim/multiplay/generic/string[4]</property>
+			    <value>aero300</value>
 			</equals>
+			<equals>
+			    <property>/sim/multiplay/generic/int[7]</property>
+			    <value>1</value>
+			</equals>
+		    </and>
 		</condition>
 	</animation>
 
