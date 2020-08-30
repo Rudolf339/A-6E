@@ -3371,7 +3371,39 @@
 	    </product>
 	</function>
 
-	
+	<function name="aero/moment/Yaw_stores">
+	    <product>
+		<property>aero/qbar-psf</property>
+		<sum>
+		    <product>
+			<property>aero/cd_p1</property>
+			<property>aero/eda_p1</property>
+			<property>inertia/pointmass-location-Y-inches</property>
+		    </product>
+		    <product>
+			<property>aero/cd_p2</property>
+			<property>aero/eda_p2</property>
+			<property>inertia/pointmass-location-Y-inches[1]</property>
+		    </product>
+		    <product>
+			<property>aero/cd_p3</property>
+			<property>aero/eda_p3</property>
+			<property>inertia/pointmass-location-Y-inches[2]</property>
+		    </product>
+		    <product>
+			<property>aero/cd_p4</property>
+			<property>aero/eda_p4</property>
+			<property>inertia/pointmass-location-Y-inches[3]</property>
+		    </product>
+		    <product>
+			<property>aero/cd_p5</property>
+			<property>aero/eda_p5</property>
+			<property>inertia/pointmass-location-Y-inches[4]</property>
+		    </product>
+		</sum>
+	    </product>
+	</function>			     
+			
 	<function name="aero/moment/Yaw_roll_rate">
 	    <description>Yaw moment due to roll rate</description>
 	    <product>
