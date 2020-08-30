@@ -3149,6 +3149,34 @@
 	    </product>
 	</function>
 
+	<function name="aero/force/CD_stores">
+	    <product>
+		<property>aero/qbar-psf</property>
+		<sum>
+		    <product>
+			<property>aero/cd_p1</property>
+			<property>aero/eda_p1</property>
+		    </product>
+		    <product>
+			<property>aero/cd_p2</property>
+			<property>aero/eda_p2</property>
+		    </product>
+		    <product>
+			<property>aero/cd_p3</property>
+			<property>aero/eda_p3</property>
+		    </product>
+		    <product>
+			<property>aero/cd_p4</property>
+			<property>aero/eda_p4</property>
+		    </product>
+		    <product>
+			<property>aero/cd_p5</property>
+			<property>aero/eda_p5</property>
+		    </product>
+		</sum>
+	    </product>
+	</function>
+		    
 	<function name="aero/force/Drag_gear">
 	    <description>Drag due to gear</description>
             <product>
