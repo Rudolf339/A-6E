@@ -39,7 +39,7 @@
    <static_friction>  0.80 </static_friction>
    <dynamic_friction> 0.50 </dynamic_friction>
    <rolling_friction> 0.02 </rolling_friction>
-   <spring_coeff unit="N/M">235300</spring_coeff>
+   <spring_coeff unit="N/M">875000</spring_coeff>
    <damping_coeff unit="N/M/SEC">47000</damping_coeff>
    <max_steer unit="DEG">360</max_steer>
    <!-- actually 56, controlled in Systems/fcs.xml -->
