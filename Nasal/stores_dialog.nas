@@ -28,34 +28,23 @@ var stores = {
         m.p1opt = [
                     ["None",     
                                 ["none"]],
-                    ["Droptank",
+                    ["Misc",
                                 ["Droptank",]],
         ];
         m.p2opt = [
                     ["None",     
                                 ["none"]],
-                    ["Droptank",
+                    ["Misc",
                                 ["Droptank",]],
         ];
         m.p3opt = [
                     ["None",     
                                 ["none"]],
-                    ["Droptank",
+                    ["Misc",
                                 ["Droptank",]],
         ];
         m.p4opt = m.p1opt;
         m.p5opt = m.p3opt;
-        m.oblopt = [
-                    ["None",     
-                                ["none"]],
-                    ["Countermeasure",
-                                ["Conformal CM"]],
-        ];
-        m.obropt = m.oblopt;
-        m.cconopt = [
-                    ["None",     
-                                ["none"]],
-        ];
 
         # do the line splits manually
         # limit 20 characters per line
@@ -63,14 +52,14 @@ var stores = {
         # 21 lines for info
         m.store_info = {
             "none"  :   [
-                        #12345678901234567890 
-                        "There is nothing",
-                        "selected on this",
-                        "pylon.",
-                        ],
-		"Droptank": [
-		    "Aero 300",
-		    "300 Gal droptank"],
+                "There is nothing",
+                "selected on this",
+                "pylon.",
+            ],
+	    "Droptank": [
+		"Aero ID 300",
+		"300 Gal droptank",
+	    ],
 
         };
 
@@ -88,9 +77,9 @@ var stores = {
                     .setFont("LiberationFonts/LiberationMono-Regular.ttf")
                     .setFontSize(m.font_size, 1.0)
                     .setColor(m.selected_color)
-                    .setText("Pylon 3");
+                    .setText("Pylon 1");
                     
-        m.p1store = m.root.createChild("text", "p3store")
+        m.p1store = m.root.createChild("text", "p2store")
                     .setTranslation(10,40)
                     .setAlignment("left-center")
                     .setFont("LiberationFonts/LiberationMono-Regular.ttf")
@@ -107,13 +96,13 @@ var stores = {
                     .setColor(1,1,1,1)
                     .addEventListener("click",func(){m.pylon_click(0)});
                     
-        m.p2 = m.root.createChild("text", "p1label")
+        m.p2 = m.root.createChild("text", "p2label")
                     .setTranslation(10, 80)
                     .setAlignment("left-center")
                     .setFont("LiberationFonts/LiberationMono-Regular.ttf")
                     .setFontSize(m.font_size, 1.0)
                     .setColor(m.font_color)
-                    .setText("Pylon 1");
+                    .setText("Pylon 2");
                     
         m.p2store = m.root.createChild("text", "p1store")
                     .setTranslation(10,100)
@@ -138,7 +127,7 @@ var stores = {
                     .setFont("LiberationFonts/LiberationMono-Regular.ttf")
                     .setFontSize(m.font_size, 1.0)
                     .setColor(m.font_color)
-                    .setText("Pylon Center");
+                    .setText("Pylon 3");
                     
         m.p3store = m.root.createChild("text", "pcstore")
                     .setTranslation(10,160)
@@ -163,7 +152,7 @@ var stores = {
                     .setFont("LiberationFonts/LiberationMono-Regular.ttf")
                     .setFontSize(m.font_size, 1.0)
                     .setColor(m.font_color)
-                    .setText("Pylon 2");
+                    .setText("Pylon 4");
                     
         m.p4store = m.root.createChild("text", "p2store")
                     .setTranslation(10,220)
@@ -188,7 +177,7 @@ var stores = {
                     .setFont("LiberationFonts/LiberationMono-Regular.ttf")
                     .setFontSize(m.font_size, 1.0)
                     .setColor(m.font_color)
-                    .setText("Pylon 4");
+                    .setText("Pylon 5");
                     
         m.p5store = m.root.createChild("text", "p4store")
                     .setTranslation(10,280)
@@ -205,81 +194,7 @@ var stores = {
                     .horiz(-180)
                     .close()
                     .setColor(1,1,1,1)
-                    .addEventListener("click",func(){m.pylon_click(4)});
-                    
-        m.obl = m.root.createChild("text", "obllabel")
-                    .setTranslation(10, 320)
-                    .setAlignment("left-center")
-                    .setFont("LiberationFonts/LiberationMono-Regular.ttf")
-                    .setFontSize(m.font_size, 1.0)
-                    .setColor(m.font_color)
-                    .setText("Outboard Left");
-                    
-        m.oblstore = m.root.createChild("text", "oblstore")
-                    .setTranslation(10,340)
-                    .setAlignment("left-center")
-                    .setFont("LiberationFonts/LiberationMono-Regular.ttf")
-                    .setFontSize(m.font_size, 1.0)
-                    .setColor(m.font_color)
-                    .setText(getprop("/payload/weight[5]/selected"));
-
-        m.oblclick = m.root.createChild("path")
-                    .setTranslation(10,305)
-                    .horiz(180)
-                    .vert(50)
-                    .horiz(-180)
-                    .close()
-                    .setColor(1,1,1,1)
-                    .addEventListener("click",func(){m.pylon_click(5)});
-                    
-        m.obr = m.root.createChild("text", "obrlabel")
-                    .setTranslation(10, 380)
-                    .setAlignment("left-center")
-                    .setFont("LiberationFonts/LiberationMono-Regular.ttf")
-                    .setFontSize(m.font_size, 1.0)
-                    .setColor(m.font_color)
-                    .setText("Outboard Right");
-                    
-        m.obrstore = m.root.createChild("text", "obrstore")
-                    .setTranslation(10,400)
-                    .setAlignment("left-center")
-                    .setFont("LiberationFonts/LiberationMono-Regular.ttf")
-                    .setFontSize(m.font_size, 1.0)
-                    .setColor(m.font_color)
-                    .setText(getprop("/payload/weight[6]/selected"));
-
-        m.obrclick = m.root.createChild("path")
-                    .setTranslation(10,365)
-                    .horiz(180)
-                    .vert(50)
-                    .horiz(-180)
-                    .close()
-                    .setColor(1,1,1,1)
-                    .addEventListener("click",func(){m.pylon_click(6)});
-                    
-        m.ccon = m.root.createChild("text", "cconlabel")
-                    .setTranslation(10, 440)
-                    .setAlignment("left-center")
-                    .setFont("LiberationFonts/LiberationMono-Regular.ttf")
-                    .setFontSize(m.font_size, 1.0)
-                    .setColor(m.font_color)
-                    .setText("Center Console");
-                    
-        m.cconstore = m.root.createChild("text", "cconstore")
-                    .setTranslation(10,460)
-                    .setAlignment("left-center")
-                    .setFont("LiberationFonts/LiberationMono-Regular.ttf")
-                    .setFontSize(m.font_size, 1.0)
-                    .setColor(m.font_color)
-                    .setText("none");
-
-        m.cconclick = m.root.createChild("path")
-                    .setTranslation(10,425)
-                    .horiz(180)
-                    .vert(50)
-                    .horiz(-180)
-                    .close()
-                    .setColor(1,1,1,1);
+                    .addEventListener("click",func(){m.pylon_click(4)});                    
 
         m.outerselectiongroup = [];
         m.innerselectiongroup = [];
@@ -689,15 +604,12 @@ var stores = {
                     .addEventListener("click",func(){m.inner_click(22);}),
         ];
 
-        m.selection_map = [m.p1opt, m.p2opt, m.p3opt, m.p4opt, m.p5opt, m.oblopt, m.obropt, m.cconopt];
+        m.selection_map = [m.p1opt, m.p2opt, m.p3opt, m.p4opt, m.p5opt];
         m.pylon_map = [   [m.p1,m.p1store],
                           [m.p2,m.p2store],
                           [m.p3,m.p3store],
                           [m.p4,m.p4store],
                           [m.p5,m.p5store],
-                          [m.obl,m.oblstore],
-                          [m.obr,m.obrstore],
-                          [m.ccon,m.cconstore],
                         ];
         m.pylon_click(0);
         return m;
@@ -782,7 +694,6 @@ var stores = {
                 me.innerselectiongroup[i].setColor(me.font_color);
             }
         }
-        me.write_info(me.selected);
     },
 
     inner_click: func(ig) {
@@ -810,8 +721,10 @@ var stores = {
     },
 
     write_info: func(name) {
+	print("writing in infobox");
+	print(name);
         me.write_array = [];
-        # clear out old info
+	# clear out old info
         foreach(var info; keys(me.store_info)) {
             if (info == name) {
                 me.write_array = me.store_info[info];

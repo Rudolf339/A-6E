@@ -8,6 +8,9 @@ var stores = {Droptank: {id:"aero300", count:1}};
 
 loadPylon = func (n, selected) {
     n = sprintf("%i", n);
+    if (selected != getprop("/payload/weight[" ~ n ~ "]/selected")) {
+	setprop("/payload/weight[" ~ n ~ "]/selected", selected);
+    }
     if (selected != "none") {
 	var id = stores[selected].id;
 	var mass = getprop("/payload/armament/" ~ id ~ "/weight-launch-lbs");
