@@ -143,7 +143,7 @@
     <system file="Propulsion.xml"/>
     <system file="Arrestor_Hook.xml"/>
     <system file="Catapult.xml"/>
-    <system file="jsb-instruments"/>
+    <system file="jsb-instruments.xml"/>
     
     <flight_control file="Systems/fcs.xml"/>
 

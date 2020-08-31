@@ -8,7 +8,7 @@
     <name>fuel-main</name>
     <type>rotate</type>
     <object-name>needle-main</object-name>
-    <property>consumables/fuel/tank[0]/level-lbs</property>
+    <property>fdm/jsbsim/systems/instrument/fuel/main-indicated</property>
     <interpolation> 
       <entry><ind>0</ind><dep>0</dep></entry>
       <entry><ind>10000</ind><dep>272</dep></entry>
@@ -30,7 +30,7 @@
   <name>fuel-r</name>
     <type>rotate</type>
     <object-name>needle-select</object-name>
-    <property>sim/model/A-6E/consumables/fuel/selected-tank-lbs</property>
+    <property>fdm/jsbsim/systems/instrument/fuel/select-indicated</property>
     <interpolation> 
       <entry><ind>0</ind><dep>0</dep></entry>
       <entry><ind>10000</ind><dep>272</dep></entry>
@@ -54,7 +54,7 @@
   <animation>
     <type>textranslate</type>
     <object-name>drum-1</object-name>
-    <property>consumables/fuel/total-fuel-lbs</property>
+    <property>fdm/jsbsim/systems/instrument/fuel/total-indicated</property>
     <factor>0.1</factor>
     <offset>-1</offset>
     <center>
@@ -73,7 +73,7 @@
   <animation>
     <type>textranslate</type>
     <object-name>drum-2</object-name>
-    <property>consumables/fuel/total-fuel-lbs</property>
+    <property>fdm/jsbsim/systems/instrument/fuel/total-indicated</property>
     <factor>0.01</factor>
     <offset>-10</offset>
     <step>10</step>
@@ -94,7 +94,7 @@
   <animation>
     <type>textranslate</type>
     <object-name>drum-3</object-name>
-    <property>consumables/fuel/total-fuel-lbs</property>
+    <property>fdm/jsbsim/systems/instrument/fuel/total-indicated</property>
     <factor>0.001</factor>
     <offset>-100</offset>
     <step>100</step>
@@ -114,7 +114,7 @@
   <animation>
     <type>textranslate</type>
     <object-name>drum-4</object-name>
-    <property>consumables/fuel/total-fuel-lbs</property>
+    <property>fdm/jsbsim/systems/instrument/fuel/total-indicated</property>
     <factor>0.0001</factor>
     <offset>-1000</offset>
     <step>1000</step>
@@ -131,11 +131,10 @@
     </axis>
   </animation>
 
-
   <animation>
     <type>textranslate</type>
     <object-name>drum-5</object-name>
-    <property>consumables/fuel/total-fuel-lbs</property>
+    <property>fdm/jsbsim/systems/instrument/fuel/total-indicated</property>
     <factor>0.00001</factor>
     <offset>-10000</offset>
     <step>10000</step>

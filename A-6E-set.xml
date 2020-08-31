@@ -149,57 +149,43 @@ Grumman A-6E simulation config.
 	<consumables>
 	    <fuel>
 		<tank n='0'>
-		    <name>Main Fuselage</name>
+		    <name>MID Fuselage Tank</name>
+		</tank>
+		<tank n='1'>
+		    <name>FWD Fuselage Tank</name>
+		</tank>
+		<tank n='2'>
+		    <name>AFT Fuselage Tank</name>
+		</tank>
+		<tank n='3'>
+		    <name>Left Inboard Wing Tank</name>
+		</tank>
+		<tank n='4'>
+		    <name>Left Outboard Wing Tank</name>
+		</tank>
+		<tank n='5'>
+		    <name>Right Inboard Wing Tank</name>
+		</tank>
+		<tank n='6'>
+		    <name>Right Outboard Wing Tank</name>
+		</tank>
+		<tank n='7'>
+		    <name>Pylon 1 External Tank</name>
+		</tank>
+		<tank n='8'>
+		    <name>Pylon 2 External Tank</name>
+		</tank>
+		<tank n='9'>
+		    <name>Pylon 3 External Tank</name>
+		</tank>
+		<tank n='10'>
+		    <name>Pylon 4 External Tank</name>
+		</tank>>
+		<tank n='11'>
+		    <name>Pylon 5 External Tank</name>
 		</tank>
 	    </fuel>
 	</consumables>
-
-	<weight n="0">
-	    <name>Left Outboard</name>
-	    <tank>2</tank> <!-- FDM tank index on this pylon -->
-	    <weight-lb>0</weight-lb>
-	    <selected>none</selected>
-	    <opt><name>none</name><lbs>0</lbs></opt>
-	    <opt><name>test</name><lbs>500</lbs></opt>
-	    <opt><name>300 Gallons Fuel Tank</name><lbs>2016</lbs><gals>300</gals></opt>
-	</weight>
-	<weight n="1">
-	    <name>Left Inboard</name>
-	    <tank>3</tank> <!-- FDM tank index on this pylon -->
-	    <weight-lb>0</weight-lb>
-	    <selected>none</selected>
-	    <opt><name>none</name><lbs>0</lbs>  </opt>
-	    <opt><name>test</name><lbs>500</lbs></opt>
-	    <opt><name>300 Gallons Fuel Tank</name><lbs>2016</lbs><gals>300</gals></opt>
-	</weight>
-	<weight n="2">
-	    <name>Center Fuselage</name>
-	    <tank>4</tank> <!-- FDM tank index on this pylon -->
-	    <weight-lb>0</weight-lb>
-	    <selected>none</selected>
-	    <opt><name>none</name><lbs>0</lbs>  </opt>
-	    <opt><name>test</name><lbs>500</lbs></opt>
-	    <opt><name>300 Gallons Fuel Tank</name><lbs>2016</lbs><gals>300</gals></opt>
-	</weight>
-	<weight n="3">
-	    <name>Right Inboard</name>
-	    <tank>5</tank> <!-- FDM tank index on this pylon -->
-	    <weight-lb>0</weight-lb>
-	    <selected>none</selected>
-	    <opt><name>none</name><lbs>0</lbs>  </opt>
-	    <opt><name>test</name><lbs>500</lbs></opt>
-	    <opt><name>300 Gallons Fuel Tank</name><lbs>2016</lbs><gals>300</gals></opt>
-	</weight>
-	<weight n="4">
-	    <name>Right Outboard</name>
-	    <tank>6</tank> <!-- FDM tank index on this pylon -->
-	    <weight-lb>0</weight-lb>
-	    <selected>none</selected>
-	    <opt><name>none</name><lbs>0</lbs></opt>
-	    <opt><name>test</name><lbs>500</lbs></opt>
-	    <opt><name>300 Gallons Fuel Tank</name><lbs>2016</lbs><gals>300</gals></opt>
-	</weight>
-
 
 	<sound>
 	    <audible>true</audible>
@@ -407,6 +393,11 @@ Grumman A-6E simulation config.
     <systems>
 	<refuel>
 	    <type>probe</type>
+	    <serviceable type="bool">true</serviceable>
+	    <max-fuel-transfer-lbs-min>2213.25</max-fuel-transfer-lbs-min>
+	    <offset-x-m>-4.50</offset-x-m>
+	    <offset-y-m> 0.00</offset-y-m>
+	    <offset-z-m> 1.76</offset-z-m>
 	</refuel>
     </systems>
 
@@ -648,6 +639,9 @@ Grumman A-6E simulation config.
 	<storesDialog>
 	    <file>Nasal/stores_dialog.nas</file>
 	</storesDialog>
+	<randoms>
+	    <file>Nasal/startup_randoms.nas</file>
+	</randoms>
     </nasal>
     
     <fdm>
