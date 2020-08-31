@@ -382,6 +382,23 @@ Grumman A-6E simulation config.
 		<int n="7" alias="/payload/weight[4]/count"/>
 	    </generic>
 	</multiplay>
+
+	<menubar>
+	    <default>
+		<menu n="100">
+		    <label>A-6E TRAM/SWIP</label>
+		    <enabled type="bool">true</enabled>
+		    <item>
+			<label>Stores Dialog</label>
+			<binding>
+			    <command>nasal</command>
+			    <script>storesDialog.showStoresDialog();</script>
+			</binding>
+		    </item>
+		</menu>
+	    </default>
+	</menubar>
+	
     </sim>
     <canopy>
 	<position-norm type="double">1</position-norm>
@@ -625,9 +642,12 @@ Grumman A-6E simulation config.
 	<J52-P8>
 	    <file>Aircraft/A-6E/Nasal/J52-P8.nas</file>
 	</J52-P8>
-	<pylon-manager>
+	<pylonManager>
 	    <file>Nasal/pylon-manager.nas</file>
-	</pylon-manager>
+	</pylonManager>
+	<storesDialog>
+	    <file>Nasal/stores_dialog.nas</file>
+	</storesDialog>
     </nasal>
     
     <fdm>
