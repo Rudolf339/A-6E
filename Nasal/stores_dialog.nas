@@ -721,8 +721,6 @@ var stores = {
     },
 
     write_info: func(name) {
-	print("writing in infobox");
-	print(name);
         me.write_array = [];
 	# clear out old info
         foreach(var info; keys(me.store_info)) {

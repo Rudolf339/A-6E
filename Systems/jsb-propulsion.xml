@@ -56,14 +56,161 @@
 	</thruster>
     </engine>
 
+    <!-- MID Fuselage Tank -->
     <tank type="FUEL" number="0">
 	<location unit="M">
-	    <x> 2.25 </x>
-	    <y> 0.00 </y>
-	    <z> 0.00 </z>
+	    <x> 1.7 </x>
+	    <y> 0.0 </y>
+	    <z> 0.9 </z>
 	</location>
-	<capacity unit="LBS">15939</capacity>
-	<contents unit="LBS">10000</contents>
+	<capacity unit="LBS">1743</capacity>
+	<contents unit="LBS">1743</contents>
+	<type>JP-5</type>
+	<priority>2</priority>
     </tank>
+
+    <!-- FWD Fuselage Tank -->
+    <tank type="FUEL" number="1">
+	<location unit="M">
+	    <x>-0.3 </x>
+	    <y> 0.0 </y>
+	    <z> 0.4 </z>
+	</location>
+	<capacity unit="LBS">2908</capacity>
+	<contents unit="LBS">2908</contents>
+	<type>JP-5</type>
+	<priority>2</priority>
+    </tank>
+    
+    <!-- AFT Fuselage Tank -->
+    <tank type="FUEL" number="2">
+	<location unit="M">
+	    <x>-0.3 </x>
+	    <y> 0.0 </y>
+	    <z> 0.4 </z>
+	</location>
+	<capacity unit="LBS">4379</capacity>
+	<contents unit="LBS">4379</contents>
+	<type>JP-5</type>
+	<priority>2</priority>
+    </tank>
+
+    <!-- Left Inboard Tank -->
+    <tank type="FUEL" number="3">
+	<location unit="M">
+	    <x> 2.2 </x>
+	    <y>-2.7 </y>
+	    <z> 0.2 </z>
+	</location>
+	<capacity unit="LBS">2493</capacity>
+	<contents unit="LBS">2493</contents>
+	<type>JP-5</type>
+	<priority>2</priority>
+    </tank>
+    
+    <!-- Left Outboard Tank -->
+    <tank type="FUEL" number="4">
+	<location unit="M">
+	    <x> 3.0 </x>
+	    <y>-5.2 </y>
+	    <z> 0.15</z>
+	</location>
+	<capacity unit="LBS">934</capacity>
+	<contents unit="LBS">934</contents>
+	<type>JP-5</type>
+	<priority>2</priority>
+    </tank>
+
+    <!-- Right Inboard Tank -->
+    <tank type="FUEL" number="5">
+	<location unit="M">
+	    <x> 2.2 </x>
+	    <y> 2.7 </y>
+	    <z> 0.2 </z>
+	</location>
+	<capacity unit="LBS">2493</capacity>
+	<contents unit="LBS">2493</contents>
+	<type>JP-5</type>
+	<priority>2</priority>
+    </tank>
+    
+    <!-- Right Outboard Tank -->
+    <tank type="FUEL" number="6">
+	<location unit="M">
+	    <x> 3.0 </x>
+	    <y> 5.2 </y>
+	    <z> 0.15</z>
+	</location>
+	<capacity unit="LBS">934</capacity>
+	<contents unit="LBS">934</contents>
+	<type>JP-5</type>
+	<priority>2</priority>
+    </tank>
+
+    <!-- Pylon 1 Aero ID 300 -->
+    <tank type="FUEL" number="7">
+	<location unit="M">
+	    <x> 1.90</x>
+	    <y>-3.66</y>
+	    <z>-0.63</z>
+	</location>
+	<capacity unit="LBS">2043</capacity>
+	<contents unit="LBS">0</contents>
+	<type>JP-5</type>
+	<priority>1</priority>
+    </tank>
+
+    <!-- Pylon 2 Aero ID 300 -->
+    <tank type="FUEL" number="8">
+	<location unit="M">
+	    <x> 1.90</x>
+	    <y>-2.48</y>
+	    <z>-0.63</z>
+	</location>
+	<capacity unit="LBS">2043</capacity>
+	<contents unit="LBS">0</contents>
+	<type>JP-5</type>
+	<priority>1</priority>
+    </tank>
+
+    <!-- Pylon 3 Aero ID 300 -->
+    <tank type="FUEL" number="9">
+	<location unit="M">
+	    <x> 1.40</x>
+	    <y> 0.00</y>
+	    <z>-1.22</z>
+	</location>
+	<capacity unit="LBS">2043</capacity>
+	<contents unit="LBS">0</contents>
+	<type>JP-5</type>
+	<priority>1</priority>
+    </tank>
+
+    <!-- Pylon 4 Aero ID 300 -->
+    <tank type="FUEL" number="10">
+	<location unit="M">
+	    <x> 1.90</x>
+	    <y> 2.48</y>
+	    <z>-0.63</z>
+	</location>
+	<capacity unit="LBS">2043</capacity>
+	<contents unit="LBS">0</contents>
+	<type>JP-5</type>
+	<priority>1</priority>
+    </tank>
+
+    <!-- Pylon 5 Aero ID 300 -->
+    <tank type="FUEL" number="11">
+	<location unit="M">
+	    <x> 1.90</x>
+	    <y> 3.66</y>
+	    <z>-0.63</z>
+	</location>
+	<capacity unit="LBS">2043</capacity>
+	<contents unit="LBS">0</contents>
+	<type>JP-5</type>
+	<priority>1</priority>
+    </tank>
+
 </propulsion>
 

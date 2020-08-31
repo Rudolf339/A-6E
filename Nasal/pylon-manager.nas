@@ -21,8 +21,16 @@ loadPylon = func (n, selected) {
 	var mass = 0;
 	var cd = 0;
 	var eda = 0;
-	var id = 0;
+	var id = "none";
 	var count = 0;
+    }
+
+    # load fuel tanks if needed
+    print(id ~ " " ~ sprintf("%i", num(n) + 7));
+    if (id == "aero300") {
+	setprop("/consumables/fuel/tank[" ~ sprintf("%i", num(n) + 7) ~ "]/level-gal_us", 300);
+    } else {
+	setprop("/consumables/fuel/tank[" ~ sprintf("%i", num(n) + 7) ~ "]/level-ga_us", 0);
     }
     setprop("/payload/weight[" ~ n ~ "]/weight-lb", mass);
     setprop("/payload/weight[" ~ n ~ "]/eda", eda);
