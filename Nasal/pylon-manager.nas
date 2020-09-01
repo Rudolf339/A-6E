@@ -4,9 +4,27 @@
 
 # name: [id, count, rack]
 
+var UPDATE_PERIOD = 0.1;
 var stores = {Droptank: {id:"aero300", count:1}};
 
-loadPylon = func (n, selected) {
+var ext = {0: {id: props.globals.getNode("/payload/weight/id"),
+	       level: props.globals.getNode("/consumables/fuel/tank[8]/level-gal_us"),
+	      },
+	   1: {id: props.globals.getNode("/payload/weight[1]/id"),
+	       level: props.globals.getNode("/consumables/fuel/tank[9]/level-gal_us"),
+	      },
+	   2: {id: props.globals.getNode("/payload/weight[2]/id"),
+	       level: props.globals.getNode("/consumables/fuel/tank[10]/level-gal_us"),
+	      },
+	   3: {id: props.globals.getNode("/payload/weight[3]/id"),
+	       level: props.globals.getNode("/consumables/fuel/tank[11]/level-gal_us"),
+	      },
+	   4: {id: props.globals.getNode("/payload/weight[4]/id"),
+	       level: props.globals.getNode("/consumables/fuel/tank[12]/level-gal_us"),
+	      },
+	  };
+
+var loadPylon = func (n, selected) {
     n = sprintf("%i", n);
     if (selected != getprop("/payload/weight[" ~ n ~ "]/selected")) {
 	setprop("/payload/weight[" ~ n ~ "]/selected", selected);
@@ -26,27 +44,44 @@ loadPylon = func (n, selected) {
     }
 
     # load fuel tanks if needed
-    print(id ~ " " ~ sprintf("%i", num(n) + 7));
-    if (id == "aero300") {
-	setprop("/consumables/fuel/tank[" ~ sprintf("%i", num(n) + 7) ~ "]/level-gal_us", 300);
+    if (id == "aero300" or id == "d704") {
+	ext[num(n)].level.setValue(300);
     } else {
-	setprop("/consumables/fuel/tank[" ~ sprintf("%i", num(n) + 7) ~ "]/level-ga_us", 0);
+	ext[num(n)].level.setValue(0);
     }
     setprop("/payload/weight[" ~ n ~ "]/weight-lb", mass);
     setprop("/payload/weight[" ~ n ~ "]/eda", eda);
     setprop("/payload/weight[" ~ n ~ "]/cd", cd);
     setprop("/payload/weight[" ~ n ~ "]/id", id);
     setprop("/payload/weight[" ~ n ~ "]/count", count);
+
 }
 
-# load empty stores for startup
-for (var i = 1; i < 5; i += 1) {
-    loadPylon(i, "none");
+var droptank_check = func {
+    for (var n = 0; n < 5; n += 1) {
+	if (ext[n].id.getValue() != "aero300" and
+	    ext[n].id.getValue() != "d704" and
+	    ext[n].level.getValue() != 0) {
+	    ext[n].level.setValue(0);
+	}
+    }
 }
 
-# Set up listeners for stores selection
-setlistener("/payload/weight/selected", func { loadPylon(0, getprop("/payload/weight/selected")) });
-setlistener("/payload/weight[1]/selected", func { loadPylon(1, getprop("/payload/weight[1]/selected")) });
-setlistener("/payload/weight[2]/selected", func { loadPylon(2, getprop("/payload/weight[2]/selected")) });
-setlistener("/payload/weight[3]/selected", func { loadPylon(3, getprop("/payload/weight[3]/selected")) });
-setlistener("/payload/weight[4]/selected", func { loadPylon(4, getprop("/payload/weight[4]/selected")) });
+var armament_loop = func {
+    droptank_check();
+    settimer(armament_loop, UPDATE_PERIOD);
+}
+
+var main_init = func {
+    print("#### Pylon Manager started ####");
+    # load empty stores for startup
+    for (var i = 0; i < 5; i += 1) {
+	loadPylon(i, "none");
+    }
+    armament_loop();
+}
+
+var main_init_listener = setlistener("sim/signals/fdm-initialized", func {
+    main_init();
+    removelistener(main_init_listener);
+}, 0, 0);
