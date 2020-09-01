@@ -96,7 +96,7 @@
     </tank>
 
     <!-- Center Wing Tank -->
-    <tank type="fuel" number="3">
+    <tank type="FUEL" number="3">
 	<location unit="M">
 	    <x> 2.2 </x>
 	    <y>-2.7 </y>
