@@ -146,47 +146,6 @@ Grumman A-6E simulation config.
 	    </config>
 	</view>
 
-	<consumables>
-	    <fuel>
-		<tank n='0'>
-		    <name>MID Fuselage Tank</name>
-		</tank>
-		<tank n='1'>
-		    <name>FWD Fuselage Tank</name>
-		</tank>
-		<tank n='2'>
-		    <name>AFT Fuselage Tank</name>
-		</tank>
-		<tank n='3'>
-		    <name>Left Inboard Wing Tank</name>
-		</tank>
-		<tank n='4'>
-		    <name>Left Outboard Wing Tank</name>
-		</tank>
-		<tank n='5'>
-		    <name>Right Inboard Wing Tank</name>
-		</tank>
-		<tank n='6'>
-		    <name>Right Outboard Wing Tank</name>
-		</tank>
-		<tank n='7'>
-		    <name>Pylon 1 External Tank</name>
-		</tank>
-		<tank n='8'>
-		    <name>Pylon 2 External Tank</name>
-		</tank>
-		<tank n='9'>
-		    <name>Pylon 3 External Tank</name>
-		</tank>
-		<tank n='10'>
-		    <name>Pylon 4 External Tank</name>
-		</tank>>
-		<tank n='11'>
-		    <name>Pylon 5 External Tank</name>
-		</tank>
-	    </fuel>
-	</consumables>
-
 	<sound>
 	    <audible>true</audible>
 	    <path>Aircraft/A-6E/Sounds/A-6E-sound.xml</path>
@@ -400,6 +359,50 @@ Grumman A-6E simulation config.
 	    <offset-z-m type="double"> 1.76</offset-z-m>
 	</refuel>
     </systems>
+    
+    <consumables>
+	<fuel>
+	    <tank n="0">
+		<name>MID Fuselage</name>
+	    </tank>
+	    <tank n="1">
+		<name>FWD Fuselage</name>
+	    </tank>
+	    <tank n="2">
+		<name>AFT Fuselage</name>
+	    </tank>
+	    <tank n="3">
+		<name>Center Wing Tank</name>
+	    </tank>
+	    <tank n="4">
+		<name>Left Inboard Wing</name>
+	    </tank>
+	    <tank n="5">
+		<name>Left Outboard Wing</name>
+	    </tank>
+	    <tank n="6">
+		<name>Right Inboard Wing</name>
+	    </tank>
+	    <tank n="7">
+		<name>Right Outboard Wing</name>
+	    </tank>
+	    <tank n="8">
+		<name>Pylon 1 External</name>
+	    </tank>
+	    <tank n="9">
+		<name>Pylon 2 External</name>
+	    </tank>
+	    <tank n="10">
+		<name>Pylon 3 External</name>
+	    </tank>
+	    <tank n="11">
+		<name>Pylon 4 External</name>
+	    </tank>
+	    <tank n="12">
+		<name>Pylon 5 External</name>
+	    </tank>
+	</fuel>
+    </consumables>
 
     <payload>
 	<weight>

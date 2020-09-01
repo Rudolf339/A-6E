@@ -28,6 +28,7 @@
 	    <input>propulsion/tank[4]/contents-lbs</input>
 	    <input>propulsion/tank[5]/contents-lbs</input>
 	    <input>propulsion/tank[6]/contents-lbs</input>
+	    <input>propulsion/tank[7]/contents-lbs</input>
 	    <clipto>
 		<min>0</min>
 		<max>10000</max>
@@ -47,25 +48,26 @@
 	    <input>propulsion/tank[9]/contents-lbs</input>
 	    <input>propulsion/tank[10]/contents-lbs</input>
 	    <input>propulsion/tank[11]/contents-lbs</input>
+	    <input>propulsion/tank[12]/contents-lbs</input>
 	</summer>
 	
 	<!-- 1: R outbrd 2: R inbrf 3: L inbrd 4: L outbrd
 	     5: CTR 6: WING 7: MAIN -->
 	<switch name="systems/instrument/fuel/select-lbs">
 	    <default value="0"/>
-	    <test value="propulsion/tank[6]/contents-lbs">
+	    <test value="propulsion/tank[7]/contents-lbs">
 		systems/instrument/fuel/tank-select eq 1
 	    </test>
 	    <test value="propulsion/tank[5]/contents-lbs">
 		systems/instrument/fuel/tank-select eq 2
 	    </test>
-	    <test value="propulsion/tank[3]/contents-lbs">
+	    <test value="propulsion/tank[4]/contents-lbs">
 		systems/instrument/fuel/tank-select eq 3
 	    </test>
-	    <test value="propulsion/tank[4]/contents-lbs">
+	    <test value="propulsion/tank[5]/contents-lbs">
 		systems/instrument/fuel/tank-select eq 4
 	    </test>
-	    <test value="propulsion/tank/contents-lbs">
+	    <test value="propulsion/tank[3]/contents-lbs">
 		systems/instrument/fuel/tank-select eq 5
 	    </test>
 	    <test value="systems/instrument/fuel/wing-lbs">

@@ -11,7 +11,7 @@
 	    <roll>     0.00 </roll>
 	    <yaw>     0.00 </yaw>
 	</orient>
-	<feed> 0 </feed>
+	<feed>2</feed>
 
 	<thruster file="direct">
 	    <sense> 1 </sense>
@@ -39,7 +39,7 @@
 	    <roll>     0.00 </roll>
 	    <yaw>     0.00 </yaw>
 	</orient>
-	<feed> 0 </feed>
+	<feed>2</feed>
 
 	<thruster file="direct">
 	    <sense> 1 </sense>
@@ -95,21 +95,34 @@
 	<priority>2</priority>
     </tank>
 
-    <!-- Left Inboard Tank -->
-    <tank type="FUEL" number="3">
+    <!-- Center Wing Tank -->
+    <tank type="fuel" number="3">
 	<location unit="M">
 	    <x> 2.2 </x>
 	    <y>-2.7 </y>
 	    <z> 0.2 </z>
 	</location>
-	<capacity unit="LBS">2493</capacity>
-	<contents unit="LBS">2493</contents>
+	<capacity unit="LBS">2043</capacity>
+	<contents unit="LBS">2043</contents>
+	<type>JP-5</type>
+	<priority>2</priority>
+    </tank>
+
+    <!-- Left Inboard Tank -->
+    <tank type="FUEL" number="4">
+	<location unit="M">
+	    <x> 2.2 </x>
+	    <y>-2.7 </y>
+	    <z> 0.2 </z>
+	</location>
+	<capacity unit="LBS">1539</capacity>
+	<contents unit="LBS">1539</contents>
 	<type>JP-5</type>
 	<priority>2</priority>
     </tank>
     
     <!-- Left Outboard Tank -->
-    <tank type="FUEL" number="4">
+    <tank type="FUEL" number="5">
 	<location unit="M">
 	    <x> 3.0 </x>
 	    <y>-5.2 </y>
@@ -122,20 +135,20 @@
     </tank>
 
     <!-- Right Inboard Tank -->
-    <tank type="FUEL" number="5">
+    <tank type="FUEL" number="6">
 	<location unit="M">
 	    <x> 2.2 </x>
 	    <y> 2.7 </y>
 	    <z> 0.2 </z>
 	</location>
-	<capacity unit="LBS">2493</capacity>
-	<contents unit="LBS">2493</contents>
+	<capacity unit="LBS">1539</capacity>
+	<contents unit="LBS">1539</contents>
 	<type>JP-5</type>
 	<priority>2</priority>
     </tank>
     
     <!-- Right Outboard Tank -->
-    <tank type="FUEL" number="6">
+    <tank type="FUEL" number="7">
 	<location unit="M">
 	    <x> 3.0 </x>
 	    <y> 5.2 </y>
@@ -148,7 +161,7 @@
     </tank>
 
     <!-- Pylon 1 Aero ID 300 -->
-    <tank type="FUEL" number="7">
+    <tank type="FUEL" number="8">
 	<location unit="M">
 	    <x> 1.90</x>
 	    <y>-3.66</y>
@@ -161,7 +174,7 @@
     </tank>
 
     <!-- Pylon 2 Aero ID 300 -->
-    <tank type="FUEL" number="8">
+    <tank type="FUEL" number="9">
 	<location unit="M">
 	    <x> 1.90</x>
 	    <y>-2.48</y>
@@ -174,7 +187,7 @@
     </tank>
 
     <!-- Pylon 3 Aero ID 300 -->
-    <tank type="FUEL" number="9">
+    <tank type="FUEL" number="10">
 	<location unit="M">
 	    <x> 1.40</x>
 	    <y> 0.00</y>
@@ -187,7 +200,7 @@
     </tank>
 
     <!-- Pylon 4 Aero ID 300 -->
-    <tank type="FUEL" number="10">
+    <tank type="FUEL" number="11">
 	<location unit="M">
 	    <x> 1.90</x>
 	    <y> 2.48</y>
@@ -200,7 +213,7 @@
     </tank>
 
     <!-- Pylon 5 Aero ID 300 -->
-    <tank type="FUEL" number="11">
+    <tank type="FUEL" number="12">
 	<location unit="M">
 	    <x> 1.90</x>
 	    <y> 3.66</y>
