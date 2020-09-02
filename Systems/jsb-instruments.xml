@@ -3,7 +3,11 @@
     <channel name="AOA">
 	<pure_gain name="systems/instrument/aoa-unit">
 	    <input>aero/alpha-deg</input>
-	    <gain>2.83053</gain>
+	    <gain>2.0</gain>
+	    <clipto>
+		<min>-15</min>
+		<max>30</max>
+	    </clipto>
 	</pure_gain>
     </channel>
 
