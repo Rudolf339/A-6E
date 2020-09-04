@@ -328,7 +328,7 @@
 	      </setting>
 	      <setting>
 		  <position> 40 </position>
-		  <time>      12 </time>
+		  <time>      3 </time>
 	      </setting>
 	  </traverse>
 	  <output>fcs/surfaces/flap-pos-deg</output>
