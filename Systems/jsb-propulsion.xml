@@ -123,7 +123,7 @@
     <tank type="FUEL" number="3">
 	<location unit="M">
 	    <x> 2.2 </x>
-	    <y>-2.7 </y>
+	    <y> 0.0 </y>
 	    <z> 0.2 </z>
 	</location>
 	<capacity unit="LBS">2043</capacity>
