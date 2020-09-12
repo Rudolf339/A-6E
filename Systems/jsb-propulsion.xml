@@ -1,15 +1,15 @@
 <propulsion>
     
     <engine file="J52-P8">
-	<location unit="IN">
-	    <x>   355.20 </x>
-	    <y>   -20.00 </y>
-	    <z>   -12.00 </z>
+	<location unit="M">
+	    <x> 4.23</x>
+	    <y>-1.00</y>
+	    <z>-0.32</z>
 	</location>
 	<orient unit="DEG">
-	    <pitch>     0.00 </pitch>
-	    <roll>     0.00 </roll>
-	    <yaw>     0.00 </yaw>
+	    <pitch>-12.00</pitch>
+	    <roll>0.00</roll>
+	    <yaw>-6.00</yaw>
 	</orient>
 	<feed>0</feed>
 	<feed>1</feed>
@@ -27,10 +27,10 @@
 
 	<thruster file="direct">
 	    <sense> 1 </sense>
-	    <location unit="IN">
-		<x>   355.20 </x>
-		<y>   -20.00 </y>
-		<z>   -12.00 </z>
+	    <location unit="M">
+		<x> 4.23</x>
+		<y>-1.00</y>
+		<z>-0.32</z>
 	    </location>
 	    <orient unit="DEG">
 		<pitch>-12.00</pitch>
@@ -41,10 +41,10 @@
     </engine>
 
     <engine file="J52-P8">
-	<location unit="IN">
-	    <x>   355.20 </x>
-	    <y>    20.00 </y>
-	    <z>   -12.00 </z>
+	<location unit="M">
+	    <x> 4.23</x>
+	    <y> 1.00</y>
+	    <z>-0.32</z>
 	</location>
 	<orient unit="DEG">
 	    <pitch>-12.00</pitch>
@@ -67,15 +67,15 @@
 
 	<thruster file="direct">
 	    <sense> 1 </sense>
-	    <location unit="IN">
-		<x>   355.20 </x>
-		<y>    20.00 </y>
-		<z>   -12.00 </z>
+	    <location unit="M">
+		<x> 4.23</x>
+		<y> 1.00</y>
+		<z>-0.32</z>
 	    </location>
 	    <orient unit="DEG">
-		<pitch>     0.00 </pitch>
-		<roll>     0.00 </roll>
-		<yaw>     0.00 </yaw>
+		<pitch>-12.00</pitch>
+		<roll>0.00</roll>
+		<yaw>6.00</yaw>
 	    </orient>
 	</thruster>
     </engine>
