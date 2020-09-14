@@ -18857,18 +18857,19 @@
 	</product>
     </function>
 
+    
+    <function name="aero/force/CL">
+      <sum>
+	<property>aero/CL_base</property>
+	<property>aero/CL_elevator</property>
+	<property>aero/CL_right-flaperon</property>
+	<property>aero/CL_left-flaperon</property>
+	<property>aero/CL_slats</property>
+	<property>aero/CL_flap</property>
+      </sum>
+    </function>
+	
     <axis name="LIFT">
-
-	<function name="aero/force/CL">
-	    <sum>
-		<property>aero/CL_base</property>
-		<property>aero/CL_elevator</property>
-		<property>aero/CL_right-flaperon</property>
-		<property>aero/CL_left-flaperon</property>
-		<property>aero/CL_slats</property>
-		<property>aero/CL_flap</property>
-	    </sum>
-	</function>
 	
 	<function name="aero/force/Lift_combined">
 	    <description>Lift due to alpha</description>
@@ -18911,19 +18912,19 @@
 	</function>
 
     </axis>
+    
+    <function name="aero/force/CDtot">
+      <sum>
+	<property>aero/CDtot_base</property>
+	<property>aero/CDtot_elevator</property>
+	<property>aero/CDtot_right-flaperon</property>
+	<property>aero/CDtot_left-flaperon</property>
+	<property>aero/CDtot_slats</property>
+	<property>aero/CDtot_flap</property>
+      </sum>
+    </function>
 
     <axis name="DRAG">
-
-	<function name="aero/force/CDtot">
-	    <sum>
-		<property>aero/CDtot_base</property>
-		<property>aero/CDtot_elevator</property>
-		<property>aero/CDtot_right-flaperon</property>
-		<property>aero/CDtot_left-flaperon</property>
-		<property>aero/CDtot_slats</property>
-		<property>aero/CDtot_flap</property>
-	    </sum>
-	</function>
 	
 	<function name="aero/force/Drag_combined">
 	    <description>Drag at zero lift</description>
@@ -18983,18 +18984,18 @@
 	</function>
 
     </axis>
+    
+    <function name="aero/force/CS">
+      <sum>
+	<property>aero/CS_base</property>
+	<property>aero/CS_rudder</property>
+	<property>aero/CS_flap</property>
+	<property>aero/s/cfyp</property>
+	<property>aero/s/cfyr</property>
+      </sum>
+    </function>
 
     <axis name="SIDE">
-
-	<function name="aero/force/CS">
-	    <sum>
-		<property>aero/CS_base</property>
-		<property>aero/CS_rudder</property>
-		<property>aero/CS_flap</property>
-		<property>aero/s/cfyp</property>
-		<property>aero/s/cfyr</property>
-	    </sum>
-	</function>
 	
 	<function name="aero/force/Side_combined">
 	    <description>Side force</description>
@@ -19017,15 +19018,15 @@
 
     </axis>
 
-    <axis name="PITCH">
+    <function name="aero/moment/CMy">
+      <sum>
+	<property>aero/CMy_flap</property>
+	<property>aero/CMy_slats</property>
+	<property>aero/s/cmmq</property>
+      </sum>
+    </function>
 
-	<function name="aero/moment/CMy">
-	    <sum>
-		<property>aero/CMy_flap</property>
-		<property>aero/CMy_slats</property>
-		<property>aero/s/cmmq</property>
-	    </sum>
-	</function>
+    <axis name="PITCH">
 
 	<function name="aero/moment/Pitch_combined">
 	    <description>Pitch moment due to alpha</description>
@@ -19091,22 +19092,23 @@
 
     </axis>
 
+    <function name="aero/moment/CMx">
+      <sum>
+	<!-- <property>aero/CMx_base</property> -->
+	<property>aero/CMx_rudder</property>
+	<property>aero/s/cmlr</property>
+	<product>
+	  <sum>
+	    <property>aero/CMx_left-flaperon</property>
+	    <property>aero/CMx_right-flaperon</property>
+	    <property>aero/s/cmlp</property>
+	  </sum>
+	  <value>-1</value>
+	</product>
+      </sum>
+    </function>
+
     <axis name="ROLL">
-	<function name="aero/moment/CMx">
-	    <sum>
-		<!-- <property>aero/CMx_base</property> -->
-		<property>aero/CMx_rudder</property>
-		<property>aero/s/cmlr</property>
-		<product>
-		    <sum>
-			<property>aero/CMx_left-flaperon</property>
-			<property>aero/CMx_right-flaperon</property>
-			<property>aero/s/cmlp</property>
-		    </sum>
-		    <value>-1</value>
-		</product>
-	    </sum>
-	</function>
 
 	<function name="aero/moment/Roll_combined">
 	    <description>Roll moment</description>
@@ -19119,22 +19121,22 @@
 	</function>
     </axis>
 
-    <axis name="YAW">
+    <function name="aero/moment/CMz">
+      <sum>
+	<property>aero/CMz_base</property>
+	<property>aero/CMz_left-flaperon</property>
+	<property>aero/CMz_right-flaperon</property>
+	<!-- <property>aero/s/cmnr</property> -->
+	<property>aero/s/cmnp</property>
+	<product>
+	  <property>aero/CMz_rudder</property>
+	  <value>-1</value>
+	</product>
+      </sum>
+    </function>
 
-	<function name="aero/moment/CMz">
-	    <sum>
-		<property>aero/CMz_base</property>
-		<property>aero/CMz_left-flaperon</property>
-		<property>aero/CMz_right-flaperon</property>
-		<!-- <property>aero/s/cmnr</property> -->
-		<property>aero/s/cmnp</property>
-		<product>
-		    <property>aero/CMz_rudder</property>
-		    <value>-1</value>
-		</product>
-	    </sum>
-	</function>
-	
+    <axis name="YAW">
+      
 	<function name="aero/moment/Yaw_combined">
 	    <description>Yaw moment</description>
 	    <product>
