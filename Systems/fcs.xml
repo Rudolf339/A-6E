@@ -315,7 +315,7 @@
 	  </test>
       </switch>
       
-      <kinematic name="fcs/flap-pos-deg">
+      <kinematic name="fcs/flaps-pos-deg">
 	  <input>fcs/flap-cmd</input>
 	  <traverse>
 	      <setting>
@@ -331,11 +331,11 @@
 		  <time>      3 </time>
 	      </setting>
 	  </traverse>
-	  <output>fcs/surfaces/flap-pos-deg</output>
+	  <output>fcs/surfaces/flaps-pos-deg</output>
       </kinematic>
 
       <aerosurface_scale name="fcs/surfaces/flap-pos-norm">
-	  <input>fcs/flap-pos-deg</input>
+	  <input>fcs/flaps-pos-deg</input>
 	  <domain>
 	      <min>  0 </min>
 	      <max> 40 </max>
