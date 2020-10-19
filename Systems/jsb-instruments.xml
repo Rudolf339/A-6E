@@ -1,14 +1,22 @@
 <?xml version="1.0"?>
 <system name="instrumentation">
-    <channel name="AOA">
-	<pure_gain name="systems/instrument/aoa-unit">
-	    <input>aero/alpha-deg</input>
-	    <gain>2.7777777777</gain>
-	    <clipto>
-		<min>-15</min>
-		<max>30</max>
-	    </clipto>
-	</pure_gain>
+  <channel name="AOA">
+
+    <fcs_function name="systems/instrument/aoa-unit">
+      <function>
+	<quotient>
+	  <sum>
+	    <property>aero/alpha-deg</property>
+	    <value>11.7</value>
+	  </sum>
+	  <value>1.3</value>
+	</quotient>
+      </function>
+      <clipto>
+	<min>-15</min>
+	<max>30</max>
+      </clipto>
+      </fcs_function>
     </channel>
 
     <property value="0">systems/instrument/fuel/damage-rate</property>
