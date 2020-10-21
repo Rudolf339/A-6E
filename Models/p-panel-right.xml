@@ -45,7 +45,7 @@
 					<h>35</h>
 					<binding> 
 						<command>property-assign</command>
-						<property>controls/gear/tailhook</property>
+						<property>fdm/jsbsim/systems/hook/tailhook-cmd-norm</property>
 						<value type="double">0</value>
 					</binding>
 				</action>
@@ -58,7 +58,7 @@
 					<h>38</h>
 					<binding> 
 						<command>property-assign</command>
-						<property>controls/gear/tailhook</property>
+						<property>fdm/jsbsim/systems/hook/tailhook-cmd-norm</property>
 						<value type="double">1</value>
 					</binding>
 				</action>

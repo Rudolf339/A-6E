@@ -23,7 +23,7 @@ engine diameter:         3.8 ft
 -->
 
 <turbine_engine name="J52-P8">
-<milthrust> 8700.0 </milthrust>
+<milthrust> 7700.0 </milthrust>
 <bypassratio>     1.000 </bypassratio>
 <tsfc>            0.760 </tsfc>
 <bleed>           0.03</bleed>

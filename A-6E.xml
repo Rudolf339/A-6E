@@ -141,9 +141,9 @@
     <propulsion file="Systems/jsb-propulsion.xml"/>
     <ground_reactions file="Systems/ground_reactions.xml"/>
     <system file="Propulsion.xml"/>
-    <system file="Arrestor_Hook.xml"/>
     <system file="Catapult.xml"/>
     <system file="jsb-instruments.xml"/>
+    <system file="jsb-hook.xml"/>
     
     <flight_control file="Systems/fcs.xml"/>
 
@@ -152,10 +152,10 @@
     <external_reactions>
 
 	<force name="hook" frame="BODY">
-	    <location unit="FT">
-		<x> 49.595 </x>
-		<y> 0 </y>
-		<z> -1.09</z>
+	    <location unit="M">
+		<x>7</x>
+		<y>0</y>
+		<z>-1</z>
 	    </location>
 	    <direction>
 		<x>-0.9995</x>

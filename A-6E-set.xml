@@ -290,7 +290,7 @@ Grumman A-6E simulation config.
 	    <line>    Rotate:        ~120 kt</line>
 	    <line>Approach, landinh:</line>
 	    <line>    Onspeed:       22 units AoA</line>
-	    <line>    Flaps:         LD (40)</line>
+	    <line>    Flaps:         TO (30)</line>
 	    <key>
 		<name>c</name>
 		<desc>Canopy open/close command</desc>
@@ -310,6 +310,10 @@ Grumman A-6E simulation config.
 	    <key>
 		<name>n</name>
 		<desc>Enable NSW steering</desc>
+	    </key>
+	    <key>
+		<name>o</name>
+		<desc>Toggle arrestor hook</desc>
 	    </key>
 	</help>
 	
@@ -581,6 +585,16 @@ Grumman A-6E simulation config.
 		    </binding>
 		</mod-up>
 	    </key>
+
+            <key n="111">
+                <name>o</name>
+                <desc>Toggle arrester hook</desc>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>fdm/jsbsim/systems/hook/tailhook-cmd-norm</property>
+                </binding>
+	    </key>
+	    
 	</keyboard>
     </input>
 

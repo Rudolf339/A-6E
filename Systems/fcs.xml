@@ -595,5 +595,16 @@
       <output>fcs/wing-fold-pos-norm</output>
     </actuator>
   </channel>
+
+  <property>fcs/hook-engage</property>
+  <property value="2.5">fcs/rate-limits/hook-up</property>
+  <property value="2.5">fcs/rate-limits/hook-down</property>
+  <channel name="hook">
+      <actuator name="fcs/hook-pos-norm">
+	  <input>fcs/hook-engage</input>
+	  <rate_limit sense="incr">fcs/rate-limits/hook-down</rate_limit>
+	  <rate_limit sense="decr">fcs/rate-limits/hook-up</rate_limit>
+      </actuator>
+  </channel>
   
 </flight_control>
