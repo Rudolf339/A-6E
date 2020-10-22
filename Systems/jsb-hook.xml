@@ -18,36 +18,6 @@
     <property value="0">systems/hook/hook-decel-force</property>
     <property value="-60">systems/hook/funcs/arrestor-wire-available-dt</property>
     <property value="20">systems/hook/arrestor-wire-reset-time</property>
-    <!--<channel name="hook-resets" execute="systems/hook/funcs/reset-hook">
-        <fcs_function name="systems/hook/zz-intermediate/reset-hook">
-            <output>systems/hook/funcs/reset-hook</output>
-            <function>
-                <v>0</v>
-            </function>
-        </fcs_function>
-        <fcs_function name="systems/hook/funcs/hook-damage-reset">
-            <function>
-                <v>1</v>
-            </function>
-            <output>systems/hook/funcs/hook-functional</output>
-        </fcs_function>
-    </channel>-->
-
-    <!--<channel name="HookDamage" execute="systems/hook/funcs/hook-functional">
-        <fcs_function name="systems/hook/funcs/zzhook-functional">
-            <function>
-                <ifthen>
-                    <lt>
-                        <p>systems/hook/funcs/hook-operational-efficiency</p>
-                        <v>0.4</v>
-                    </lt>
-                    <v>0</v>
-                    <v>1</v>
-                </ifthen>
-            </function>
-            <output>systems/hook/funcs/hook-functional</output>
-        </fcs_function>
-    </channel>-->
     <property value="1">systems/hydraulics/combined-system-pressure</property>
     <channel name="Hook">
         <fcs_function name="systems/hook/zz-intermediate/systems/hook/arrestor-wire-available">
