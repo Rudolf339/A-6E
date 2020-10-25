@@ -165,10 +165,10 @@
 	</force>
 
 	<force name="catapult" frame="BODY">
-	    <location unit="IN">
-		<x> 85.02 </x>
-		<y> 0 </y>
-		<z> -78.48 </z>
+	    <location unit="M">
+		<x>-2.84</x>
+		<y> 0.00</y>
+		<z> 0.00</z>
 	    </location>
 	    <direction>
 		<x> 1 </x>
