@@ -126,113 +126,7 @@ var ldg_hdl_anim = func {
 	}
 }
 
-
-# Wing Fold System
-# ----------------
-
-var wf_hdl		= props.globals.getNode("sim/model/A-6E/controls/wing-fold/handle-position");
-var wf_btn		= props.globals.getNode("sim/model/A-6E/controls/wing-fold/button-position");
-var wf_sw		= props.globals.getNode("sim/model/A-6E/controls/wing-fold/switch-position");
-var wf_hdl_dir	= 0;
-var WingFold    = aircraft.door.new("sim/model/A-6E/controls/wing-fold", 7);
-
-var mp_wing_pos = props.globals.getNode("surface-positions/wing-fold-pos-norm", 1);
-mp_wing_pos.alias(props.globals.getNode("sim/model/A-6E/controls/wing-fold/position-norm"));
-
-var wf_push_button = func {
-	var hdl_pos = wf_hdl.getValue();
-	var btn_pos = wf_btn.getValue();
-	if ( hdl_pos == 0 and ! btn_pos) {
-		wf_btn.setValue(1);
-		wf_hdl.setValue(0.3);
-	}
-}
-
-var wf_handle = func {
-	var hdl_pos = wf_hdl.getValue();
-	var btn_pos = wf_btn.getValue();
-	var sw_pos = wf_sw.getValue();
-	if ( btn_pos == 1 and sw_pos == -1 ) {
-		if ( wf_hdl_dir >= 0 and hdl_pos >= 0.3 and hdl_pos < 1  ) {
-			wf_hdl_dir = 1;
-			var max = 1;
-			wf_hdl_anim(1, hdl_pos, max)
-		} elsif ( wf_hdl_dir <= 0 and hdl_pos <= 1 and hdl_pos > 0.3  ) {
-			wf_hdl_dir = -1;
-			var min = 0.3;
-			wf_hdl_anim(-1, hdl_pos, min)
-		}
-	} elsif ( btn_pos == 1 and sw_pos == 1 ) {
-		wf_btn.setValue(0);
-		wf_hdl.setValue(0);
-	}
-}
-
-var wf_switch = func {
-	var cmd = arg[0];
-	var sw_pos = wf_sw.getValue();
-	var hdl_pos = wf_hdl.getValue();
-	if ( cmd == 1 and sw_pos == -1 ) {
-		wf_sw.setValue(1);
-		if ( hdl_pos > 0.3 ) { settimer( func { wf_switch_return() }, 0.1 ) }
-		#check lateral ctrl
-		#lock flaperons
-	} elsif ( cmd == -1 and sw_pos == 1 ) {
-		wf_sw.setValue(-1);
-	}
-}
-var wf_switch_return = func {
-	wf_sw.setValue(-1);
-}
-
-var lockpinToggle = func {
-    var p = getprop("/fdm/jsbsim/fcs/wing-fold/lockpin");
-    if ( p == 1 ) {
-	var l = -1;
-    } else {
-	var l = 1;
-    }
-    setprop("/controls/flight/wing-fold/lockpin-cmd", l);
-}
-    
-var wf_hdl_anim = func {
-	var pos = arg[1] + arg[0]/20;
-	var limit = arg[2];
-	if (( arg[0] == 1 and pos >= limit ) or ( arg[0] == -1 and pos <= limit )) {
-		wf_hdl.setValue(limit);
-		wf_fold(wf_hdl_dir);
-		wf_hdl_dir = 0;
-	} else { 
-		wf_hdl.setValue(pos);
-		settimer( wf_handle, 0.02 );
-	}
-}
-
-var wf_fold = func(n) {
-	if ( n == 1 ) {
-		settimer( func { WingFold.open() }, 2 );
-	} else {
-		settimer( func { WingFold.close() }, 2 );
-	}
-}
-
-# Override standard controls.wingsDown() so the regular keybindings trigger the
-# whole sequence.
-controls.wingsDown = func(n) {
-	if ( n == -1 ) {
-		wf_btn.setValue(1);
-		wf_hdl.setValue(0.3);
-		wf_sw.setValue(1);
-		wf_hdl.setValue(1);
-		WingFold.open();
-	} elsif ( n == 1 ) {
-		wf_hdl.setValue(0);
-		wf_sw.setValue(-1);
-		wf_btn.setValue(0);
-		wf_hdl.setValue(0);
-		WingFold.close();
-	} 
-}
+ldg_hdl_main();
 
 # General 3 positions switch (2 - 1 - 0)
 # --------------------------------------
@@ -457,33 +351,6 @@ var afcs_disengage = func() {
 }
 
 
-
-# Launch bar animation 
-# -----------------------------
-var listen_launchbar = nil;
-var launchbarpos = nil;
-listen_launchbar = setlistener( "gear/launchbar/state", func { settimer(update_launchbar, 0.1) },0 ,0 );
-
-var update_launchbar = func() {
-	launchbarpos = getprop("gear/launchbar/position-norm");
-	if ( getprop("gear/launchbar/position-norm") == 1) {
-		if ( ! getprop ("/gear/gear[0]/wow") ) {
-			removelistener( listen_launchbar );
-			setprop("controls/gear/launchbar", "true");
-			settimer(reset_launchbar_listener, 1);
-		} else {
-			settimer(update_launchbar, 0.1);
-		}
-	}
-}
-
-var reset_launchbar_listener = func() {
-	setprop("controls/gear/launchbar", "false");
-	listen_launchbar = setlistener( "gear/launchbar/state", func { settimer(update_launchbar, 0.05) },0 ,0 );
-}
-
-
-
 # collision lights flasher
 # ------------------------
 var beacon = props.globals.getNode("controls/lighting/beacon", 1);
@@ -500,3 +367,44 @@ aircraft.light.new("sim/model/A-6E/lighting/warn-fast-lights-switch", [0.1, 0.1]
 setprop("sim/model/A-6E/lighting/warn-fast-lights-switch/enabled", 1);
 
 
+# launchbar activation
+
+var launchbar_toggle = func {
+    
+    # prevent holdback when in the air.
+    if(getprop("fdm/jsbsim/position/aircraft-on-ground"))
+    {
+	if (getprop("fdm/jsbsim/systems/holdback/holdback-cmd"))
+	{
+	    print("Disengage launchbar");
+	    setprop("fdm/jsbsim/systems/catapult/cat-launch-cmd",0);
+	    setprop("fdm/jsbsim/systems/holdback/holdback-cmd",0);
+	    setprop("/controls/gear/brake-parking",1);
+	}
+	else
+	{
+	    print("Engage launchbar");
+	    setprop("fdm/jsbsim/systems/catapult/cat-launch-cmd",0);
+	    setprop("fdm/jsbsim/systems/holdback/holdback-cmd",1);
+	    setprop("/controls/gear/brake-parking",0);
+	}
+    }
+    else
+    {
+	setprop("fdm/jsbsim/systems/catapult/cat-launch-cmd",0);
+	setprop("fdm/jsbsim/systems/holdback/holdback-cmd",0);
+    }
+}
+
+# launch catapult
+var catapult = func {
+    if (getprop("fdm/jsbsim/systems/holdback/holdback-cmd"))
+    {
+	print("Catapult launch");
+	setprop("fdm/jsbsim/systems/catapult/cat-launch-cmd",1);
+	setprop("fdm/jsbsim/systems/holdback/holdback-cmd",0);
+    }
+    else
+    {
+    }
+}
