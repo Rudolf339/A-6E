@@ -33,10 +33,59 @@
 
 	<pure_gain name="Catapult Force">
 	    <input>inertia/weight-lbs</input>
-	    <gain>3</gain>
+	    <gain>4</gain>
 	    <output>systems/catapult/cat-force</output>
 	</pure_gain>
 
+	<washout_filter name="systems/catapult/cmd-delta">
+	    <input>systems/catapult/cat-launch-cmd</input>
+	    <c1>1</c1>
+	</washout_filter>
+	
+	<switch name="systems/catapult/launch-time">
+	    <default value="systems/catapult/launch-time"/>
+	    <test value="sim-time-sec">
+		systems/catapult/cmd-delta gt 0
+	    </test>
+	</switch>
+
+	<fcs_function name="systems/catapult/cat-z-gain">
+	    <function>
+		<ifthen>
+		    <eq>
+			<property>systems/catapult/cat-launch-cmd</property>
+			<value>0</value>
+		    </eq>
+		    <value>0</value>
+		    <product>
+			<sum>
+			    <product>
+				<sin>
+				    <quotient>
+					<value>5</value>
+					<sum>
+					    <product>
+						<value>8</value>
+						<property>systems/catapult/cat-pos-norm</property>
+					    </product>
+					    <quotient>
+						<value>8.0875</value> <!-- 7/80 -->
+						<property>systems/catapult/cat-pos-norm</property>
+					    </quotient>
+					    <value>-1</value>
+					</sum>
+				    </quotient>
+				</sin>
+				<value>0.8</value>
+			    </product>
+			    <value>1</value>
+			</sum>
+			<value>0.1</value>
+		    </product>
+		</ifthen>
+	    </function>
+	</fcs_function>
+				
 	<switch name="Catapult Final">
 	    <default value="0"/>
 	    <test logic="AND" value="systems/catapult/cat-force">
@@ -47,6 +96,11 @@
 	    </test>
 	    <output>external_reactions/catapult/magnitude</output>
 	</switch>
+
+	<pure_gain name="external_reactions/catapult_vertical/magnitude">
+	    <input>external_reactions/catapult/magnitude</input>
+	    <gain>systems/catapult/cat-z-gain</gain>
+	</pure_gain>
     </channel>
 
 </system>

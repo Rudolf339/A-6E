@@ -606,5 +606,16 @@
 	  <rate_limit sense="decr">fcs/rate-limits/hook-up</rate_limit>
       </actuator>
   </channel>
-  
+
+  <channel name="misc">
+      <switch name="position/aircraft-on-ground">
+	  <default value="0"/>
+	  <test logic="OR" value="1">
+	      gear/unit[0]/WOW ne 0
+	      gear/unit[1]/WOW ne 0
+	      gear/unit[2]/WOW ne 0
+	  </test>
+      </switch>
+  </channel>
+       
 </flight_control>

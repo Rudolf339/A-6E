@@ -40,7 +40,7 @@
    <dynamic_friction> 0.50 </dynamic_friction>
    <rolling_friction> 0.02 </rolling_friction>
    <spring_coeff unit="N/M">875000</spring_coeff>
-   <damping_coeff unit="N/M/SEC">47000</damping_coeff>
+   <damping_coeff unit="N/M/SEC">20000</damping_coeff> <!-- 47000 -->
    <max_steer unit="DEG">360</max_steer>
    <!-- actually 56, controlled in Systems/fcs.xml -->
    <brake_group>NONE</brake_group>
@@ -57,7 +57,7 @@
    <dynamic_friction> 0.50 </dynamic_friction>
    <rolling_friction> 0.02 </rolling_friction>
    <spring_coeff unit="N/M">784000</spring_coeff>
-   <damping_coeff unit="N/M/SEC">50800</damping_coeff>
+   <damping_coeff unit="N/M/SEC">25000</damping_coeff>
    <max_steer unit="DEG">0</max_steer>
    <brake_group>LEFT</brake_group>
    <retractable>1</retractable>
@@ -73,7 +73,7 @@
    <dynamic_friction> 0.50 </dynamic_friction>
    <rolling_friction> 0.02 </rolling_friction>
    <spring_coeff unit="N/M">784000</spring_coeff>
-   <damping_coeff unit="LBS/FT/SEC">50800</damping_coeff>
+   <damping_coeff unit="LBS/FT/SEC">25000</damping_coeff>
    <max_steer unit="DEG">0</max_steer>
    <brake_group>RIGHT</brake_group>
    <retractable>1</retractable>

@@ -144,6 +144,7 @@
     <system file="Catapult.xml"/>
     <system file="jsb-instruments.xml"/>
     <system file="jsb-hook.xml"/>
+    <system file="jsb-holdback.xml"/>
     
     <flight_control file="Systems/fcs.xml"/>
 
@@ -171,7 +172,33 @@
 		<z> 0.00</z>
 	    </location>
 	    <direction>
-		<x> 1 </x>
+		<x>1</x>
+		<y>0</y>
+		<z>0</z>
+	    </direction>
+	</force>
+
+	<force name="catapult_vertical" frame="BODY">
+	    <location unit="M">
+		<x>-2.84</x>
+		<y> 0.00</y>
+		<z> 0.00</z>
+	    </location>
+	    <direction>
+		<x>0</x>
+		<y>0</y>
+		<z>1</z>
+	    </direction>
+	</force>
+	
+	<force name="holdback" frame="BODY">
+	    <location unit="M">
+		<x>-2.84</x>
+		<y> 0.00</y>
+		<z> 0.00</z>
+	    </location>
+	    <direction>
+		<x>-1 </x>
 		<y> 0 </y>
 		<z> 0 </z>
 	    </direction>

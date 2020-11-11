@@ -595,6 +595,61 @@ Grumman A-6E simulation config.
                 </binding>
 	    </key>
 	    
+            <!-- map keys for catapult launch -->
+            <key n="67">
+                <name>C</name>
+                <desc>Catapult Launch Command.</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>
+                        if (getprop("fdm/jsbsim/systems/holdback/holdback-cmd"))
+                        {
+                        print("Catapult launch");
+                        setprop("fdm/jsbsim/systems/catapult/cat-launch-cmd",1);
+                        setprop("fdm/jsbsim/systems/holdback/holdback-cmd",0);
+                        }
+                        else
+                        {
+                        }
+                    </script>
+                </binding>
+            </key>
+
+	    
+            <!-- map keys for launch-bar -->
+            <key n="76">
+                <name>L</name>
+                <desc>Launch-bar engage.</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>
+                        # prevent holdback when in the air.
+                        if(getprop("fdm/jsbsim/position/aircraft-on-ground"))
+                        {
+                            if (getprop("fdm/jsbsim/systems/holdback/holdback-cmd"))
+                            {
+                            print("Disengage launchbar");
+                            setprop("fdm/jsbsim/systems/catapult/cat-launch-cmd",0);
+                            setprop("fdm/jsbsim/systems/holdback/holdback-cmd",0);
+                            setprop("/controls/gear/brake-parking",1);
+                            }
+                            else
+                            {
+                            print("Engage launchbar");
+                            setprop("fdm/jsbsim/systems/catapult/cat-launch-cmd",0);
+                            setprop("fdm/jsbsim/systems/holdback/holdback-cmd",1);
+                            setprop("/controls/gear/brake-parking",0);
+                            }
+                        }
+                        else
+                        {
+                            setprop("fdm/jsbsim/systems/catapult/cat-launch-cmd",0);
+                            setprop("fdm/jsbsim/systems/holdback/holdback-cmd",0);
+                        }
+                    </script>
+                </binding>
+            </key>
+
 	</keyboard>
     </input>
 
