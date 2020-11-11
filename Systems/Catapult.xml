@@ -36,19 +36,7 @@
 	    <gain>4</gain>
 	    <output>systems/catapult/cat-force</output>
 	</pure_gain>
-
-	<washout_filter name="systems/catapult/cmd-delta">
-	    <input>systems/catapult/cat-launch-cmd</input>
-	    <c1>1</c1>
-	</washout_filter>
 	
-	<switch name="systems/catapult/launch-time">
-	    <default value="systems/catapult/launch-time"/>
-	    <test value="sim-time-sec">
-		systems/catapult/cmd-delta gt 0
-	    </test>
-	</switch>
-
 	<fcs_function name="systems/catapult/cat-z-gain">
 	    <function>
 		<ifthen>
@@ -84,8 +72,8 @@
 		    </product>
 		</ifthen>
 	    </function>
-	</fcs_function>
-				
+	</fcs_function>	
+
 	<switch name="Catapult Final">
 	    <default value="0"/>
 	    <test logic="AND" value="systems/catapult/cat-force">
@@ -101,6 +89,7 @@
 	    <input>external_reactions/catapult/magnitude</input>
 	    <gain>systems/catapult/cat-z-gain</gain>
 	</pure_gain>
+	
     </channel>
 
 </system>

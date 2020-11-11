@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<system name="Strut lock">
+    <property value="0">systems/strut-lock/strut-lock-cmd</property>
+
+    <channel name="strutlock">    
+    	<washout_filter name="systems/strut-lock/cmd-delta">
+	    <input>systems/strut-lock/strut-lock-cmd</input>
+	    <c1>1</c1>
+	</washout_filter>
+
+	<pure_gain name="systems/strut-lock/gear-force">
+	    <input>gear/unit/compression-ft</input>
+	    <gain>266700</gain> <!-- gear compression coeff in N/ft -->
+	</pure_gain>
+
+	<switch name="systems/strut-lock/launch-gear-force">
+	    <default value="systems/strut-lock/launch-gear-force"/>
+	    <test value="systems/strut-lock/gear-force">
+		systems/strut-lock/cmd-delta gt 0.9
+	    </test>
+	</switch>
+
+	<fcs_function name="systems/strut-lock/force-error">
+	    <function>
+		<difference>
+		    <property>systems/strut-lock/launch-gear-force</property>
+		    <property>systems/strut-lock/gear-force</property>
+		</difference>
+	    </function>
+	</fcs_function>
+
+	<pid name="systems/strut-lock/strut-lock-force">
+	    <input>systems/strut-lock/force-error</input>
+	    <kp>1</kp>
+	    <ki>1</ki>
+	    <kd>1</kd>
+	</pid>
+	
+	<switch name="external_reactions/strut-lock/magnitude">
+	    <default value="0"/>
+	    <test value="systems/strut-lock/strut-lock-force">
+		systems/strut-lock/strut-lock-cmd eq 1
+	    </test>
+	</switch>
+    </channel>
+</system>	 
