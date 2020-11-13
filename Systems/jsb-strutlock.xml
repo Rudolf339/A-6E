@@ -2,9 +2,22 @@
 <system name="Strut lock">
     <property value="0">systems/strut-lock/strut-lock-cmd</property>
 
-    <channel name="strutlock">    
-    	<washout_filter name="systems/strut-lock/cmd-delta">
+    <channel name="strutlock">
+
+	<actuator name="systems/strut-lock/strut-lock-norm">
 	    <input>systems/strut-lock/strut-lock-cmd</input>
+	    <rate_limit sence="decr">1</rate_limit>
+	</actuator>
+
+	<switch name="systems/strut-lock/strut-lock-enabled">
+	    <default value="0"/>
+	    <test value="1">
+		systems/strut-lock/strut-lock-norm gt 0
+	    </test>
+	</switch>
+	
+    	<washout_filter name="systems/strut-lock/cmd-delta">
+	    <input>systems/strut-lock/strut-lock-enabled</input>
 	    <c1>1</c1>
 	</washout_filter>
 
@@ -15,31 +28,71 @@
 
 	<switch name="systems/strut-lock/launch-gear-force">
 	    <default value="systems/strut-lock/launch-gear-force"/>
-	    <test value="systems/strut-lock/gear-force">
-		systems/strut-lock/cmd-delta gt 0.9
+	    <test logic="OR" value="systems/strut-lock/gear-force">
+		systems/strut-lock/cmd-delta gt 0.99
+		sim-time-sec eq 2
 	    </test>
 	</switch>
-
+	
 	<fcs_function name="systems/strut-lock/force-error">
 	    <function>
-		<difference>
-		    <property>systems/strut-lock/launch-gear-force</property>
-		    <property>systems/strut-lock/gear-force</property>
-		</difference>
+		<ifthen>
+		    <and>
+			<eq>
+			    <property>gear/unit/WOW</property>
+			    <value>1</value>
+			</eq>
+			<gt>
+			    <property>systems/strut-lock/launch-gear-force</property>
+			    <value>0</value>
+			</gt>
+			<gt>
+			    <property>systems/strut-lock/strut-lock-enabled</property>
+			    <value>0</value>
+			</gt>
+		    </and>
+		    <difference>
+			<property>systems/strut-lock/launch-gear-force</property>
+			<property>systems/strut-lock/gear-force</property>
+		    </difference>
+		    <value>0</value>
+		</ifthen>
 	    </function>
 	</fcs_function>
 
+	<switch name="systems/strut-lock/kp">
+	    <default value="0.8"/>
+	    <test value="0">
+		systems/strut-lock/strut-lock-enabled eq 0
+	    </test>
+	</switch>
+	<switch name="systems/strut-lock/ki">
+	    <default value="6"/>
+	    <test value="0">
+		systems/strut-lock/strut-lock-enabled eq 0
+	    </test>
+	</switch>
+	<switch name="systems/strut-lock/kd">
+	    <default value="0.1"/>
+	    <test value="0">
+		systems/strut-lock/strut-lock-enabled eq 0
+	    </test>
+	</switch>
+	
 	<pid name="systems/strut-lock/strut-lock-force">
 	    <input>systems/strut-lock/force-error</input>
-	    <kp>1</kp>
-	    <ki>1</ki>
-	    <kd>1</kd>
+	    <kp>systems/strut-lock/kp</kp>
+	    <ki>systems/strut-lock/ki</ki>
+	    <kd>systems/strut-lock/kd</kd>
+	    <trigger>systems/strut-lock/trigger</trigger>
+	    <output>systems/strut-lock/force-output</output>
 	</pid>
 	
 	<switch name="external_reactions/strut-lock/magnitude">
 	    <default value="0"/>
 	    <test value="systems/strut-lock/strut-lock-force">
-		systems/strut-lock/strut-lock-cmd eq 1
+		systems/strut-lock/strut-lock-enabled eq 1
+		gear/unit/WOW eq 1
 	    </test>
 	</switch>
     </channel>

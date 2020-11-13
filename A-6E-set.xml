@@ -288,9 +288,25 @@ Grumman A-6E simulation config.
 	    <line>Take off:</line>
 	    <line>    Flaps:         TO (30)</line>
 	    <line>    Rotate:        ~120 kt</line>
-	    <line>Approach, landinh:</line>
+	    <line>    Positive rate: Gears up</line>
+	    <line>    at 175 kias:   Flaps up</line>
+	    <line></line>
+	    <line>Catapult take off:</line>
+	    <line>    Flaps:         TO (30)</line>
+	    <line>    Launchbar:     Engage</line>
+	    <line>    Throttle:      MIL thrust</line>
+	    <line>    Catapult grip: Engage and hold</line>
+	    <line>    Catapult:      Engage</line>
+	    <line>    Once cleared catapult release catapult grip</line>
+	    <line>    Gears:         Up</line>
+	    <line>    at 175 kias:   Flaps Up</line>
+	    <line></line>
+	    <line>Approach, landing:</line>
 	    <line>    Onspeed:       22 units AoA</line>
 	    <line>    Flaps:         TO (30)</line>
+	    <line>    for shore landings,</line>
+	    <line>        optionally flare by adding more power</line>
+	    <line>        aerobrake keeping onspeed AoA</line>
 	    <key>
 		<name>c</name>
 		<desc>Canopy open/close command</desc>
@@ -314,6 +330,18 @@ Grumman A-6E simulation config.
 	    <key>
 		<name>o</name>
 		<desc>Toggle arrestor hook</desc>
+	    </key>
+	    <key>
+		<name>L</name>
+		<desc>Engage launchbar</desc>
+	    </key>
+	    <key>
+		<name>C</name>
+		<desc>Engage catapult</desc>
+	    </key>
+	    <key>
+		<name>N</name>
+		<desc>Catapult Grip engage</desc>
 	    </key>
 	</help>
 	
@@ -616,9 +644,8 @@ Grumman A-6E simulation config.
                 </binding>
             </key>
 
-	    <!--
-	    <key n="108">
-		<name>l</name>
+	    <key n="78">
+		<name>N</name>
 		<desc>Strut Lock engage</desc>
 		<binding>
 		    <command>property-assign</command>
@@ -633,7 +660,6 @@ Grumman A-6E simulation config.
 		    </binding>
 		</mod-up>
 	    </key>
-	    -->
 	</keyboard>
     </input>
 

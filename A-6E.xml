@@ -196,12 +196,12 @@
 	    <location unit="M">
 		<x>-2.84</x>
 		<y> 0.00</y>
-		<z> 0.00</z>
+		<z>-2.44</z>
 	    </location>
 	    <direction>
-		<x>0</x>
+		<x>-1</x>
 		<y>0</y>
-		<z>1</z>
+		<z>0</z>
 	    </direction>
 	</force>
 	
@@ -209,7 +209,7 @@
 	    <location unit="M">
 		<x>-2.84</x>
 		<y> 0.00</y>
-		<z>-2.44</z>
+		<z> 0.00</z>
 	    </location>
 	    <direction>
 		<x>0</x>
