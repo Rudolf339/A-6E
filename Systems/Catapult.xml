@@ -33,7 +33,7 @@
 
 	<pure_gain name="Catapult Force">
 	    <input>inertia/weight-lbs</input>
-	    <gain>4</gain>
+	    <gain>3</gain>
 	    <output>systems/catapult/cat-force</output>
 	</pure_gain>
 	
