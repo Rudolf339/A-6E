@@ -10,7 +10,7 @@ kids 3
 OBJECT poly
 name "mount"
 loc 0.00139822 0.00175623 -0.00276939
-texture "ext-air-temp-gauge.rgb"
+texture "ext-air-temp-gauge.png"
 crease 45.000000
 numvert 163
 -0.00284384 0.0262378 -0.0325148
@@ -1067,7 +1067,7 @@ kids 0
 OBJECT poly
 name "face"
 loc -0.00156709 0.00125042 -0.00180009
-texture "ext-air-temp-gauge.rgb"
+texture "ext-air-temp-gauge.png"
 crease 45.000000
 numvert 25
 0 0 0

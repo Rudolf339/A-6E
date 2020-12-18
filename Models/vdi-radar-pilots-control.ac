@@ -10,7 +10,7 @@ kids 32
 OBJECT poly
 name "mount"
 loc -0.0115784 0.0326445 2.41466e-09
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 45.000000
 numvert 4
 1.58325e-08 0.103381 0.0729709
@@ -29,7 +29,7 @@ kids 0
 OBJECT poly
 name "clearance-switch"
 loc -0.00381612 -0.0844708 0.0405715
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 45.000000
 numvert 17
 -0.0148305 -0.00217402 0.00267184
@@ -158,7 +158,7 @@ kids 0
 OBJECT poly
 name "horiz-onescan-erase-switch"
 loc -0.0038161 -0.00849584 -0.000498318
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 45.000000
 numvert 17
 0.0124337 -5.50225e-06 -2.84559e-05
@@ -287,7 +287,7 @@ kids 0
 OBJECT poly
 name "horiz-on-stby-off-switch"
 loc -0.00381608 -0.00876444 -0.0410642
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 45.000000
 numvert 17
 -0.0149602 -0.0021931 0.00269528
@@ -416,7 +416,7 @@ kids 0
 OBJECT poly
 name "vdi-push-button-bkg"
 loc -0.00737944 0.0691166 -0.00455022
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 45.000000
 numvert 170
 0.00665788 0.0411643 0.0449126
@@ -1634,7 +1634,7 @@ kids 0
 OBJECT poly
 name "vdi-range-1.5-bt"
 loc 0.00165606 0.0688745 -0.0493973
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 45.000000
 numvert 16
 -0.00386241 0.00909535 0.00599826
@@ -1790,7 +1790,7 @@ kids 0
 OBJECT poly
 name "vdi-range-1-bt"
 loc 0.00150147 0.0483881 -0.0494932
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 45.000000
 numvert 16
 -0.00386241 -0.00646529 -0.00877121
@@ -1946,7 +1946,7 @@ kids 0
 OBJECT poly
 name "vdi-test-bt"
 loc 0.00165605 0.0280944 -0.0498022
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 45.000000
 numvert 16
 -0.00386241 0.00181616 0.0107427
@@ -2102,7 +2102,7 @@ kids 0
 OBJECT poly
 name "vdi-range-2-bt"
 loc 0.00165606 0.0899602 -0.049485
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 45.000000
 numvert 16
 -0.00386241 -0.0066174 -0.00865705
@@ -2258,7 +2258,7 @@ kids 0
 OBJECT poly
 name "vdi-range-3-bt"
 loc 0.00165606 0.11047 -0.0495301
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 45.000000
 numvert 16
 -0.00386241 0.00865477 0.00661811
@@ -2414,7 +2414,7 @@ kids 0
 OBJECT poly
 name "vdi-cont-analog-bt"
 loc 0.00175348 0.110445 0.0401825
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 45.000000
 numvert 16
 -0.00386241 -0.0064653 -0.00877122
@@ -2570,7 +2570,7 @@ kids 0
 OBJECT poly
 name "vdi-tc-bt"
 loc 0.00165606 0.0899722 0.0401489
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 45.000000
 numvert 16
 -0.00386241 0.00865476 0.00661811
@@ -2726,7 +2726,7 @@ kids 0
 OBJECT poly
 name "vdi-off-bt"
 loc 0.00167144 0.0280945 0.0398735
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 45.000000
 numvert 16
 -0.00386241 0.00163053 -0.0107739
@@ -2882,7 +2882,7 @@ kids 0
 OBJECT poly
 name "vdi-stby-bt"
 loc 0.00165605 0.0483881 0.0401825
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 45.000000
 numvert 16
 -0.00386241 0.00888048 0.00631204
@@ -3038,7 +3038,7 @@ kids 0
 OBJECT poly
 name "vdi-tc-cal-bt"
 loc 0.00165606 0.0688796 0.0402635
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 45.000000
 numvert 16
 -0.00386241 -0.00615525 -0.00899151
@@ -3194,7 +3194,7 @@ kids 0
 OBJECT poly
 name "horiz-persist-knob"
 loc 0.00480707 -0.0476931 0.000304563
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 45.000000
 numvert 29
 0.014054 0.00831417 0.00308975
@@ -3403,7 +3403,7 @@ kids 0
 OBJECT poly
 name "horiz-brt-knob"
 loc 0.00595708 -0.0474451 0.0410421
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 45.000000
 numvert 33
 -0.0128775 0.000171497 -0.00982185
@@ -3640,7 +3640,7 @@ kids 0
 OBJECT poly
 name "horiz-contrast-knob"
 loc -0.00221313 -0.0474782 0.0410697
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 45.000000
 numvert 21
 0.00657989 7.45058e-09 0
@@ -3799,7 +3799,7 @@ kids 0
 OBJECT poly
 name "vdi-contrast-knob"
 loc -0.0022131 0.104839 -0.000832038
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 45.000000
 numvert 23
 0.00657989 -0.00829458 0.00539509
@@ -3983,7 +3983,7 @@ kids 0
 OBJECT poly
 name "rcvr-gain-knob"
 loc -0.00221311 -0.121523 -0.0422167
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 45.000000
 numvert 34
 -0.00657989 -0.00929229 0.00456279
@@ -4255,7 +4255,7 @@ kids 0
 OBJECT poly
 name "vdi-brt-knob"
 loc 0.00595711 0.104868 -0.000867117
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 45.000000
 numvert 33
 -0.0128775 -0.00102678 -0.00976953
@@ -4492,7 +4492,7 @@ kids 0
 OBJECT poly
 name "mri-knob"
 loc 0.00591108 -0.12144 -0.042198
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 55.000000
 numvert 45
 0.00931951 -0.00547676 -0.00782219
@@ -4794,7 +4794,7 @@ kids 0
 OBJECT poly
 name "display-track-switch"
 loc -0.00381612 -0.0841718 -0.0409505
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 45.000000
 numvert 17
 -0.0148305 -0.00217402 0.00267184
@@ -4923,7 +4923,7 @@ kids 0
 OBJECT poly
 name "scale-switch"
 loc -0.00381612 -0.122182 -0.000189507
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 45.000000
 numvert 17
 0.0149146 -6.55651e-06 -3.42131e-05
@@ -5052,7 +5052,7 @@ kids 0
 OBJECT poly
 name "flight-line-knob"
 loc 0.00595708 -0.121041 0.0395435
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 45.000000
 numvert 33
 0.0128775 -0.00109676 0.00863995
@@ -5289,7 +5289,7 @@ kids 0
 OBJECT poly
 name "mode-sel-switch"
 loc -0.0038161 -0.00889155 0.0404585
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 45.000000
 numvert 17
 -0.0123638 -0.00181248 0.00222751
@@ -5418,7 +5418,7 @@ kids 0
 OBJECT poly
 name "range-mkr-knob"
 loc -0.00221313 -0.121074 0.0395711
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 45.000000
 numvert 21
 0.00657989 -0.00931656 0.0069625
@@ -5577,7 +5577,7 @@ kids 0
 OBJECT poly
 name "vdi-path-brt-knob"
 loc -0.00221311 0.0329073 -0.000856247
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 45.000000
 numvert 34
 -0.00647989 -0.00229818 0.0120441
@@ -5849,7 +5849,7 @@ kids 0
 OBJECT poly
 name "vdi-pitch-trim-knob"
 loc 0.00296749 0.0705339 0.000772583
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 45.000000
 numvert 23
 0.0113859 -0.0066701 0.00325919
@@ -6033,7 +6033,7 @@ kids 0
 OBJECT poly
 name "horiz-az-mkr-knob"
 loc -0.00221313 -0.0470655 -0.0403372
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 45.000000
 numvert 34
 -0.00657989 -0.00929227 0.00456279
@@ -6305,7 +6305,7 @@ kids 0
 OBJECT poly
 name "vdi-off-set-impact-pt-knob"
 loc 0.00591108 0.0329903 -0.000837527
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 55.000000
 numvert 45
 0.00283149 -0.00832268 0.00275186
@@ -6607,7 +6607,7 @@ kids 0
 OBJECT poly
 name "horiz-rng-mkr"
 loc 0.00591106 -0.0469824 -0.0403185
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 67.000000
 numvert 45
 0.00283149 -0.00832269 0.00275186

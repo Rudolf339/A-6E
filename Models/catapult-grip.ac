@@ -67,7 +67,7 @@ kids 0
 OBJECT poly
 name "catapult-grip"
 loc 0.0248046 -0.0186441 0.000460403
-texture "catpult-grip.rgb"
+texture "catpult-grip.png"
 crease 72.000000
 numvert 94
 -0.0543346 0.035786 0.00791557

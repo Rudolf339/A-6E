@@ -2266,7 +2266,7 @@ kids 0
 OBJECT poly
 name "on-off-switch"
 loc -0.0143905 0.0100843 -0.0497303
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 73.000000
 numvert 17
 0.00406074 0.00955474 -2.37636e-05
@@ -2395,7 +2395,7 @@ kids 0
 OBJECT poly
 name "auto-stab-augm-switch"
 loc 0.0240136 0.0100581 -0.0496135
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 73.000000
 numvert 17
 -0.00264062 -0.0100941 0.00185991
@@ -2679,7 +2679,7 @@ kids 0
 OBJECT poly
 name "cmd-switch"
 loc 0.0132482 0.0101419 -0.00681773
-texture "vdi-radar-pilots-control.rgb"
+texture "vdi-radar-pilots-control.png"
 crease 73.000000
 numvert 17
 -0.00319515 -0.0122138 0.00225049

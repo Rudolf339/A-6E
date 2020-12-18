@@ -11,7 +11,7 @@ kids 12
 OBJECT poly
 name "face"
 loc -0.0057923 -0.00288386 -0.00748694
-texture "doppler.rgb"
+texture "doppler.png"
 crease 45.000000
 numvert 17
 -9.31323e-10 0 -0.0267537
@@ -148,7 +148,7 @@ kids 0
 OBJECT poly
 name "bezel"
 loc -0.00589505 0.0134551 -0.00692543
-texture "doppler.rgb"
+texture "doppler.png"
 crease 45.000000
 numvert 96
 0.0253702 -0.0188602 -0.00699258
@@ -813,7 +813,7 @@ kids 0
 OBJECT poly
 name "drift-button"
 loc -0.0232606 0.00211619 -0.0420548
-texture "doppler.rgb"
+texture "doppler.png"
 crease 45.000000
 numvert 21
 -1.00583e-06 0.00604381 -1.00583e-07
@@ -972,7 +972,7 @@ kids 0
 OBJECT poly
 name "memory-off"
 loc 0.0102983 -0.00151548 0.0302236
-texture "doppler.rgb"
+texture "doppler.png"
 crease 180.000000
 numvert 25
 0.00554807 -0.00224423 -7.45058e-09
@@ -1165,7 +1165,7 @@ kids 0
 OBJECT poly
 name "mount"
 loc -0.00133639 -0.00595744 0.0112219
-texture "doppler.rgb"
+texture "doppler.png"
 crease 76.000000
 numvert 24
 -0.0377844 -0.00318636 0.0776271
@@ -1341,7 +1341,7 @@ kids 0
 OBJECT poly
 name "memory-on"
 loc 0.0102983 -0.00151548 0.0301604
-texture "doppler.rgb"
+texture "doppler.png"
 crease 180.000000
 numvert 25
 0 0.00231223 -5.58794e-09
@@ -1534,7 +1534,7 @@ kids 0
 OBJECT poly
 name "mode-selector"
 loc -0.00168823 0.00415549 0.0582681
-texture "doppler.rgb"
+texture "doppler.png"
 crease 45.000000
 numvert 55
 0.00709131 -0.00842865 -0.0159276
@@ -1857,7 +1857,7 @@ kids 0
 OBJECT poly
 name "gs-button"
 loc 0.00686228 0.00211619 -0.0418797
-texture "doppler.rgb"
+texture "doppler.png"
 crease 45.000000
 numvert 21
 0.004952 0.00604381 0.00372503

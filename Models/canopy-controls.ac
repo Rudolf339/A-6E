@@ -496,7 +496,7 @@ kids 0
 OBJECT poly
 name "handle"
 loc -0.000806271 -0.0495655 0.00589062
-texture "warning-stripes.rgb"
+texture "warning-stripes.png"
 crease 45.000000
 numvert 36
 -0.0148886 0.00843575 -0.0269574

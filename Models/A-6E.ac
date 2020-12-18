@@ -47,7 +47,7 @@ kids 8
 OBJECT poly
 name "CPT-fwd-cover"
 loc -5.79554 -0.178859 -0.0765057
-texture "skin-1.rgb"
+texture "skin-1.png"
 crease 45.000000
 numvert 61
 0.285009 -0.113533 0.74421
@@ -530,7 +530,7 @@ kids 0
 OBJECT poly
 name "CPT-canopy-rails"
 loc -5.08194 -0.369213 0.737467
-texture "skin-1.rgb"
+texture "skin-1.png"
 crease 45.000000
 numvert 50
 -0.0550504 -0.0170012 0.00538552
@@ -956,7 +956,7 @@ kids 0
 OBJECT poly
 name "CPT-inside"
 loc -4.30998 -0.225102 -0.0689116
-texture "gradiants.rgb"
+texture "gradiants.png"
 crease 45.000000
 numvert 153
 -0.729735 -0.327084 0.845467
@@ -2377,7 +2377,7 @@ kids 0
 OBJECT poly
 name "CPT-canopy-back"
 loc -3.94093 0.15176 -0.0689097
-texture "skin-1.rgb"
+texture "skin-1.png"
 crease 45.000000
 numvert 125
 0.489266 0.583684 0
@@ -3986,7 +3986,7 @@ kids 0
 OBJECT poly
 name "CPT-wind-shield-ext-frame"
 loc -5.70525 0.0502203 -0.0689087
-texture "skin-1.rgb"
+texture "skin-1.png"
 crease 73.000000
 numvert 361
 -0.426203 -0.0645447 -0.035237
@@ -9215,7 +9215,7 @@ kids 0
 OBJECT poly
 name "CPT-canopy-int-frame"
 loc -4.58702 0.15176 0.352145
-texture "skin-1.rgb"
+texture "skin-1.png"
 crease 45.000000
 numvert 401
 0.345157 -0.243306 0.361359
@@ -13919,7 +13919,7 @@ kids 8
 OBJECT poly
 name "nav_halo_WR"
 loc -4.45404 -0.0582977 1.14908
-texture "halos.rgb"
+texture "halos.png"
 crease 45.000000
 numvert 4
 -0.0219889 0.021989 0
@@ -13943,7 +13943,7 @@ kids 0
 OBJECT poly
 name "nav_halo_Tail_Dim"
 loc -4.45404 -0.058298 1.14908
-texture "halos.rgb"
+texture "halos.png"
 crease 45.000000
 numvert 4
 -0.0219898 0.021989 0
@@ -13967,7 +13967,7 @@ kids 0
 OBJECT poly
 name "nav_halo_WL_Dim"
 loc -4.45404 -0.0582977 1.14908
-texture "halos.rgb"
+texture "halos.png"
 crease 45.000000
 numvert 4
 0.0219889 0.021989 0
@@ -13991,7 +13991,7 @@ kids 0
 OBJECT poly
 name "nav_halo_WR_Dim"
 loc -4.45404 -0.0582977 1.14908
-texture "halos.rgb"
+texture "halos.png"
 crease 45.000000
 numvert 4
 0.0219889 0.021989 0
@@ -14015,7 +14015,7 @@ kids 0
 OBJECT poly
 name "nav_halo_Tail"
 loc -4.45404 -0.058298 1.14908
-texture "halos.rgb"
+texture "halos.png"
 crease 45.000000
 numvert 4
 0.0219898 0.021989 0
@@ -14039,7 +14039,7 @@ kids 0
 OBJECT poly
 name "nav_halo_PR"
 loc -4.45404 -0.0582977 1.14908
-texture "halos.rgb"
+texture "halos.png"
 crease 45.000000
 numvert 4
 -0.0219889 0.021989 0
@@ -14063,7 +14063,7 @@ kids 0
 OBJECT poly
 name "nav_halo_PL"
 loc -4.45404 -0.0582977 1.14908
-texture "halos.rgb"
+texture "halos.png"
 crease 45.000000
 numvert 4
 0.0219889 0.021989 0
@@ -14087,7 +14087,7 @@ kids 0
 OBJECT poly
 name "nav_halo_WL"
 loc -4.45404 -0.0582977 1.14908
-texture "halos.rgb"
+texture "halos.png"
 crease 45.000000
 numvert 4
 -0.0219889 0.021989 0
@@ -14115,7 +14115,7 @@ kids 6
 OBJECT poly
 name "coll_halo_WL"
 loc -4.76837e-07 -1.49012e-07 0
-texture "halos.rgb"
+texture "halos.png"
 crease 45.000000
 numvert 4
 -0.0219889 0.021989 0
@@ -14139,7 +14139,7 @@ kids 0
 OBJECT poly
 name "coll_halo_WR"
 loc -4.76837e-07 -1.49012e-07 0
-texture "halos.rgb"
+texture "halos.png"
 crease 45.000000
 numvert 4
 -0.0219889 0.021989 0
@@ -14163,7 +14163,7 @@ kids 0
 OBJECT poly
 name "coll_halo_FR"
 loc -4.76837e-07 -1.49012e-07 0
-texture "halos.rgb"
+texture "halos.png"
 crease 45.000000
 numvert 4
 -0.0219889 0.021989 0
@@ -14187,7 +14187,7 @@ kids 0
 OBJECT poly
 name "coll_halo_FL"
 loc -4.76837e-07 -1.49012e-07 0
-texture "halos.rgb"
+texture "halos.png"
 crease 45.000000
 numvert 4
 0.0219889 0.021989 0
@@ -14211,7 +14211,7 @@ kids 0
 OBJECT poly
 name "coll_halo_TL"
 loc -4.76837e-07 -1.49012e-07 0
-texture "halos.rgb"
+texture "halos.png"
 crease 45.000000
 numvert 4
 -0.0219889 0.021989 0
@@ -14235,7 +14235,7 @@ kids 0
 OBJECT poly
 name "coll_halo_TR"
 loc -4.76837e-07 -1.49012e-07 0
-texture "halos.rgb"
+texture "halos.png"
 crease 45.000000
 numvert 4
 0.0219889 0.021989 0
@@ -14444,7 +14444,7 @@ kids 0
 OBJECT poly
 name "object"
 loc -6.1972 -0.616703 -0.132035
-texture "warning-stripes.rgb"
+texture "warning-stripes.png"
 crease 104.000000
 numvert 150
 2.37709 1.22719 0.281402
@@ -15610,7 +15610,7 @@ kids 0
 OBJECT poly
 name "L-bottom-eject-handle"
 loc -5.4632 -0.470557 0.00192377
-texture "warning-stripes.rgb"
+texture "warning-stripes.png"
 crease 45.000000
 numvert 120
 0.0173266 -0.0694933 0.0347477
@@ -17162,7 +17162,7 @@ kids 0
 OBJECT poly
 name "CPT-Seat"
 loc -4.93485 0.493339 -0.00336593
-texture "grey-blue-flood.rgb"
+texture "grey-blue-flood.png"
 crease 82.000000
 numvert 47
 -0.0121958 -0.0517572 -0.0694769
@@ -17527,7 +17527,7 @@ kids 0
 OBJECT poly
 name "box"
 loc -4.90314 -0.102675 0.0011633
-texture "grey-blue-flood.rgb"
+texture "grey-blue-flood.png"
 crease 136.000000
 numvert 53
 0.0671649 0.142416 -0.203005
@@ -18221,7 +18221,7 @@ kids 0
 OBJECT poly
 name "CPT-Seat"
 loc -5.33608 -0.505015 0.00146475
-texture "grey-blue-flood.rgb"
+texture "grey-blue-flood.png"
 crease 45.000000
 numvert 187
 -0.232223 0.078303 -0.211021
@@ -19522,7 +19522,7 @@ kids 3
 OBJECT poly
 name "UC-L-R-Door"
 loc -3.69713 -0.177503 -0.0640067
-texture "skin-1.rgb"
+texture "skin-1.png"
 crease 67.000000
 numvert 46
 0.759557 -0.18221 0.0451074
@@ -20104,7 +20104,7 @@ kids 0
 OBJECT poly
 name "UC-L-F-Door-a"
 loc -5.35814 0.067656 -1.04922
-texture "skin-1.rgb"
+texture "skin-1.png"
 crease 45.000000
 numvert 36
 0.256143 0.180159 1.4972
@@ -20556,7 +20556,7 @@ kids 0
 OBJECT poly
 name "UC-L-F-Door-b"
 loc -5.39486 -0.15631 -0.205057
-texture "skin-1.rgb"
+texture "skin-1.png"
 crease 45.000000
 numvert 12
 -0.608007 0.219849 -0.04413
@@ -20700,7 +20700,7 @@ kids 11
 OBJECT poly
 name "UC-R-StrutTop"
 loc -4.86006 0.673711 0.244137
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 76.000000
 numvert 72
 0.0162687 -0.113577 -0.053874
@@ -21257,7 +21257,7 @@ kids 0
 OBJECT poly
 name "UC-R-TopArm"
 loc -6.15206 1.00254 0.257887
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 45.000000
 numvert 8
 0.487423 -0.394212 -0.0413855
@@ -21429,7 +21429,7 @@ kids 0
 OBJECT poly
 name "UC-R-StrutShaft"
 loc -4.8081 -0.277516 -0.00969279
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 102.000000
 numvert 16
 0.00746965 -0.413873 -0.140827
@@ -22172,7 +22172,7 @@ kids 0
 OBJECT poly
 name "UC-R-Hub"
 loc -4.7926 -0.8864 -0.355883
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 45.000000
 numvert 64
 0.00174618 -0.091536 -0.101969
@@ -22506,7 +22506,7 @@ kids 0
 OBJECT poly
 name "UC-R-OpeningJackBottom"
 loc -4.76074 0.58143 0.167027
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 102.000000
 numvert 16
 0.0657034 0.259781 0.0235387
@@ -23005,7 +23005,7 @@ kids 11
 OBJECT poly
 name "UC-N-CatapultStrop"
 loc -6.2572 -0.73266 -8.10027e-05
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 45.000000
 numvert 45
 -0.197973 0.159387 -0.0538831
@@ -24759,7 +24759,7 @@ kids 0
 OBJECT poly
 name "UC-N-Hub"
 loc -5.8096 -0.888006 -8.11125e-05
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 45.000000
 numvert 128
 0.00576258 -0.082515 0.235262
@@ -25533,7 +25533,7 @@ kids 0
 OBJECT poly
 name "UC-N-StrutBottom"
 loc -5.8002 -0.441174 -0.0794047
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 87.000000
 numvert 130
 -0.0175841 0.0444698 0.0264567
@@ -27138,7 +27138,7 @@ kids 0
 OBJECT poly
 name "UC-N-StrutShaft"
 loc -5.98532 0.188953 5.7513e-05
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 88.000000
 numvert 16
 -0.0740552 0.474725 0.0407655
@@ -27218,7 +27218,7 @@ kids 0
 OBJECT poly
 name "UC-N-StrutTop"
 loc -6.01292 0.577285 -0.000410324
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 82.000000
 numvert 17
 0.0126956 -0.165375 0.000216561
@@ -27347,7 +27347,7 @@ kids 0
 OBJECT poly
 name "UC-N-ArmTop"
 loc -4.46279 0.365767 -0.00041032
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 82.000000
 numvert 17
 -0.402747 -0.29141 0.0519431
@@ -27476,7 +27476,7 @@ kids 0
 OBJECT poly
 name "UC-N-ArmBottom"
 loc -5.20479 -0.169873 0.000785211
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 82.000000
 numvert 25
 -0.370466 -0.242742 0.0507476
@@ -27659,7 +27659,7 @@ kids 3
 OBJECT poly
 name "UC-N-F-Door"
 loc -9.1303 -0.636695 -0.312836
-texture "skin-1.rgb"
+texture "skin-1.png"
 crease 29.000000
 numvert 134
 0.292218 -0.00454473 -0.267718
@@ -29127,7 +29127,7 @@ kids 0
 OBJECT poly
 name "UC-N-L-Door"
 loc -8.11979 -0.665468 -0.171909
-texture "skin-1.rgb"
+texture "skin-1.png"
 crease 45.000000
 numvert 24
 -0.36362 0.0088855 0.0188305
@@ -29423,7 +29423,7 @@ kids 0
 OBJECT poly
 name "UC-N-R-Door"
 loc -8.11979 -0.665468 -0.453763
-texture "skin-1.rgb"
+texture "skin-1.png"
 crease 45.000000
 numvert 24
 -0.36362 0.0088855 -0.018831
@@ -29723,7 +29723,7 @@ kids 11
 OBJECT poly
 name "UC-L-StrutTop"
 loc -4.86006 0.673711 -0.244137
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 76.000000
 numvert 72
 0.0162687 -0.113577 0.053874
@@ -30280,7 +30280,7 @@ kids 0
 OBJECT poly
 name "UC-L-TopArm"
 loc -6.15206 1.00254 -0.257885
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 45.000000
 numvert 8
 0.487423 -0.394212 0.0413855
@@ -30452,7 +30452,7 @@ kids 0
 OBJECT poly
 name "UC-L-StrutShaft"
 loc -4.8081 -0.277516 0.00969553
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 102.000000
 numvert 16
 0.00746965 -0.413873 0.140827
@@ -31195,7 +31195,7 @@ kids 0
 OBJECT poly
 name "UC-L-Hub"
 loc -4.7926 -0.8864 0.355879
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 45.000000
 numvert 64
 0.00174618 -0.091536 0.101969
@@ -31529,7 +31529,7 @@ kids 0
 OBJECT poly
 name "UC-L-OpeningJackBottom"
 loc -4.76074 0.58143 -0.167029
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 102.000000
 numvert 16
 0.0657034 0.259781 -0.0235388
@@ -32028,7 +32028,7 @@ kids 3
 OBJECT poly
 name "UC-R-R-Door"
 loc -3.69713 -0.177503 -2.64187
-texture "skin-1.rgb"
+texture "skin-1.png"
 crease 67.000000
 numvert 46
 0.759557 -0.18221 -0.0451074
@@ -32610,7 +32610,7 @@ kids 0
 OBJECT poly
 name "UC-R-F-Door-b"
 loc -5.39486 -0.15631 -2.50082
-texture "skin-1.rgb"
+texture "skin-1.png"
 crease 45.000000
 numvert 12
 0.629235 -0.219849 0.0072732
@@ -32750,7 +32750,7 @@ kids 0
 OBJECT poly
 name "UC-R-F-Door-a"
 loc -5.35814 0.067656 -2.82235
-texture "skin-1.rgb"
+texture "skin-1.png"
 crease 45.000000
 numvert 36
 0.256143 0.180159 -0.33151
@@ -33206,7 +33206,7 @@ kids 5
 OBJECT poly
 name "tank-5"
 loc -4.77974 0.117124 1.20974
-texture "skin-1.rgb"
+texture "skin-1.png"
 crease 45.000000
 numvert 100
 1.94626 -0.0859531 -7.30341
@@ -34029,7 +34029,7 @@ kids 0
 OBJECT poly
 name "tank-4"
 loc -4.77974 0.117124 0.0222173
-texture "skin-1.rgb"
+texture "skin-1.png"
 crease 45.000000
 numvert 100
 2.60817 -0.0602196 -4.9509
@@ -34852,7 +34852,7 @@ kids 0
 OBJECT poly
 name "tank-3"
 loc -5.88105 -0.468496 -2.4639
-texture "skin-1.rgb"
+texture "skin-1.png"
 crease 45.000000
 numvert 92
 -1.49458 1.19209e-07 0
@@ -35632,7 +35632,7 @@ kids 0
 OBJECT poly
 name "tank-2"
 loc -4.77974 0.117124 0.0222173
-texture "skin-1.rgb"
+texture "skin-1.png"
 crease 45.000000
 numvert 100
 2.60817 -0.0602196 0
@@ -36455,7 +36455,7 @@ kids 0
 OBJECT poly
 name "tank-1"
 loc -4.77974 0.117124 1.20974
-texture "skin-1.rgb"
+texture "skin-1.png"
 crease 45.000000
 numvert 100
 1.94626 -0.0859531 -0.0225229
@@ -37321,7 +37321,7 @@ kids 0
 OBJECT poly
 name "Tail"
 loc 4.47135 1.71312 -0.0734759
-texture "skin-1.rgb"
+texture "skin-1.png"
 crease 128.000000
 numvert 133
 -0.512985 0.782614 0.0121078
@@ -38647,7 +38647,7 @@ kids 0
 OBJECT poly
 name "position-tail-lights"
 loc 4.39615 2.24131 0.0121655
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 95.000000
 numvert 68
 0.203774 0.0961556 -0.156939
@@ -40525,7 +40525,7 @@ kids 0
 OBJECT poly
 name "pre-heat-hexaust"
 loc -4.14401 -0.236508 -0.0734759
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 131.000000
 numvert 55
 -1.09993 0.280002 -1.19742
@@ -41182,7 +41182,7 @@ kids 0
 OBJECT poly
 name "aar-arm"
 loc -8.67478 1.46919 -0.0713127
-texture "skin-1.rgb"
+texture "skin-1.png"
 crease 160.000000
 numvert 134
 0.175028 0.28128 -0.00191071
@@ -42422,7 +42422,7 @@ kids 0
 OBJECT poly
 name "elevator"
 loc 4.71205 0.273107 -0.0734759
-texture "skin-1.rgb"
+texture "skin-1.png"
 crease 45.000000
 numvert 38
 1.17881 -0.0276634 -2.88327
@@ -42804,7 +42804,7 @@ kids 0
 OBJECT poly
 name "rudder"
 loc 6.2377 0.982657 -0.00818586
-texture "skin-1.rgb"
+texture "skin-1.png"
 crease 59.000000
 numvert 63
 -0.144053 1.04474 -0.0651109
@@ -43583,7 +43583,7 @@ kids 0
 OBJECT poly
 name "tail-hook"
 loc 2.90065 -0.277695 -0.0761287
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 78.000000
 numvert 92
 -1.09283 -0.0831313 -0.458496
@@ -44301,7 +44301,7 @@ kids 0
 OBJECT poly
 name "noze-wheel-receptacle"
 loc -6.98809 -0.137883 -0.0734759
-texture "skin-1.rgb"
+texture "skin-1.png"
 crease 45.000000
 numvert 31
 -0.428135 -0.558003 0.267651
@@ -44580,7 +44580,7 @@ kids 0
 OBJECT poly
 name "Inlet-Ramp"
 loc -7.64881 -0.222955 -0.0734759
-texture "skin-1.rgb"
+texture "skin-1.png"
 crease 61.000000
 numvert 36
 -0.176086 -0.313948 -0.407966
@@ -44960,7 +44960,7 @@ kids 0
 OBJECT poly
 name "fuselage-canopy-tail"
 loc -3.82872 1.46098 -0.0734759
-texture "skin-1.rgb"
+texture "skin-1.png"
 crease 107.000000
 numvert 63
 -0.231358 0.182162 -0.070992
@@ -48426,7 +48426,7 @@ kids 0
 OBJECT poly
 name "fuselage-sides"
 loc -4.14401 -0.236508 -0.0734759
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 131.000000
 numvert 414
 -0.54285 0.139551 -1.19854
@@ -52892,7 +52892,7 @@ kids 0
 OBJECT poly
 name "fuselage-main"
 loc -1.50033 0.237928 -0.0734759
-texture "skin-1.rgb"
+texture "skin-1.png"
 crease 45.000000
 numvert 622
 3.43069 0.34508 0.255156
@@ -59466,7 +59466,7 @@ kids 2
 OBJECT poly
 name "optical-turret"
 loc -5 -0.084908 -2.25997e-06
-texture "skin-1.rgb"
+texture "skin-1.png"
 crease 88.000000
 numvert 81
 0.113766 0.113784 0.197085
@@ -60347,7 +60347,7 @@ kids 0
 OBJECT poly
 name "optical-mount"
 loc -5 0.084908 2.26009e-06
-texture "skin-1.rgb"
+texture "skin-1.png"
 crease 45.000000
 numvert 76
 0.219726 0.169815 0.0588928
@@ -60959,7 +60959,7 @@ kids 0
 OBJECT poly
 name "noze-radome"
 loc -8.86567 0.208693 -0.0734768
-texture "skin-1.rgb"
+texture "skin-1.png"
 crease 45.000000
 numvert 178
 0.472557 0.712628 -0.393779
@@ -63045,7 +63045,7 @@ kids 10
 OBJECT poly
 name "CPT-center-panel-sides"
 loc -5.51903 0.052957 -0.537911
-texture "grey-blue-flood-grad.rgb"
+texture "grey-blue-flood-grad.png"
 crease 78.000000
 numvert 126
 0.549552 -0.097798 -0.07404
@@ -63868,7 +63868,7 @@ kids 0
 OBJECT poly
 name "CPT-center-panel"
 loc -5.14341 0.172296 -0.538003
-texture "grey-blue-flood-grad.rgb"
+texture "grey-blue-flood-grad.png"
 crease 45.000000
 numvert 25
 0.181445 -0.225772 -0.0742855
@@ -63978,7 +63978,7 @@ kids 0
 OBJECT poly
 name "CPT-panel-1b"
 loc -5.61802 0.535293 -0.375825
-texture "grey-blue-flood-grad2.rgb"
+texture "grey-blue-flood-grad2.png"
 crease 45.000000
 numvert 30
 0.0263028 -0.106873 -0.0972095
@@ -64170,7 +64170,7 @@ kids 0
 OBJECT poly
 name "CPT-panel-1a"
 loc -5.61384 0.518735 -0.00314945
-texture "grey-blue-flood-grad2.rgb"
+texture "grey-blue-flood-grad2.png"
 crease 45.000000
 numvert 19
 -0.0124702 0.0523841 -0.126056
@@ -64284,7 +64284,7 @@ kids 0
 OBJECT poly
 name "CPT-consoles"
 loc -5.50581 -0.103172 -0.536949
-texture "grey-blue-flood-grad.rgb"
+texture "grey-blue-flood-grad.png"
 crease 45.000000
 numvert 49
 -0.0185611 0.219805 -0.761707
@@ -64642,7 +64642,7 @@ kids 0
 OBJECT poly
 name "CPT-piedestal"
 loc -5.65425 0.0465554 -0.151852
-texture "grey-blue-flood-grad.rgb"
+texture "grey-blue-flood-grad.png"
 crease 45.000000
 numvert 37
 -0.674765 0.0584376 -0.159444
@@ -64915,7 +64915,7 @@ kids 0
 OBJECT poly
 name "CPT-throttle-mount"
 loc -5.27346 -0.061868 0.185234
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 45.000000
 numvert 100
 -0.106848 0.0170287 -0.0794063
@@ -65683,7 +65683,7 @@ kids 0
 OBJECT poly
 name "CPT-BN-panel"
 loc -5.87452 0.364645 -0.917935
-texture "grey-blue-flood-grad2.rgb"
+texture "grey-blue-flood-grad2.png"
 crease 45.000000
 numvert 20
 -0.0545356 0.200064 0.30165
@@ -65808,7 +65808,7 @@ kids 0
 OBJECT poly
 name "CPT-canpy-block"
 loc -5.61852 0.488906 -0.598184
-texture "grey-blue-flood.rgb"
+texture "grey-blue-flood.png"
 crease 45.000000
 numvert 16
 -0.0323589 -0.0663297 -0.0246869
@@ -65907,7 +65907,7 @@ kids 0
 OBJECT poly
 name "CPT-panel-2"
 loc -5.61667 0.246706 -0.119014
-texture "grey-blue-flood-grad.rgb"
+texture "grey-blue-flood-grad.png"
 crease 45.000000
 numvert 27
 0 0.10351 0.227873
@@ -67833,7 +67833,7 @@ kids 0
 OBJECT poly
 name "L-oxy-tube"
 loc -4.9522 -0.126226 0.0846685
-texture "white-black-gradient-stripes.rgb"
+texture "white-black-gradient-stripes.png"
 crease 117.000000
 numvert 135
 0.00933814 0.307852 0.0191229
@@ -87145,7 +87145,7 @@ kids 8
 OBJECT poly
 name "CPT-Seat"
 loc -5.13486 -0.449283 0.0179565
-texture "grey-blue-flood.rgb"
+texture "grey-blue-flood.png"
 crease 45.000000
 numvert 187
 -0.252522 0.067618 0.213488
@@ -88495,7 +88495,7 @@ kids 0
 OBJECT poly
 name "box"
 loc -4.70193 -0.0469428 0.017655
-texture "grey-blue-flood.rgb"
+texture "grey-blue-flood.png"
 crease 136.000000
 numvert 53
 -0.147582 -0.347802 -0.213131
@@ -89132,7 +89132,7 @@ kids 0
 OBJECT poly
 name "CPT-Seat"
 loc -4.73363 0.549071 0.0131258
-texture "grey-blue-flood.rgb"
+texture "grey-blue-flood.png"
 crease 82.000000
 numvert 47
 0.0257554 -0.0913079 -0.0514739
@@ -90137,7 +90137,7 @@ kids 0
 OBJECT poly
 name "R-bottom-eject-handle"
 loc -5.26198 -0.414825 0.0184155
-texture "warning-stripes.rgb"
+texture "warning-stripes.png"
 crease 45.000000
 numvert 120
 0.0118542 -0.0706083 -0.0392725
@@ -91230,7 +91230,7 @@ kids 0
 OBJECT poly
 name "object"
 loc -6.1972 -0.616703 -0.132035
-texture "warning-stripes.rgb"
+texture "warning-stripes.png"
 crease 104.000000
 numvert 150
 2.38612 1.23562 0.206108
@@ -95161,7 +95161,7 @@ kids 0
 OBJECT poly
 name "R-oxy-tube"
 loc -4.82244 0.0320987 0.0784141
-texture "white-black-gradient-stripes.rgb"
+texture "white-black-gradient-stripes.png"
 crease 117.000000
 numvert 136
 0.0713608 0.403435 0.0298871
@@ -113345,7 +113345,7 @@ kids 0
 OBJECT poly
 name "wing-center"
 loc 1.65003 0.0396515 0
-texture "skin-1.rgb"
+texture "skin-1.png"
 crease 45.000000
 numvert 384
 -3.17394 0.407059 -1.02848
@@ -117214,7 +117214,7 @@ kids 10
 OBJECT poly
 name "W-L-bridge"
 loc -5.83232 0.151017 -5.50152
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 45.000000
 numvert 202
 -0.106864 0.072264 7.4811
@@ -118334,7 +118334,7 @@ kids 0
 OBJECT poly
 name "W-L-outer-jack"
 loc -5.83794 0.0936299 -12.5714
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 45.000000
 numvert 50
 0.0137491 0.0137969 14.6234
@@ -118638,7 +118638,7 @@ kids 0
 OBJECT poly
 name "W-L-inner-jack"
 loc -5.83794 0.0936299 -5.10752
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 45.000000
 numvert 50
 0.0137491 0.0137969 6.98042
@@ -118942,7 +118942,7 @@ kids 0
 OBJECT poly
 name "W-L-inner-axis-fairing-top"
 loc -5.77524 0.204813 -5.44531
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 69.000000
 numvert 71
 -0.356614 0.0790288 7.38087
@@ -119539,7 +119539,7 @@ kids 0
 OBJECT poly
 name "W-L-inner-axis-fairing-shutter"
 loc -5.81091 0.244743 -5.45191
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 45.000000
 numvert 14
 0.718855 -0.0951379 7.41255
@@ -119631,7 +119631,7 @@ kids 0
 OBJECT poly
 name "W-L-inner-mechanism"
 loc -5.84481 0.0849008 -5.43515
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 45.000000
 numvert 790
 0.267924 0.0133695 7.36193
@@ -126574,7 +126574,7 @@ kids 0
 OBJECT poly
 name "W-L-inner"
 loc -6.10112 0.0296708 -4.36176
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 69.000000
 numvert 277
 -0.599741 0.241971 6.18466
@@ -129312,7 +129312,7 @@ kids 0
 OBJECT poly
 name "W-L-Int-Flaperon"
 loc -4.81187 0.0219776 0.796064
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 45.000000
 numvert 6
 -0.449316 0.0696614 -1.1128
@@ -129374,7 +129374,7 @@ kids 0
 OBJECT poly
 name "W-L-Int-Flap"
 loc -4.59128 -0.0779517 0.758734
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 75.000000
 numvert 24
 -0.177656 0.0395582 0.864131
@@ -129574,7 +129574,7 @@ kids 0
 OBJECT poly
 name "W-L-Int-slat"
 loc -7.41427 0.271443 1.07051
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 84.000000
 numvert 19
 0.615381 0.018122 0.892107
@@ -129782,7 +129782,7 @@ kids 11
 OBJECT poly
 name "W-L-outer-axis-fairing-shutter"
 loc -6.32887 0.296242 -4.16138
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 45.000000
 numvert 14
 0.718855 -0.0951379 7.41881
@@ -129874,7 +129874,7 @@ kids 0
 OBJECT poly
 name "W-L-outer-mechanism"
 loc -6.34941 0.134492 -11.6109
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 45.000000
 numvert 168
 -0.178654 -0.0500086 15.0356
@@ -131590,7 +131590,7 @@ kids 0
 OBJECT poly
 name "W-L-outer-axis-fairing-bottom"
 loc -5.79689 0.104228 -6.37822
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 79.000000
 numvert 20
 -0.663093 -0.0457802 9.71191
@@ -131768,7 +131768,7 @@ kids 0
 OBJECT poly
 name "W-L-outer-axis-fairing-top"
 loc -6.2932 0.243486 -4.29627
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 79.000000
 numvert 37
 -0.0133567 0.0421591 7.58337
@@ -132046,7 +132046,7 @@ kids 0
 OBJECT poly
 name "W-L-outer"
 loc -5.79689 0.0844703 -6.37843
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 79.000000
 numvert 313
 1.29134 -0.183862 12.8825
@@ -134961,7 +134961,7 @@ kids 0
 OBJECT poly
 name "W-L-Ext-slat"
 loc -6.59151 0.161207 5.17858
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 82.000000
 numvert 55
 -0.228463 0.0767041 -0.688229
@@ -135324,7 +135324,7 @@ kids 0
 OBJECT poly
 name "W-L-Ext-Flap"
 loc -4.64544 -0.0545605 4.88262
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 75.000000
 numvert 24
 -0.0950842 0.00655112 0.505863
@@ -135524,7 +135524,7 @@ kids 0
 OBJECT poly
 name "W-L-Upper-airbrake"
 loc -4.18761 -0.0474729 -8.03493
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 45.000000
 numvert 30
 -0.307496 -0.0232562 15.6229
@@ -135796,7 +135796,7 @@ kids 0
 OBJECT poly
 name "W-L-Lower-airbrake"
 loc -4.19451 -0.115545 -8.03493
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 45.000000
 numvert 29
 -0.294567 0.0583857 14.6698
@@ -136075,7 +136075,7 @@ kids 0
 OBJECT poly
 name "W-L-Ext-Flaperon"
 loc -4.7733 0.0159998 4.88323
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 45.000000
 numvert 6
 -0.107216 -0.0122288 -1.6301
@@ -136848,7 +136848,7 @@ kids 10
 OBJECT poly
 name "W-R-inner"
 loc -5.19602 -0.0783982 0.108466
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 69.000000
 numvert 277
 0.767362 -0.096911 1.13016
@@ -139586,7 +139586,7 @@ kids 0
 OBJECT poly
 name "W-R-inner-axis-fairing-shutter"
 loc -4.90581 0.136674 -0.981681
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 45.000000
 numvert 14
 0.718855 -0.0951379 -0.047667
@@ -139678,7 +139678,7 @@ kids 0
 OBJECT poly
 name "W-R-inner-axis-fairing-top"
 loc -4.87014 0.096744 -0.97508
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 69.000000
 numvert 71
 -0.356614 0.0790288 -0.0291884
@@ -140275,7 +140275,7 @@ kids 0
 OBJECT poly
 name "W-R-Int-Flap"
 loc -3.68617 -0.186021 2.58858
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 88.000000
 numvert 24
 -0.211547 0.0730308 -1.28679
@@ -140475,7 +140475,7 @@ kids 0
 OBJECT poly
 name "W-R-Int-Flaperon"
 loc -3.90677 -0.0860916 5.26629
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 45.000000
 numvert 6
 -0.449316 0.0696614 -4.01826
@@ -140537,7 +140537,7 @@ kids 0
 OBJECT poly
 name "W-R-Int-slat"
 loc -6.50917 0.163374 5.54074
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 84.000000
 numvert 19
 -0.484216 0.0473112 -4.90067
@@ -140741,7 +140741,7 @@ kids 0
 OBJECT poly
 name "W-R-inner-jack"
 loc -4.93284 -0.0144392 -0.637291
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 45.000000
 numvert 50
 0.0137491 0.0137969 -0.304316
@@ -141045,7 +141045,7 @@ kids 0
 OBJECT poly
 name "W-R-outer-jack"
 loc -4.93284 -0.0144392 -8.10113
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 45.000000
 numvert 50
 0.0137491 0.0137969 6.98042
@@ -141349,7 +141349,7 @@ kids 0
 OBJECT poly
 name "W-R-bridge"
 loc -4.92722 0.0429479 -1.03129
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 45.000000
 numvert 202
 -0.106864 0.072264 -0.0169995
@@ -142469,7 +142469,7 @@ kids 0
 OBJECT poly
 name "W-R-inner-mechanism"
 loc -4.93971 -0.0231682 -0.964924
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 45.000000
 numvert 790
 0.267924 0.0133695 -0.03056
@@ -149416,7 +149416,7 @@ kids 11
 OBJECT poly
 name "W-R-outer"
 loc -5.27893 0.0329709 -7.40492
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 79.000000
 numvert 313
 1.29134 -0.183862 -1.08355
@@ -152331,7 +152331,7 @@ kids 0
 OBJECT poly
 name "W-R-outer-axis-fairing-top"
 loc -5.77524 0.191987 -5.32276
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 79.000000
 numvert 37
 -0.795751 0.0885557 0.0857151
@@ -152621,7 +152621,7 @@ kids 0
 OBJECT poly
 name "W-R-outer-axis-fairing-bottom"
 loc -5.27893 0.052729 -7.40471
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 79.000000
 numvert 20
 -1.4186 -0.0152216 2.08747
@@ -152799,7 +152799,7 @@ kids 0
 OBJECT poly
 name "W-R-outer-mechanism"
 loc -5.83145 0.082993 -12.6374
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 45.000000
 numvert 168
 0.43745 -0.124637 7.38568
@@ -154515,7 +154515,7 @@ kids 0
 OBJECT poly
 name "W-R-outer-axis-fairing-shutter"
 loc -5.81091 0.244743 -5.18787
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 45.000000
 numvert 14
 -0.631392 0.0907522 -0.0539291
@@ -155314,7 +155314,7 @@ kids 0
 OBJECT poly
 name "W-R-Ext-slat"
 loc -6.07355 0.109708 4.15209
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 82.000000
 numvert 55
 0.957194 -0.179857 -13.2032
@@ -155677,7 +155677,7 @@ kids 0
 OBJECT poly
 name "W-R-Ext-Flaperon"
 loc -4.25534 -0.0354997 3.85674
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 45.000000
 numvert 6
 0.311385 -0.0784059 -12.3452
@@ -155739,7 +155739,7 @@ kids 0
 OBJECT poly
 name "W-R-Ext-Flap"
 loc -4.12748 -0.10606 3.85613
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 75.000000
 numvert 24
 0.140884 -0.0326974 -12.3439
@@ -155939,7 +155939,7 @@ kids 0
 OBJECT poly
 name "W-R-Upper-airbrake"
 loc -3.66965 -0.0989724 -9.06142
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 45.000000
 numvert 30
 -0.275973 0.065484 0.23818
@@ -156211,7 +156211,7 @@ kids 0
 OBJECT poly
 name "W-R-Lower-airbrake"
 loc -3.67655 -0.167044 -9.06142
-texture "skin-2.rgb"
+texture "skin-2.png"
 crease 45.000000
 numvert 29
 -0.290265 0.0159033 0.298381

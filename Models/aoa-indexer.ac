@@ -16,7 +16,7 @@ kids 15
 OBJECT poly
 name "light-boxes"
 loc 0.86977 0.402248 0.260243
-texture "afcs-apc-warn-lights.rgb"
+texture "afcs-apc-warn-lights.png"
 crease 45.000000
 numvert 12
 0.000878334 0.00479794 -0.0207555
@@ -57,7 +57,7 @@ kids 0
 OBJECT poly
 name "light-boxes"
 loc 0.86977 0.402248 0.260243
-texture "afcs-apc-warn-lights.rgb"
+texture "afcs-apc-warn-lights.png"
 crease 45.000000
 numvert 24
 -0.0125062 0.00312269 -0.0156702
@@ -1232,7 +1232,7 @@ kids 0
 OBJECT poly
 name "light-boxes"
 loc 0.86977 0.402248 0.260243
-texture "wheels_warning.rgb"
+texture "wheels_warning.png"
 crease 45.000000
 numvert 8
 -0.0175371 0.0277756 -0.0172237
@@ -1568,7 +1568,7 @@ kids 0
 OBJECT poly
 name "aoa-too-fast"
 loc 0.871848 0.409292 0.206562
-texture "aoa-indexer.rgb"
+texture "aoa-indexer.png"
 crease 45.000000
 numvert 4
 -0.0318215 0.0404589 0.00165635
@@ -1587,7 +1587,7 @@ kids 0
 OBJECT poly
 name "aoa-fast"
 loc 0.871848 0.409292 0.206562
-texture "aoa-indexer.rgb"
+texture "aoa-indexer.png"
 crease 45.000000
 numvert 4
 -0.0267682 -0.0110403 -0.00028342
@@ -1606,7 +1606,7 @@ kids 0
 OBJECT poly
 name "aoa-on-speed"
 loc 0.871848 0.409292 0.206562
-texture "aoa-indexer.rgb"
+texture "aoa-indexer.png"
 crease 45.000000
 numvert 4
 -0.0318165 0.0404063 0.00165433
@@ -1625,7 +1625,7 @@ kids 0
 OBJECT poly
 name "aoa-slow"
 loc 0.871848 0.409292 0.206562
-texture "aoa-indexer.rgb"
+texture "aoa-indexer.png"
 crease 45.000000
 numvert 4
 -0.0267682 -0.0110403 -0.00028342
@@ -1644,7 +1644,7 @@ kids 0
 OBJECT poly
 name "aoa-too-slow"
 loc 0.871848 0.409272 0.206583
-texture "aoa-indexer.rgb"
+texture "aoa-indexer.png"
 crease 45.000000
 numvert 4
 -0.0318162 0.0404613 0.00164294
@@ -1663,7 +1663,7 @@ kids 0
 OBJECT poly
 name "aoa-off"
 loc 0.871698 0.409272 0.206614
-texture "aoa-indexer.rgb"
+texture "aoa-indexer.png"
 crease 45.000000
 numvert 4
 -0.0267615 -0.0110518 -0.000297368
@@ -1682,7 +1682,7 @@ kids 0
 OBJECT poly
 name "wheels-lt"
 loc -1.93374 -0.897323 -0.500697
-texture "wheels_warning.rgb"
+texture "wheels_warning.png"
 crease 45.000000
 numvert 4
 2.80258 1.32943 0.737405
@@ -1701,7 +1701,7 @@ kids 0
 OBJECT poly
 name "afcs-out-lt"
 loc -1.92924 -0.919822 -0.503557
-texture "afcs-apc-warn-lights.rgb"
+texture "afcs-apc-warn-lights.png"
 crease 45.000000
 numvert 4
 2.80275 1.30434 0.741676
@@ -1720,7 +1720,7 @@ kids 0
 OBJECT poly
 name "apc-stby-lt"
 loc -1.93064 -0.90867 -0.502699
-texture "afcs-apc-warn-lights.rgb"
+texture "afcs-apc-warn-lights.png"
 crease 45.000000
 numvert 4
 2.80402 1.29448 0.740887
@@ -1739,7 +1739,7 @@ kids 0
 OBJECT poly
 name "wave-off-lt"
 loc -1.93215 -0.897323 -0.501756
-texture "afcs-apc-warn-lights.rgb"
+texture "afcs-apc-warn-lights.png"
 crease 45.000000
 numvert 4
 2.80329 1.30443 0.741059

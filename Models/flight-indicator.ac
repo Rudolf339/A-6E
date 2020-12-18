@@ -13,7 +13,7 @@ kids 3
 OBJECT poly
 name "LW-barberpole"
 loc -0.00028313 -5.96046e-08 0
-texture "flight-indicator-symbols.rgb"
+texture "flight-indicator-symbols.png"
 crease 180.000000
 numvert 4
 -0.0011742 0.651933 0.654959
@@ -32,7 +32,7 @@ kids 0
 OBJECT poly
 name "LW-up"
 loc 0 -5.96046e-08 0
-texture "flight-indicator-symbols.rgb"
+texture "flight-indicator-symbols.png"
 crease 180.000000
 numvert 4
 -0.0011742 0.651933 0.654959
@@ -51,7 +51,7 @@ kids 0
 OBJECT poly
 name "LW-down"
 loc 0 -5.96046e-08 0
-texture "flight-indicator-symbols.rgb"
+texture "flight-indicator-symbols.png"
 crease 180.000000
 numvert 4
 -0.0011742 0.664065 0.670022
@@ -74,7 +74,7 @@ kids 3
 OBJECT poly
 name "NW-barberpole"
 loc -0.00028313 0 0
-texture "flight-indicator-symbols.rgb"
+texture "flight-indicator-symbols.png"
 crease 180.000000
 numvert 4
 -0.0011742 0.651933 0.654959
@@ -92,7 +92,7 @@ refs 4
 kids 0
 OBJECT poly
 name "NW-up"
-texture "flight-indicator-symbols.rgb"
+texture "flight-indicator-symbols.png"
 crease 180.000000
 numvert 4
 -0.0011742 0.651933 0.654959
@@ -110,7 +110,7 @@ refs 4
 kids 0
 OBJECT poly
 name "NW-down"
-texture "flight-indicator-symbols.rgb"
+texture "flight-indicator-symbols.png"
 crease 180.000000
 numvert 4
 -0.0011742 0.664065 0.670022
@@ -133,7 +133,7 @@ kids 3
 OBJECT poly
 name "RW-barberpole"
 loc -0.00028313 -5.96046e-08 5.96046e-08
-texture "flight-indicator-symbols.rgb"
+texture "flight-indicator-symbols.png"
 crease 180.000000
 numvert 4
 -0.0011742 0.651933 0.654959
@@ -152,7 +152,7 @@ kids 0
 OBJECT poly
 name "RW-up"
 loc 0 -5.96046e-08 5.96046e-08
-texture "flight-indicator-symbols.rgb"
+texture "flight-indicator-symbols.png"
 crease 180.000000
 numvert 4
 -0.0011742 0.651933 0.654959
@@ -171,7 +171,7 @@ kids 0
 OBJECT poly
 name "RW-down"
 loc 0 -5.96046e-08 5.96046e-08
-texture "flight-indicator-symbols.rgb"
+texture "flight-indicator-symbols.png"
 crease 180.000000
 numvert 4
 -0.0011742 0.664065 0.670022
@@ -194,7 +194,7 @@ kids 3
 OBJECT poly
 name "slat-barberpole"
 loc -0.00028313 0 0
-texture "flight-indicator-symbols.rgb"
+texture "flight-indicator-symbols.png"
 crease 180.000000
 numvert 4
 -0.0011742 0.664065 0.670022
@@ -212,7 +212,7 @@ refs 4
 kids 0
 OBJECT poly
 name "slat-up"
-texture "flight-indicator-symbols.rgb"
+texture "flight-indicator-symbols.png"
 crease 180.000000
 numvert 4
 -0.0011742 0.664065 0.670022
@@ -230,7 +230,7 @@ refs 4
 kids 0
 OBJECT poly
 name "slat-down"
-texture "flight-indicator-symbols.rgb"
+texture "flight-indicator-symbols.png"
 crease 180.000000
 numvert 4
 -0.0011742 0.651933 0.654959
@@ -253,7 +253,7 @@ kids 3
 OBJECT poly
 name "brake-barberpole"
 loc -0.00028313 0 0
-texture "flight-indicator-symbols.rgb"
+texture "flight-indicator-symbols.png"
 crease 180.000000
 numvert 4
 -0.0011742 0.664065 0.670022
@@ -271,7 +271,7 @@ refs 4
 kids 0
 OBJECT poly
 name "brake-in"
-texture "flight-indicator.rgb"
+texture "flight-indicator.png"
 crease 180.000000
 numvert 4
 -0.0011742 0.651933 0.654959
@@ -289,7 +289,7 @@ refs 4
 kids 0
 OBJECT poly
 name "brake-up"
-texture "flight-indicator-symbols.rgb"
+texture "flight-indicator-symbols.png"
 crease 180.000000
 numvert 4
 -0.0011742 0.651933 0.654959
@@ -312,7 +312,7 @@ kids 3
 OBJECT poly
 name "stab-barberpole"
 loc -0.00028313 0 0
-texture "flight-indicator-symbols.rgb"
+texture "flight-indicator-symbols.png"
 crease 180.000000
 numvert 4
 -0.0011742 0.651933 0.654959
@@ -330,7 +330,7 @@ refs 4
 kids 0
 OBJECT poly
 name "stab-restricted"
-texture "flight-indicator-symbols.rgb"
+texture "flight-indicator-symbols.png"
 crease 180.000000
 numvert 4
 -0.0011742 0.651933 0.654959
@@ -348,7 +348,7 @@ refs 4
 kids 0
 OBJECT poly
 name "stab-full"
-texture "flight-indicator-symbols.rgb"
+texture "flight-indicator-symbols.png"
 crease 180.000000
 numvert 4
 -0.0011742 0.664065 0.670022
@@ -371,7 +371,7 @@ kids 4
 OBJECT poly
 name "flap-barberpole"
 loc -0.00028313 0 0
-texture "flight-indicator-symbols.rgb"
+texture "flight-indicator-symbols.png"
 crease 180.000000
 numvert 4
 -0.0011742 0.664065 0.670022
@@ -389,7 +389,7 @@ refs 4
 kids 0
 OBJECT poly
 name "flap-up"
-texture "flight-indicator-symbols.rgb"
+texture "flight-indicator-symbols.png"
 crease 180.000000
 numvert 4
 -0.0011742 0.651933 0.654959
@@ -407,7 +407,7 @@ refs 4
 kids 0
 OBJECT poly
 name "flap-TO"
-texture "flight-indicator-symbols.rgb"
+texture "flight-indicator-symbols.png"
 crease 180.000000
 numvert 4
 -0.0011742 0.651933 0.654959
@@ -425,7 +425,7 @@ refs 4
 kids 0
 OBJECT poly
 name "flap-LD"
-texture "flight-indicator-symbols.rgb"
+texture "flight-indicator-symbols.png"
 crease 180.000000
 numvert 4
 -0.0011742 0.664065 0.670022
@@ -444,7 +444,7 @@ kids 0
 OBJECT poly
 name "mount"
 loc 0 0.0229203 -0.0233554
-texture "flight-indicator.rgb"
+texture "flight-indicator.png"
 crease 180.000000
 numvert 58
 0 0.675937 0.735862

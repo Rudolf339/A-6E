@@ -36,7 +36,7 @@ kids 0
 OBJECT poly
 name "mount"
 loc -0.156945 -0.166451 1.02908
-texture "elev-trim.rgb"
+texture "elev-trim.png"
 crease 45.000000
 numvert 64
 0.492308 0.535421 -3.27496
@@ -444,7 +444,7 @@ kids 0
 OBJECT poly
 name "face"
 loc -0.182384 -0.1933 1.19502
-texture "elev-trim.rgb"
+texture "elev-trim.png"
 crease 45.000000
 numvert 17
 0.522453 0.553194 -3.44141
