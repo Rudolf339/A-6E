@@ -1283,45 +1283,7 @@
 	    <object-name>axis84</object-name>
 	</axis>
     </animation>
-    <!--
-	<animation>
-	<type>translate</type>
-	<object-name>UC-N-CatapultStrop</object-name>
-	<property>gear/gear[0]/compression-norm</property>
-	<factor>0.5544</factor>
-	<axis>
-	<object-name>axis85</object-name>
-	</axis>
-	</animation>
-	<animation>
-	<type>translate</type>
-	<object-name>UC-N-StrutBottom</object-name>
-	<object-name>UC-N-DamperBottom</object-name>
-	<property>gear/gear[0]/compression-norm</property>
-	<factor>0.5544</factor>
-	<axis>
-	<object-name>axis86</object-name>
-	</axis>
-	</animation>
-	<animation>
-	<type>translate</type>
-	<object-name>UC-N-ArmTop</object-name>
-	<property>gear/gear[0]/compression-norm</property>
-	<factor>0.80</factor>
-	<axis>
-	<object-name>axis87</object-name>
-	</axis>
-	</animation>
-	<animation>
-	<type>translate</type>
-	<object-name>UC-N-ArmBottom</object-name>
-	<property>gear/gear[0]/compression-norm</property>
-	<factor>0.80</factor>
-	<axis>
-	<object-name>axis88</object-name>
-	</axis>
-	</animation>
-    -->
+    
     <animation>
 	<type>rotate</type>
 	<object-name>UC-N-ArmTop</object-name>

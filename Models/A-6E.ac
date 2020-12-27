@@ -34,8 +34,8 @@ MATERIAL "ac3dmat13.002" rgb 1.000 1.000 1.000  amb 1.000 1.000 1.000  emis 0.00
 MATERIAL "ac3dmat14.016" rgb 1.000 1.000 1.000  amb 1.000 1.000 1.000  emis 0.000 0.000 0.000  spec 0.676 0.676 0.676  shi 64 trans 0.000
 MATERIAL "ac3dmat6.002" rgb 1.000 1.000 1.000  amb 1.000 1.000 1.000  emis 0.000 0.000 0.000  spec 0.821 0.821 0.821  shi 64 trans 0.000
 OBJECT world
-name "Blender_exporter_v3.3__A-6E-rot.ac"
-kids 135
+name "Blender_exporter_v3.3__A-6E.ac"
+kids 131
 OBJECT poly
 name "axis0"
 data 4
@@ -1555,66 +1555,6 @@ OBJECT poly
 name "axis84"
 data 8
 crea.084
-crease 180.0
-numvert 2
--2.94726 -1.576 -0
--2.82502 -2.57096 -0
-numsurf 1
-SURF 0X12
-mat 0
-refs 2
-0 0 0
-1 0 0
-kids 0
-OBJECT poly
-name "axis85"
-data 8
-crea.085
-crease 180.0
-numvert 2
--2.94726 -1.576 -0
--2.82502 -2.57096 -0
-numsurf 1
-SURF 0X12
-mat 0
-refs 2
-0 0 0
-1 0 0
-kids 0
-OBJECT poly
-name "axis86"
-data 8
-crea.086
-crease 180.0
-numvert 2
--2.94726 -1.576 -0
--2.82502 -2.57096 -0
-numsurf 1
-SURF 0X12
-mat 0
-refs 2
-0 0 0
-1 0 0
-kids 0
-OBJECT poly
-name "axis87"
-data 8
-crea.087
-crease 180.0
-numvert 2
--2.94726 -1.576 -0
--2.82502 -2.57096 -0
-numsurf 1
-SURF 0X12
-mat 0
-refs 2
-0 0 0
-1 0 0
-kids 0
-OBJECT poly
-name "axis88"
-data 8
-crea.088
 crease 180.0
 numvert 2
 -2.94726 -1.576 -0
