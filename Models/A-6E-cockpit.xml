@@ -349,7 +349,8 @@
 
 <!--  ################ 3D panels for hot-spots  ################ -->
 
-  <!-- Hotspots-Pilot-Panel-Right -->
+<!-- Hotspots-Pilot-Panel-Right -->
+<!--
   <panel>
     <name>Hotspots-Pilot-Panel-Right</name>
     <path>Aircraft/A-6E/Models/p-panel-right.xml</path>
@@ -369,8 +370,9 @@
       <z-m>0.5394</z-m>
     </bottom-right>
   </panel>
-
-  <!-- Hotspots-Pilot-Panel-Bottom-Right -->
+-->
+<!-- Hotspots-Pilot-Panel-Bottom-Right -->
+<!--
   <panel>
     <name>Hotspots-Pilot-Panel-Right</name>
     <path>Aircraft/A-6E/Models/p-panel-bottom-right.xml</path>
@@ -390,48 +392,49 @@
       <z-m>0.6959</z-m>
     </bottom-right>
   </panel>
+-->
 
+  <!-- Hotspots-Console-Left-Aft -->
 
-  <!-- Hotspots-Console-Left-Aft 
-  <panel>
-    <name>Hotspots-Console-Center-Fwd</name>
-    <path>Aircraft/A-6E/Models/p-console-center-fwd.xml</path>
-    <top-left>
-      <x-m>-2.2783</x-m>
-      <y-m>-0.0786</y-m>
-      <z-m>0.5494</z-m>
-    </top-left>
-    <bottom-left>
-      <x-m>-1.9045</x-m>
-      <y-m>-0.0786</y-m>
-      <z-m>0.4550</z-m>
-    </bottom-left>
-    <bottom-right>
-      <x-m>-1.9045</x-m>
-      <y-m>0.0795</y-m>
-      <z-m>0.4550</z-m>
-    </bottom-right>
-  </panel>-->
+  <!-- <panel> -->
+  <!--   <name>Hotspots-Console-Center-Fwd</name> -->
+  <!--   <path>Aircraft/A-6E/Models/p-console-center-fwd.xml</path> -->
+  <!--   <top-left> -->
+  <!--     <x-m>-2.2783</x-m> -->
+  <!--     <y-m>-0.0786</y-m> -->
+  <!--     <z-m>0.5494</z-m> -->
+  <!--   </top-left> -->
+  <!--   <bottom-left> -->
+  <!--     <x-m>-1.9045</x-m> -->
+  <!--     <y-m>-0.0786</y-m> -->
+  <!--     <z-m>0.4550</z-m> -->
+  <!--   </bottom-left> -->
+  <!--   <bottom-right> -->
+  <!--     <x-m>-1.9045</x-m> -->
+  <!--     <y-m>0.0795</y-m> -->
+  <!--     <z-m>0.4550</z-m> -->
+  <!--   </bottom-right> -->
+  <!-- </panel>-\-> -->
 
   <!-- Hotspots-Console-Right (Navigator) -->
-  <panel>
-    <name>Hotspots-Console-Right</name>
-    <path>Aircraft/A-6E/Models/p-console-right.xml</path>
-    <top-left>
-      <x-m>-2.3056</x-m>
-      <y-m>0.6434</y-m>
-      <z-m>0.4499</z-m>
-    </top-left>
-    <bottom-left>
-      <x-m>-1.4658</x-m>
-      <y-m>0.6434</y-m>
-      <z-m>0.4478</z-m>
-    </bottom-left>
-    <bottom-right>
-      <x-m>-1.4658</x-m>
-      <y-m>0.8554</y-m>
-      <z-m>0.4872</z-m>
-    </bottom-right>
-  </panel>
+  <!-- <panel> -->
+  <!--   <name>Hotspots-Console-Right</name> -->
+  <!--   <path>Aircraft/A-6E/Models/p-console-right.xml</path> -->
+  <!--   <top-left> -->
+  <!--     <x-m>-2.3056</x-m> -->
+  <!--     <y-m>0.6434</y-m> -->
+  <!--     <z-m>0.4499</z-m> -->
+  <!--   </top-left> -->
+  <!--   <bottom-left> -->
+  <!--     <x-m>-1.4658</x-m> -->
+  <!--     <y-m>0.6434</y-m> -->
+  <!--     <z-m>0.4478</z-m> -->
+  <!--   </bottom-left> -->
+  <!--   <bottom-right> -->
+  <!--     <x-m>-1.4658</x-m> -->
+  <!--     <y-m>0.8554</y-m> -->
+  <!--     <z-m>0.4872</z-m> -->
+  <!--   </bottom-right> -->
+  <!-- </panel> -->
 
 </PropertyList>

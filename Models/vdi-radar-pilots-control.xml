@@ -1,555 +1,646 @@
 <?xml version="1.0"?>
 
-	<PropertyList>
+<PropertyList>
 
-	<path>vdi-radar-pilots-control.ac</path>
+    <path>vdi-radar-pilots-control.ac</path>
 
-	<!-- Objects list :
-	vdi-push-button-bkg
-	vdi-cont-analog-bt
-	vdi-tc-bt
-	vdi-tc-cal-bt
-	vdi-stby-bt
-	vdi-off-bt
+    <!-- Objects list :
+	 vdi-push-button-bkg
+	 vdi-cont-analog-bt
+	 vdi-tc-bt
+	 vdi-tc-cal-bt
+	 vdi-stby-bt
+	 vdi-off-bt
+         
+         vdi-brt-knob
+         vdi-contrast-knob
+         vdi-pitch-trim-knob
+         vdi-off-set-impact-pt-knob
+         vdi-path-brt-knob
+         
+         vdi-range-3-bt
+         vdi-range-2-bt
+         vdi-range-1.5-bt
+         vdi-range-1-bt
+         vdi-test-bt
+         
+         horiz-brt-knob
+         horiz-contrast-knob
+         horiz-onescan-erase-switch
+         horiz-on-stby-off-switch
+         horiz-persist-knob
+         horiz-rng-mkr
+         horiz-az-mkr-knob
+         
+         attitude-ref-comp-in-out-switch -->
 
-	vdi-brt-knob
-	vdi-contrast-knob
-	vdi-pitch-trim-knob
-	vdi-off-set-impact-pt-knob
-	vdi-path-brt-knob
-	 
-	vdi-range-3-bt
-	vdi-range-2-bt
-	vdi-range-1.5-bt
-	vdi-range-1-bt
-	vdi-test-bt
+    <!-- VDI Display -->
+    <!-- <animation> -->
+    <!-- 	<type>pick</type> -->
+    <!-- 	<object-name>vdi-cont-analog-bt</object-name> -->
+    <!-- 	<action> -->
+    <!-- 	    <binding> -->
+    <!-- 		<command>nasal</command> -->
+    <!-- 		<script> -->
+    <!-- 		    A6Econtrols.radio_bt_sel("sim/model/A-6E/controls/VDI/display","contanalog") -->
+    <!-- 		</script> -->
+    <!-- 	    </binding> -->
+    <!-- 	</action> -->
+    <!-- </animation> -->
+    
+    <animation>
+	<object-name>vdi-cont-analog-bt</object-name>
+	<type>translate</type>
+	<property>sim/model/A-6E/controls/VDI/display/contanalog</property>
+	<factor>0.0073</factor>
+	<axis>
+	    <x>-1</x>
+	    <y>0</y>
+	    <z>0</z>
+	</axis>
+    </animation>
 
-	horiz-brt-knob
-	horiz-contrast-knob
-	horiz-onescan-erase-switch
-	horiz-on-stby-off-switch
-	horiz-persist-knob
-	horiz-rng-mkr
-	horiz-az-mkr-knob
+    <!-- <animation> -->
+    <!-- 	<type>pick</type> -->
+    <!-- 	<object-name>vdi-tc-bt</object-name> -->
+    <!-- 	<action> -->
+    <!-- 	    <binding>  -->
+    <!-- 		<command>nasal</command> -->
+    <!-- 		<script>A6Econtrols.radio_bt_sel("sim/model/A-6E/controls/VDI/display", "tc")</script> -->
+    <!-- 	    </binding> -->
+    <!-- 	</action> -->
+    <!-- </animation> -->
+    
+    <animation>
+	<object-name>vdi-tc-bt</object-name>
+	<type>translate</type>
+	<property>sim/model/A-6E/controls/VDI/display/tc</property>
+	<factor>0.0073</factor>
+	<axis>
+	    <x>-1</x>
+	    <y>0</y>
+	    <z>0</z>
+	</axis>
+    </animation>
 
-	attitude-ref-comp-in-out-switch -->
+    <!-- <animation> -->
+    <!-- 	<type>pick</type> -->
+    <!-- 	<object-name>vdi-tc-cal-bt</object-name> -->
+    <!-- 	<action> -->
+    <!-- 	    <binding> -->
+    <!-- 		<command>nasal</command> -->
+    <!-- 		<script>A6Econtrols.radio_bt_sel("sim/model/A-6E/controls/VDI/display", "tccal")</script> -->
+    <!-- 	    </binding> -->
+    <!-- 	</action> -->
+    <!-- </animation> -->
 
-	<!-- VDI Display -->
-	<animation>
-		<object-name>vdi-cont-analog-bt</object-name>
-		<type>translate</type>
-		<property>sim/model/A-6E/controls/VDI/display/contanalog</property>
-		<factor>0.0073</factor>
-		<axis>
-			<x>-1</x>
-			<y>0</y>
-			<z>0</z>
-		</axis>
-	</animation>
-	<animation>
-		<object-name>vdi-tc-bt</object-name>
-		<type>translate</type>
-		<property>sim/model/A-6E/controls/VDI/display/tc</property>
-		<factor>0.0073</factor>
-		<axis>
-			<x>-1</x>
-			<y>0</y>
-			<z>0</z>
-		</axis>
-	</animation>
-	<animation>
-		<object-name>vdi-tc-cal-bt</object-name>
-		<type>translate</type>
-		<property>sim/model/A-6E/controls/VDI/display/tccal</property>
-		<factor>0.0073</factor>
-		<axis>
-			<x>-1</x>
-			<y>0</y>
-			<z>0</z>
-		</axis>
-	</animation>
-	<animation>
-		<object-name>vdi-stby-bt</object-name>
-		<type>translate</type>
-		<property>sim/model/A-6E/controls/VDI/display/stby</property>
-		<factor>0.0073</factor>
-		<axis>
-			<x>-1</x>
-			<y>0</y>
-			<z>0</z>
-		</axis>
-	</animation>
-	<animation>
-		<object-name>vdi-off-bt</object-name>
-		<type>translate</type>
-		<property>sim/model/A-6E/controls/VDI/display/off</property>
-		<factor>0.0073</factor>
-		<axis>
-			<x>-1</x>
-			<y>0</y>
-			<z>0</z>
-		</axis>
-	</animation>
+    <animation>
+	<object-name>vdi-tc-cal-bt</object-name>
+	<type>translate</type>
+	<property>sim/model/A-6E/controls/VDI/display/tccal</property>
+	<factor>0.0073</factor>
+	<axis>
+	    <x>-1</x>
+	    <y>0</y>
+	    <z>0</z>
+	</axis>
+    </animation>
 
-	<!-- VDI brightness knob -->
-	<animation>
-		<object-name>vdi-brt-knob</object-name>
-		<type>rotate</type>
+    <!-- <animation> -->
+    <!-- 	<type>pick</type> -->
+    <!-- 	<object-name>vdi-stby-bt</object-name> -->
+    <!-- 	<action> -->
+    <!-- 	    <binding> -->
+    <!-- 		<command>nasal</command> -->
+    <!-- 		<script>A6Econtrols.radio_bt_sel("sim/model/A-6E/controls/VDI/display", "stby")</script> -->
+    <!-- 	    </binding> -->
+    <!-- 	</action> -->
+    <!-- </animation> -->
+    
+    <animation>
+	<object-name>vdi-stby-bt</object-name>
+	<type>translate</type>
+	<property>sim/model/A-6E/controls/VDI/display/stby</property>
+	<factor>0.0073</factor>
+	<axis>
+	    <x>-1</x>
+	    <y>0</y>
+	    <z>0</z>
+	</axis>
+    </animation>
+
+    <!-- <animation> -->
+    <!-- 	<type>pick</type> -->
+    <!-- 	<object-name>vdi-off-bt</object-name> -->
+    <!-- 	<action> -->
+    <!-- 	    <binding>  -->
+    <!-- 		<command>nasal</command> -->
+    <!-- 		<script>A6Econtrols.radio_bt_sel("sim/model/A-6E/controls/VDI/display", "off")</script> -->
+    <!-- 	    </binding> -->
+    <!-- 	</action> -->
+    <!-- </animation> -->
+    
+    <animation>
+	<object-name>vdi-off-bt</object-name>
+	<type>translate</type>
+	<property>sim/model/A-6E/controls/VDI/display/off</property>
+	<factor>0.0073</factor>
+	<axis>
+	    <x>-1</x>
+	    <y>0</y>
+	    <z>0</z>
+	</axis>
+    </animation>
+
+    <!-- VDI brightness knob -->
+    <animation>
+	<object-name>vdi-brt-knob</object-name>
+	<type>knob</type>
+	<property>sim/model/A-6E/controls/VDI/brightness</property>
+	<factor>345</factor>
+	<center>
+	    <x-m>0</x-m>
+	    <y-m>0.0009</y-m>
+	    <z-m>0.1047</z-m>
+	</center>
+	<axis>
+	    <x>-1</x>
+	    <y>0</y>
+	    <z>0</z>
+	</axis>
+	<action>
+	    <binding>
+		<command>property-adjust</command>
 		<property>sim/model/A-6E/controls/VDI/brightness</property>
-		<factor>345</factor>
-		<center>
-			<x-m>0</x-m>
-			<y-m>0.0009</y-m>
-			<z-m>0.1047</z-m>
-		</center>
-		<axis>
-			<x>-1</x>
-			<y>0</y>
-			<z>0</z>
-		</axis>
-	</animation>
+		<factor>0.05</factor>
+		<min>0</min>
+		<max>1</max>
+		<wrap>false</wrap>
+	    </binding>
+	</action>
+    </animation>
 
-	<!-- VDI Range -->
-	<!--<animation>
-		<object-name>vdi-range-3-bt</object-name>
-		<type>translate</type>
-		<property>sim/model/A-6E/controls/VDI/range-miles/miles3</property>
-		<factor>0.0073</factor>
-		<axis>
-			<x>-1</x>
-			<y>0</y>
-			<z>0</z>
-		</axis>
+    <!-- VDI Range -->
+    <!--<animation>
+	<object-name>vdi-range-3-bt</object-name>
+	<type>translate</type>
+	<property>sim/model/A-6E/controls/VDI/range-miles/miles3</property>
+	<factor>0.0073</factor>
+	<axis>
+	<x>-1</x>
+	<y>0</y>
+	<z>0</z>
+	</axis>
 	</animation>
 	<animation>
-		<object-name>vdi-range-2-bt</object-name>
-		<type>translate</type>
-		<property>sim/model/A-6E/controls/VDI/range-miles/miles2</property>
-		<factor>0.0073</factor>
-		<axis>
-			<x>-1</x>
-			<y>0</y>
-			<z>0</z>
-		</axis>
+	<object-name>vdi-range-2-bt</object-name>
+	<type>translate</type>
+	<property>sim/model/A-6E/controls/VDI/range-miles/miles2</property>
+	<factor>0.0073</factor>
+	<axis>
+	<x>-1</x>
+	<y>0</y>
+	<z>0</z>
+	</axis>
 	</animation>
 	<animation>
-		<object-name>vdi-range-1.5-bt</object-name>
-		<type>translate</type>
-		<property>sim/model/A-6E/controls/VDI/range-miles/miles1.5</property>
-		<factor>0.0073</factor>
-		<axis>
-			<x>-1</x>
-			<y>0</y>
-			<z>0</z>
-		</axis>
+	<object-name>vdi-range-1.5-bt</object-name>
+	<type>translate</type>
+	<property>sim/model/A-6E/controls/VDI/range-miles/miles1.5</property>
+	<factor>0.0073</factor>
+	<axis>
+	<x>-1</x>
+	<y>0</y>
+	<z>0</z>
+	</axis>
 	</animation>
 	<animation>
-		<object-name>vdi-range-1-bt</object-name>
-		<type>translate</type>
-		<property>sim/model/A-6E/controls/VDI/range-miles/miles1</property>
-		<factor>0.0073</factor>
-		<axis>
-			<x>-1</x>
-			<y>0</y>
-			<z>0</z>
-		</axis>
+	<object-name>vdi-range-1-bt</object-name>
+	<type>translate</type>
+	<property>sim/model/A-6E/controls/VDI/range-miles/miles1</property>
+	<factor>0.0073</factor>
+	<axis>
+	<x>-1</x>
+	<y>0</y>
+	<z>0</z>
+	</axis>
 	</animation>
 	<animation>
-		<object-name>vdi-test-bt</object-name>
-		<type>translate</type>
-		<property>sim/model/A-6E/controls/VDI/range-miles/test</property>
-		<factor>0.0073</factor>
-		<axis>
-			<x>-1</x>
-			<y>0</y>
-			<z>0</z>
-		</axis>
+	<object-name>vdi-test-bt</object-name>
+	<type>translate</type>
+	<property>sim/model/A-6E/controls/VDI/range-miles/test</property>
+	<factor>0.0073</factor>
+	<axis>
+	<x>-1</x>
+	<y>0</y>
+	<z>0</z>
+	</axis>
 	</animation>-->
 
-	<!-- PHD on-stby-off-switch -->
-	<animation>
-		<object-name>horiz-on-stby-off-switch</object-name>
-		<type>rotate</type>
+    <!-- PHD on-stby-off-switch -->
+    <animation>
+	<object-name>horiz-on-stby-off-switch</object-name>
+	<type>knob</type>
+	<property>sim/model/A-6E/controls/PHD/off-stdby-on</property>
+	<interpolation>
+	    <entry><ind>0</ind><dep>-30</dep></entry>
+	    <entry><ind>1</ind><dep>0</dep></entry>
+	    <entry><ind>2</ind><dep>30</dep></entry>
+	</interpolation>
+	<center>
+	    <x-m>0.0000</x-m>
+	    <y-m>0.0409</y-m>
+	    <z-m>-0.0090</z-m>
+	</center>
+	<axis>
+	    <x>0</x>
+	    <y>-1</y>
+	    <z>0</z>
+	</axis>
+	<action>
+	    <binding> 
+		<command>property-adjust</command>
 		<property>sim/model/A-6E/controls/PHD/off-stdby-on</property>
-		<interpolation>
-			<entry><ind>0</ind><dep>-30</dep></entry>
-			<entry><ind>1</ind><dep>0</dep></entry>
-			<entry><ind>2</ind><dep>30</dep></entry>
-		</interpolation>
-		<center>
-			<x-m>0.0000</x-m>
-			<y-m>0.0409</y-m>
-			<z-m>-0.0090</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
-		</axis>
-	</animation>
+		<factor>1</factor>
+		<min>0</min>
+		<max>2</max>
+		<wrap>false</wrap>
+	    </binding>
+	</action>
+    </animation>
 
-	<!-- PHD TC range switch -->
-	<animation>
-		<object-name>scale-switch</object-name>
-		<type>rotate</type>
+    <!-- PHD TC range switch -->
+    <animation>
+	<object-name>scale-switch</object-name>
+	<type>knob</type>
+	<property>sim/model/A-6E/controls/PHD/TCrange-switch</property>
+	<interpolation>
+	    <entry><ind>0</ind><dep>-30</dep></entry>
+	    <entry><ind>1</ind><dep>0</dep></entry>
+	    <entry><ind>2</ind><dep>30</dep></entry>
+	</interpolation>
+	<center>
+	    <x-m>0.0000</x-m>
+	    <y-m>0.0000</y-m>
+	    <z-m>-0.1227</z-m>
+	</center>
+	<axis>
+	    <x>0</x>
+	    <y>-1</y>
+	    <z>0</z>
+	</axis>
+	<action>
+	    <binding> 
+		<command>property-adjust</command>
 		<property>sim/model/A-6E/controls/PHD/TCrange-switch</property>
-		<interpolation>
-			<entry><ind>0</ind><dep>-30</dep></entry>
-			<entry><ind>1</ind><dep>0</dep></entry>
-			<entry><ind>2</ind><dep>30</dep></entry>
-		</interpolation>
-		<center>
-			<x-m>0.0000</x-m>
-			<y-m>0.0000</y-m>
-			<z-m>-0.1227</z-m>
-		</center>
-		<axis>
-			<x>0</x>
-			<y>-1</y>
-			<z>0</z>
-		</axis>
-	</animation>
+		<factor>1</factor>
+		<min>0</min>
+		<max>2</max>
+		<wrap>false</wrap>
+	    </binding>
+	</action>
+    </animation>
 
-	<!-- lighting -->
-	<animation> 
-		<object-name>mount</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.45</red>
-			<green>0.34</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
+    <!-- lighting -->
+    <animation> 
+	<object-name>mount</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/panel-norm</factor-prop>
+	    <red>0.45</red>
+	    <green>0.34</green>
+	    <blue>0.18</blue>
+	</emission>
+    </animation>
 
-	<animation>
-		<object-name>vdi-push-button-bkg</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/instruments-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.30</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
+    <animation>
+	<object-name>vdi-push-button-bkg</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/instruments-norm</factor-prop>
+	    <red>0.50</red>
+	    <green>0.30</green>
+	    <blue>0.18</blue>
+	</emission>
+    </animation>
 
-	<animation>
-		<object-name>vdi-cont-analog-bt</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.30</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
-	<animation>
-		<object-name>vdi-tc-bt</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.30</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
-	<animation>
-		<object-name>vdi-tc-cal-bt</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.30</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
-	<animation>
-		<object-name>vdi-stby-bt</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.30</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
-	<animation>
-		<object-name>vdi-off-bt</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.30</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
+    <animation>
+	<object-name>vdi-cont-analog-bt</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/panel-norm</factor-prop>
+	    <red>0.50</red>
+	    <green>0.30</green>
+	    <blue>0.18</blue>
+	</emission>
+    </animation>
+    <animation>
+	<object-name>vdi-tc-bt</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/panel-norm</factor-prop>
+	    <red>0.50</red>
+	    <green>0.30</green>
+	    <blue>0.18</blue>
+	</emission>
+    </animation>
+    <animation>
+	<object-name>vdi-tc-cal-bt</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/panel-norm</factor-prop>
+	    <red>0.50</red>
+	    <green>0.30</green>
+	    <blue>0.18</blue>
+	</emission>
+    </animation>
+    <animation>
+	<object-name>vdi-stby-bt</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/panel-norm</factor-prop>
+	    <red>0.50</red>
+	    <green>0.30</green>
+	    <blue>0.18</blue>
+	</emission>
+    </animation>
+    <animation>
+	<object-name>vdi-off-bt</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/panel-norm</factor-prop>
+	    <red>0.50</red>
+	    <green>0.30</green>
+	    <blue>0.18</blue>
+	</emission>
+    </animation>
 
-	<animation>
-		<object-name>vdi-range-3-bt</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.30</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
-	<animation>
-		<object-name>vdi-range-2-bt</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.30</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
-	<animation>
-		<object-name>vdi-range-1.5-bt</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.30</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
-	<animation>
-		<object-name>vdi-range-1-bt</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.30</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
-	<animation>
-		<object-name>vdi-test-bt</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.30</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
+    <animation>
+	<object-name>vdi-range-3-bt</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/panel-norm</factor-prop>
+	    <red>0.50</red>
+	    <green>0.30</green>
+	    <blue>0.18</blue>
+	</emission>
+    </animation>
+    <animation>
+	<object-name>vdi-range-2-bt</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/panel-norm</factor-prop>
+	    <red>0.50</red>
+	    <green>0.30</green>
+	    <blue>0.18</blue>
+	</emission>
+    </animation>
+    <animation>
+	<object-name>vdi-range-1.5-bt</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/panel-norm</factor-prop>
+	    <red>0.50</red>
+	    <green>0.30</green>
+	    <blue>0.18</blue>
+	</emission>
+    </animation>
+    <animation>
+	<object-name>vdi-range-1-bt</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/panel-norm</factor-prop>
+	    <red>0.50</red>
+	    <green>0.30</green>
+	    <blue>0.18</blue>
+	</emission>
+    </animation>
+    <animation>
+	<object-name>vdi-test-bt</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/panel-norm</factor-prop>
+	    <red>0.50</red>
+	    <green>0.30</green>
+	    <blue>0.18</blue>
+	</emission>
+    </animation>
 
 
-	<animation>
-		<object-name>vdi-brt-knob</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.30</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
-	<animation>
-		<object-name>vdi-contrast-knob</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.30</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
-	<animation>
-		<object-name>vdi-pitch-trim-knob</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.30</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
-	<animation>
-		<object-name>vdi-off-set-impact-pt-knob</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.30</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
-	<animation>
-		<object-name>vdi-path-brt-knob</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.30</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
+    <animation>
+	<object-name>vdi-brt-knob</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/panel-norm</factor-prop>
+	    <red>0.50</red>
+	    <green>0.30</green>
+	    <blue>0.18</blue>
+	</emission>
+    </animation>
+    <animation>
+	<object-name>vdi-contrast-knob</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/panel-norm</factor-prop>
+	    <red>0.50</red>
+	    <green>0.30</green>
+	    <blue>0.18</blue>
+	</emission>
+    </animation>
+    <animation>
+	<object-name>vdi-pitch-trim-knob</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/panel-norm</factor-prop>
+	    <red>0.50</red>
+	    <green>0.30</green>
+	    <blue>0.18</blue>
+	</emission>
+    </animation>
+    <animation>
+	<object-name>vdi-off-set-impact-pt-knob</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/panel-norm</factor-prop>
+	    <red>0.50</red>
+	    <green>0.30</green>
+	    <blue>0.18</blue>
+	</emission>
+    </animation>
+    <animation>
+	<object-name>vdi-path-brt-knob</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/panel-norm</factor-prop>
+	    <red>0.50</red>
+	    <green>0.30</green>
+	    <blue>0.18</blue>
+	</emission>
+    </animation>
 
-	<animation>
-		<object-name>horiz-brt-knob</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.30</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
-	<animation>
-		<object-name>horiz-contrast-knob</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.30</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
-	<animation>
-		<object-name>horiz-onescan-erase-switch</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.30</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
-	<animation>
-		<object-name>horiz-on-stby-off-switch</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.30</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
-	<animation>
-		<object-name>horiz-persist-knob</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.30</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
-	<animation>
-		<object-name>horiz-rng-mkr</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.30</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
-	<animation>
-		<object-name>horiz-az-mkr-knob</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.30</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
-	<animation>
-		<object-name>mode-sel-switch</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.30</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
+    <animation>
+	<object-name>horiz-brt-knob</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/panel-norm</factor-prop>
+	    <red>0.50</red>
+	    <green>0.30</green>
+	    <blue>0.18</blue>
+	</emission>
+    </animation>
+    <animation>
+	<object-name>horiz-contrast-knob</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/panel-norm</factor-prop>
+	    <red>0.50</red>
+	    <green>0.30</green>
+	    <blue>0.18</blue>
+	</emission>
+    </animation>
+    <animation>
+	<object-name>horiz-onescan-erase-switch</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/panel-norm</factor-prop>
+	    <red>0.50</red>
+	    <green>0.30</green>
+	    <blue>0.18</blue>
+	</emission>
+    </animation>
+    <animation>
+	<object-name>horiz-on-stby-off-switch</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/panel-norm</factor-prop>
+	    <red>0.50</red>
+	    <green>0.30</green>
+	    <blue>0.18</blue>
+	</emission>
+    </animation>
+    <animation>
+	<object-name>horiz-persist-knob</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/panel-norm</factor-prop>
+	    <red>0.50</red>
+	    <green>0.30</green>
+	    <blue>0.18</blue>
+	</emission>
+    </animation>
+    <animation>
+	<object-name>horiz-rng-mkr</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/panel-norm</factor-prop>
+	    <red>0.50</red>
+	    <green>0.30</green>
+	    <blue>0.18</blue>
+	</emission>
+    </animation>
+    <animation>
+	<object-name>horiz-az-mkr-knob</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/panel-norm</factor-prop>
+	    <red>0.50</red>
+	    <green>0.30</green>
+	    <blue>0.18</blue>
+	</emission>
+    </animation>
+    <animation>
+	<object-name>mode-sel-switch</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/panel-norm</factor-prop>
+	    <red>0.50</red>
+	    <green>0.30</green>
+	    <blue>0.18</blue>
+	</emission>
+    </animation>
 
-	<animation>
-		<object-name>clearance-switch</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.30</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
-	<animation>
-		<object-name>display-track-switch</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.30</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
-	<animation>
-		<object-name>range-mkr-knob</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.30</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
-	<animation>
-		<object-name>flight-line-knob</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.30</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
-	<animation>
-		<object-name>scale-switch</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.30</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
-	<animation>
-		<object-name>mri-knob</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.30</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
-	<animation>
-		<object-name>rcvr-gain-knob</object-name>
-		<type>material</type>
-		<emission> 
-			<factor-prop>controls/lighting/panel-norm</factor-prop>
-			<red>0.50</red>
-			<green>0.30</green>
-			<blue>0.18</blue>
-		</emission>
-	</animation>
+    <animation>
+	<object-name>clearance-switch</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/panel-norm</factor-prop>
+	    <red>0.50</red>
+	    <green>0.30</green>
+	    <blue>0.18</blue>
+	</emission>
+    </animation>
+    <animation>
+	<object-name>display-track-switch</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/panel-norm</factor-prop>
+	    <red>0.50</red>
+	    <green>0.30</green>
+	    <blue>0.18</blue>
+	</emission>
+    </animation>
+    <animation>
+	<object-name>range-mkr-knob</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/panel-norm</factor-prop>
+	    <red>0.50</red>
+	    <green>0.30</green>
+	    <blue>0.18</blue>
+	</emission>
+    </animation>
+    <animation>
+	<object-name>flight-line-knob</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/panel-norm</factor-prop>
+	    <red>0.50</red>
+	    <green>0.30</green>
+	    <blue>0.18</blue>
+	</emission>
+    </animation>
+    <animation>
+	<object-name>scale-switch</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/panel-norm</factor-prop>
+	    <red>0.50</red>
+	    <green>0.30</green>
+	    <blue>0.18</blue>
+	</emission>
+    </animation>
+    <animation>
+	<object-name>mri-knob</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/panel-norm</factor-prop>
+	    <red>0.50</red>
+	    <green>0.30</green>
+	    <blue>0.18</blue>
+	</emission>
+    </animation>
+    <animation>
+	<object-name>rcvr-gain-knob</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/panel-norm</factor-prop>
+	    <red>0.50</red>
+	    <green>0.30</green>
+	    <blue>0.18</blue>
+	</emission>
+    </animation>
 
-	<animation>
-		<object-name>vdi-radar-pilots-control</object-name>
-		<type>noshadow</type>
-	</animation>
+    <animation>
+	<object-name>vdi-radar-pilots-control</object-name>
+	<type>noshadow</type>
+    </animation>
 
 
-	<!-- LoD -->
-	<animation>
-		<type>range</type>
-		<min-m>0</min-m>
-		<max-m>35</max-m>
-	</animation>
+    <!-- LoD -->
+    <animation>
+	<type>range</type>
+	<min-m>0</min-m>
+	<max-m>35</max-m>
+    </animation>
 
 </PropertyList>

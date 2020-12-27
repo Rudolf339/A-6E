@@ -41,7 +41,7 @@
 		<object-name>slat-up</object-name>
 		<condition>
 			<equals>
-				<property>surface-positions/flap-pos-norm</property>
+				<property>surface-positions/slats-pos-norm</property>
 				<value>0</value>
 			</equals>
 		</condition>
@@ -50,10 +50,10 @@
 		<type>select</type>
 		<object-name>slat-down</object-name>
 		<condition>
-			<greater-than-equals>
-				<property>surface-positions/flap-pos-norm</property>
-				<value>0.75</value>
-			</greater-than-equals>
+			<equals>
+				<property>surface-positions/slats-pos-norm</property>
+				<value>1</value>
+			</equals>
 		</condition>
 	</animation>
 
@@ -62,7 +62,7 @@
 		<object-name>brake-in</object-name>
 		<condition>
 			<equals>
-				<property>surface-positions/spoiler-pos-norm</property>
+				<property>surface-positions/speedbrake-pos-norm</property>
 				<value>0</value>
 			</equals>
 		</condition>
@@ -72,7 +72,7 @@
 		<object-name>brake-up</object-name>
 		<condition>
 			<equals>
-				<property>surface-positions/spoiler-pos-norm</property>
+				<property>surface-positions/speedbrake-pos-norm</property>
 				<value>1</value>
 			</equals>
 		</condition>

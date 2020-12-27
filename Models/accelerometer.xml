@@ -102,6 +102,29 @@
     </emission>
   </animation>
 
+  <animation>
+      <type>pick</type>
+      <object-name>button</object-name>
+      <action> 
+	  <name>Reset Accelerometer</name>
+	  <button>0</button>
+	  <x>-180</x>
+	  <y>80</y>
+	  <w>55</w>
+	  <h>150</h>
+	  <binding> 
+	      <command>property-assign</command>
+	      <property>sim/model/A-6E/instrumentation/g-meter/g-max</property>
+	      <value>1</value>
+	  </binding>
+	  <binding> 
+	      <command>property-assign</command>
+	      <property>sim/model/A-6E/instrumentation/g-meter/g-min</property>
+	      <value>1</value>
+	  </binding>
+      </action>
+  </animation>
+  
   <!-- *** LoD *** -->
   <animation>
     <type>range</type>
