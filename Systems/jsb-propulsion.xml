@@ -2,9 +2,9 @@
     
     <engine file="J52-P8">
 	<location unit="M">
-	    <x> 4.23</x>
+	    <x> 4.30</x>
 	    <y>-1.00</y>
-	    <z>-0.32</z>
+	    <z>-0.45</z>
 	</location>
 	<orient unit="DEG">
 	    <pitch>-12.00</pitch>
@@ -28,9 +28,9 @@
 	<thruster file="direct">
 	    <sense> 1 </sense>
 	    <location unit="M">
-		<x> 4.23</x>
+		<x> 4.30</x>
 		<y>-1.00</y>
-		<z>-0.32</z>
+		<z>-0.45</z>
 	    </location>
 	    <orient unit="DEG">
 		<pitch>-12.00</pitch>
@@ -42,9 +42,9 @@
 
     <engine file="J52-P8">
 	<location unit="M">
-	    <x> 4.23</x>
+	    <x> 4.30</x>
 	    <y> 1.00</y>
-	    <z>-0.32</z>
+	    <z>-0.45</z>
 	</location>
 	<orient unit="DEG">
 	    <pitch>-12.00</pitch>
@@ -68,9 +68,9 @@
 	<thruster file="direct">
 	    <sense> 1 </sense>
 	    <location unit="M">
-		<x> 4.23</x>
+		<x> 4.30</x>
 		<y> 1.00</y>
-		<z>-0.32</z>
+		<z>-0.45</z>
 	    </location>
 	    <orient unit="DEG">
 		<pitch>-12.00</pitch>
@@ -85,7 +85,7 @@
 	<location unit="M">
 	    <x> 1.7 </x>
 	    <y> 0.0 </y>
-	    <z> 0.9 </z>
+	    <z> 0.6 </z>
 	</location>
 	<capacity unit="LBS">1743</capacity>
 	<contents unit="LBS">1743</contents>
@@ -98,7 +98,7 @@
 	<location unit="M">
 	    <x>-0.3 </x>
 	    <y> 0.0 </y>
-	    <z> 0.4 </z>
+	    <z> 0.1 </z>
 	</location>
 	<capacity unit="LBS">2908</capacity>
 	<contents unit="LBS">2908</contents>
@@ -111,7 +111,7 @@
 	<location unit="M">
 	    <x>-0.3 </x>
 	    <y> 0.0 </y>
-	    <z> 0.4 </z>
+	    <z> 0.1 </z>
 	</location>
 	<capacity unit="LBS">4379</capacity>
 	<contents unit="LBS">4379</contents>
@@ -124,7 +124,7 @@
 	<location unit="M">
 	    <x> 2.2 </x>
 	    <y> 0.0 </y>
-	    <z> 0.2 </z>
+	    <z>-0.1 </z>
 	</location>
 	<capacity unit="LBS">2043</capacity>
 	<contents unit="LBS">2043</contents>
@@ -137,7 +137,7 @@
 	<location unit="M">
 	    <x> 2.2 </x>
 	    <y>-2.7 </y>
-	    <z> 0.2 </z>
+	    <z>-0.1 </z>
 	</location>
 	<capacity unit="LBS">1539</capacity>
 	<contents unit="LBS">1539</contents>
@@ -150,7 +150,7 @@
 	<location unit="M">
 	    <x> 3.0 </x>
 	    <y>-5.2 </y>
-	    <z> 0.15</z>
+	    <z>-0.15</z>
 	</location>
 	<capacity unit="LBS">934</capacity>
 	<contents unit="LBS">934</contents>
@@ -163,7 +163,7 @@
 	<location unit="M">
 	    <x> 2.2 </x>
 	    <y> 2.7 </y>
-	    <z> 0.2 </z>
+	    <z>-0.1 </z>
 	</location>
 	<capacity unit="LBS">1539</capacity>
 	<contents unit="LBS">1539</contents>
@@ -176,7 +176,7 @@
 	<location unit="M">
 	    <x> 3.0 </x>
 	    <y> 5.2 </y>
-	    <z> 0.15</z>
+	    <z>-0.15</z>
 	</location>
 	<capacity unit="LBS">934</capacity>
 	<contents unit="LBS">934</contents>
@@ -189,7 +189,7 @@
 	<location unit="M">
 	    <x> 1.90</x>
 	    <y>-3.66</y>
-	    <z>-0.63</z>
+	    <z>-0.93</z>
 	</location>
 	<capacity unit="LBS">2043</capacity>
 	<contents unit="LBS">0</contents>
@@ -202,7 +202,7 @@
 	<location unit="M">
 	    <x> 1.90</x>
 	    <y>-2.48</y>
-	    <z>-0.63</z>
+	    <z>-0.93</z>
 	</location>
 	<capacity unit="LBS">2043</capacity>
 	<contents unit="LBS">0</contents>
@@ -215,7 +215,7 @@
 	<location unit="M">
 	    <x> 1.40</x>
 	    <y> 0.00</y>
-	    <z>-1.22</z>
+	    <z>-1.52</z>
 	</location>
 	<capacity unit="LBS">2043</capacity>
 	<contents unit="LBS">0</contents>
@@ -228,7 +228,7 @@
 	<location unit="M">
 	    <x> 1.90</x>
 	    <y> 2.48</y>
-	    <z>-0.63</z>
+	    <z>-0.93</z>
 	</location>
 	<capacity unit="LBS">2043</capacity>
 	<contents unit="LBS">0</contents>
@@ -241,7 +241,7 @@
 	<location unit="M">
 	    <x> 1.90</x>
 	    <y> 3.66</y>
-	    <z>-0.63</z>
+	    <z>-0.93</z>
 	</location>
 	<capacity unit="LBS">2043</capacity>
 	<contents unit="LBS">0</contents>

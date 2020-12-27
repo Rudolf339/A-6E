@@ -602,8 +602,9 @@
     <animation>
 	<type>rotate</type>
 	<object-name>elevator</object-name>
-	<property>surface-positions/elevator-pos-norm</property>
-	<factor>10</factor>
+	<property>fdm/jsbsim/fcs/surfaces/elevator-pos-deg</property>
+	<factor>1</factor>
+	<offset-deg>3</offset-deg>
 	<axis>
 	    <object-name>axis42</object-name>
 	</axis>

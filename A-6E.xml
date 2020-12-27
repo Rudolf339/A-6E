@@ -83,7 +83,7 @@
 	<izz unit="SLUG*FT2">  139927.00 </izz>
 	<emptywt unit="LBS" >  25980.00 </emptywt>
 	<location name="CG" unit="M">
-	    <x> 1.68 </x>
+	    <x> 1.56 </x>
 	    <y> 0.00 </y>
 	    <z> 0.00 </z>
 	</location>
@@ -92,18 +92,18 @@
 	    <description>left outboard pylon</description>
 	    <weight unit="LBS"> 0 </weight>
 	    <location name="POINTMASS" unit="M">
-		<x> 1.90</x>
+		<x> 1.56</x>
 		<y>-3.66</y>
-		<z>-0.63</z>
+		<z>-0.73</z>
 	    </location>
 	</pointmass>
 	<pointmass name="Pylon 2">
 	    <description>left inboard pylon</description>
 	    <weight unit="LBS"> 0 </weight>
 	    <location name="POINTMASS" unit="M">
-		<x> 1.90</x>
+		<x> 1.56</x>
 		<y>-2.48</y>
-		<z>-0.63</z>
+		<z>-0.73</z>
 	    </location>
 	</pointmass>
 	
@@ -111,9 +111,9 @@
 	    <description>center pylon</description>
 	    <weight unit="LBS"> 0 </weight>
 	    <location name="POINTMASS" unit="M">
-		<x> 1.40</x>
+		<x> 1.03</x>
 		<y> 0.00</y>
-		<z>-1.22</z>
+		<z>-1.29</z>
 	    </location>
 	</pointmass>
 
@@ -121,9 +121,9 @@
 	    <description>right inboard pylon</description>
 	    <weight unit="LBS"> 0 </weight>
 	    <location name="POINTMASS" unit="M">
-		<x> 1.90</x>
+		<x> 1.56</x>
 		<y> 2.48</y>
-		<z>-0.63</z>
+		<z>-0.73</z>
 	    </location>
 	</pointmass>
 
@@ -133,7 +133,7 @@
 	    <location name="POINTMASS" unit="M">
 		<x> 1.90</x>
 		<y> 3.66</y>
-		<z>-0.63</z>
+		<z>-0.73</z>
 	    </location>
 	</pointmass>
     </mass_balance>
@@ -152,10 +152,10 @@
     <external_reactions>
 
 	<force name="hook" frame="BODY">
-	    <location unit="FT">
-		<x> 49.595 </x>
+	    <location unit="M">
+		<x> 14.78 </x>
 		<y> 0 </y>
-		<z> -1.09</z>
+		<z> -1.121</z>
 	    </location>
 	    <direction>
 		<x>-0.9995</x>
@@ -166,9 +166,9 @@
 
 	<force name="catapult" frame="BODY">
 	    <location unit="IN">
-		<x> 85.02 </x>
+		<x> 80.50 </x>
 		<y> 0 </y>
-		<z> -78.48 </z>
+		<z> -82.82 </z>
 	    </location>
 	    <direction>
 		<x> 1 </x>
