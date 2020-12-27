@@ -6,15 +6,7 @@
   <property value="1">fcs/wing-fold/lockpin</property>
   <channel name="Pitch">
 
-    <aerosurface_scale name="fcs/elevator/pitch-trim-limit-limit">
-      <input>fcs/pitch-trim-cmd-norm</input>
-      <range>
-	<min>-1</min>
-	<max>0.5</max>
-      </range>
-    </aerosurface_scale>
-
-    <aerosurface_scale name="fcs/elevator/pitch-trim-limit-full">
+    <aerosurface_scale name="fcs/elevator/pitch-trim-full">
       <input>fcs/pitch-trim-cmd-norm</input>
       <range>
 	<min>-1</min>
@@ -22,45 +14,53 @@
       </range>
     </aerosurface_scale>
 
-    <switch name="fcs/elevator/pitch-trim-full">
-      <default value="fcs/elevator/pitch-trim-limit-limit"/>
-      <test value="fcs/elevator/pitch-trim-limit-full">
-	fcs/flap-cmd-norm != 0
-      </test>
-    </switch>
+    <summer name="fcs/elevator/pitch-trim-sum">
+	<input>fcs/elevator/pitch-trim-full</input>
+	<input>fcs/elevator-cmd-norm</input>
+	<clipto>
+	    <min>-1</min>
+	    <max>1</max>
+	</clipto>
+    </summer>
     
-    <fcs_function name="fcs/elevator/elevator-max-deg">
+    <aerosurface_scale name="fcs/elevator/elevator-limit-deg">
+	<input>fcs/elevator/pitch-trim-sum</input>
+	<domain>
+	    <min>-1</min>
+	    <max>1</max>
+	</domain>
+	<range>
+	    <min>-9.5</min>
+	    <max>1.5</max>
+	</range>
+	<zero_centered>false</zero_centered>
+    </aerosurface_scale>
+    
+    <aerosurface_scale name="fcs/elevator/elevator-full-deg">
+	<input>fcs/elevator/pitch-trim-sum</input>
+	<domain>
+	    <min>-1</min>
+	    <max>1</max>
+	</domain>
+	<range>
+	    <min>-24</min>
+	    <max>1.5</max>
+	</range>
+	<zero_centered>false</zero_centered>
+    </aerosurface_scale>	 
+
+    <fcs_function name="fcs/elevator/elevator-cmd-deg">
 	<function>
-	    <table>
-		<independentVar lookup="row">fcs/surfaces/flap-pos-norm</independentVar>
-		<tableData>
-		    0	 0.39583333333
-		    0.75    1
-		</tableData>
-	    </table>
+	    <interpolate1d>
+		<property>fcs/flap-pos-norm</property>
+		<value>0</value> <property>fcs/elevator/elevator-limit-deg</property>
+		<value>1</value> <property>fcs/elevator/elevator-full-deg</property>
+	    </interpolate1d>
 	</function>
     </fcs_function>
-
-    <summer name="fcs/elevator/pitch-trim-sum">
-      <input>fcs/elevator-cmd-norm</input>
-      <input>fcs/pitch-trim-cmd-norm</input>
-      <clipto>
-	<min> -fcs/elevator/elevator-max-deg </min>
-	<max>  1 </max>
-      </clipto>
-    </summer>
-	
-	<aerosurface_scale name="fcs/elevator/elevator-deg">
-      <input>fcs/elevator/pitch-trim-sum</input>
-      <range>
-        <min> -24.5 </min>
-	<max>   1.5 </max>
-      </range>
-      <zero_centered>false</zero_centered>
-    </aerosurface_scale>
-	
+    
     <actuator name="fcs/surfaces/elevator-pos-deg">
-      <input>fcs/elevator/elevator-deg</input>
+      <input>fcs/elevator/elevator-cmd-deg</input>
       <rate_limit>fcs/rate-limits/elevator</rate_limit>
       <output>fcs/elevator-pos-deg</output>
     </actuator>
