@@ -14,41 +14,45 @@
       </range>
     </aerosurface_scale>
 
-    <summer name="fcs/elevator/pitch-trim-sum">
-	<input>fcs/elevator/pitch-trim-full</input>
-	<input>fcs/elevator-cmd-norm</input>
-	<clipto>
-	    <min>-1</min>
-	    <max>1</max>
-	</clipto>
-    </summer>
+    <fcs_function name="fcs/elevator/pitch-trim-sum">
+	<function>
+	    <interpolate1d>
+		<property>fcs/elevator-cmd-norm</property>
+		<value>-1</value><value>-1</value>
+		<value>0</value><property>fcs/elevator/pitch-trim-full</property>
+		<value>1</value><value>1</value>
+	    </interpolate1d>
+	</function>
+    </fcs_function>
     
-    <aerosurface_scale name="fcs/elevator/elevator-limit-deg">
-	<input>fcs/elevator/pitch-trim-sum</input>
-	<domain>
-	    <min>-1</min>
-	    <max>1</max>
-	</domain>
-	<range>
-	    <min>-9.5</min>
-	    <max>1.5</max>
-	</range>
-	<zero_centered>false</zero_centered>
-    </aerosurface_scale>
+    <fcs_function name="fcs/elevator/elevator-limit-deg">
+	<function>
+	    <table>
+		<independentVar
+		    lookup="row">fcs/elevator/pitch-trim-sum</independentVar>
+		<tableData>
+		    -1 -9.5
+		    0   -3
+		    1   1.5
+		</tableData>
+	    </table>
+	</function>
+    </fcs_function>
     
-    <aerosurface_scale name="fcs/elevator/elevator-full-deg">
-	<input>fcs/elevator/pitch-trim-sum</input>
-	<domain>
-	    <min>-1</min>
-	    <max>1</max>
-	</domain>
-	<range>
-	    <min>-24</min>
-	    <max>1.5</max>
-	</range>
-	<zero_centered>false</zero_centered>
-    </aerosurface_scale>	 
-
+    <fcs_function name="fcs/elevator/elevator-full-deg">
+	<function>
+	    <table>
+		<independentVar
+		    lookup="row">fcs/elevator/pitch-trim-sum</independentVar>
+		<tableData>
+		    -1.0 -24
+		    0.0 -3
+		    1.0 1.5
+		</tableData>
+	    </table>
+	</function>
+    </fcs_function>
+    
     <fcs_function name="fcs/elevator/elevator-cmd-deg">
 	<function>
 	    <interpolate1d>
