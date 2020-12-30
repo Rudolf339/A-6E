@@ -55,15 +55,15 @@ Grumman A-6E simulation config.
  		</colors>
 	    </style>
 	</gui>
-	<!--		
-	    <rendering>
+	-->
+	<rendering>
 	    <redout>
-	    <parameters>
-	    <blackout-complete-g>7.9</blackout-complete-g>
-	    <blackout-onset-g>5.5</blackout-onset-g>
-	    </parameters>
+		<parameters>
+		    <blackout-complete-g>7.9</blackout-complete-g>
+		    <blackout-onset-g>5.5</blackout-onset-g>
+		</parameters>
 	    </redout>
-	    </rendering>
+	</rendering>
 	-->
 	<view n="0">
 	    <name>Cockpit View</name>
@@ -71,7 +71,7 @@ Grumman A-6E simulation config.
 	    <internal archive="y">true</internal>
 	    <config>
 		<x-offset-m archive="y">-0.4</x-offset-m>
-		<y-offset-m archive="y"> 0.9</y-offset-m>
+		<y-offset-m archive="y"> 0.97</y-offset-m>
 		<z-offset-m archive="y">-1.7</z-offset-m>
 		<pitch-offset-deg>-10</pitch-offset-deg>
 		<default-field-of-view-deg>100</default-field-of-view-deg>
