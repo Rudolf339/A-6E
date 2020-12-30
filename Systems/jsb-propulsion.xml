@@ -33,9 +33,9 @@
 		<z>-0.45</z>
 	    </location>
 	    <orient unit="DEG">
-		<pitch>-12.00</pitch>
+		<pitch>12.00</pitch>
 		<roll>0.00</roll>
-		<yaw>-6.00</yaw>
+		<yaw>0.00</yaw>
 	    </orient>
 	</thruster>
     </engine>
@@ -47,7 +47,7 @@
 	    <z>-0.45</z>
 	</location>
 	<orient unit="DEG">
-	    <pitch>-12.00</pitch>
+	    <pitch>12.00</pitch>
 	    <roll>0.00</roll>
 	    <yaw>6.00</yaw>
 	</orient>
@@ -73,9 +73,9 @@
 		<z>-0.45</z>
 	    </location>
 	    <orient unit="DEG">
-		<pitch>-12.00</pitch>
+		<pitch>12.00</pitch>
 		<roll>0.00</roll>
-		<yaw>6.00</yaw>
+		<yaw>0.00</yaw>
 	    </orient>
 	</thruster>
     </engine>
