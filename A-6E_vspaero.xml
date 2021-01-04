@@ -6047,7 +6047,7 @@ Author: Jüttner Domokos
     <axis name="DRAG">
 	
 	<function name="aero/force/Drag_combined">
-	    <description>Drag at zero lift</description>
+	    <description>combined drag</description>
 	    <product>
 		<property>aero/qbar-psf</property>
 		<property>metrics/Sw-sqft</property>
@@ -6099,7 +6099,7 @@ Author: Jüttner Domokos
 		<property>aero/qbar-psf</property>
 		<property>metrics/Sw-sqft</property>
 		<property>fcs/speedbrake-pos-norm</property>
-		<value> 0.0800 </value>
+		<value> 0.0300 </value>
 	    </product>
 	</function>
 
