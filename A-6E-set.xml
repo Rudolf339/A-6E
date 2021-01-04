@@ -661,9 +661,7 @@ Grumman A-6E simulation config.
 		<flaperon>
 		    <gnd-spoiler-arm alias="/controls/flight/gnd-spoiler-arm"/>
 		</flaperon>
-		<rudder>
-		    <spin-assist alias="/controls/flight/spin-assist"/>
-		</rudder>
+		<spin-assist alias="/controls/flight/spin-assist"/>
 		<speedbrake>
 		    <speedbrake-test alias="/controls/flight/speedbrake-test"/>
 		</speedbrake>

@@ -55,11 +55,18 @@
     
     <fcs_function name="fcs/elevator/elevator-cmd-deg">
 	<function>
-	    <interpolate1d>
-		<property>fcs/flap-pos-norm</property>
-		<value>0</value> <property>fcs/elevator/elevator-limit-deg</property>
-		<value>1</value> <property>fcs/elevator/elevator-full-deg</property>
-	    </interpolate1d>
+	    <ifthen>
+		<eq>
+		    <property>fcs/spin-assist</property>
+		    <value>1</value>
+		</eq>
+		<property>fcs/elevator/elevator-full-deg</property>
+		<interpolate1d>
+		    <property>fcs/flap-pos-norm</property>
+		    <value>0</value> <property>fcs/elevator/elevator-limit-deg</property>
+		    <value>1</value> <property>fcs/elevator/elevator-full-deg</property>
+		</interpolate1d>
+	    </ifthen>
 	</function>
     </fcs_function>
     
@@ -259,7 +266,7 @@
 	<function>
 	    <ifthen>
 		<eq>
-		    <property>fcs/rudder/spin-assist</property>
+		    <property>fcs/spin-assist</property>
 		    <value>1</value>
 		</eq>
 		<product>
