@@ -43,6 +43,12 @@ Grumman A-6E simulation config.
 	    <tag>single-engine</tag>
 	</tags>
 
+	<hud>
+	    <mickey>
+		<num-engines type="int">2</num-engines>
+		<throttle-on-left type="bool">true</throttle-on-left>
+	    </mickey>
+	</hud>
 	
 	<gui>
 	    <style>
@@ -170,7 +176,7 @@ Grumman A-6E simulation config.
 			<CG-trim-aft type="double">5000</CG-trim-aft>
 		    </flight>
 		    <gear>
-			<ld-gear-handle-anim type="double">0</ld-gear-handle-anim>
+			<ld-gear-handle-anim type="double">1</ld-gear-handle-anim>
 		    </gear>
 		    <instrumentation>
 			<doppler>
@@ -288,6 +294,8 @@ Grumman A-6E simulation config.
 	    <line>Take off:</line>
 	    <line>    Flaps:         TO (30)</line>
 	    <line>    Rotate:        ~120 kt</line>
+	    <line>    positive rate: Gears retr</line>
+	    <line>    airspeed 175:  Flaps retr</line>
 	    <line>Approach, landinh:</line>
 	    <line>    Onspeed:       22 units AoA</line>
 	    <line>    Flaps:         TO (30)</line>
@@ -331,7 +339,7 @@ Grumman A-6E simulation config.
 	<menubar>
 	    <default>
 		<menu n="100">
-		    <label>A-6E TRAM/SWIP</label>
+		    <label>A-6E</label>
 		    <enabled type="bool">true</enabled>
 		    <item>
 			<label>Stores Dialog</label>
