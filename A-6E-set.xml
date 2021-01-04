@@ -280,7 +280,7 @@ Grumman A-6E simulation config.
 	    <too-slow-deg>24</too-slow-deg>  <!-- target +2 units -->
 	    <slow-deg>22.5</slow-deg>          <!-- target +0.5 units -->
 	    <fast-deg>21.5</fast-deg>          <!-- target -0.5 units -->
-	    <too-fast-deg>18</too-fast-deg>  <!-- target -2 units -->
+	    <too-fast-deg>20</too-fast-deg>  <!-- target -2 units -->
 	</aoa-indexer>
 
 	<help>
@@ -290,7 +290,7 @@ Grumman A-6E simulation config.
 	    <line>    Rotate:        ~120 kt</line>
 	    <line>Approach, landinh:</line>
 	    <line>    Onspeed:       22 units AoA</line>
-	    <line>    Flaps:         LD (40)</line>
+	    <line>    Flaps:         TO (30)</line>
 	    <key>
 		<name>c</name>
 		<desc>Canopy open/close command</desc>
