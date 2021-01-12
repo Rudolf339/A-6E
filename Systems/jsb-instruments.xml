@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <system name="instrumentation">
-    <channel name="AOA">
-	<fcs_function name="systems/instrument/aoa-unit">
+    <channel execrate="8" name="AOA">
+	<fcs_function name="systems/instrument/aoa-unit-conversion">
 	    <function>
 		<sum>
 		    <product>
@@ -11,18 +11,29 @@
 		    <value>6.32</value>
 		</sum>
 	    </function>
+	</fcs_function>
+	<fcs_function name="systems/instrument/aoa-unit">
+	    <function>
+		<interpolate1d>
+		    <property>velocities/vtrue-kts</property>
+		    <value>0</value><value>0</value>
+		    <value>10</value><value>0</value>
+		    <value>15</value><property>systems/instrument/aoa-unit-conversion</property>
+		</interpolate1d>
+	    </function>
 	    <clipto>
-		<min>-15</min>
+		<min>-10</min>
 		<max>30</max>
 	    </clipto>
 	</fcs_function>
+	
     </channel>
 
     <property value="0">systems/instrument/fuel/damage-rate</property>
     <property value="0">systems/instrument/fuel/gauge-damage</property>
     <property value="6">systems/instrument/fuel/tank-select</property>
     <property value="1">systems/instrument/fuel/power</property>
-    <channel name="fuel gauge">
+    <channel execrate="8" name="fuel gauge">
 
 	<summer name="systems/instrument/fuel/main-lbs">
 	    <input>propulsion/tank/contents-lbs</input>
@@ -134,5 +145,74 @@
 	    <output>systems/instrument/fuel/total-indicated-debug</output>
 	</actuator>
 	
+    </channel>
+
+    <channel execrate="8" name="ground_reactions">
+
+	<switch name="simulation/terminate">
+	    <default value="0"/>
+	    <test logic="AND" value="1">
+		sim-time-sec gt 0.5
+		<test logic="OR">
+		    simulation/terminate eq 1
+		    contact/unit[3]/compression-ft gt 1
+		    contact/unit[4]/compression-ft gt 1
+		    contact/unit[5]/compression-ft gt 1
+		    contact/unit[6]/compression-ft gt 1
+		    contact/unit[7]/compression-ft gt 1
+		    contact/unit[8]/compression-ft gt 1
+		    contact/unit[9]/compression-ft gt 1
+		    contact/unit[10]/compression-ft gt 1
+		    contact/unit[11]/compression-ft gt 1
+		    contact/unit[12]/compression-ft gt 1
+		</test>
+	    </test>
+	</switch>
+	
+	<fcs_function name="contact/unit[4]/y-position">
+	    <function>
+		<product>
+		    <sum>
+			<value>3.8</value>
+			<product>
+			    <cos>
+				<product>
+				    <value>2.460914</value> <!-- pi/180*141 -->
+				    <property>fcs/wing-fold-pos-norm</property>
+				</product>
+			    </cos>
+			    <value>4.2</value>
+			</product>
+		    </sum>
+		    <value>39.3701</value>
+		</product>
+	    </function>
+	</fcs_function>
+
+	<pure_gain value="contact/unit[3]/y-position">
+	    <input>contact/unit[4]/y-position</input>
+	    <gain>-1</gain>
+	</pure_gain>
+	
+	<fcs_function name="contact/unit[4]/z-position">
+	    <function>
+		<product>
+		    <sum>
+			<value>-0.1</value>
+			<product>
+			    <sin>
+				<product>
+				    <value>2.460914</value> <!-- pi/180*141 -->
+				    <property>fcs/wing-fold-pos-norm</property>
+				</product>
+			    </sin>
+			    <value>4.2</value>
+			</product>
+		    </sum>
+		    <value>39.3701</value>
+		</product>
+	    </function>
+	    <output>contact/unit[3]/z-position</output>
+	</fcs_function>
     </channel>
 </system>
