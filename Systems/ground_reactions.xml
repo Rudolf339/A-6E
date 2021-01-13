@@ -45,6 +45,7 @@
 	<!-- actually 56, controlled in Systems/fcs.xml -->
 	<brake_group>NONE</brake_group>
 	<retractable>1</retractable>
+	<castered>0</castered>
     </contact>
 
     <contact type="BOGEY" name="LEFT_MAIN">

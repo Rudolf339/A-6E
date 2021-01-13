@@ -670,11 +670,6 @@ Grumman A-6E simulation config.
 		    <lockpin-cmd alias="/controls/flight/wing-fold/lockpin-cmd"/>
 		</wing-fold>
 	    </fcs>
-	    <gear>
-		<unit>
-		    <castered>0</castered>
-		</unit>
-	    </gear>
 	</jsbsim>
     </fdm>
 
