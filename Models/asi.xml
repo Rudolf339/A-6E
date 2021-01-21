@@ -15,17 +15,17 @@
       <entry><ind>20</ind><dep>4</dep></entry>
       <entry><ind>40</ind><dep>10</dep></entry>
       <entry><ind>80</ind><dep>21</dep></entry>
-      <entry><ind>100</ind><dep>44</dep></entry>
+      <entry><ind>100</ind><dep>46</dep></entry>
       <entry><ind>120</ind><dep>73</dep></entry>
       <entry><ind>150</ind><dep>112</dep></entry>
-      <entry><ind>200</ind><dep>148</dep></entry>
-      <entry><ind>250</ind><dep>182</dep></entry>
-      <entry><ind>300</ind><dep>212</dep></entry>
-      <entry><ind>350</ind><dep>240</dep></entry>
-      <entry><ind>400</ind><dep>266</dep></entry>
-      <entry><ind>450</ind><dep>290</dep></entry>
-      <entry><ind>500</ind><dep>310</dep></entry>
-      <entry><ind>600</ind><dep>335</dep></entry>
+      <entry><ind>200</ind><dep>156</dep></entry>
+      <entry><ind>250</ind><dep>172</dep></entry>
+      <entry><ind>300</ind><dep>219</dep></entry>
+      <entry><ind>350</ind><dep>244</dep></entry>
+      <entry><ind>400</ind><dep>268</dep></entry>
+      <entry><ind>450</ind><dep>286</dep></entry>
+      <entry><ind>500</ind><dep>304</dep></entry>
+      <entry><ind>600</ind><dep>336</dep></entry>
     </interpolation>
     <axis>
       <x>-1</x>
