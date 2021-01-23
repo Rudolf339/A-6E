@@ -785,7 +785,7 @@
 	<type>translate</type>
 	<object-name>UC-R-StrutShaft</object-name>
 	<property>gear/gear[2]/compression-norm</property>
-	<factor>0.51282</factor>
+	<factor>0.31</factor>
 	<axis>
 	    <object-name>axis50</object-name>
 	</axis>
