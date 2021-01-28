@@ -1,0 +1,92 @@
+<!-- model-file: beacon light -->
+
+    <model>
+        <name>als-beacon-light</name>
+        <path>Aircraft/Citation/Models/Effects/lights/beacon_light.xml</path>
+        <offsets>
+            <x-m>13.78</x-m>
+            <y-m> 0.00</y-m>
+            <z-m> 3.63</z-m>
+        </offsets>
+    </model>
+
+    <animation>
+        <type>select</type>
+        <object-name>als-beacon-light</object-name>
+        <condition>
+            <greater-than>
+                <property>systems/electrical/outputs/beacon</property>
+                <value>1.0</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>dist-scale</type>
+        <object-name>als-beacon-light</object-name>
+        <factor>0.005</factor>
+        <min>1.0</min>
+        <max>10.0</max>
+        <center>
+            <x-m>13.78</x-m>
+            <y-m> 0.00</y-m>
+            <z-m> 3.63</z-m>
+        </center>
+    </animation>
+
+<!-- prop-filter: beacon light -->
+
+<!-- ALS beacon light -->
+
+    <filter>
+        <name>beacon-timing</name>
+        <debug>false</debug>
+        <type>gain</type>
+        <input>
+            <expression>
+                <mod>
+                    <div>
+                        <property>/sim/time/elapsed-sec</property>
+                        <value>2.3</value>
+                    </div>
+                    <value>1</value>
+                </mod>
+            </expression>
+        </input>
+        <output>controls/lighting/beacon-timing</output>
+    </filter>
+
+    <filter>
+        <name>beacon-sin</name>
+        <debug>false</debug>
+        <type>gain</type>
+        <input>
+            <expression>
+                <sin>
+                    <product>
+                        <property>controls/lighting/beacon-timing</property>
+                        <value>6.28318530718</value>
+                    </product>
+                </sin>
+            </expression>
+        </input>
+        <output>controls/lighting/beacon-sin</output>
+    </filter>
+
+    <filter>
+        <name>beacon-cos</name>
+        <debug>false</debug>
+        <type>gain</type>
+        <input>
+            <expression>
+                <cos>
+                    <product>
+                        <property>controls/lighting/beacon-timing</property>
+                        <value>6.28318530718</value>
+                    </product>
+                </cos>
+            </expression>
+        </input>
+        <output>controls/lighting/beacon-cos</output>
+    </filter>
+

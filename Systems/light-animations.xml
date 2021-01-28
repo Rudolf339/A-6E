@@ -1,0 +1,87 @@
+<PropertyList>
+    <!-- ALS beacon light -->
+
+    <filter>
+        <name>beacon-timing</name>
+        <debug>false</debug>
+        <type>gain</type>
+        <input>
+            <expression>
+                <mod>
+                    <div>
+                        <property>/sim/time/elapsed-sec</property>
+                        <value>2.3</value>
+                    </div>
+                    <value>1</value>
+                </mod>
+            </expression>
+        </input>
+        <output>systems/lighting/beacon-timing</output>
+    </filter>
+
+    <filter>
+        <name>beacon-sin</name>
+        <debug>false</debug>
+        <type>gain</type>
+        <input>
+            <expression>
+                <sin>
+                    <product>
+                        <property>systems/lighting/beacon-timing</property>
+                        <value>6.28318530718</value>
+                    </product>
+                </sin>
+            </expression>
+        </input>
+        <output>systems/lighting/beacon-sin</output>
+    </filter>
+
+    <filter>
+        <name>beacon-cos</name>
+        <debug>false</debug>
+        <type>gain</type>
+        <input>
+            <expression>
+                <cos>
+                    <product>
+                        <property>systems/lighting/beacon-timing</property>
+                        <value>6.28318530718</value>
+                    </product>
+                </cos>
+            </expression>
+        </input>
+        <output>systems/lighting/beacon-cos</output>
+    </filter>
+
+    <logic>
+	<name>engine beacon</name>
+	<input>
+	    <property>controls/lighting/beacon</property>
+	    <and>
+		<equals>
+		    <property>gear/gear[0]/position-norm</property>
+		    <value>0</value>
+		</equals>
+		<equals>
+		    <property>gear/gear[1]/position-norm</property>
+		    <value>0</value>
+		</equals>
+		<equals>
+		    <property>gear/gear[2]/position-norm</property>
+		    <value>0</value>
+		</equals>
+	    </and>
+	</input>
+	<output>systems/lighting/beacon-eng-on</output>
+    </logic>
+
+    <logic>
+	<name>tail beacon</name>
+	<input>
+	    <property>controls/lighting/beacon</property>
+	</input>
+	<output>systems/lighting/beacon-tail-on</output>
+    </logic>
+        
+		
+</PropertyList>
