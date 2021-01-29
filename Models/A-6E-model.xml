@@ -1696,8 +1696,6 @@
 	</offsets>
     </model>
 
-    <light>
-	
     <animation>
 	<type>select</type>
 	<object-name>probe_light</object-name>
@@ -1850,6 +1848,5 @@
 	<object-name>CPT-panels</object-name>
 	<type>noshadow</type>
     </animation>
-
 
 </PropertyList>
