@@ -317,36 +317,29 @@
     </aerosurface_scale>
 
   </channel>
-  
+
+  <property value="2.666666666">fcs/rate-limits/flaps</property>
   <channel name="Flap">
-      <switch name="fcs/flap-cmd">
+      <switch name="fcs/flaps/flap-cmd">
 	  <default value="fcs/flap-cmd-norm"/>
 	  <test value="0">
 	      fcs/wing-fold/handle ne 0
 	  </test>
       </switch>
       
-      <kinematic name="fcs/flaps-pos-deg">
-	  <input>fcs/flap-cmd</input>
-	  <traverse>
-	      <setting>
-		  <position>  0 </position>
-		  <time>      0 </time>
-	      </setting>
-	      <setting>
-		  <position> 30 </position>
-		  <time>      8 </time>
-	      </setting>
-	      <setting>
-		  <position> 40 </position>
-		  <time>      3 </time>
-	      </setting>
-	  </traverse>
-	  <output>fcs/surfaces/flaps-pos-deg</output>
-      </kinematic>
+      <pure_gain name="fcs/flaps/flaps-deg-cmd">
+	  <input>fcs/flaps/flap-cmd</input>
+	  <gain>40</gain>
+      </pure_gain>
 
+      <actuator name="fcs/flaps/flaps-pos-deg">
+	  <input>fcs/flaps/flaps-deg-cmd</input>
+	  <rate_limit>fcs/rate-limits/flaps</rate_limit>
+	  <output>fcs/surfaces/flaps-pos-deg</output>
+      </actuator>
+      
       <aerosurface_scale name="fcs/surfaces/flap-pos-norm">
-	  <input>fcs/flaps-pos-deg</input>
+	  <input>fcs/surfaces/flaps-pos-deg</input>
 	  <domain>
 	      <min>  0 </min>
 	      <max> 40 </max>
@@ -366,7 +359,7 @@
     <switch name="fcs/slats/slats-cmd-deg">
       <default value="0"/>
       <test value="27.5">
-	fcs/flap-cmd-norm ge 0.75
+	fcs/flaps/flap-cmd ge 0.75
       </test>
     </switch>
 
@@ -460,8 +453,14 @@
       <rate_limit sense="incr">fcs/rate-limits/speedbrake-ext</rate_limit>
       <rate_limit sense="decr">fcs/rate-limits/speedbrake-rtr</rate_limit>
       <output>fcs/speedbrake-pos-deg</output>
+      <output>fcs/surfaces/speedbrake-upper-pos-deg</output>
     </actuator>
 
+    <pure_gain name="fcs/surfaces/speedbrake-lower-pos-deg">
+	<input>fcs/surfaces/speedbrake-upper-pos-deg</input>
+	<gain>-1</gain>
+    </pure_gain>
+    
     <aerosurface_scale name="fcs/surfaces/speedbrake-pos-norm">
       <input>fcs/surfaces/speedbrake-pos-deg</input>
       <domain>
