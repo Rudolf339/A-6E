@@ -61,7 +61,7 @@ Grumman A-6E simulation config.
  		</colors>
 	    </style>
 	</gui>
-	-->
+	
 	<rendering>
 	    <redout>
 		<parameters>
@@ -70,7 +70,7 @@ Grumman A-6E simulation config.
 		</parameters>
 	    </redout>
 	</rendering>
-	-->
+	
 	<view n="0">
 	    <name>Cockpit View</name>
 	    <type>lookfrom</type>
@@ -167,7 +167,11 @@ Grumman A-6E simulation config.
 	</systems>
 
 	<model>
-	    <path>Aircraft/A-6E/Models/A-6E-model.xml</path>
+	    <path>Aircraft/A-6E/Models/A-6E.xml</path>
+	    <ramp>
+		<x-m type="float">-2.7</x-m>
+		<class type="int">3</class>
+	    </ramp>
 	    <A-6E>
 		<controls>
 		    <canopy>
