@@ -224,6 +224,7 @@
     <animation>
 	<type>rotate</type>
 	<object-name>rudder</object-name>
+	<object-name>tail-light</object-name>
 	<property>surface-positions/rudder-pos-norm</property>
 	<factor>-35</factor>
 	<axis>
@@ -1517,6 +1518,16 @@
 	</offsets>
     </model>
 
+    <animation>
+	<type>rotate</type>
+	<object-name>nav_L</object-name>
+	<property>surface-positions/wing-fold-pos-norm</property>
+	<factor>141</factor>
+	<axis>
+	    <object-name>axis37</object-name>
+	</axis>
+    </animation>
+
     <model>
 	<path>Aircraft/A-6E/Models/Effects/lights/green-nav-light.xml</path>
 	<name>nav_R</name>
@@ -1526,6 +1537,16 @@
 	    <z-m>-0.06</z-m>
 	</offsets>
     </model>
+
+    <animation>
+	<type>rotate</type>
+	<object-name>nav_R</object-name>
+	<property>surface-positions/wing-fold-pos-norm</property>
+	<factor>-141</factor>
+	<axis>
+	    <object-name>axis29</object-name>
+	</axis>
+    </animation>
 
     <animation>
 	<type>select</type>
