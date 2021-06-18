@@ -26,46 +26,14 @@ var PHD_TCrange_sw = func {
 }
 
 
-# Hard-coded flaps movement in 2 steps, 30 and 40 degrees:
-# --------------------------------------------------------
-controls.flapsDown = func {
-	if(arg[0] == 0) { return; }
-	if(props.globals.getNode("/sim/flaps") != nil) {
-		stepProps("/controls/flight/flaps", "/sim/flaps", arg[0]);
-		return;
-	}
-	current_f = getprop("/controls/flight/flaps");
-	if (arg[0] == 1) {
-		if (current_f == 1) {
-			return;
-		} elsif (current_f == 0) {
-			setprop("/controls/flight/flaps", 0.75);
-		} else {
-			setprop("/controls/flight/flaps", 1);
-		}
-	} else {
-		if (current_f == 0) {
-			return;
-		} elsif (current_f == 0.75) {
-			setprop("/controls/flight/flaps", 0);
-		} else {
-			setprop("/controls/flight/flaps", 0.75);
-		}
-	}
-}
-
-
 # A-6 spoilers can be full open or closed:
 # ----------------------------------------
 var SpeedBrake = props.globals.getNode("controls/flight/speedbrake", 1);
 
-controls.stepSpoilers = func(s) {
-	if ( s == 1 ) {
-		SpeedBrake.setValue(1);
-	} elsif ( s == -1 ) {
-		SpeedBrake.setValue(0);
-	}
-}
+setlistener( "controls/flight/spoilers/", func(v){
+             SpeedBrake.setValue(v.getValue());
+             print("speedbrake set to ",SpeedBrake.getValue());
+}, 1, 0);
 
 # Canopy switch animation and canopy move
 # ---------------------------------------
