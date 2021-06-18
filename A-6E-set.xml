@@ -10,6 +10,17 @@ Grumman A-6E simulation config.
 <PropertyList>
     <sim>
 
+        <spoilers>
+            <setting>0.0</setting>
+            <setting>1.0</setting>
+        </spoilers>
+
+        <flaps>
+            <setting>0.0</setting>
+            <setting>0.75</setting>
+            <setting>1.0</setting>
+        </flaps>
+ 
 	<startup>
 	    <splash-texture>Aircraft/A-6E/A-6E-splash.rgb</splash-texture>
 	</startup>
