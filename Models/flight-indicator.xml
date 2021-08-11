@@ -19,10 +19,14 @@
 		<type>select</type>
 		<object-name>flap-TO</object-name>
 		<condition>
-		<equals>
+		    <greater-than>
 			<property>surface-positions/flap-pos-norm</property>
-			<value>0.75</value>
-		</equals>
+			<value>0.66666</value>
+		    </greater-than>
+		    <less-than>
+			<property>surface-positions/flap-pos-norm</property>
+			<value>0.6666667</value>
+		    </less-than>
 		</condition>
 	</animation>
 	<animation> 

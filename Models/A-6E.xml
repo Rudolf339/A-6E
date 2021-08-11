@@ -239,7 +239,7 @@
 	<object-name>W-L-Int-Flap</object-name>
 	<object-name>W-L-Ext-Flap</object-name>
 	<property>surface-positions/flap-pos-norm</property>
-	<factor>2.5</factor>
+	<factor>1.875</factor>
 	<axis>
 	    <object-name>axis8</object-name>
 	</axis>
@@ -259,7 +259,7 @@
 	<object-name>W-L-Int-Flap</object-name>
 	<object-name>W-L-Ext-Flap</object-name>
 	<property>surface-positions/flap-pos-norm</property>
-	<factor>40</factor>
+	<factor>30</factor>
 	<axis>
 	    <object-name>axis10</object-name>
 	</axis>
@@ -270,7 +270,7 @@
 	<object-name>W-R-Int-Flap</object-name>
 	<object-name>W-R-Ext-Flap</object-name>
 	<property>surface-positions/flap-pos-norm</property>
-	<factor>-2.5</factor>
+	<factor>-1.875</factor>
 	<axis>
 	    <object-name>axis11</object-name>
 	</axis>
@@ -290,7 +290,7 @@
 	<object-name>W-R-Int-Flap</object-name>
 	<object-name>W-R-Ext-Flap</object-name>
 	<property>surface-positions/flap-pos-norm</property>
-	<factor>-40</factor>
+	<factor>-30</factor>
 	<axis>
 	    <object-name>axis13</object-name>
 	</axis>

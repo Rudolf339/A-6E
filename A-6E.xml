@@ -52,16 +52,16 @@
     -->
 
     <metrics>
-	<wingarea  unit="FT2">   528.90 </wingarea>
-	<wingspan  unit="FT" >    53.00 </wingspan>
+	<wingarea  unit="M2">49.14</wingarea> <!-- 528.9 sqft -->
+	<wingspan  unit="M" >15.54</wingspan>
 	<wing_incidence>           2.00 </wing_incidence>
-	<chord     unit="FT" >    10.90 </chord>
+	<chord     unit="M" >   3.2569 </chord>
 	<htailarea unit="FT2">   117.00 </htailarea>
 	<htailarm  unit="FT" >    24.90 </htailarm>
 	<vtailarea  unit="FT2">   79.25 </vtailarea>
 	<vtailarm  unit="FT" >    24.90 </vtailarm>
 	<location name="AERORP" unit="M">
-	    <x> 1.846 </x>
+	    <x> 1.808 </x>
 	    <y> 0.000 </y>
 	    <z> 0.000 </z>
 	</location>
@@ -76,14 +76,14 @@
 	    <z>     0.0 </z>
 	</location>
     </metrics>
-
+    
     <mass_balance>
 	<ixx unit="SLUG*FT2">  53320.00 </ixx>
 	<iyy unit="SLUG*FT2">  87273.00 </iyy>
 	<izz unit="SLUG*FT2">  139927.00 </izz>
 	<emptywt unit="LBS" >  25980.00 </emptywt>
 	<location name="CG" unit="M">
-	    <x> 1.56 </x>
+	    <x> 1.81 </x>
 	    <y> 0.00 </y>
 	    <z> 0.00 </z>
 	</location>
@@ -149,6 +149,26 @@
 
     <aerodynamics file="A-6E_vspaero.xml"/>
 
+    <output name="/tmp/JSBout.csv" type="CSV" rate="10">
+	<property caption="Mach">velocities/mach</property>
+	<property caption="alpha">aero/alpha-deg</property>
+	<property caption="beta">aero/beta-deg</property>
+	<property caption="pdot_rad_sec2">accelerations/pdot-rad_sec2</property>
+	<property caption="qdot_rad_sec2">accelerations/qdot-rad_sec2</property>
+	<property caption="rdot_rad_sec2">accelerations/rdot-rad_sec2</property>
+	<property caption="p_rad_sec">velocities/p-rad_sec</property>
+	<property caption="q_rad_sec">velocities/q-rad_sec</property>
+	<property caption="r_rad_sec">velocities/r-rad_sec</property>
+	<property caption="CMz_base">aero/CMz_base</property>
+	<property caption="CMz">aero/moment/CMz</property>
+	<!-- <property caption="cmnr">aero/s/cmnr</property> -->
+	<property caption="cmnp">aero/s/cmnp</property>
+	<property caption="CMz_rudder">aero/CMz_rudder</property>
+	<property caption="rudder">fcs/rudder-cmd-norm</property>
+	<property caption="elevator">fcs/elevator-cmd-norm</property>
+	<!-- <property caption="flaperon">fcs/aileron-cmd-norm</property> -->
+    </output>
+    
     <external_reactions>
 
 	<force name="hook" frame="BODY">

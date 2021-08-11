@@ -327,10 +327,16 @@
 	  </test>
       </switch>
       
-      <pure_gain name="fcs/flaps/flaps-deg-cmd">
-	  <input>fcs/flaps/flap-cmd</input>
-	  <gain>40</gain>
-      </pure_gain>
+      <switch name="fcs/flaps/flaps-deg-cmd">
+	  <default value="0"/>
+	  <test value="20" logic="AND">
+	      fcs/flaps/flap-cmd ge 0.25
+	      fcs/flaps/flap-cmd le 0.75
+	  </test>
+	  <test value="30" logic="AND">
+	      fcs/flaps/flap-cmd gt 0.75
+	  </test>
+      </switch>
 
       <actuator name="fcs/flaps/flaps-pos-deg">
 	  <input>fcs/flaps/flaps-deg-cmd</input>
@@ -342,7 +348,7 @@
 	  <input>fcs/surfaces/flaps-pos-deg</input>
 	  <domain>
 	      <min>  0 </min>
-	      <max> 40 </max>
+	      <max> 30 </max>
 	  </domain>
 	  <range>
 	      <min> 0 </min>
@@ -359,7 +365,7 @@
     <switch name="fcs/slats/slats-cmd-deg">
       <default value="0"/>
       <test value="27.5">
-	fcs/flaps/flap-cmd ge 0.75
+	fcs/flaps/flap-cmd ge 0.25
       </test>
     </switch>
 

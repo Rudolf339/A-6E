@@ -17,7 +17,7 @@ Grumman A-6E simulation config.
 
         <flaps>
             <setting>0.0</setting>
-            <setting>0.75</setting>
+            <setting>0.5</setting>
             <setting>1.0</setting>
         </flaps>
  
