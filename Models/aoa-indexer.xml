@@ -17,7 +17,7 @@
 				<property>sim/aoa-indexer/too-slow-deg</property>
 			</greater-than>
 			<equals>
-				<property>gear/gear[0]/position-norm</property>
+				<property>fdm/jsbsim/systems/instrument/aoa-indexer-on</property>
 				<value>1</value>
 			</equals>
 		</condition>
@@ -40,7 +40,7 @@
 				<property>sim/aoa-indexer/slow-deg</property>
 			</greater-than>
 			<equals>
-				<property>gear/gear[0]/position-norm</property>
+				<property>fdm/jsbsim/systems/instrument/aoa-indexer-on</property>
 				<value>1</value>
 			</equals>
 		</condition>
@@ -63,7 +63,7 @@
 				<property>sim/aoa-indexer/fast-deg</property>
 			</greater-than>
 			<equals>
-				<property>gear/gear[0]/position-norm</property>
+				<property>fdm/jsbsim/systems/instrument/aoa-indexer-on</property>
 				<value>1</value>
 			</equals>
 		</condition>
@@ -86,7 +86,7 @@
 				<property>sim/aoa-indexer/too-fast-deg</property>
 			</greater-than>
 			<equals>
-				<property>gear/gear[0]/position-norm</property>
+				<property>fdm/jsbsim/systems/instrument/aoa-indexer-on</property>
 				<value>1</value>
 			</equals>
 		</condition>
@@ -105,7 +105,7 @@
 				<property>sim/aoa-indexer/too-fast-deg</property>
 			</less-than>
 			<equals>
-				<property>gear/gear[0]/position-norm</property>
+				<property>fdm/jsbsim/systems/instrument/aoa-indexer-on</property>
 				<value>1</value>
 			</equals>
 		</condition>
@@ -123,7 +123,7 @@
 			</greater-than>-->
 			<or>
 				<less-than>
-					<property>gear/gear[0]/position-norm</property>
+					<property>fdm/jsbsim/systems/instrument/aoa-indexer-on</property>
 					<value>1</value>
 				</less-than>
 				<less-than>

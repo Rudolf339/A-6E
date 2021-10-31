@@ -1,5 +1,8 @@
 <?xml version="1.0"?>
 <system name="instrumentation">
+	
+    <property value="1">systems/instrument/aoa-blip</property>
+    <property value="1">systems/hook/hook-override</property>
     <channel execrate="8" name="AOA">
 	<fcs_function name="systems/instrument/aoa-unit-conversion">
 	    <function>
@@ -26,7 +29,49 @@
 		<max>30</max>
 	    </clipto>
 	</fcs_function>
-	
+	<pure_gain name="systems/instrument/aoa-unit">
+	    <input>aero/alpha-deg</input>
+	    <gain>2.7777777777</gain>
+	    <clipto>
+		<min>-10</min>
+		<max>30</max>
+	    </clipto>
+	</pure_gain>
+
+	<actuator name="systems/instrument/aoa-blip-act">
+	    <input>systems/instrument/aoa-blip</input>
+	    <rate_limit>0.5</rate_limit>
+	    <output>systems/instrument/aoa-blip-norm</output>
+	</actuator>
+
+	<switch name="systems/instrument/aoa-blip">
+	    <default value="systems/instrument/aoa-blip"/>
+	    <test value="1">
+		systems/instrument/aoa-blip eq 0
+	    </test>
+	    <test value="0">
+		systems/instrument/aoa-blip eq 1
+	    </test>
+	</switch>
+
+	<switch name="systems/instrument/aoa-indexer-on">
+	    <default value="0"/>
+	    <test logic="AND" value="1">
+		gear/gear-pos-norm eq 1
+		systems/instrument/aoa-blip eq 1
+		systems/hook/tailhook-pos-norm lt 1
+		systems/hook/hook-override eq 0
+	    </test>
+	    <test logic="AND" value="1">
+		gear/gear-pos-norm eq 1
+		<test logic="OR">
+		    systems/hook/hook-override eq 1
+		    systems/hook/tailhook-pos-norm eq 1
+		</test>
+	    </test>
+	</switch>
+	     
+>>>>>>> carrier-ops
     </channel>
 
     <property value="0">systems/instrument/fuel/damage-rate</property>

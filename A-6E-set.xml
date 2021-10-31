@@ -312,11 +312,25 @@ Grumman A-6E simulation config.
 	    <line>Take off:</line>
 	    <line>    Flaps:         TO (30)</line>
 	    <line>    Rotate:        ~120 kt</line>
-	    <line>    positive rate: Gears retr</line>
-	    <line>    airspeed 175:  Flaps retr</line>
-	    <line>Approach, landinh:</line>
+	    <line>    Positive rate: Gears up</line>
+	    <line>    at 175 kias:   Flaps up</line>
+	    <line></line>
+	    <line>Catapult take off:</line>
+	    <line>    Flaps:         TO (30)</line>
+	    <line>    Launchbar:     Engage</line>
+	    <line>    Throttle:      MIL thrust</line>
+	    <line>    Catapult grip: Engage and hold</line>
+	    <line>    Catapult:      Engage</line>
+	    <line>    Once cleared catapult release catapult grip</line>
+	    <line>    Gears:         Up</line>
+	    <line>    at 175 kias:   Flaps Up</line>
+	    <line></line>
+	    <line>Approach, landing:</line>
 	    <line>    Onspeed:       22 units AoA</line>
 	    <line>    Flaps:         TO (30)</line>
+	    <line>    for shore landings,</line>
+	    <line>        optionally flare by adding more power</line>
+	    <line>        aerobrake keeping onspeed AoA</line>
 	    <key>
 		<name>c</name>
 		<desc>Canopy open/close command</desc>
@@ -336,6 +350,22 @@ Grumman A-6E simulation config.
 	    <key>
 		<name>n</name>
 		<desc>Enable NSW steering</desc>
+	    </key>
+	    <key>
+		<name>o</name>
+		<desc>Toggle arrestor hook</desc>
+	    </key>
+	    <key>
+		<name>L</name>
+		<desc>Engage launchbar</desc>
+	    </key>
+	    <key>
+		<name>C</name>
+		<desc>Engage catapult</desc>
+	    </key>
+	    <key>
+		<name>N</name>
+		<desc>Catapult Grip engage</desc>
 	    </key>
 	</help>
 	
@@ -628,6 +658,53 @@ Grumman A-6E simulation config.
 		    <binding>
 			<command>property-assign</command>
 			<property>/controls/gear/nose-wheel-steering</property>
+			<value>0</value>
+		    </binding>
+		</mod-up>
+	    </key>
+
+            <key n="111">
+                <name>o</name>
+                <desc>Toggle arrester hook</desc>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>fdm/jsbsim/systems/hook/tailhook-cmd-norm</property>
+                </binding>
+	    </key>
+	    
+            <!-- map keys for catapult launch -->
+            <key n="67">
+                <name>C</name>
+                <desc>Catapult Launch Command.</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>A6Econtrols.catapult();</script>
+                </binding>
+            </key>
+
+	    
+            <!-- map keys for launch-bar -->
+            <key n="76">
+                <name>L</name>
+                <desc>Launch-bar engage.</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>A6Econtrols.launchbar_toggle();</script>
+                </binding>
+            </key>
+
+	    <key n="78">
+		<name>N</name>
+		<desc>Strut Lock engage</desc>
+		<binding>
+		    <command>property-assign</command>
+		    <property>fdm/jsbsim/systems/strut-lock/strut-lock-cmd</property>
+		    <value>1</value>
+		</binding>
+		<mod-up>
+		    <binding>
+			<command>property-assign</command>
+			<property>fdm/jsbsim/systems/strut-lock/strut-lock-cmd</property>
 			<value>0</value>
 		    </binding>
 		</mod-up>
