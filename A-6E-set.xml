@@ -369,7 +369,32 @@ Grumman A-6E simulation config.
 		</menu>
 	    </default>
 	</menubar>
-	
+
+	<flight-recorder>
+	    <replay-config type="int">0</replay-config>
+	    <config n="0" 
+		    include="/Aircraft/Generic/flightrecorder/generic-jet.xml">
+		<name type="string">My Aircraft's Flight Recorder</name>
+		<!-- Custom properties -->
+		<signal>
+		    <type>float</type>
+		    <property type="string">surface-positions/nsw-pos-deg</property>
+		    <interpolation>linear</interpolation>
+		</signal>
+		<signal>
+		    <type>float</type>
+		    <property type="string">surface-positions/wing-fold-pos-norm</property>
+		    <interpolation>linear</interpolation>
+		</signal>
+		<signal>
+		    <type>float</type>
+		    <property type="string">/fdm/jsbsim/systems/instrument/aoa-unit</property>
+		    <interpolation>linear</interpolation>
+		</signal>
+		<!-- More custom signals here -->
+	    </config>
+	</flight-recorder>
+
     </sim>
     <canopy>
 	<position-norm type="double">1</position-norm>
