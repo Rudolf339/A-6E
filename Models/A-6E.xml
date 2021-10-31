@@ -203,7 +203,7 @@
 	<object-name>CPT-canopy-back</object-name>
 	<object-name>CPT-canopy-int-frame</object-name>
 	<property>canopy/position-norm</property>
-	<factor>-0.7</factor>
+	<factor>0.7</factor>
 	<axis>
 	    <object-name>axis4</object-name>
 	</axis>
@@ -212,7 +212,7 @@
 	<type>translate</type>
 	<object-name>canopy-main-glass</object-name>
 	<property>canopy/position-norm</property>
-	<factor>-0.7</factor>
+	<factor>0.7</factor>
 	<axis>
 	    <object-name>axis5</object-name>
 	</axis>
@@ -758,7 +758,7 @@
 	<type>translate</type>
 	<object-name>UC-R-Tyre</object-name>
 	<property>gear/gear[2]/compression-norm</property>
-	<factor>0.31</factor>
+	<factor>-0.31</factor>
 	<axis>
 	    <object-name>axis49</object-name>
 	</axis>
@@ -767,7 +767,7 @@
 	<type>translate</type>
 	<object-name>UC-R-StrutShaft</object-name>
 	<property>gear/gear[2]/compression-norm</property>
-	<factor>0.31</factor>
+	<factor>-0.31</factor>
 	<axis>
 	    <object-name>axis50</object-name>
 	</axis>
@@ -776,7 +776,7 @@
 	<type>translate</type>
 	<object-name>UC-R-StrutShaft-cont</object-name>
 	<property>gear/gear[2]/compression-norm</property>
-	<factor>0.31</factor>
+	<factor>-0.31</factor>
 	<axis>
 	    <object-name>axis51</object-name>
 	</axis>
@@ -785,7 +785,7 @@
 	<type>translate</type>
 	<object-name>UC-R-Hub</object-name>
 	<property>gear/gear[2]/compression-norm</property>
-	<factor>0.31</factor>
+	<factor>-0.31</factor>
 	<axis>
 	    <object-name>axis52</object-name>
 	</axis>
@@ -794,7 +794,7 @@
 	<type>translate</type>
 	<object-name>UC-R-BottomDamper</object-name>
 	<property>gear/gear[2]/compression-norm</property>
-	<factor>0.31</factor>
+	<factor>-0.31</factor>
 	<axis>
 	    <object-name>axis53</object-name>
 	</axis>
@@ -981,7 +981,7 @@
 	<type>translate</type>
 	<object-name>UC-L-StrutShaft</object-name>
 	<property>gear/gear[1]/compression-norm</property>
-	<factor>0.31</factor>
+	<factor>-0.31</factor>
 	<axis>
 	    <object-name>axis65</object-name>
 	</axis>
@@ -990,7 +990,7 @@
 	<type>translate</type>
 	<object-name>UC-L-StrutShaft-cont</object-name>
 	<property>gear/gear[1]/compression-norm</property>
-	<factor>0.31</factor>
+	<factor>-0.31</factor>
 	<axis>
 	    <object-name>axis66</object-name>
 	</axis>
@@ -999,7 +999,7 @@
 	<type>translate</type>
 	<object-name>UC-L-Hub</object-name>
 	<property>gear/gear[1]/compression-norm</property>
-	<factor>0.31</factor>
+	<factor>-0.31</factor>
 	<axis>
 	    <object-name>axis67</object-name>
 	</axis>
@@ -1008,7 +1008,7 @@
 	<type>translate</type>
 	<object-name>UC-L-Tyre</object-name>
 	<property>gear/gear[1]/compression-norm</property>
-	<factor>0.31</factor>
+	<factor>-0.31</factor>
 	<axis>
 	    <object-name>axis68</object-name>
 	</axis>
@@ -1017,7 +1017,7 @@
 	<type>translate</type>
 	<object-name>UC-L-BottomDamper</object-name>
 	<property>gear/gear[1]/compression-norm</property>
-	<factor>0.31</factor>
+	<factor>-0.31</factor>
 	<axis>
 	    <object-name>axis69</object-name>
 	</axis>
@@ -1260,7 +1260,7 @@
 	<object-name>UC-N-ArmBottom</object-name>
 	<object-name>UC-N-ArmTop</object-name>
 	<property>gear/gear[0]/compression-norm</property>
-	<factor>0.5544</factor>
+	<factor>-0.5544</factor>
 	<axis>
 	    <object-name>axis84</object-name>
 	</axis>
@@ -1270,7 +1270,7 @@
 	<type>rotate</type>
 	<object-name>UC-N-ArmTop</object-name>
 	<property>gear/gear[0]/compression-norm</property>
-	<factor>17.325</factor>
+	<factor>-17.325</factor>
 	<axis>
 	    <object-name>axis89</object-name>
 	</axis>
@@ -1279,7 +1279,7 @@
 	<type>rotate</type>
 	<object-name>UC-N-ArmBottom</object-name>
 	<property>gear/gear[0]/compression-norm</property>
-	<factor>17.325</factor>
+	<factor>-17.325</factor>
 	<axis>
 	    <object-name>axis90</object-name>
 	</axis>
