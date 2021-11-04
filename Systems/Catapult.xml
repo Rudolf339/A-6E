@@ -3,73 +3,142 @@
     <property value="0">systems/catapult/cat-pos-norm</property>
     <property value="0">systems/catapult/cat-launch-cmd</property>
     <property value="0">systems/catapult/cat-force</property>
-
+    <property value="15">systems/catapult/excess-speed-kt</property>
+    <property value="91">systems/catapult/catapult-length-m</property> <!-- Nimitz Class -->
+    <!-- <property value="0.1">systems/catapult/launch-rate</property> -->
+    
     <channel name="Catapult">
-	<switch name="Catapult Command">
-	    <default value="0"/>
-	    <test logic="AND" value="0">
-		systems/catapult/cat-pos-norm gt 0.999
-	    </test>
-	    <test logic="AND" value="1">
+	<switch name="systems/catapult/cat-launching">
+            <default value="systems/catapult/cat-launch-cmd"/>
+            <test value="1">
 		systems/catapult/cat-launch-cmd == 1
-	    </test>
-	    <output>systems/catapult/cat-launch-cmd</output>
-	</switch>
-
-	<kinematic name="Catapult Timer">
-	    <input>systems/catapult/cat-launch-cmd</input>
-	    <traverse>
-		<setting>
-		    <position> 0 </position>
-		    <time>     0 </time>
-		</setting>
-		<setting>
-		    <position> 1 </position>
-		    <time>     2.7 </time>
-		</setting>
-	    </traverse>
-	    <output>systems/catapult/cat-pos-norm</output>
-	</kinematic>
-
-	<pure_gain name="Catapult Force">
-	    <input>inertia/weight-lbs</input>
-	    <gain>3</gain>
-	    <output>systems/catapult/cat-force</output>
-	</pure_gain>
+            </test>
+	    <test value="0">
+		systems/catapult/cat-pos-norm == 1
+            </test>
+        </switch>
 	
+	<!-- 0: flaps 20, all loads -->
+	<!-- 1: flaps 30, empty racks -->
+	<!-- 2: flaps 30, loaded racks -->
+	<!-- TODO: don't rely on non-jsb properties -->
+	<switch name="systems/catapult/config">
+	    <default value="0"/>
+	    <test logic="AND" value="1">
+		fcs/flaps/flaps-deg-cmd == 30
+		/payload/weight[0]/count == 0
+		/payload/weight[1]/count == 0
+		/payload/weight[2]/count == 0
+		/payload/weight[3]/count == 0
+		/payload/weight[4]/count == 0
+	    </test>
+	    <test logic="AND" value="2">
+		fcs/flaps/flaps-deg-cmd == 30
+		<test logic="OR">
+		    /payload/weight[0]/count != 0
+		    /payload/weight[1]/count != 0
+		    /payload/weight[2]/count != 0
+		    /payload/weight[3]/count != 0
+		    /payload/weight[4]/count != 0
+		</test>
+	    </test>
+	</switch>
+	
+	<!-- table from NAVAIR 01-85ADF-1 Figure 8-1 -->
+	<fcs_function name="systems/catapult/catapult-end-speed">
+	    <function>
+		<sum>
+		    <table>
+			<independentVar lookup="column">inertia/weight-lbs</independentVar>
+			<independentVar lookup="row">systems/catapult/config</independentVar>
+			<tableData>
+			           0   1   2
+			     32000 119  94 100 
+			     58500 156 138 144 
+			</tableData>
+		    </table>
+		    <property>systems/catapult/excess-speed-kt</property>
+		</sum>
+	    </function>
+	</fcs_function>
+
+	<fcs_function name="systems/catapult/launch-rate">
+	    <function>
+		<quotient>
+		    <property>systems/catapult/catapult-end-speed</property>
+		    <product>
+			<property>systems/catapult/catapult-length-m</property>
+			<value>2</value>
+		    </product>
+		</quotient>
+	    </function>
+	</fcs_function>
+
+	<actuator name="systems/catapult/cat-pos-norm">
+	    <input>systems/catapult/cat-launching</input>
+	    <rate_limit sense="incr">systems/catapult/launch-rate</rate_limit>
+	    <rate_limit sense="decr">120</rate_limit>
+	    <output>systems/catapult/cat-pos-norm</output>
+	</actuator>
+
+	<!-- <kinematic name="Catapult Timer"> -->
+	<!--     <input>systems/catapult/cat-launch-cmd</input> -->
+	<!--     <traverse> -->
+	<!-- 	<setting> -->
+	<!-- 	    <position> 0 </position> -->
+	<!-- 	    <time>     0 </time> -->
+	<!-- 	</setting> -->
+	<!-- 	<setting> -->
+	<!-- 	    <position> 1 </position> -->
+	<!-- 	    <time>systems/catapult/launch-time</time> -->
+	<!-- 	</setting> -->
+	<!--     </traverse> -->
+	<!--     <output>systems/catapult/cat-pos-norm</output> -->
+	<!-- </kinematic> -->
+
+	<fcs_function name="systems/catapult/cat-acc">
+	    <function>
+		<quotient>
+		    <product>
+			<value>0.4535924</value> <!-- kg to lb -->
+			<value>8</value>
+			<pow>
+			    <property>systems/catapult/catapult-length-m</property>
+			    <value>3</value>
+			</pow>
+		    </product>
+		    <pow>
+			<product>
+			    <property>systems/catapult/catapult-end-speed</property>
+			    <value>0.5144447</value> <!-- kt to m/s -->
+			</product>
+			<value>2</value>
+		    </pow>
+ 		</quotient>
+	    </function>
+	</fcs_function>
+	     
+	<fcs_function name="systems/catapult/cat-force">
+	    <function>
+		<sum>
+		    <product>
+			<property>inertia/weight-lbs</property>
+			<value>5.5</value>
+		    </product>
+		    <value>-38700</value> <!-- engines 2*8700 [lbf] -> [N] -->
+		</sum>
+	    </function>
+	</fcs_function>
+
 	<fcs_function name="systems/catapult/cat-z-gain">
 	    <function>
 		<ifthen>
 		    <eq>
-			<property>systems/catapult/cat-launch-cmd</property>
+			<property>systems/catapult/cat-launching</property>
 			<value>0</value>
 		    </eq>
 		    <value>0</value>
-		    <product>
-			<sum>
-			    <product>
-				<sin>
-				    <quotient>
-					<value>5</value>
-					<sum>
-					    <product>
-						<value>8</value>
-						<property>systems/catapult/cat-pos-norm</property>
-					    </product>
-					    <quotient>
-						<value>8.0875</value> <!-- 7/80 -->
-						<property>systems/catapult/cat-pos-norm</property>
-					    </quotient>
-					    <value>-1</value>
-					</sum>
-				    </quotient>
-				</sin>
-				<value>0.8</value>
-			    </product>
-			    <value>1</value>
-			</sum>
-			<value>0.1</value>
-		    </product>
+		    <value>0.1</value>
 		</ifthen>
 	    </function>
 	</fcs_function>	
@@ -77,7 +146,7 @@
 	<switch name="Catapult Final">
 	    <default value="0"/>
 	    <test logic="AND" value="systems/catapult/cat-force">
-		systems/catapult/cat-launch-cmd == 1
+		systems/catapult/cat-launching == 1
 		systems/catapult/cat-pos-norm lt 0.999
 		systems/catapult/cat-pos-norm gt 0.0
 		gear/unit[0]/WOW ne 0

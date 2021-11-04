@@ -371,6 +371,9 @@ var catapult = func {
 	print("Catapult launch");
 	setprop("fdm/jsbsim/systems/catapult/cat-launch-cmd",1);
 	setprop("fdm/jsbsim/systems/holdback/holdback-cmd",0);
+        settimer(func{
+	    setprop("fdm/jsbsim/systems/catapult/cat-launch-cmd",0);},
+	    1 / getprop("fdm/jsbsim/systems/catapult/launch-rate"));
     }
     else
     {

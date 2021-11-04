@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <system name="Strut lock">
     <property value="0">systems/strut-lock/strut-lock-cmd</property>
-
     <channel name="strutlock">
 
 	<actuator name="systems/strut-lock/strut-lock-norm">
@@ -84,7 +83,7 @@
 	    <kp>systems/strut-lock/kp</kp>
 	    <ki>systems/strut-lock/ki</ki>
 	    <kd>systems/strut-lock/kd</kd>
-	    <trigger>systems/strut-lock/trigger</trigger>
+	    <!-- <trigger>systems/strut-lock/trigger</trigger> -->
 	    <output>systems/strut-lock/force-output</output>
 	</pid>
 	
