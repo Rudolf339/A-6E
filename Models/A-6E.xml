@@ -1768,8 +1768,8 @@
 	<object-name>AoA_slow</object-name>
 	<condition>
 	    <greater-than>
-		<property>fdm/jsbsim/systems/instrument/aoa-unit</property>
-		<property>sim/aoa-indexer/slow-deg</property>
+		<property>sim/multiplay/generic/int[8]</property>
+		<value>2</value>
 	    </greater-than>
 	    <equals>
 		<property>gear/gear[0]/position-norm</property>
@@ -1782,14 +1782,14 @@
 	<type>select</type>
 	<object-name>AoA_onspeed</object-name>
 	<condition>
-	    <less-than>
-		<property>fdm/jsbsim/systems/instrument/aoa-unit</property>
-		<property>sim/aoa-indexer/too-slow-deg</property>
-	    </less-than>
 	    <greater-than>
-		<property>fdm/jsbsim/systems/instrument/aoa-unit</property>
-		<property>sim/aoa-indexer/too-fast-deg</property>
+		<property>sim/multiplay/generic/int[8]</property>
+		<value>0</value>
 	    </greater-than>
+	    <less-than>
+		<property>sim/multiplay/generic/int[8]</property>
+		<value>4</value>
+	    </less-than>
 	    <equals>
 		<property>gear/gear[0]/position-norm</property>
 		<value>1</value>
@@ -1802,8 +1802,8 @@
 	<object-name>AoA_fast</object-name>
 	<condition>
 	    <less-than>
-		<property>fdm/jsbsim/systems/instrument/aoa-unit</property>
-		<property>sim/aoa-indexer/fast-deg</property>
+		<property>sim/multiplay/generic/int[8]</property>
+		<value>3</value>
 	    </less-than>
 	    <equals>
 		<property>gear/gear[0]/position-norm</property>

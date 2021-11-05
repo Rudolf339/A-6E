@@ -15,6 +15,7 @@
 		</sum>
 	    </function>
 	</fcs_function>
+	
 	<fcs_function name="systems/instrument/aoa-unit">
 	    <function>
 		<interpolate1d>
@@ -29,14 +30,6 @@
 		<max>30</max>
 	    </clipto>
 	</fcs_function>
-	<pure_gain name="systems/instrument/aoa-unit">
-	    <input>aero/alpha-deg</input>
-	    <gain>2.7777777777</gain>
-	    <clipto>
-		<min>-10</min>
-		<max>30</max>
-	    </clipto>
-	</pure_gain>
 
 	<actuator name="systems/instrument/aoa-blip-act">
 	    <input>systems/instrument/aoa-blip</input>
@@ -70,8 +63,25 @@
 		</test>
 	    </test>
 	</switch>
-	     
->>>>>>> carrier-ops
+
+	<switch name="systems/instrument/aoa-indexer">
+	    <default value="0"/> <!-- fast -->
+	    <test logic="AND" value="1"> <!--slightly fast -->
+		systems/instrument/aoa-unit gt 20
+		systems/instrument/aoa-unit le 21.5
+	    </test>
+	    <test logic="AND" value="2"> <!-- onspeed -->
+		systems/instrument/aoa-unit gt 21.5
+		systems/instrument/aoa-unit lt 22.5
+	    </test>
+	    <test logic="AND" value="3"> <!-- slightly slow -->
+		systems/instrument/aoa-unit ge 22.5
+		systems/instrument/aoa-unit lt 24
+	    </test>
+	    <test logic="AND" value="4"> <!-- slow -->
+		systems/instrument/aoa-unit ge 24
+	    </test>
+	</switch>
     </channel>
 
     <property value="0">systems/instrument/fuel/damage-rate</property>

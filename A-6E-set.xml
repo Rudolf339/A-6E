@@ -381,6 +381,7 @@ Grumman A-6E simulation config.
 		<int n="5" alias="/payload/weight[2]/count"/>
 		<int n="6" alias="/payload/weight[3]/count"/>
 		<int n="7" alias="/payload/weight[4]/count"/>
+		<int n="8" alias="/fdm/jsbsim/systems/instrument/aoa-indexer"/>
 	    </generic>
 	</multiplay>
 
@@ -402,13 +403,37 @@ Grumman A-6E simulation config.
 
 	<flight-recorder>
 	    <replay-config type="int">0</replay-config>
-	    <config n="0" 
-		    include="/Aircraft/Generic/flightrecorder/generic-jet.xml">
-		<name type="string">My Aircraft's Flight Recorder</name>
+	    <config n="0">
+		<name type="string">A-6E flight recorder</name>
+                <signals include="/Aircraft/Generic/flightrecorder/components/environment.xml"/>
+                <signals include="/Aircraft/Generic/flightrecorder/components/position.xml"/>
+                <signals include="/Aircraft/Generic/flightrecorder/components/controls.xml"/>
+                <signals include="/Aircraft/Generic/flightrecorder/components/surfaces.xml"/>
+                <signals include="/Aircraft/Generic/flightrecorder/components/engine-jet.xml">
+                    <count type="int">2</count>
+                </signals>
+                <signals include="/Aircraft/Generic/flightrecorder/components/gear-retractable.xml">
+                    <count type="int">3</count>
+                </signals>
+		<!-- These 3 are from Richard's f-14 -->
+                <signals include="flightrecorder/components/ai-models-carrier.xml">
+                    <count type="int">4</count>
+                </signals>
+                <signals include="flightrecorder/components/ai-models-escorts.xml">
+                    <count type="int">12</count>
+                </signals>
+                <signals include="flightrecorder/components/ai-models-tanker.xml">
+                    <count type="int">4</count>
+                </signals>
 		<!-- Custom properties -->
 		<signal>
 		    <type>float</type>
 		    <property type="string">surface-positions/nsw-pos-deg</property>
+		    <interpolation>linear</interpolation>
+		</signal>
+		<signal>
+		    <type>float</type>
+		    <property type="string">surface-positions/slat-pos-norm</property>
 		    <interpolation>linear</interpolation>
 		</signal>
 		<signal>
@@ -419,6 +444,11 @@ Grumman A-6E simulation config.
 		<signal>
 		    <type>float</type>
 		    <property type="string">/fdm/jsbsim/systems/instrument/aoa-unit</property>
+		    <interpolation>linear</interpolation>
+		</signal>
+		<signal>
+		    <type>float</type>
+		    <property type="string">/fdm/jsbsim/systems/instrument/aoa-indexer</property>
 		    <interpolation>linear</interpolation>
 		</signal>
 		<!-- More custom signals here -->
