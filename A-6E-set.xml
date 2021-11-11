@@ -175,6 +175,9 @@ Grumman A-6E simulation config.
 	    <autopilot>
 		<path>Aircraft/A-6E/Systems/light-animations.xml</path>
 	    </autopilot>
+	    <autopilot>
+		<path>Aircraft/A-6E/Systems/instruments.xml</path>
+	    </autopilot>
 	</systems>
 
 	<model>
@@ -764,7 +767,14 @@ Grumman A-6E simulation config.
 	    <tail-light type="int">0</tail-light>
 	    <pylon-light type="int">0</pylon-light>
 	</lighting>
+	<instrumentation>
+	    <tacan>
+		<BIT type="bool">false</BIT>
+		<hsi-off type="bool">false</hsi-off>
+	    </tacan>
+	</instrumentation>
     </controls>
+    
     <instrumentation>
 	<radar>
 	    <minimized type="bool">0</minimized>
@@ -773,6 +783,19 @@ Grumman A-6E simulation config.
 	    <serviceable type="bool">1</serviceable>
 	    <switch type="string">ON</switch>
 	</radar>
+	<tacan>
+	    <go type="bool">false</go>
+	    <no-go type="bool">false</no-go>
+	    <BIT-complete type="int">0</BIT-complete>
+	    <BIT-running type="bool">false</BIT-running>
+	    <BIT-range type="double">0</BIT-range>
+	    <BIT-bearing type="double">0</BIT-bearing>
+	</tacan>
+	<hsi>
+	    <tacan-range-10 type="double">0</tacan-range-10>
+	    <tacan-range-1 type="double">0</tacan-range-1>
+	    <tacan-range-01 type="double">0</tacan-range-01>
+	</hsi>
     </instrumentation>
 
     <nasal>
@@ -806,6 +829,9 @@ Grumman A-6E simulation config.
 	<randoms>
 	    <file>Nasal/startup_randoms.nas</file>
 	</randoms>
+	<instruments>
+	    <file>Nasal/instruments.nas</file>
+	</instruments>
     </nasal>
     
     <fdm>

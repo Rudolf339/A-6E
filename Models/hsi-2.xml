@@ -116,16 +116,16 @@
   </animation>
 
 <!--course-deviation-indicator ils on (CDI)-->
-  <animation>
-    <type>select</type>
-    <object-name>course-deviation-indicator-on</object-name>
-    <condition>
-      <equals>
-        <property>controls/switches/ils</property>
-        <value>true</value>
-      </equals>
-    </condition>
-  </animation>
+  <!-- <animation> -->
+  <!--   <type>select</type> -->
+  <!--   <object-name>course-deviation-indicator-on</object-name> -->
+  <!--   <condition> -->
+  <!--     <equals> -->
+  <!--       <property>controls/switches/ils</property> -->
+  <!--       <value>true</value> -->
+  <!--     </equals> -->
+  <!--   </condition> -->
+  <!-- </animation> -->
 
   <animation>
     <type>rotate</type>
@@ -143,7 +143,7 @@
       <z-m>0.0</z-m>
     </center>
     <axis>
-      <x>1</x>
+      <x>0</x>
       <y>0</y>
       <z>0</z>
     </axis>
@@ -168,11 +168,11 @@
   <animation>
     <type>translate</type>
     <object-name>course-deviation-indicator-on</object-name>
-    <property>instrumentation/nav[0]/heading-needle-deflection</property>
+    <property>instrumentation/tacan/deviation-deg</property>
     <interpolation>
       <entry>
         <ind>-10</ind>
-        <dep>-0.024</dep>
+        <dep>-0.024</dep>x
       </entry>
       <entry>
         <ind>0</ind>
