@@ -1,6 +1,8 @@
-Grumman A-6E Intruder for FlightGear
+## Grumman A-6E Intruder for FlightGear
 
 Maintainer: Jüttner Domokos
 Based on the work of Alexis Bory
 
-This is just my side project, mainly for learning JSBSim
+# Thanks to:
+Richard Harrison: Massive help with creating the VSPAERO FDM, adding carriers
+to the flight recorder
