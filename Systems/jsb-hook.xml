@@ -7,9 +7,9 @@
     <property value="0">systems/hook/tailhook-pos-min-deg</property>
     <property value="60">systems/hook/tailhook-pos-max-deg</property>
 
-    <property value="646">systems/hook/tailhook-offset-x-in</property>
+    <property value="242">systems/hook/tailhook-offset-x-in</property> <!-- 6.61 m -->
     <property value="0.0">systems/hook/tailhook-offset-y-in</property>
-    <property value="0">systems/hook/tailhook-offset-z-in</property>
+    <property value="-0.35">systems/hook/tailhook-offset-z-in</property>
     <property value="0">systems/hook/tailhook-pos-deg</property>
     <property value="1.0">systems/hook/funcs/hook-operational-efficiency</property>
     <!--<property value="1.0">systems/hook/funcs/hook-functional</property>
