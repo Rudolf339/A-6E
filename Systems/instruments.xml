@@ -204,34 +204,84 @@
 
     <filter>
 	<type>gain</type>
+	<!-- <input> -->
+	<!--     <condition> -->
+	<!-- 	<less-than> -->
+	<!-- 	    <property>instrumentation/tacan/deviation-mag-deg</property> -->
+	<!-- 	    <value>0</value> -->
+	<!-- 	</less-than> -->
+	<!--     </condition> -->
+	<!--     <expression> -->
+	<!-- 	<sum> -->
+	<!-- 	    <property>instrumentation/tacan/deviation-mag-deg</property> -->
+	<!-- 	    <product> -->
+	<!-- 		<property>instrumentation/tacan/deviation-deg</property> -->
+	<!-- 		<value>360</value> -->
+	<!-- 	    </product> -->
+	<!-- 	</sum> -->
+	<!--     </expression> -->
+	<!-- </input> -->
+	<!-- <input> -->
+	<!--     <condition> -->
+	<!-- 	<greater-equals> -->
+	<!-- 	    <property>instrumentation/tacan/deviation-mag-deg</property> -->
+	<!-- 	    <value>0</value> -->
+	<!-- 	</greater-equals> -->
+	<!--     </condition> -->
+	<!--     <property>instrumentation/tacan/deviation-mag-deg</property> -->
+	<!-- </input> -->
+	<input>instrumentation/tacan/deviation-mag-deg</input>
+	<gain>1</gain>
+	<output>instrumentation/tacan/course-dif-deg</output>
+    </filter>
+
+    <filter>
+	<type>gain</type>
 	<input>
 	    <condition>
-		<less-than>
-		    <property>instrumentation/tacan/deviation-mag-deg</property>
-		    <value>0</value>
-		</less-than>
+		<or>
+		    <greater-than>
+			<property>instrumentation/tacan/course-dif-deg</property>
+			<value>90</value>
+		    </greater-than>
+		    <less-than>
+			<property>instrumentation/tacan/course-dif-deg</property>
+			<value>-90</value>
+		    </less-than>
+		</or>
 	    </condition>
 	    <expression>
 		<sum>
-		    <property>instrumentation/tacan/deviation-mag-deg</property>
-		    <product>
-			<property>instrumentation/tacan/deviation-neg</property>
-			<value>360</value>
-		    </product>
+		    <property>instrumentation/tacan/course-dif-deg</property>
+		    <value>-180</value>
 		</sum>
 	    </expression>
 	</input>
 	<input>
 	    <condition>
-		<greater-equals>
-		    <property>instrumentation/tacan/deviation-mag-deg</property>
-		    <value>0</value>
-		</greater-equals>
+		<not>
+		    <or>
+			<greater-than>
+			    <property>instrumentation/tacan/course-dif-deg</property>
+			    <value>90</value>
+			</greater-than>
+			<less-than>
+			    <property>instrumentation/tacan/course-dif-deg</property>
+			    <value>-90</value>
+			</less-than>
+		    </or>
+		</not>
 	    </condition>
-	    <property>instrumentation/tacan/deviation-mag-deg</property>
+	    <property>instrumentation/tacan/course-dif-deg</property>
 	</input>
 	<gain>1</gain>
 	<output>instrumentation/tacan/deviation-deg</output>
     </filter>
     
+    <filter>
+	<type>noise-spike</type>
+	<max-rate-of-change>30</max-rate-of-change>
+	<input>instrumentation/tacan/deviation-deg</input>
+	<output>instrumentation/hsi/course-dev-deg</output>
+    </filter>
 </PropertyList>

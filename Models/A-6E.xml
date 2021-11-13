@@ -1769,7 +1769,7 @@
 	<condition>
 	    <greater-than>
 		<property>sim/multiplay/generic/int[8]</property>
-		<value>2</value>
+		<value>3</value>
 	    </greater-than>
 	    <equals>
 		<property>gear/gear[0]/position-norm</property>
@@ -1784,11 +1784,11 @@
 	<condition>
 	    <greater-than>
 		<property>sim/multiplay/generic/int[8]</property>
-		<value>0</value>
+		<value>1</value>
 	    </greater-than>
 	    <less-than>
 		<property>sim/multiplay/generic/int[8]</property>
-		<value>4</value>
+		<value>5</value>
 	    </less-than>
 	    <equals>
 		<property>gear/gear[0]/position-norm</property>
@@ -1801,6 +1801,10 @@
 	<type>select</type>
 	<object-name>AoA_fast</object-name>
 	<condition>
+	    <greater-than>
+		<property>sim/multiplay/generic/int[8]</property>
+		<value>0</value>
+	    </greater-than>
 	    <less-than>
 		<property>sim/multiplay/generic/int[8]</property>
 		<value>3</value>

@@ -33,17 +33,17 @@
 
 	<actuator name="systems/instrument/aoa-blip-act">
 	    <input>systems/instrument/aoa-blip</input>
-	    <rate_limit>0.5</rate_limit>
+	    <rate_limit>2</rate_limit>
 	    <output>systems/instrument/aoa-blip-norm</output>
 	</actuator>
 
 	<switch name="systems/instrument/aoa-blip">
 	    <default value="systems/instrument/aoa-blip"/>
 	    <test value="1">
-		systems/instrument/aoa-blip eq 0
+		systems/instrument/aoa-blip-act eq 0
 	    </test>
 	    <test value="0">
-		systems/instrument/aoa-blip eq 1
+		systems/instrument/aoa-blip-act eq 1
 	    </test>
 	</switch>
 
@@ -65,20 +65,28 @@
 	</switch>
 
 	<switch name="systems/instrument/aoa-indexer">
-	    <default value="0"/> <!-- fast -->
-	    <test logic="AND" value="1"> <!--slightly fast -->
+	    <default value="0"/> <!-- off -->
+	    <test logic="AND" value="1"> <!-- fast -->
+		systems/instrument/aoa-indexer-on eq 1
+		systems/instrument/aoa-unit le 20
+	    </test>
+	    <test logic="AND" value="2"> <!--slightly fast -->
+		systems/instrument/aoa-indexer-on eq 1
 		systems/instrument/aoa-unit gt 20
 		systems/instrument/aoa-unit le 21.5
 	    </test>
-	    <test logic="AND" value="2"> <!-- onspeed -->
+	    <test logic="AND" value="3"> <!-- onspeed -->
+		systems/instrument/aoa-indexer-on eq 1
 		systems/instrument/aoa-unit gt 21.5
 		systems/instrument/aoa-unit lt 22.5
 	    </test>
-	    <test logic="AND" value="3"> <!-- slightly slow -->
+	    <test logic="AND" value="4"> <!-- slightly slow -->
+		systems/instrument/aoa-indexer-on eq 1
 		systems/instrument/aoa-unit ge 22.5
 		systems/instrument/aoa-unit lt 24
 	    </test>
-	    <test logic="AND" value="4"> <!-- slow -->
+	    <test logic="AND" value="5"> <!-- slow -->
+		systems/instrument/aoa-indexer-on eq 1
 		systems/instrument/aoa-unit ge 24
 	    </test>
 	</switch>
