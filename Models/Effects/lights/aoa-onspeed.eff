@@ -20,9 +20,9 @@
         <is_directional type="bool">true</is_directional>
         <is_strobe type="bool">false</is_strobe>
 
-        <inner_angle type="float">0.5</inner_angle>
-        <outer_angle type="float">0.76</outer_angle>
-        <zero_angle type="float">0.982547593563</zero_angle>
+        <inner_angle type="float">0.173</inner_angle> <!-- +-5 [deg] -->
+        <outer_angle type="float">0.342</outer_angle> <!-- +- 10 [deg] -->
+        <zero_angle type="float">0.642</zero_angle> <!-- +- 20 [deg] -->
         <outer_gain type="float">0.1</outer_gain>
     </parameters>
 
