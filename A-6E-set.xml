@@ -197,7 +197,7 @@ Grumman A-6E simulation config.
 			<CG-trim-aft type="double">5000</CG-trim-aft>
 		    </flight>
 		    <gear>
-			<ld-gear-handle-anim type="double">1</ld-gear-handle-anim>
+			<ld-gear-handle-anim type="double">0</ld-gear-handle-anim>
 		    </gear>
 		    <instrumentation>
 			<doppler>
