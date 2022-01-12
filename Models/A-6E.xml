@@ -1326,8 +1326,8 @@
     <animation>
 	<type>rotate</type>
 	<object-name>UC-N-CatapultStrop</object-name>
-	<property>gear/launchbar/position-norm</property>
-	<factor>-90.0 </factor>
+	<property>/fdm/jsbsim/systems/holdback/launchbar-pos-norm</property>
+	<factor>-70.0 </factor>
 	<axis>
 	    <object-name>axis94</object-name>
 	</axis>
@@ -1768,8 +1768,8 @@
 	<object-name>AoA_slow</object-name>
 	<condition>
 	    <greater-than>
-		<property>fdm/jsbsim/systems/instrument/aoa-unit</property>
-		<property>sim/aoa-indexer/slow-deg</property>
+		<property>sim/multiplay/generic/int[8]</property>
+		<value>3</value>
 	    </greater-than>
 	    <equals>
 		<property>gear/gear[0]/position-norm</property>
@@ -1782,14 +1782,14 @@
 	<type>select</type>
 	<object-name>AoA_onspeed</object-name>
 	<condition>
-	    <less-than>
-		<property>fdm/jsbsim/systems/instrument/aoa-unit</property>
-		<property>sim/aoa-indexer/too-slow-deg</property>
-	    </less-than>
 	    <greater-than>
-		<property>fdm/jsbsim/systems/instrument/aoa-unit</property>
-		<property>sim/aoa-indexer/too-fast-deg</property>
+		<property>sim/multiplay/generic/int[8]</property>
+		<value>1</value>
 	    </greater-than>
+	    <less-than>
+		<property>sim/multiplay/generic/int[8]</property>
+		<value>5</value>
+	    </less-than>
 	    <equals>
 		<property>gear/gear[0]/position-norm</property>
 		<value>1</value>
@@ -1801,9 +1801,13 @@
 	<type>select</type>
 	<object-name>AoA_fast</object-name>
 	<condition>
+	    <greater-than>
+		<property>sim/multiplay/generic/int[8]</property>
+		<value>0</value>
+	    </greater-than>
 	    <less-than>
-		<property>fdm/jsbsim/systems/instrument/aoa-unit</property>
-		<property>sim/aoa-indexer/fast-deg</property>
+		<property>sim/multiplay/generic/int[8]</property>
+		<value>3</value>
 	    </less-than>
 	    <equals>
 		<property>gear/gear[0]/position-norm</property>

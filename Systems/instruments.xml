@@ -1,0 +1,287 @@
+<PropertyList>
+    <logic>
+	<input>
+	    <greater-than>
+		<property>systems/electrical/outputs/tacan</property>
+		<value>24</value>
+	    </greater-than>
+	    <or>
+		<property>controls/instrumentation/tacan/BIT</property>
+		<equals>
+		    <property>instrumentation/tacan/BIT-complete</property>
+		    <value>1</value>
+		</equals>
+	    </or>
+	</input>
+	<output>instrumentation/tacan/go</output>
+    </logic>
+    
+    <logic>
+	<input>
+	    <and>
+		<greater-than>
+		    <property>systems/electrical/outputs/tacan</property>
+		    <value>24</value>
+		</greater-than>
+		<or>
+		    <property>controls/instrumentation/tacan/BIT</property>
+		    <equals>
+			<property>instrumentation/tacan/BIT-complete</property>
+			<value>-1</value>
+		    </equals>
+		</or>
+	    </and>
+	</input>
+	<output>instrumentation/tacan/no-go</output>
+    </logic>
+
+    <logic>
+	<input>
+	    <or>
+		<less-than>
+		    <property>systems/electrical/outputs/hsi</property>
+		    <value>24</value>
+		</less-than>
+		<and>
+		    <greater-than>
+			<property>systems/electrical/outputs/hsi</property>
+			<value>24</value>
+		    </greater-than>
+		    <greater-than>
+			<property>systems/electrical/outputs/tacan</property>
+			<value>24</value>
+		    </greater-than>
+		    <property>controls/instrumentation/tacan/BIT</property>
+		</and>
+	    </or>
+	</input>
+	<output>instrumentation/hsi/hsi-off</output>
+    </logic>
+
+    <filter>
+	<type>gain</type>
+	<input>
+	    <condition>
+		<property>instrumentation/tacan/BIT-running</property>
+		<property>instrumentation/tacan/BIT-bearing</property>
+	    </condition>
+	    <property>instrumentation/tacan/BIT-bearing</property>
+	</input>
+	<input>
+	    <condition>
+		<not>
+		    <and>
+			<property>instrumentation/tacan/BIT-running</property>
+			<property>instrumentation/tacan/BIT-bearing</property>
+		    </and>
+		</not>
+	    </condition>
+	    <property>instrumentation/tacan/indicated-mag-bearing-deg</property>
+	</input>
+	<gain>1</gain>
+	<output>instrumentation/tacan/tacan-bearing</output>
+    </filter>
+
+    <filter>
+	<type>gain</type>
+	<input>
+	    <condition>
+		<property>instrumentation/tacan/BIT-running</property>
+		<property>instrumentation/tacan/BIT-range</property>
+	    </condition>
+	    <property>instrumentation/tacan/BIT-range</property>
+	</input>
+	<input>
+	    <condition>
+		<not>
+		    <and>
+			<property>instrumentation/tacan/BIT-running</property>
+			<property>instrumentation/tacan/BIT-range</property>
+		    </and>
+		</not>
+	    </condition>
+	    <property>instrumentation/tacan/indicated-distance-nm</property>
+	</input>
+	<gain>1</gain>
+	<output>instrumentation/tacan/tacan-range</output>
+    </filter>
+
+    <!-- individual TACAN digits -->
+
+    <!-- 10 -->
+    <filter>
+	<type>gain</type>
+	<input>
+	    <expression>
+		<floor>
+		    <product>
+			<property>instrumentation/tacan/tacan-range</property>
+			<value>0.1</value>
+		    </product>
+		</floor>
+	    </expression>
+	</input>
+	<gain>1</gain>
+	<output>instrumentation/hsi/tacan-range-10</output>
+    </filter>
+
+    <!-- 1 -->
+    <filter>
+	<type>gain</type>
+	<input>
+	    <expression>
+		<floor>
+		    <dif>
+			<property>instrumentation/tacan/tacan-range</property>
+			<product>
+			    <property>instrumentation/hsi/tacan-range-10</property>
+			    <value>10</value>
+			</product>
+		    </dif>
+		</floor>
+	    </expression>
+	</input>
+	<gain>1</gain>
+	<output>instrumentation/hsi/tacan-range-1</output>
+    </filter>
+
+    <!-- 0.1 -->
+    <filter>
+	<type>gain</type>
+	<input>
+	    <expression>
+		<floor>
+		    <product>
+			<dif>
+			    <property>instrumentation/tacan/tacan-range</property>
+			    <sum>
+				<property>instrumentation/hsi/tacan-range-10</property>
+				<property>instrumentation/hsi/tacan-range-1</property>
+			    </sum>
+			</dif>
+			<value>10</value>
+		    </product>
+		</floor>
+	    </expression>
+	</input>
+	<gain>1</gain>
+	<output>instrumentation/hsi/tacan-range-01</output>
+    </filter>
+
+    
+    <logic>
+	<input>
+	    <not>
+		<and>
+		    <property>instrumentation/tacan/in-range</property>
+		    <greater-than>
+			<property>controls/instrumentation/tacan/mode</property>
+			<value>1</value>
+		    </greater-than>
+		    <greater-than>
+			<property>systems/electrical/outputs/tacan</property>
+			<value>24</value>
+		    </greater-than>
+		</and>
+	    </not>
+	</input>
+	<output>instrumentation/hsi/range-flag</output>
+    </logic>
+    
+    <filter>
+	<type>gain</type>
+	<input>
+	    <expression>
+		<dif>
+		    <property>instrumentation/nav[1]/radials/selected-deg</property>
+		    <property>instrumentation/tacan/indicated-mag-bearing-deg</property>
+		</dif>
+	    </expression>
+	</input>
+	<gain>1</gain>
+	<output>instrumentation/tacan/deviation-mag-deg</output>
+    </filter>
+
+    <filter>
+	<type>gain</type>
+	<!-- <input> -->
+	<!--     <condition> -->
+	<!-- 	<less-than> -->
+	<!-- 	    <property>instrumentation/tacan/deviation-mag-deg</property> -->
+	<!-- 	    <value>0</value> -->
+	<!-- 	</less-than> -->
+	<!--     </condition> -->
+	<!--     <expression> -->
+	<!-- 	<sum> -->
+	<!-- 	    <property>instrumentation/tacan/deviation-mag-deg</property> -->
+	<!-- 	    <product> -->
+	<!-- 		<property>instrumentation/tacan/deviation-deg</property> -->
+	<!-- 		<value>360</value> -->
+	<!-- 	    </product> -->
+	<!-- 	</sum> -->
+	<!--     </expression> -->
+	<!-- </input> -->
+	<!-- <input> -->
+	<!--     <condition> -->
+	<!-- 	<greater-equals> -->
+	<!-- 	    <property>instrumentation/tacan/deviation-mag-deg</property> -->
+	<!-- 	    <value>0</value> -->
+	<!-- 	</greater-equals> -->
+	<!--     </condition> -->
+	<!--     <property>instrumentation/tacan/deviation-mag-deg</property> -->
+	<!-- </input> -->
+	<input>instrumentation/tacan/deviation-mag-deg</input>
+	<gain>1</gain>
+	<output>instrumentation/tacan/course-dif-deg</output>
+    </filter>
+
+    <filter>
+	<type>gain</type>
+	<input>
+	    <condition>
+		<or>
+		    <greater-than>
+			<property>instrumentation/tacan/course-dif-deg</property>
+			<value>90</value>
+		    </greater-than>
+		    <less-than>
+			<property>instrumentation/tacan/course-dif-deg</property>
+			<value>-90</value>
+		    </less-than>
+		</or>
+	    </condition>
+	    <expression>
+		<sum>
+		    <property>instrumentation/tacan/course-dif-deg</property>
+		    <value>-180</value>
+		</sum>
+	    </expression>
+	</input>
+	<input>
+	    <condition>
+		<not>
+		    <or>
+			<greater-than>
+			    <property>instrumentation/tacan/course-dif-deg</property>
+			    <value>90</value>
+			</greater-than>
+			<less-than>
+			    <property>instrumentation/tacan/course-dif-deg</property>
+			    <value>-90</value>
+			</less-than>
+		    </or>
+		</not>
+	    </condition>
+	    <property>instrumentation/tacan/course-dif-deg</property>
+	</input>
+	<gain>1</gain>
+	<output>instrumentation/tacan/deviation-deg</output>
+    </filter>
+    
+    <filter>
+	<type>noise-spike</type>
+	<max-rate-of-change>30</max-rate-of-change>
+	<input>instrumentation/tacan/deviation-deg</input>
+	<output>instrumentation/hsi/course-dev-deg</output>
+    </filter>
+</PropertyList>

@@ -116,16 +116,16 @@
   </animation>
 
 <!--course-deviation-indicator ils on (CDI)-->
-  <animation>
-    <type>select</type>
-    <object-name>course-deviation-indicator-on</object-name>
-    <condition>
-      <equals>
-        <property>controls/switches/ils</property>
-        <value>true</value>
-      </equals>
-    </condition>
-  </animation>
+  <!-- <animation> -->
+  <!--   <type>select</type> -->
+  <!--   <object-name>course-deviation-indicator-on</object-name> -->
+  <!--   <condition> -->
+  <!--     <equals> -->
+  <!--       <property>controls/switches/ils</property> -->
+  <!--       <value>true</value> -->
+  <!--     </equals> -->
+  <!--   </condition> -->
+  <!-- </animation> -->
 
   <animation>
     <type>rotate</type>
@@ -136,14 +136,15 @@
         <value>24</value>
       </greater-than>
     </condition>
-    <property>orientation/heading-deg</property>
+    <property>orientation/heading-magnetic-deg</property>
+    <factor>-1</factor>
     <center>
       <x-m>0.0</x-m>
       <y-m>0.0</y-m>
       <z-m>0.0</z-m>
     </center>
     <axis>
-      <x>1</x>
+      <x>-1</x>
       <y>0</y>
       <z>0</z>
     </axis>
@@ -168,11 +169,11 @@
   <animation>
     <type>translate</type>
     <object-name>course-deviation-indicator-on</object-name>
-    <property>instrumentation/nav[0]/heading-needle-deflection</property>
+    <property>instrumentation/hsi/course-dev-deg</property>
     <interpolation>
       <entry>
         <ind>-10</ind>
-        <dep>-0.024</dep>
+        <dep>-0.02</dep>x
       </entry>
       <entry>
         <ind>0</ind>
@@ -180,7 +181,7 @@
       </entry>
       <entry>
         <ind>10</ind>
-        <dep>0.024</dep>
+        <dep>0.02</dep>
       </entry>
     </interpolation>
   <axis>

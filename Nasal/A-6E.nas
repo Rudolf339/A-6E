@@ -190,6 +190,7 @@ var main_init = func {
 }
 
 var main_init_listener = setlistener("sim/signals/fdm-initialized", func {
+        setprop("/fdm/jsbsim/position/h-sl-ft/", getprop("/fdm/jsbsim/position/h-sl-ft")+4);
 	main_init();
 	removelistener(main_init_listener);
  }, 0, 0);

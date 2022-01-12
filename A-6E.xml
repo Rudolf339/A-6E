@@ -141,9 +141,11 @@
     <propulsion file="Systems/jsb-propulsion.xml"/>
     <ground_reactions file="Systems/ground_reactions.xml"/>
     <system file="Propulsion.xml"/>
-    <system file="Arrestor_Hook.xml"/>
     <system file="Catapult.xml"/>
     <system file="jsb-instruments.xml"/>
+    <system file="jsb-hook.xml"/>
+    <system file="jsb-holdback.xml"/>
+    <system file="jsb-strutlock.xml"/>
     
     <flight_control file="Systems/fcs.xml"/>
 
@@ -173,9 +175,9 @@
 
 	<force name="hook" frame="BODY">
 	    <location unit="M">
-		<x> 14.78 </x>
-		<y> 0 </y>
-		<z> -1.121</z>
+		<x>1.5</x>
+		<y>0</y>
+		<z>0</z>
 	    </location>
 	    <direction>
 		<x>-0.9995</x>
@@ -185,15 +187,54 @@
 	</force>
 
 	<force name="catapult" frame="BODY">
-	    <location unit="IN">
-		<x> 80.50 </x>
-		<y> 0 </y>
-		<z> -82.82 </z>
+	    <location unit="M">
+		<x>-2.84</x>
+		<y> 0.00</y>
+		<z> 0.00</z>
 	    </location>
 	    <direction>
-		<x> 1 </x>
-		<y> 0 </y>
-		<z> 0 </z>
+		<x>1</x>
+		<y>0</y>
+		<z>0</z>
+	    </direction>
+	</force>
+
+	<force name="catapult_vertical" frame="BODY">
+	    <location unit="M">
+		<x>-2.84</x>
+		<y> 0.00</y>
+		<z> 0.00</z>
+	    </location>
+	    <direction>
+		<x>0</x>
+		<y>0</y>
+		<z>1</z>
+	    </direction>
+	</force>
+
+	<force name="holdback" frame="BODY">
+	    <location unit="M">
+		<x>-2.84</x>
+		<y> 0.00</y>
+		<z>-2.44</z>
+	    </location>
+	    <direction>
+		<x>-1</x>
+		<y>0</y>
+		<z>0</z>
+	    </direction>
+	</force>
+	
+	<force name="strut-lock" frame="BODY" unit="N">
+	    <location unit="M">
+		<x>-2.84</x>
+		<y> 0.00</y>
+		<z> 0.00</z>
+	    </location>
+	    <direction>
+		<x>0</x>
+		<y>0</y>
+		<z>1</z>
 	    </direction>
 	</force>
 

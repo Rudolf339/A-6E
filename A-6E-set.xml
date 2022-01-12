@@ -175,6 +175,9 @@ Grumman A-6E simulation config.
 	    <autopilot>
 		<path>Aircraft/A-6E/Systems/light-animations.xml</path>
 	    </autopilot>
+	    <autopilot>
+		<path>Aircraft/A-6E/Systems/instruments.xml</path>
+	    </autopilot>
 	</systems>
 
 	<model>
@@ -194,7 +197,7 @@ Grumman A-6E simulation config.
 			<CG-trim-aft type="double">5000</CG-trim-aft>
 		    </flight>
 		    <gear>
-			<ld-gear-handle-anim type="double">1</ld-gear-handle-anim>
+			<ld-gear-handle-anim type="double">0</ld-gear-handle-anim>
 		    </gear>
 		    <instrumentation>
 			<doppler>
@@ -312,11 +315,25 @@ Grumman A-6E simulation config.
 	    <line>Take off:</line>
 	    <line>    Flaps:         TO (30)</line>
 	    <line>    Rotate:        ~120 kt</line>
-	    <line>    positive rate: Gears retr</line>
-	    <line>    airspeed 175:  Flaps retr</line>
-	    <line>Approach, landinh:</line>
+	    <line>    Positive rate: Gears up</line>
+	    <line>    at 175 kias:   Flaps up</line>
+	    <line></line>
+	    <line>Catapult take off:</line>
+	    <line>    Flaps:         TO (30)</line>
+	    <line>    Launchbar:     Engage</line>
+	    <line>    Throttle:      MIL thrust</line>
+	    <line>    Catapult grip: Engage and hold</line>
+	    <line>    Catapult:      Engage</line>
+	    <line>    Once cleared catapult release catapult grip</line>
+	    <line>    Gears:         Up</line>
+	    <line>    at 175 kias:   Flaps Up</line>
+	    <line></line>
+	    <line>Approach, landing:</line>
 	    <line>    Onspeed:       22 units AoA</line>
 	    <line>    Flaps:         TO (30)</line>
+	    <line>    for shore landings,</line>
+	    <line>        optionally flare by adding more power</line>
+	    <line>        aerobrake keeping onspeed AoA</line>
 	    <key>
 		<name>c</name>
 		<desc>Canopy open/close command</desc>
@@ -337,6 +354,22 @@ Grumman A-6E simulation config.
 		<name>n</name>
 		<desc>Enable NSW steering</desc>
 	    </key>
+	    <key>
+		<name>o</name>
+		<desc>Toggle arrestor hook</desc>
+	    </key>
+	    <key>
+		<name>L</name>
+		<desc>Engage launchbar</desc>
+	    </key>
+	    <key>
+		<name>C</name>
+		<desc>Engage catapult</desc>
+	    </key>
+	    <key>
+		<name>N</name>
+		<desc>Catapult Grip engage</desc>
+	    </key>
 	</help>
 	
 	<multiplay>
@@ -351,6 +384,7 @@ Grumman A-6E simulation config.
 		<int n="5" alias="/payload/weight[2]/count"/>
 		<int n="6" alias="/payload/weight[3]/count"/>
 		<int n="7" alias="/payload/weight[4]/count"/>
+		<int n="8" alias="/fdm/jsbsim/systems/instrument/aoa-indexer"/>
 	    </generic>
 	</multiplay>
 
@@ -372,13 +406,37 @@ Grumman A-6E simulation config.
 
 	<flight-recorder>
 	    <replay-config type="int">0</replay-config>
-	    <config n="0" 
-		    include="/Aircraft/Generic/flightrecorder/generic-jet.xml">
-		<name type="string">My Aircraft's Flight Recorder</name>
+	    <config n="0">
+		<name type="string">A-6E flight recorder</name>
+                <signals include="/Aircraft/Generic/flightrecorder/components/environment.xml"/>
+                <signals include="/Aircraft/Generic/flightrecorder/components/position.xml"/>
+                <signals include="/Aircraft/Generic/flightrecorder/components/controls.xml"/>
+                <signals include="/Aircraft/Generic/flightrecorder/components/surfaces.xml"/>
+                <signals include="/Aircraft/Generic/flightrecorder/components/engine-jet.xml">
+                    <count type="int">2</count>
+                </signals>
+                <signals include="/Aircraft/Generic/flightrecorder/components/gear-retractable.xml">
+                    <count type="int">3</count>
+                </signals>
+		<!-- These 3 are from Richard's f-14 -->
+                <signals include="flightrecorder/components/ai-models-carrier.xml">
+                    <count type="int">4</count>
+                </signals>
+                <signals include="flightrecorder/components/ai-models-escorts.xml">
+                    <count type="int">12</count>
+                </signals>
+                <signals include="flightrecorder/components/ai-models-tanker.xml">
+                    <count type="int">4</count>
+                </signals>
 		<!-- Custom properties -->
 		<signal>
 		    <type>float</type>
 		    <property type="string">surface-positions/nsw-pos-deg</property>
+		    <interpolation>linear</interpolation>
+		</signal>
+		<signal>
+		    <type>float</type>
+		    <property type="string">surface-positions/slat-pos-norm</property>
 		    <interpolation>linear</interpolation>
 		</signal>
 		<signal>
@@ -389,6 +447,11 @@ Grumman A-6E simulation config.
 		<signal>
 		    <type>float</type>
 		    <property type="string">/fdm/jsbsim/systems/instrument/aoa-unit</property>
+		    <interpolation>linear</interpolation>
+		</signal>
+		<signal>
+		    <type>float</type>
+		    <property type="string">/fdm/jsbsim/systems/instrument/aoa-indexer</property>
 		    <interpolation>linear</interpolation>
 		</signal>
 		<!-- More custom signals here -->
@@ -632,6 +695,53 @@ Grumman A-6E simulation config.
 		    </binding>
 		</mod-up>
 	    </key>
+
+            <key n="111">
+                <name>o</name>
+                <desc>Toggle arrester hook</desc>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>fdm/jsbsim/systems/hook/tailhook-cmd-norm</property>
+                </binding>
+	    </key>
+	    
+            <!-- map keys for catapult launch -->
+            <key n="67">
+                <name>C</name>
+                <desc>Catapult Launch Command.</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>A6Econtrols.catapult();</script>
+                </binding>
+            </key>
+
+	    
+            <!-- map keys for launch-bar -->
+            <key n="76">
+                <name>L</name>
+                <desc>Launch-bar engage.</desc>
+                <binding>
+                    <command>nasal</command>
+                    <script>A6Econtrols.launchbar_toggle();</script>
+                </binding>
+            </key>
+
+	    <key n="78">
+		<name>N</name>
+		<desc>Strut Lock engage</desc>
+		<binding>
+		    <command>property-assign</command>
+		    <property>fdm/jsbsim/systems/strut-lock/strut-lock-cmd</property>
+		    <value>1</value>
+		</binding>
+		<mod-up>
+		    <binding>
+			<command>property-assign</command>
+			<property>fdm/jsbsim/systems/strut-lock/strut-lock-cmd</property>
+			<value>0</value>
+		    </binding>
+		</mod-up>
+	    </key>
 	</keyboard>
     </input>
 
@@ -657,7 +767,14 @@ Grumman A-6E simulation config.
 	    <tail-light type="int">0</tail-light>
 	    <pylon-light type="int">0</pylon-light>
 	</lighting>
+	<instrumentation>
+	    <tacan>
+		<BIT type="bool">false</BIT>
+		<hsi-off type="bool">false</hsi-off>
+	    </tacan>
+	</instrumentation>
     </controls>
+    
     <instrumentation>
 	<radar>
 	    <minimized type="bool">0</minimized>
@@ -666,6 +783,19 @@ Grumman A-6E simulation config.
 	    <serviceable type="bool">1</serviceable>
 	    <switch type="string">ON</switch>
 	</radar>
+	<tacan>
+	    <go type="bool">false</go>
+	    <no-go type="bool">false</no-go>
+	    <BIT-complete type="int">0</BIT-complete>
+	    <BIT-running type="bool">false</BIT-running>
+	    <BIT-range type="double">0</BIT-range>
+	    <BIT-bearing type="double">0</BIT-bearing>
+	</tacan>
+	<hsi>
+	    <tacan-range-10 type="double">0</tacan-range-10>
+	    <tacan-range-1 type="double">0</tacan-range-1>
+	    <tacan-range-01 type="double">0</tacan-range-01>
+	</hsi>
     </instrumentation>
 
     <nasal>
@@ -699,6 +829,9 @@ Grumman A-6E simulation config.
 	<randoms>
 	    <file>Nasal/startup_randoms.nas</file>
 	</randoms>
+	<instruments>
+	    <file>Nasal/instruments.nas</file>
+	</instruments>
     </nasal>
     
     <fdm>
