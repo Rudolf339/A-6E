@@ -25,4 +25,13 @@ var tacan_bit = setlistener("controls/instrumentation/tacan/BIT", func (node) {
 		 }, 22 + 4 * rand());
     }
 });
-		
+
+# Radar altimeter BIT test
+var radalt_bit = setlistener("controls/instrumentation/radalt/BIT", func(node) {
+    if (node.getValue() == 0) {
+	setprop("instrumentation/radar-altimeter/BIT-running", 0);
+    } else if (getprop("instrumentation/radar-altimeter/serviceable")){
+	setprop("instrumentation/radar-altimeter/BIT-running", 1);
+	setprop("instrumentation/radar-altimeter/BIT-readout", 90 + 20 * rand());
+    }
+});

@@ -283,5 +283,89 @@
 	<max-rate-of-change>30</max-rate-of-change>
 	<input>instrumentation/tacan/deviation-deg</input>
 	<output>instrumentation/hsi/course-dev-deg</output>
+
     </filter>
+
+    <!-- RADALT -->
+
+    <logic>
+	<input>
+	    <less-than>
+		<property>orientation/roll-deg</property>
+		<value>45</value>
+	    </less-than>
+	    <greater-than>
+		<property>orientation/roll-deg</property>
+		<value>-45</value>
+	    </greater-than>
+	    <less-than>
+		<property>orientation/pitch-deg</property>
+		<value>45</value>
+	    </less-than>
+	    <greater-than>
+		<property>orientation/pitch-deg</property>
+		<value>-45</value>
+	    </greater-than>
+	    <less-than>
+		<property>position/altitude-agl-ft</property>
+		<value>5000</value>
+	    </less-than>
+	    <property>instrumentation/radar-altimeter/serviceable</property>
+	</input>
+	<output>instrumentation/radar-altimeter/radalt-on</output>
+    </logic>
+
+    <filter>
+	<type>gain</type>
+	<input>
+	    <condition>
+		<property>instrumentation/radar-altimeter/radalt-on</property>
+	    </condition>
+	    <property>position/altitude-agl-ft</property>
+	</input>
+	<gain>1</gain>
+	<output>instrumentation/radar-altimeter/agl-ft</output>
+    </filter>
+
+    <filter>
+	<type>noise-spike</type>
+	<max-rate-of-change>7000</max-rate-of-change>
+	<input>
+	    <condition>
+		<property>instrumentation/radar-altimeter/radalt-on</property>
+		<not>
+		    <property>instrumentation/radar-altimeter/BIT-running</property>
+		</not>
+	    </condition>
+	    <property>instrumentation/radar-altimeter/agl-ft</property>
+	</input>
+	<input>
+	    <condition>
+		<not>
+		    <property>instrumentation/radar-altimeter/radalt-on</property>
+		</not>
+	    </condition>
+	    <value>5500</value>
+	</input>
+	<input>
+	    <condition>
+		<property>instrumentation/radar-altimeter/radalt-on</property>
+		<property>instrumentation/radar-altimeter/BIT-running</property>
+	    </condition>
+	    <property>instrumentation/radar-altimeter/BIT-readout</property>
+	</input>
+	<output>instrumentation/radar-altimeter/needle-ft</output>
+    </filter>
+
+    <logic>
+	<input>
+	    <property>instrumentation/radar-altimeter/radalt-on</property>
+	    <less-than>
+		<property>instrumentation/radar-altimeter/needle-ft</property>
+		<property>controls/instrumentation/radalt/limit-bug</property>
+	    </less-than>
+	</input>
+	<output>instrumentation/radar-altimeter/low-lamp</output>
+    </logic>
+
 </PropertyList>

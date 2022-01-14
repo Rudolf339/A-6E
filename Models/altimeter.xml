@@ -168,81 +168,32 @@
 
   <!-- Altimeter Ingh Setting Knob -->
   <animation>
-    <name>ingh-knob-left-fine</name>
-    <type>pick</type>
-    <visible>true</visible>
-    <object-name>ingh-knob-left</object-name>
-    <action>
-      <button>0</button>
-      <repeatable>false</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property>instrumentation/altimeter/setting-inhg</property>
-        <step>-0.005</step>
-        <min>26.0</min>
-        <max>33.0</max>
-        <wrap>false</wrap>
-      </binding>
-    </action>
+      <type>knob</type>
+      <object-name>knob</object-name>
+      <property>instrumentation/altimeter/setting-inhg</property>
+      <factor>-1000</factor>
+      <axis>
+	  <x>1</x>
+	  <y>0</y>
+	  <z>0</z>
+      </axis>
+      <center>
+	  <x-m>0</x-m>
+	  <y-m>-0.0317</y-m>
+	  <z-m>-0.0288</z-m>
+      </center>
+      <action>
+	  <binding>
+	      <command>property-adjust</command>
+	      <property>instrumentation/altimeter/setting-inhg</property>
+	      <factor>0.01</factor>
+	      <min>26</min>
+	      <max>33</max>
+	      <wrap>false</wrap>
+	  </binding>
+      </action>
   </animation>
-
-  <animation>
-    <name>ingh-knob-left-coarse</name>
-    <type>pick</type>
-    <visible>true</visible>
-    <object-name>ingh-knob-left</object-name>
-    <action>
-      <button>1</button>
-      <repeatable>false</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property>instrumentation/altimeter/setting-inhg</property>
-        <step>-0.025</step>
-        <min>26.0</min>
-        <max>33.0</max>
-        <wrap>false</wrap>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <name>ingh-knob-right-fine</name>
-    <type>pick</type>
-    <visible>true</visible>
-    <object-name>ingh-knob-right</object-name>
-    <action>
-      <button>0</button>
-      <repeatable>false</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property>instrumentation/altimeter/setting-inhg</property>
-        <step>0.005</step>
-        <min>26.0</min>
-        <max>33.0</max>
-        <wrap>false</wrap>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <name>ingh-knob-right-coarse</name>
-    <type>pick</type>
-    <visible>true</visible>
-    <object-name>ingh-knob-right</object-name>
-    <action>
-      <button>1</button>
-      <repeatable>false</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property>instrumentation/altimeter/setting-inhg</property>
-        <step>0.025</step>
-        <min>26.0</min>
-        <max>33.0</max>
-        <wrap>false</wrap>
-      </binding>
-    </action>
-  </animation>
-
+  
   <!-- lighting -->
   <animation>
     <object-name>altimeter</object-name>

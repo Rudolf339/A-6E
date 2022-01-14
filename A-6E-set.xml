@@ -742,7 +742,7 @@ Grumman A-6E simulation config.
 		    </binding>
 		</mod-up>
 	    </key>
-	</keyboard>
+  	</keyboard>
     </input>
 
     <controls>
@@ -772,6 +772,13 @@ Grumman A-6E simulation config.
 		<BIT type="bool">false</BIT>
 		<hsi-off type="bool">false</hsi-off>
 	    </tacan>
+	    <radalt>
+		<limit-bug type="int">250</limit-bug>
+		<BIT type="bool">0</BIT>
+	    </radalt>
+	    <asi>
+		<speed-limit-bug type="double">550</speed-limit-bug>
+	    </asi>
 	</instrumentation>
     </controls>
     
@@ -796,6 +803,11 @@ Grumman A-6E simulation config.
 	    <tacan-range-1 type="double">0</tacan-range-1>
 	    <tacan-range-01 type="double">0</tacan-range-01>
 	</hsi>
+	<radar-altimeter>
+	    <agl-ft type="double">0</agl-ft>
+	    <serviceable type="bool">true</serviceable>
+	    <bit-runnning type="bool">false</bit-runnning>
+	</radar-altimeter>
     </instrumentation>
 
     <nasal>
