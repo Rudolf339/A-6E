@@ -1,33 +1,33 @@
 <PropertyList>
-  <name type="string" n="0">cruise</name>
-  <overlay>
-    <controls>
-      <engines>
-        <engine n="0">
-          <throttle>0.75</throttle>
-        </engine>
-        <engine n="1">
-          <throttle>0.75</throttle>
-        </engine>
-      </engines>
-      <flight>
-        <elevator-trim>0.0</elevator-trim>
-        <flaps>0.0</flaps>
-        <speedbrake>0.0</speedbrake>
-        <wing-fold>0.0</wing-fold>
-      </flight>
-      <gear>
-        <tailhook>false</tailhook>
-        <gear-down>false</gear-down>
-        <parking-brake>0.0</parking-brake>
-      </gear>
-      <lighting>
-        <beacon>1</beacon>
-        <taxi-light>0</taxi-light>
-      </lighting>
-    </controls>
-    <canopy>
-      <position-norm>0.0</position-norm>
-    </canopy>
-</overlay>
+    <name type="string" n="0">cruise</name>
+    <overlay>
+	<controls>
+	    <engines>
+		<engine n="0">
+		    <throttle>0.75</throttle>
+		</engine>
+		<engine n="1">
+		    <throttle>0.75</throttle>
+		</engine>
+	    </engines>
+	    <flight>
+		<elevator-trim>0.0</elevator-trim>
+		<flaps>0.0</flaps>
+		<speedbrake>0.0</speedbrake>
+		<wing-fold>0.0</wing-fold>
+	    </flight>
+	    <gear>
+		<tailhook>false</tailhook>
+		<gear-down>false</gear-down>
+		<parking-brake>0.0</parking-brake>
+	    </gear>
+	    <lighting>
+		<beacon>1</beacon>
+		<taxi-light>0</taxi-light>
+	    </lighting>
+	</controls>
+	<canopy>
+	    <position-norm>0.0</position-norm>
+	</canopy>
+    </overlay>
 </PropertyList>

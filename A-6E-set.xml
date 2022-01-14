@@ -72,6 +72,12 @@ Grumman A-6E simulation config.
  		</colors>
 	    </style>
 	</gui>
+
+	<state include="./States/take-off-overlay.xml" n="0"/>
+	<state include="./States/carrier-landing-overlay.xml" n="1"/>
+	<state include="./States/landing-overlay.xml" n="2"/>
+	<state include="./States/carrier-take-off-overlay.xml" n="3"/>
+	<state include="./States/cruise-overlay.xml" n="4"/>
 	
 	<rendering>
 	    <redout>
@@ -355,8 +361,8 @@ Grumman A-6E simulation config.
 		<desc>Enable NSW steering</desc>
 	    </key>
 	    <key>
-		<name>o</name>
-		<desc>Toggle arrestor hook</desc>
+		<name>o/O</name>
+		<desc>Raise/Lower arrestor hook</desc>
 	    </key>
 	    <key>
 		<name>L</name>
@@ -698,10 +704,21 @@ Grumman A-6E simulation config.
 
             <key n="111">
                 <name>o</name>
-                <desc>Toggle arrester hook</desc>
+                <desc>Raise arrester hook</desc>
                 <binding>
-                    <command>property-toggle</command>
-                    <property>fdm/jsbsim/systems/hook/tailhook-cmd-norm</property>
+                    <command>property-assign</command>
+                    <property>controls/gear/tailhook</property>
+		    <value>0</value>
+                </binding>
+	    </key>
+
+	    <key n="79">
+		<name>O</name>
+		<desc>Lower arrester hook</desc>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/gear/tailhook</property>
+		    <value>1</value>
                 </binding>
 	    </key>
 	    
@@ -861,6 +878,11 @@ Grumman A-6E simulation config.
 		    <lockpin-cmd alias="/controls/flight/wing-fold/lockpin-cmd"/>
 		</wing-fold>
 	    </fcs>
+	    <systems>
+		<hook>
+		    <tailhook-cmd-norm alias="/controls/gear/tailhook"/>
+		</hook>
+	    </systems>
 	</jsbsim>
     </fdm>
 

@@ -1,30 +1,28 @@
 <PropertyList>
-  <name type="string" n="0">approach</name>
-  <description type="string">Final approach to a runway.  Everything out - gear, flaps, speed-brakes</description>
-  <overlay>
-    <fdm>
-      <yasim>
-        <respect-external-gear-state>true</respect-external-gear-state>
-      </yasim>
-    </fdm>
-    <controls>
-      <engines>
-        <engine n="0">
-          <throttle>0.75</throttle>
-        </engine>
-        <engine n="1">
-          <throttle>0.75</throttle>
-        </engine>
-      </engines>
-      <flight>
-        <elevator-trim>-0.5</elevator-trim>
-        <flaps>1.0</flaps>
-        <speedbrake>1.0</speedbrake>
-      </flight>
-      <gear>
-        <tailhook>false</tailhook>
-        <gear-down>true</gear-down>
-      </gear>
-    </controls>
-  </overlay>
+    <name type="string" n="0">approach</name>
+    <description type="string">Final approach to a runway.  Everything out - gear, flaps, speed-brakes</description>
+    <overlay>
+	<controls>
+	    <engines>
+		<engine n="0">
+		    <throttle>0.75</throttle>
+		</engine>
+		<engine n="1">
+		    <throttle>0.75</throttle>
+		</engine>
+	    </engines>
+	    <flight>
+		<elevator-trim>-0.5</elevator-trim>
+		<flaps>0.5</flaps>
+		<spoilers>1.0</spoilers>
+	    </flight>
+	    <gear>
+		<tailhook>false</tailhook>
+		<gear-down>true</gear-down>x
+	    </gear>
+	</controls>
+	<canopy>
+	    <position-norm>0.0</position-norm>
+	</canopy>
+    </overlay>
 </PropertyList>

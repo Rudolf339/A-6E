@@ -1,42 +1,37 @@
 <PropertyList>
-  <name type="string" n="0">carrier-approach</name>
-  <description type="string">Final approach to a carrier landing.  Everything out - gear, flaps, speed-brakes, tailhook</description>
-  <overlay>
-    <fdm>
-      <yasim>
-        <respect-external-gear-state>true</respect-external-gear-state>
-      </yasim>
-    </fdm>
-    <controls>
-      <engines>
-        <engine n="0">
-          <throttle>0.75</throttle>
-        </engine>
-        <engine n="1">
-          <throttle>0.75</throttle>
-        </engine>
-      </engines>
-      <flight>
-        <elevator-trim>-0.85</elevator-trim>
-        <flaps>1.0</flaps>
-        <speedbrake>1.0</speedbrake>
-        <wing-fold>0.0</wing-fold>
-      </flight>
-      <gear>
-        <tailhook>true</tailhook>
-        <gear-down>true</gear-down>
-        <parking-brake>0.0</parking-brake>
-      </gear>
-      <lighting>
-  			<beacon>1</beacon>
-  			<taxi-light>0</taxi-light>
-  		</lighting>
-    </controls>
-    <canopy>
-      <position-norm>0.0</position-norm>
-    </canopy>
-    <orientation>
-      <pitch-deg>-10</pitch-deg>
-    </orientation>
-  </overlay>
+    <name type="string" n="0">carrier-approach</name>
+    <description type="string">Final approach to a carrier landing.  Everything out - gear, flaps, speed-brakes, tailhook</description>
+    <overlay>
+	<controls>
+	    <engines>
+		<engine n="0">
+		    <throttle>0.75</throttle>
+		</engine>
+		<engine n="1">
+		    <throttle>0.75</throttle>
+		</engine>
+	    </engines>
+	    <flight>
+		<elevator-trim>-0.521</elevator-trim>
+		<flaps>0.5</flaps>
+		<spoilers>1.0</spoilers>
+		<wing-fold>0.0</wing-fold>
+	    </flight>
+	    <gear>
+		<tailhook>true</tailhook>
+		<gear-down>true</gear-down>
+		<parking-brake>0.0</parking-brake>
+	    </gear>
+	    <lighting>
+  		<beacon>1</beacon>
+  		<taxi-light>0</taxi-light>
+	    </lighting>
+	</controls>
+	<canopy>
+	    <position-norm>0.0</position-norm>
+	</canopy>
+	<orientation>
+	    <pitch-deg>11</pitch-deg>
+	</orientation>
+    </overlay>
 </PropertyList>
