@@ -8,30 +8,44 @@ Grumman A-6E simulation config.
 -->
 
 <PropertyList>
-    <sim>
-
-        <spoilers>
-            <setting>0.0</setting>
-            <setting>1.0</setting>
-        </spoilers>
-
-        <flaps>
-            <setting>0.0</setting>
-            <setting>0.5</setting>
-            <setting>1.0</setting>
-        </flaps>
- 
-	<startup>
-	    <splash-texture>Aircraft/A-6E/A-6E-splash.rgb</splash-texture>
-	</startup>
-
+    <sim> 
 	<flight-model>jsb</flight-model>
 	<status>alpha</status>
-	<author>Jüttner Domokos (Rudolf)</author>
-	<author>Alexis Bory</author>
+	<rating>
+	    <FDM>3</FDM>
+	    <systems>0</systems>
+	    <external>3</external>
+	    <cockpit>2</cockpit>
+	</rating>
+	<authors>
+	    <author>
+		<name>Jüttner Domokos</name>
+		<description>FDM, systems, maintainter</description>
+		<email>juttner.domokos@gmail.com</email>
+		<nick>Rudolf</nick>
+	    </author>
+	    <author>
+		<name>Alexis Bory</name>
+		<description>original aircraft, 3d models</description>
+		<nick>Xiii</nick>
+	    </author>
+	    <author>
+		<name>Richard Harrison</name>
+		<description>Help with VSPAERO, FDM tuning</description>
+	    </author>
+	</authors>
+	<mainatiners>
+	    <maintainer>
+		<name>Jüttner Domokos</name>
+		<description>FDM, maintainter</description>
+		<email>juttner.domokos@gmail.com</email>
+		<nick>Rudolf</nick>
+	    </maintainer>
+	</mainatiners>
+	
 	<aero>A-6E</aero>
 	<fuel-fraction>0.66</fuel-fraction>
-	<description>Grumman A-6E (JSBSim FDM)</description>
+	<description>Grumman A-6E</description>
 	<virtual-cockpit archive="y">false</virtual-cockpit>
 	<chase-distance-m type="double" archive="y">-30.0</chase-distance-m>
 
@@ -53,6 +67,39 @@ Grumman A-6E simulation config.
 	    <tag>jet</tag>
 	    <tag>single-engine</tag>
 	</tags>
+
+	<previews>
+	    <preview>
+		<type>exterior</type>
+		<splash type="bool">true</splash>
+		<path>Previews/External-1.png</path>
+	    </preview>
+	    <preview>
+		<type>exterior</type>
+		<splash type="bool">true</splash>
+		<path>Previews/External-2.png</path>
+	    </preview>
+	    <preview>
+		<type>exterior</type>
+		<splash type="bool">true</splash>
+		<path>Previews/External-3.png</path>
+	    </preview>
+	    <preview>
+		<type>exterior</type>
+		<splash type="bool">true</splash>
+		<path>Previews/External-4.png</path>
+	    </preview>
+	    <preview>
+		<type>exterior</type>
+		<splash type="bool">true</splash>
+		<path>Previews/External-5.png</path>
+	    </preview>
+	    <preview>
+		<type>interior</type>
+		<splash type="bool">true</splash>
+		<path>Previews/Interior-1.png</path>
+	    </preview>
+	</previews>
 
 	<hud>
 	    <mickey>
@@ -78,7 +125,7 @@ Grumman A-6E simulation config.
 	<state include="./States/landing-overlay.xml" n="2"/>
 	<state include="./States/carrier-take-off-overlay.xml" n="3"/>
 	<state include="./States/cruise-overlay.xml" n="4"/>
-	
+
 	<rendering>
 	    <redout>
 		<parameters>
@@ -186,6 +233,17 @@ Grumman A-6E simulation config.
 	    </autopilot>
 	</systems>
 
+        <spoilers>
+            <setting>0.0</setting>
+            <setting>1.0</setting>
+        </spoilers>
+
+        <flaps>
+            <setting>0.0</setting>
+            <setting>0.5</setting>
+            <setting>1.0</setting>
+        </flaps>
+	
 	<model>
 	    <path>Aircraft/A-6E/Models/A-6E.xml</path>
 	    <ramp>
