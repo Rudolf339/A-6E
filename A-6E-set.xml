@@ -466,6 +466,7 @@ Grumman A-6E simulation config.
 		<short n="6" alias="/systems/lighting/beacon-light-tail"/>
 		<short n="7" alias="/systems/lighting/beacon-light-eng"/>
 		<short n="8" alias="/systems/lighting/probe-light"/>
+		<short n="9" alias="/systems/lighting/beacon-timing"/>
 		<short n="10" alias="/sim/model/A-6E/controls/lighting/formation-lts"/>
 	    </generic>
 	</multiplay>

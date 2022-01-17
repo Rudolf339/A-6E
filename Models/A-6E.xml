@@ -1484,7 +1484,7 @@
     <animation>
 	<type>rotate</type>
 	<object-name>beacon_TR</object-name>
-	<property>systems/lighting/beacon-timing</property>
+	<property>sim/multiplay/generic/short[9]</property>
 	<factor>360</factor>
 	<axis>
 	    <x>0</x>
@@ -1501,7 +1501,7 @@
     <animation>
 	<type>rotate</type>
 	<object-name>beacon_TL</object-name>
-	<property>systems/lighting/beacon-timing</property>
+	<property>sim/multiplay/generic/short[9]</property>
 	<factor>360</factor>
 	<axis>
 	    <x>0</x>
@@ -1530,7 +1530,7 @@
 	<condition>
 	    <property>sim/multiplay/generic/short[6]</property>
 	    <greater-than>
-		<property>systems/lighting/beacon-timing</property>
+		<property>sim/multiplay/generic/short[9]</property>
 		<value>0.6</value>
 	    </greater-than>
 	</condition>
@@ -1543,7 +1543,7 @@
 	<condition>
 	    <property>sim/multiplay/generic/short[6]</property>
 	    <less-than>
-		<property>systems/lighting/beacon-timing</property>
+		<property>sim/multiplay/generic/short[9]</property>
 		<value>0.4</value>
 	    </less-than>
 	</condition>
