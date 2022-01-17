@@ -434,6 +434,14 @@ Grumman A-6E simulation config.
 		<name>N</name>
 		<desc>Catapult Grip engage</desc>
 	    </key>
+	    <key>
+		<name>l</name>
+		<desc>Toggle taxi light</desc>
+	    </key>
+	    <key>
+		<name>i</name>
+		<desc>Key pylon light</desc>
+	    </key>
 	</help>
 	
 	<multiplay>
@@ -449,6 +457,16 @@ Grumman A-6E simulation config.
 		<int n="6" alias="/payload/weight[3]/count"/>
 		<int n="7" alias="/payload/weight[4]/count"/>
 		<int n="8" alias="/fdm/jsbsim/systems/instrument/aoa-indexer"/>
+		<short n="0" alias="/systems/lighting/taxi-light"/>
+		<short n="1" alias="/systems/lighting/wing-light-brt"/>
+		<short n="2" alias="/systems/lighting/wing-light-dim"/>
+		<short n="3" alias="/systems/lighting/tail-light-brt"/>
+		<short n="4" alias="/systems/lighting/tail-light-dim"/>p
+		<short n="5" alias="/systems/lighting/pylon-light"/>
+		<short n="6" alias="/systems/lighting/beacon-light-tail"/>
+		<short n="7" alias="/systems/lighting/beacon-light-eng"/>
+		<short n="8" alias="/systems/lighting/probe-light"/>
+		<short n="10" alias="/sim/model/A-6E/controls/lighting/formation-lts"/>
 	    </generic>
 	</multiplay>
 
@@ -800,7 +818,7 @@ Grumman A-6E simulation config.
                     <script>A6Econtrols.launchbar_toggle();</script>
                 </binding>
             </key>
-
+	    
 	    <key n="78">
 		<name>N</name>
 		<desc>Strut Lock engage</desc>
@@ -813,6 +831,32 @@ Grumman A-6E simulation config.
 		    <binding>
 			<command>property-assign</command>
 			<property>fdm/jsbsim/systems/strut-lock/strut-lock-cmd</property>
+			<value>0</value>
+		    </binding>
+		</mod-up>
+	    </key>
+
+	    <key n="108">
+		<name>l</name>
+		<desc>Toggle taxi light</desc>
+		<binding>
+		    <command>property-toggle</command>
+		    <property>controls/lighting/taxi-light</property>
+		</binding>
+	    </key>
+
+	    <key n="105">
+		<name>l</name>
+		<desc>key light</desc>
+		<binding>
+		    <command>property-assign</command>
+		    <property>controls/lighting/pylon-light</property>
+		    <value>-1</value>
+		</binding>
+		<mod-up>
+		    <binding>
+			<command>property-assign</command>
+			<property>controls/lighting/pylon-light</property>
 			<value>0</value>
 		    </binding>
 		</mod-up>

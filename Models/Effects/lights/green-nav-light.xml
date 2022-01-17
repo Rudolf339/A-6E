@@ -1,4 +1,6 @@
 <?xml version="1.0"?>
+<!-- License: GPLv2+ -->
+<!-- adapted from Viggen's lights by Colin Ganiet -->
 
 <PropertyList>
 
@@ -9,5 +11,137 @@
         <inherits-from>green-nav-light</inherits-from>
         <object-name>procedural_light</object-name>
     </effect>
+    
+    <animation>
+	<type>select</type>
+	<object-name>procedural_light</object-name>
+	<condition>
+	    <property>/sim/rendering/shaders/skydome</property>
+	</condition>
+    </animation>
+
+    <!-- Backup billboard model for low spec pipeline -->
+
+    <model>
+	<name>low_spec_light</name>
+	<path>Aircraft/A-6E/Models/Effects/lights/light-green.ac</path>
+	<offsets>
+	    <heading-deg>-60</heading-deg>
+	</offsets>
+    </model>
+
+    <animation>
+	<type>flash</type>
+	<object-name>low_spec_light</object-name>
+	<offset>0</offset>
+	<factor>1.5</factor>
+	<power>1</power>
+	<two-sides>false</two-sides>
+	<min>0</min>
+	<max>1</max>
+	<axis>
+	    <x>-0.5</x>
+	    <y>1</y>
+	    <z>0</z>
+	</axis>
+    </animation>
+
+    <animation>
+	<type>select</type>
+	<object-name>low_spec_light</object-name>
+	<condition>
+	    <not><property>/sim/rendering/shaders/skydome</property></not>
+	</condition>
+    </animation>
+
+    <animation>
+	<type>noshadow</type>
+	<object-name>procedural_light</object-name>
+	<object-name>low_spec_light</object-name>
+    </animation>
+
+
+    <!-- Compositor light cone -->
+
+    <light>
+	<name>light_cone</name>
+	<type>spot</type>
+	<position>
+	    <x-m>0</x-m>
+	    <y-m>0</y-m>
+	    <z-m>0</z-m>
+	</position>
+	<direction>
+	    <x>-0.5</x>
+	    <y>1</y>
+	    <z>0</z>
+	</direction>
+	<ambient>
+	    <r>0.0</r>
+	    <g>0.0</g>
+	    <b>0.0</b>
+	    <a>1</a>
+	</ambient>
+	<diffuse>
+	    <r>0.32</r>
+	    <g>1.0</g>
+	    <b>0.32</b>
+	    <a>1</a>
+	</diffuse>
+	<specular>
+	    <r>0.32</r>
+	    <g>1.0</g>
+	    <b>0.32</b>
+	    <a>1</a>
+	</specular>
+	<attenuation>
+	    <c>1.0</c>
+	    <l>0.7</l>
+	    <q>1.8</q>
+	</attenuation>
+	<spot-cutoff>60</spot-cutoff>
+	<spot-exponent>1</spot-exponent><!-- Lose half intensity at 60deg (edge of cone) -->
+	<range-m>7</range-m>
+	<dim-factor>
+	    <expression>
+		<product>
+		    <property>sim/multiplay/generic/short[1]</property>
+		    <value>3</value>
+		    <table>
+			<!-- adjust intensity depending on surrounding light 
+			     for reference, time of day corresponding to the value is indicated
+			     (late spring, clear weather, around 45deg latitude) -->
+			<property>/rendering/scene/diffuse/red</property>
+			<entry><ind>0.0</ind><dep>1.0</dep></entry><!-- night -->
+			<entry><ind>0.7</ind><dep>0.8</dep></entry><!-- dusk -->
+			<entry><ind>0.9</ind><dep>0.3</dep></entry><!-- afternoon -->
+			<entry><ind>1.0</ind><dep>0.2</dep></entry><!-- noon -->
+		    </table>
+		</product>
+	    </expression>
+	</dim-factor>
+    </light>
+
+    <!-- dist-scale causes issues with some FG LOD mechanism: high dist-scale factors
+	 cause the object to become invisible when it should not be.
+	 Split between a scale and a dist-scale to work around the issue. -->
+    <animation>
+	<type>scale</type>
+	<object-name>procedural_light</object-name>
+	<object-name>low_spec_light</object-name>
+	<x-offset>5</x-offset>
+	<y-offset>5</y-offset>
+	<z-offset>5</z-offset>
+    </animation>
+
+    <animation>
+	<type>dist-scale</type>
+	<object-name>procedural_light</object-name>
+	<object-name>low_spec_light</object-name>
+	<interpolation>
+	    <entry><ind>0</ind><dep>0.2</dep></entry>
+	    <entry><ind>3000</ind><dep>2.0</dep></entry>
+	</interpolation>
+    </animation>
 
 </PropertyList>

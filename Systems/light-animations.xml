@@ -72,7 +72,7 @@
 		</equals>
 	    </and>
 	</input>
-	<output>systems/lighting/beacon-eng-on</output>
+	<output>systems/lighting/beacon-light-eng</output>
     </logic>
 
     <logic>
@@ -80,8 +80,90 @@
 	<input>
 	    <property>controls/lighting/beacon</property>
 	</input>
-	<output>systems/lighting/beacon-tail-on</output>
+	<output>systems/lighting/beacon-light-tail</output>
     </logic>
-        
-		
+
+    <logic>
+	<input>
+	    <property>controls/lighting/taxi-light</property>
+	    <not-equals>
+		<property>gear/gear[0]/position-norm</property>
+		<value>0</value>
+	    </not-equals>
+	</input>
+	<output>systems/lighting/taxi-light</output>
+    </logic>
+
+    <logic>
+	<input>
+	    <equals>
+		<property>controls/lighting/taxi-light</property>
+		<value>1</value>
+	    </equals>
+	    <equals>
+		<property>gear/gear[0]/position-norm</property>
+		<value>0</value>
+	    </equals>
+	</input>
+	<output>
+	    <property>systems/lighting/probe-light</property>
+	</output>
+    </logic>
+
+    <logic>
+	<input>
+	    <equals>
+		<property>controls/lighting/wing-light</property>
+		<value>-1</value>
+	    </equals>
+	</input>
+	<output>
+	    <property>systems/lighting/wing-light-dim</property>
+	</output>
+    </logic>
+    <logic>
+	<input>
+	    <equals>
+		<property>controls/lighting/wing-light</property>
+		<value>1</value>
+	    </equals>
+	</input>
+	<output>
+	    <property>systems/lighting/wing-light-brt</property>
+	</output>
+    </logic>
+
+    <logic>
+	<input>
+	    <equals>
+		<property>controls/lighting/tail-light</property>
+		<value>-1</value>
+	    </equals>
+	</input>
+	<output>
+	    <property>systems/lighting/tail-light-dim</property>
+	</output>
+    </logic>
+    <logic>
+	<input>
+	    <equals>
+		<property>controls/lighting/tail-light</property>
+		<value>1</value>
+	    </equals>
+	</input>
+	<output>
+	    <property>systems/lighting/tail-light-brt</property>
+	</output>
+    </logic>
+
+    <logic>
+	<input>
+	    <not-equals>
+		<property>controls/lighting/pylon-light</property>
+		<value>0</value>
+	    </not-equals>
+	</input>
+	<output>systems/lighting/pylon-light</output>
+    </logic>
+			    
 </PropertyList>

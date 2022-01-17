@@ -20,9 +20,9 @@
         <is_directional type="bool">true</is_directional>
         <is_strobe type="bool">false</is_strobe>
 
-        <inner_angle type="float">0.50</inner_angle> <!-- sin(30) -->
-        <outer_angle type="float">0.866025403784</outer_angle> <!-- sin(60) -->
-        <zero_angle  type="float">1.00</zero_angle>  <!-- sin(90) -->
+        <inner_angle type="float">0.10</inner_angle>
+        <outer_angle type="float">0.50</outer_angle> <!-- sin(60) -->
+        <zero_angle  type="float">0.866025403784</zero_angle>  <!-- sin(90) -->
         <outer_gain  type="float">0.50</outer_gain>
     </parameters>
 

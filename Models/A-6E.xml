@@ -23,11 +23,11 @@
 	<condition>
 	    <and>
 		<equals>
-		    <property>/sim/multiplay/generic/string</property>
+		    <property>sim/multiplay/generic/string</property>
 		    <value>aero300</value>
 		</equals>
 		<equals>
-		    <property>/sim/multiplay/generic/int[3]</property>
+		    <property>sim/multiplay/generic/int[3]</property>
 		    <value>1</value>
 		</equals>
 	    </and>
@@ -39,11 +39,11 @@
 	<condition>
 	    <and>
 		<equals>
-		    <property>/sim/multiplay/generic/string[1]</property>
+		    <property>sim/multiplay/generic/string[1]</property>
 		    <value>aero300</value>
 		</equals>
 		<equals>
-		    <property>/sim/multiplay/generic/int[4]</property>
+		    <property>sim/multiplay/generic/int[4]</property>
 		    <value>1</value>
 		</equals>
 	    </and>
@@ -55,11 +55,11 @@
 	<condition>
 	    <and>
 		<equals>
-		    <property>/sim/multiplay/generic/string[2]</property>
+		    <property>sim/multiplay/generic/string[2]</property>
 		    <value>aero300</value>
 		</equals>
 		<equals>
-		    <property>/sim/multiplay/generic/int[5]</property>
+		    <property>sim/multiplay/generic/int[5]</property>
 		    <value>1</value>
 		</equals>
 	    </and>
@@ -71,11 +71,11 @@
 	<condition>
 	    <and>
 		<equals>
-		    <property>/sim/multiplay/generic/string[3]</property>
+		    <property>sim/multiplay/generic/string[3]</property>
 		    <value>aero300</value>
 		</equals>
 		<equals>
-		    <property>/sim/multiplay/generic/int[6]</property>
+		    <property>sim/multiplay/generic/int[6]</property>
 		    <value>1</value>
 		</equals>
 	    </and>
@@ -87,11 +87,11 @@
 	<condition>
 	    <and>
 		<equals>
-		    <property>/sim/multiplay/generic/string[4]</property>
+		    <property>sim/multiplay/generic/string[4]</property>
 		    <value>aero300</value>
 		</equals>
 		<equals>
-		    <property>/sim/multiplay/generic/int[7]</property>
+		    <property>sim/multiplay/generic/int[7]</property>
 		    <value>1</value>
 		</equals>
 	    </and>
@@ -1375,7 +1375,35 @@
 	</axis>
     </animation>
 
-    <!-- ######## EXTERNAL LIGHTS ######## -->
+
+    <!-- ############## Cockpit Flood Lighting ############## -->
+    <animation>
+	<type>material</type>
+	<object-name>CPT-inside</object-name>
+	<emission>
+	    <factor-prop>sim/model/A-6E/controls/lighting/flood-lts</factor-prop>
+	    <red>0.4</red>
+	    <green>0.25</green>
+	    <blue>0.15</blue>
+	</emission>
+    </animation>
+    <animation>
+	<type>material</type>
+	<object-name>CPT-panels</object-name>
+	<emission>
+	    <factor-prop>sim/model/A-6E/controls/lighting/flood-lts</factor-prop>
+	    <red>0.2</red>
+	    <green>0.1</green>
+	    <blue>0.05</blue>
+	</emission>
+    </animation>
+
+    <animation>
+	<object-name>CPT-panels</object-name>
+	<type>noshadow</type>
+    </animation>
+
+        <!-- ######## EXTERNAL LIGHTS ######## -->
     
     <!-- beacon lights -->
     <model>
@@ -1443,11 +1471,38 @@
         </offsets>
     </model>
 
+    <model>
+	<path>Aircraft/A-6E/Models/Effects/lights/beacon_light.xml</path>
+	<name>beacon_TR</name>
+        <offsets>
+            <x-m> 9.08</x-m>
+            <y-m> 0.08</y-m>
+            <z-m> 2.30</z-m>
+        </offsets>
+    </model>
+
     <animation>
-	<type>spin</type>
+	<type>rotate</type>
+	<object-name>beacon_TR</object-name>
+	<property>systems/lighting/beacon-timing</property>
+	<factor>360</factor>
+	<axis>
+	    <x>0</x>
+	    <y>0</y>
+	    <z>1</z>
+	</axis>
+	<center>
+            <x-m> 9.08</x-m>
+            <y-m> 0.08</y-m>
+            <z-m> 2.30</z-m>
+	</center>
+    </animation>
+
+    <animation>
+	<type>rotate</type>
 	<object-name>beacon_TL</object-name>
-	<property>sim/fdm-initialized</property>
-	<factor>20</factor>
+	<property>systems/lighting/beacon-timing</property>
+	<factor>360</factor>
 	<axis>
 	    <x>0</x>
 	    <y>0</y>
@@ -1460,49 +1515,37 @@
 	</center>
     </animation>
 
-
-    <model>
-	<path>Aircraft/A-6E/Models/Effects/lights/beacon_light.xml</path>
-	<name>beacon_TR</name>
-        <offsets>
-            <x-m> 9.08</x-m>
-            <y-m> 0.08</y-m>
-            <z-m> 2.30</z-m>
-        </offsets>
-    </model>
-
-    <animation>
-	<type>spin</type>
-	<object-name>beacon_TR</object-name>
-	<property>sim/fdm-initialized</property>
-	<factor>20</factor>
-	<axis>
-	    <x>0</x>
-	    <y>0</y>
-	    <z>1</z>
-	</axis>
-	<center>
-            <x-m> 9.08</x-m>
-            <y-m> 0.08</y-m>
-            <z-m> 2.30</z-m>
-	</center>
-    </animation>
-
     <animation>
 	<type>select</type>
 	<object-name>beacon_FL</object-name>
 	<object-name>beacon_FR</object-name>
 	<condition>
-	    <property>systems/lighting/beacon-eng-on</property>
+	    <property>sim/multiplay/generic/short[7]</property>
 	</condition>
     </animation>
 
     <animation>
 	<type>select</type>
-	<object-name>beacon_TL</object-name>
 	<object-name>beacon_TR</object-name>
 	<condition>
-	    <property>systems/lighting/beacon-tail-on</property>
+	    <property>sim/multiplay/generic/short[6]</property>
+	    <greater-than>
+		<property>systems/lighting/beacon-timing</property>
+		<value>0.6</value>
+	    </greater-than>
+	</condition>
+    </animation>
+
+    
+    <animation>
+	<type>select</type>
+	<object-name>beacon_TL</object-name>
+	<condition>
+	    <property>sim/multiplay/generic/short[6]</property>
+	    <less-than>
+		<property>systems/lighting/beacon-timing</property>
+		<value>0.4</value>
+	    </less-than>
 	</condition>
     </animation>
 
@@ -1553,10 +1596,7 @@
 	<object-name>nav_L</object-name>
 	<object-name>nav_R</object-name>
 	<condition>
-	    <equals>
-		<property>controls/lighting/wing-light</property>
-		<value>1</value>
-	    </equals>
+	    <property>sim/multiplay/generic/short[1]</property>
 	</condition>
     </animation>
 
@@ -1628,10 +1668,7 @@
 	<type>select</type>
 	<object-name>tail_light</object-name>
 	<condition>
-	    <equals>
-		<property>controls/lighting/tail-light</property>
-		<value>1</value>
-	    </equals>
+	    <property>sim/multiplay/generic/short[3]</property>
 	</condition>
     </animation>
 
@@ -1673,10 +1710,7 @@
 	<object-name>pylon_light_left</object-name>
 	<object-name>pylon_light_right</object-name>
 	<condition>
-	    <not-equals>
-		<property>controls/lighting/pylon-light</property>
-		<value>0</value>
-	    </not-equals>
+	    <property>sim/multiplay/generic/short[5]</property>
 	</condition>
     </animation>
     
@@ -1695,14 +1729,7 @@
 	<type>select</type>
 	<object-name>taxi_light</object-name>
 	<condition>
-	    <equals>
-		<property>controls/lighting/taxi-light</property>
-		<value>1</value>
-	    </equals>
-	    <not-equals>
-		<property>gear/gear[0]/position-norm</property>
-		<value>0</value>
-	    </not-equals>
+	    <property>sim/multiplay/generic/short[0]</property>
 	</condition>
     </animation>
 
@@ -1721,14 +1748,7 @@
 	<type>select</type>
 	<object-name>probe_light</object-name>
 	<condition>
-	    <equals>
-		<property>controls/lighting/taxi-light</property>
-		<value>1</value>
-	    </equals>
-	    <equals>
-		<property>gear/gear[0]/position-norm</property>
-		<value>0</value>
-	    </equals>
+	    <property>sim/multiplay/generic/short[8]</property>
 	</condition>
     </animation>
     
@@ -1763,6 +1783,8 @@
 	</offsets>
     </model>
 
+
+    <!-- light animations -->
     <animation>
 	<type>select</type>
 	<object-name>AoA_slow</object-name>
@@ -1819,6 +1841,7 @@
     <animation>
 	<type>rotate</type>
 	<object-name>taxi_light</object-name>
+	<!-- <object-name>taxi_light_source</object-name> -->
 	<object-name>AoA_fast</object-name>
 	<object-name>AoA_onspeed</object-name>
 	<object-name>AoA_slow</object-name>
@@ -1840,38 +1863,11 @@
 	<object-name>formation_lt_W</object-name>
 	<object-name>formation_lt_W.001</object-name>
 	<emission>
-	    <factor-prop>sim/model/A-6E/controls/lighting/formation-lts</factor-prop>
+	    <factor-prop>sim/multiplay/generic/short[10]</factor-prop>
 	    <red>0.455</red>
 	    <green>0.49</green>
 	    <blue>0.39</blue>
 	</emission>
-    </animation>
-
-    <!-- ############## Cockpit Flood Lighting ############## -->
-    <animation>
-	<type>material</type>
-	<object-name>CPT-inside</object-name>
-	<emission>
-	    <factor-prop>sim/model/A-6E/controls/lighting/flood-lts</factor-prop>
-	    <red>0.4</red>
-	    <green>0.25</green>
-	    <blue>0.15</blue>
-	</emission>
-    </animation>
-    <animation>
-	<type>material</type>
-	<object-name>CPT-panels</object-name>
-	<emission>
-	    <factor-prop>sim/model/A-6E/controls/lighting/flood-lts</factor-prop>
-	    <red>0.2</red>
-	    <green>0.1</green>
-	    <blue>0.05</blue>
-	</emission>
-    </animation>
-
-    <animation>
-	<object-name>CPT-panels</object-name>
-	<type>noshadow</type>
     </animation>
 
 </PropertyList>
