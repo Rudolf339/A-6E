@@ -3,253 +3,290 @@
 
 
 <PropertyList>
-	<path>engine-gauges.ac</path>
+    <path>engine-gauges.ac</path>
 
-	<!-- RPM tapes -->
-	<animation>
-		<type>select</type>
-		<object-name>L-rpm-tape</object-name>
-		<condition>
-			<property>sim/model/A-6E/instrumentation/engines-gauges/L-rpm-on</property>
-		</condition>
-	</animation> 
+    <!-- RPM tapes -->
+    <animation>
+	<type>select</type>
+	<object-name>L-rpm-tape</object-name>
+	<condition>
+	    <property>sim/model/A-6E/instrumentation/engines-gauges/L-rpm-on</property>
+	</condition>
+    </animation> 
 
-	<animation>
-		<type>textranslate</type>
-		<object-name>L-rpm-tape</object-name>
-		<property>engines/engine[0]/n1</property>
-		<interpolation>
-			<entry><ind>0</ind><dep>0</dep></entry>
-			<entry><ind>30</ind><dep>-0.060</dep></entry>
-			<entry><ind>45</ind><dep>-0.080</dep></entry>
-			<entry><ind>60</ind><dep>-0.180</dep></entry>
-			<entry><ind>80</ind><dep>-0.250</dep></entry>
-			<entry><ind>90</ind><dep>-0.335</dep></entry>
-			<entry><ind>100</ind><dep>-0.425</dep></entry>
-			<entry><ind>110</ind><dep>-0.501</dep></entry>
-		</interpolation>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-		</axis>
-	</animation>
+    <animation>
+	<type>textranslate</type>
+	<object-name>L-rpm-tape</object-name>
+	<property>engines/engine[0]/n2</property>
+	<interpolation>
+	    <entry><ind>0</ind><dep>0</dep></entry>
+	    <entry><ind>30</ind><dep>-0.069</dep></entry>
+	    <entry><ind>60</ind><dep>-0.140</dep></entry>
+	    <entry><ind>70</ind><dep>-0.155</dep></entry>
+	    <entry><ind>80</ind><dep>-0.245</dep></entry>
+	    <entry><ind>110</ind><dep>-0.501</dep></entry>
+	</interpolation>
+	<axis>
+	    <x>0</x>
+	    <y>1</y>
+	</axis>
+    </animation>
 
-	<animation>
-		<type>select</type>
-		<object-name>R-rpm-tape</object-name>
-		<condition>
-			<property>sim/model/A-6E/instrumentation/engines-gauges/L-rpm-on</property>
-		</condition>
-	</animation> 
+    <animation>
+	<type>select</type>
+	<object-name>R-rpm-tape</object-name>
+	<condition>
+	    <property>sim/model/A-6E/instrumentation/engines-gauges/L-rpm-on</property>
+	</condition>
+    </animation> 
 
-	<animation>
-		<type>textranslate</type>
-		<object-name>R-rpm-tape</object-name>
-		<property>engines/engine[1]/n1</property>
-		<interpolation>
-			<entry><ind>0</ind><dep>0</dep></entry>
-			<entry><ind>30</ind><dep>-0.060</dep></entry>
-			<entry><ind>45</ind><dep>-0.080</dep></entry>
-			<entry><ind>60</ind><dep>-0.180</dep></entry>
-			<entry><ind>80</ind><dep>-0.250</dep></entry>
-			<entry><ind>90</ind><dep>-0.335</dep></entry>
-			<entry><ind>100</ind><dep>-0.425</dep></entry>
-			<entry><ind>110</ind><dep>-0.501</dep></entry>
-		</interpolation>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-		</axis>
-	</animation>
+    <animation>
+	<type>textranslate</type>
+	<object-name>R-rpm-tape</object-name>
+	<property>engines/engine[1]/n2</property>
+	<interpolation>
+	    <entry><ind>0</ind><dep>0</dep></entry>
+	    <entry><ind>30</ind><dep>-0.069</dep></entry>
+	    <entry><ind>60</ind><dep>-0.140</dep></entry>
+	    <entry><ind>70</ind><dep>-0.155</dep></entry>
+	    <entry><ind>80</ind><dep>-0.245</dep></entry>
+	    <entry><ind>110</ind><dep>-0.501</dep></entry>
+	</interpolation>
+	<axis>
+	    <x>0</x>
+	    <y>1</y>
+	</axis>
+    </animation>
 
-	<!-- EGT tapes -->
-	<animation>
-		<type>select</type>
-		<object-name>L-egt-tape</object-name>
-		<condition>
-			<property>sim/model/A-6E/instrumentation/engines-gauges/L-egt-on</property>
-		</condition>
-	</animation> 
+    <!-- EGT tapes -->
+    <animation>
+	<type>select</type>
+	<object-name>L-egt-tape</object-name>
+	<condition>
+	    <property>sim/model/A-6E/instrumentation/engines-gauges/L-egt-on</property>
+	</condition>
+    </animation> 
 
-	<animation>
-		<type>textranslate</type>
-		<object-name>L-egt-tape</object-name>
-		<property>engines/engine[0]/egt-degf</property>
-		<interpolation>
-			<entry><ind>0</ind><dep>0</dep></entry>
-			<entry><ind>40</ind><dep>-0.110</dep></entry>
-			<entry><ind>150</ind><dep>-0.170</dep></entry>
-			<entry><ind>360</ind><dep>-0.210</dep></entry>
-			<entry><ind>680</ind><dep>-0.260</dep></entry>
-			<entry><ind>932</ind><dep>-0.325</dep></entry>
-			<entry><ind>1112</ind><dep>-0.360</dep></entry>
-			<entry><ind>1292</ind><dep>-0.435</dep></entry>
-			<entry><ind>1472</ind><dep>-0.498</dep></entry>
-		</interpolation>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-		</axis>
-	</animation>
+    <animation>
+	<type>textranslate</type>
+	<object-name>L-egt-tape</object-name>
+	<property>engines/engine[0]/egt-degc</property>
+	<interpolation>
+	    <entry><ind>0</ind><dep>0</dep></entry>
+	    <entry><ind>400</ind><dep>-0.150</dep></entry>
+	    <entry><ind>700</ind><dep>-0.432</dep></entry>
+	    <entry><ind>800</ind><dep>-0.503</dep></entry>
+	</interpolation>
+	<axis>
+	    <x>0</x>
+	    <y>1</y>
+	</axis>
+    </animation>
 
-	<animation>
-		<type>select</type>
-		<object-name>R-egt-tape</object-name>
-		<condition>
-			<property>sim/model/A-6E/instrumentation/engines-gauges/L-rpm-on</property>
-		</condition>
-	</animation> 
+    <animation>
+	<type>select</type>
+	<object-name>R-egt-tape</object-name>
+	<condition>
+	    <property>sim/model/A-6E/instrumentation/engines-gauges/L-rpm-on</property>
+	</condition>
+    </animation> 
 
-	<animation>
-		<type>textranslate</type>
-		<object-name>R-egt-tape</object-name>
-		<property>engines/engine[1]/egt-degf</property>
-		<interpolation>
-			<entry><ind>0</ind><dep>0</dep></entry>
-			<entry><ind>40</ind><dep>-0.110</dep></entry>
-			<entry><ind>150</ind><dep>-0.170</dep></entry>
-			<entry><ind>360</ind><dep>-0.210</dep></entry>
-			<entry><ind>680</ind><dep>-0.260</dep></entry>
-			<entry><ind>932</ind><dep>-0.325</dep></entry>
-			<entry><ind>1112</ind><dep>-0.360</dep></entry>
-			<entry><ind>1292</ind><dep>-0.435</dep></entry>
-			<entry><ind>1472</ind><dep>-0.498</dep></entry>
-		</interpolation>
-		<axis>
-			<x>0</x>
-			<y>1</y>
-		</axis>
-	</animation>
+    <animation>
+	<type>textranslate</type>
+	<object-name>R-egt-tape</object-name>
+	<property>engines/engine[1]/egt-degc</property>
+	<interpolation>
+	    <entry><ind>0</ind><dep>0</dep></entry>
+	    <entry><ind>400</ind><dep>-0.150</dep></entry>
+	    <entry><ind>700</ind><dep>-0.432</dep></entry>
+	    <entry><ind>800</ind><dep>-0.503</dep></entry>
+	</interpolation>
+	<axis>
+	    <x>0</x>
+	    <y>1</y>
+	</axis>
+    </animation>
 
 
+    <!-- fuel flow tapes -->
+    <animation>
+	<type>textranslate</type>
+	<object-name>L-ff-tape</object-name>
+	<property>engines/engine[0]/fuel-flow_pph</property>
+	<interpolation>
+	    <entry><ind>0</ind><dep>0</dep></entry>
+	    <entry><ind>5000</ind><dep>-0.400</dep></entry>
+	    <entry><ind>10000</ind><dep>-0.503</dep></entry>
+	</interpolation>
+	<axis>
+	    <x>0</x>
+	    <y>1</y>
+	</axis>
+    </animation>
 
- <!-- <animation>
-  <type>textranslate</type>
-  <object-name>drum-2</object-name>
-  <property>instrumentation/altimeter/indicated-altitude-ft</property>
-  <factor>0.0001</factor>
-  <offset>-750</offset>
-  <step>1000</step>
-  <scroll>25</scroll>
-  <center>
-   <x-m>0</x-m>
-   <y-m>0</y-m>
-   <z-m>0</z-m>
-  </center>
-  <axis>
-   <x>0</x>
-   <y>-1</y>
-   <z>0</z>
-  </axis>
- </animation>
-
-
- <animation>
-  <type>textranslate</type>
-  <object-name>drum-3</object-name>
-  <property>instrumentation/altimeter/indicated-altitude-ft</property>
-  <factor>0.00001</factor>
-  <offset>-7500</offset>
-  <step>10000</step>
-  <scroll>25</scroll>
-  <center>
-   <x-m>0</x-m>
-   <y-m>0</y-m>
-   <z-m>0</z-m>
-  </center>
-  <axis>
-   <x>0</x>
-   <y>-1</y>
-   <z>0</z>
-  </axis>
- </animation> -->
+    <animation>
+	<type>textranslate</type>
+	<object-name>R-ff-tape</object-name>
+	<property>engines/engine[1]/fuel-flow_pph</property>
+	<interpolation>
+	    <entry><ind>0</ind><dep>0</dep></entry>
+	    <entry><ind>5000</ind><dep>-0.400</dep></entry>
+	    <entry><ind>10000</ind><dep>-0.503</dep></entry>
+	</interpolation>
+	<axis>
+	    <x>0</x>
+	    <y>1</y>
+	</axis>
+    </animation>
 
 
+    <!-- <animation>
+	 <type>textranslate</type>
+	 <object-name>drum-2</object-name>
+	 <property>instrumentation/altimeter/indicated-altitude-ft</property>
+	 <factor>0.0001</factor>
+	 <offset>-750</offset>
+	 <step>1000</step>
+	 <scroll>25</scroll>
+	 <center>
+	 <x-m>0</x-m>
+	 <y-m>0</y-m>
+	 <z-m>0</z-m>
+	 </center>
+	 <axis>
+	 <x>0</x>
+	 <y>-1</y>
+	 <z>0</z>
+	 </axis>
+	 </animation>
 
-<!-- barometer drum counter
- -->
 
-
-<!-- lighting -->
-
-  <animation> 
-   <object-name>mount</object-name>
-   <object-name>mount2</object-name>
-   <type>material</type>
-    <emission> 
-      <factor-prop>controls/lighting/panel-norm</factor-prop>
-        <red>0.45</red>
-        <green>0.34</green>
-        <blue>0.18</blue>
-      </emission>
-  </animation>
+<animation>
+<type>textranslate</type>
+<object-name>drum-3</object-name>
+<property>instrumentation/altimeter/indicated-altitude-ft</property>
+<factor>0.00001</factor>
+<offset>-7500</offset>
+<step>10000</step>
+<scroll>25</scroll>
+<center>
+<x-m>0</x-m>
+<y-m>0</y-m>
+<z-m>0</z-m>
+</center>
+<axis>
+<x>0</x>
+<y>-1</y>
+<z>0</z>
+</axis>
+</animation> -->
 
 
 
-  <animation>
-   <object-name>bkg</object-name>
-   <object-name>bkg2</object-name>
-   <object-name>markers</object-name>
-   <type>material</type>
-     <emission> 
-      <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.50</red>
-        <green>0.25</green>
-        <blue>0.18</blue>
-      </emission>
-  </animation>
-
-  <animation>
-   <object-name>L-rpm-tape</object-name>
-   <type>material</type>
-     <emission> 
-      <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.50</red>
-        <green>0.25</green>
-        <blue>0.18</blue>
-      </emission>
-  </animation>
-  <animation>
-   <object-name>R-rpm-tape</object-name>
-   <type>material</type>
-     <emission> 
-      <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.50</red>
-        <green>0.25</green>
-        <blue>0.18</blue>
-      </emission>
-  </animation>
-  <animation>
-   <object-name>L-egt-tape</object-name>
-   <type>material</type>
-     <emission> 
-      <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.50</red>
-        <green>0.25</green>
-        <blue>0.18</blue>
-      </emission>
-  </animation>
-  <animation>
-   <object-name>R-egt-tape</object-name>
-   <type>material</type>
-     <emission> 
-      <factor-prop>controls/lighting/instruments-norm</factor-prop>
-        <red>0.50</red>
-        <green>0.25</green>
-        <blue>0.18</blue>
-      </emission>
-  </animation>
-
-	<animation>
-		<object-name>engines-gauges</object-name>
-		<type>noshadow</type>
-	</animation>
+    <!-- barometer drum counter
+    -->
 
 
- <animation>
-  <type>range</type>
-  <min-m>0</min-m>
-  <max-m>35</max-m>
- </animation>
+    <!-- lighting -->
+
+    <animation> 
+	<object-name>mount</object-name>
+	<object-name>mount2</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/panel-norm</factor-prop>
+            <red>0.45</red>
+            <green>0.34</green>
+            <blue>0.18</blue>
+	</emission>
+    </animation>
+
+
+
+    <animation>
+	<object-name>bkg</object-name>
+	<object-name>bkg2</object-name>
+	<object-name>markers</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/instruments-norm</factor-prop>
+            <red>0.50</red>
+            <green>0.25</green>
+            <blue>0.18</blue>
+	</emission>
+    </animation>
+
+    <animation>
+	<object-name>L-rpm-tape</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/instruments-norm</factor-prop>
+            <red>0.50</red>
+            <green>0.25</green>
+            <blue>0.18</blue>
+	</emission>
+    </animation>
+    <animation>
+	<object-name>R-rpm-tape</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/instruments-norm</factor-prop>
+            <red>0.50</red>
+            <green>0.25</green>
+            <blue>0.18</blue>
+	</emission>
+    </animation>
+    <animation>
+	<object-name>L-egt-tape</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/instruments-norm</factor-prop>
+            <red>0.50</red>
+            <green>0.25</green>
+            <blue>0.18</blue>
+	</emission>
+    </animation>
+    <animation>
+	<object-name>R-egt-tape</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/instruments-norm</factor-prop>
+            <red>0.50</red>
+            <green>0.25</green>
+            <blue>0.18</blue>
+	</emission>
+    </animation>
+    <animation>
+	<object-name>L-ff-tape</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/instruments-norm</factor-prop>
+            <red>0.50</red>
+            <green>0.25</green>
+            <blue>0.18</blue>
+	</emission>
+    </animation>
+    <animation>
+	<object-name>R-ff-tape</object-name>
+	<type>material</type>
+	<emission> 
+	    <factor-prop>controls/lighting/instruments-norm</factor-prop>
+            <red>0.50</red>
+            <green>0.25</green>
+            <blue>0.18</blue>
+	</emission>
+    </animation>
+
+    <animation>
+	<object-name>engines-gauges</object-name>
+	<type>noshadow</type>
+    </animation>
+
+
+    <animation>
+	<type>range</type>
+	<min-m>0</min-m>
+	<max-m>35</max-m>
+    </animation>
 
 </PropertyList>

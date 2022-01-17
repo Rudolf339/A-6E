@@ -368,4 +368,38 @@
 	<output>instrumentation/radar-altimeter/low-lamp</output>
     </logic>
 
+
+    <!-- EGT farenheit to C -->
+    <filter>
+	<type>gain</type>
+	<input>
+	    <expression>
+		<ratio>
+		    <sum>
+			<property>engines/engine/egt-degf</property>
+			<value>-32</value>
+		    </sum>
+		    <value>1.8</value>
+		</ratio>
+	    </expression>
+	</input>
+	<gain>1</gain>
+	<output>engines/engine/egt-degc</output>
+    </filter>
+    <filter>
+	<type>gain</type>
+	<input>
+	    <expression>
+		<div>
+		    <sum>
+			<property>engines/engine[1]/egt-degf</property>
+			<value>-32</value>
+		    </sum>
+		    <value>1.8</value>
+		</div>
+	    </expression>
+	</input>
+	<gain>1</gain>
+	<output>engines/engine[1]/egt-degc</output>
+    </filter>
 </PropertyList>

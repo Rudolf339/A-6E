@@ -376,6 +376,11 @@ Grumman A-6E simulation config.
 
 	<help>
 	    <title>Grumman A-6E</title>
+	    <line>Startup:</line>
+	    <line>    crank engine with s/S</line>
+	    <line>    at 15% rpm move throttle to idle with {/}</line>
+	    <line>    wait for engine to reach 60% RPM</line>
+	    <line>    repeat for other engine</line>
 	    <line>Take off:</line>
 	    <line>    Flaps:         TO (30)</line>
 	    <line>    Rotate:        ~120 kt</line>
@@ -441,6 +446,10 @@ Grumman A-6E simulation config.
 	    <key>
 		<name>i</name>
 		<desc>Key pylon light</desc>
+	    </key>
+	    <key>
+		<name>{/}</name>
+		<desc>toggle left/right throttle OFF/IDLE</desc>
 	    </key>
 	</help>
 	
@@ -862,6 +871,50 @@ Grumman A-6E simulation config.
 		    </binding>
 		</mod-up>
 	    </key>
+
+	    <key n="123">
+		<name>{</name>
+		<desc>toggle throttle 1 OFF/IDLE</desc>
+		<binding>
+		    <command>property-toggle</command>
+		    <property>controls/engines/engine/cutoff</property>
+		</binding>		    
+	    </key>
+
+	    <key n="125">
+		<name>}</name>
+		<desc>toggle throttle 2 OFF/IDLE</desc>
+		<binding>
+		    <command>property-toggle</command>
+		    <property>controls/engines/engine[1]/cutoff</property>
+		</binding>
+	    </key>
+
+	    <key n="115">
+		<name>s</name>
+		<desc>Crank ENG 1</desc>
+		<binding>
+		    <command>nasal</command>
+		    <script>J52P8.starter(0)</script>
+		</binding>
+		<mod-up>
+		    <binding>
+			<command>property-assign</command>
+			<property>foobar</property>
+			<value>1</value>
+		    </binding>
+		</mod-up>
+	    </key>
+	    
+	    <key n="83">
+		<name>S</name>
+		<desc>Crank ENG 2</desc>
+		<binding>
+		    <command>nasal</command>
+		    <script>J52P8.starter(1)</script>
+		</binding>
+	    </key>
+	    
   	</keyboard>
     </input>
 
@@ -949,9 +1002,9 @@ Grumman A-6E simulation config.
 	<A6Echronograph>
 	    <file>Aircraft/A-6E/Nasal/chronograph.nas</file>
 	</A6Echronograph>
-	<J52-P8>
+	<J52P8>
 	    <file>Aircraft/A-6E/Nasal/J52-P8.nas</file>
-	</J52-P8>
+	</J52P8>
 	<pylonManager>
 	    <file>Nasal/pylon-manager.nas</file>
 	</pylonManager>
@@ -964,6 +1017,9 @@ Grumman A-6E simulation config.
 	<instruments>
 	    <file>Nasal/instruments.nas</file>
 	</instruments>
+	<message>
+	    <file>Nasal/messages.nas</file>
+	</message>
     </nasal>
     
     <fdm>
