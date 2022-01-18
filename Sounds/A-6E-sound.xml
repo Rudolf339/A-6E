@@ -2,206 +2,294 @@
 
 <PropertyList>
 
-	<fx>
+    <fx>
 
+	<!-- Engine 1 -->
 	<engine>
-		<name>engine</name>
-		<path>Sounds/jet.wav</path>
-		<mode>looped</mode>
-		<property>/engines/engine/running</property>
-		<volume>
-			<property>/engines/engine/prop-thrust</property>
-			<type>lin</type>
-			<factor>0.0002353</factor> <!-- Scales to 0-2 for 8500lb engine -->
-			<min>0.1</min>
-			<max>0.9</max>
-		</volume>
+	    <name>engine</name>
+	    <path>Sounds/jet.wav</path>
+	    <mode>looped</mode>
+	    <property>/engines/engine/running</property>
+	    <volume>
+		<property>/engines/engine/prop-thrust</property>
+		<type>lin</type>
+		<factor>0.0002353</factor> <!-- Scales to 0-2 for 8500lb engine -->
+		<min>0.01</min>
+		<max>0.9</max>
+	    </volume>
+	    <position>
+		<x>0.35</x>
+		<y>0</y>
+		<z>-0.97</z>
+	    </position>	 
 	</engine>
 
 	<engine>
-		<name>whine</name>
-		<path>Sounds/whine.wav</path>
-		<mode>looped</mode>
-		<property>/engines/engine/running</property>
-		<pitch>
-			<property>/engines/engine/n1</property>
-			<type>lin</type>
-			<factor>.008</factor>
-		</pitch>
-		<volume>
-			<property>/engines/engine/n1</property>
-			<type>log</type>
-			<factor>0.1</factor> <!-- 10-100% rpm == 0.1 - 1 factor -->
-			<min>0.1</min>
-			<max>0.9</max>
-		</volume>
+	    <name>whine</name>
+	    <path>Sounds/whine.wav</path>
+	    <mode>looped</mode>
+	    <condition>
+		<greater-than>
+		    <property>/engines/engine/n2</property>
+		    <value>0.15</value>
+		</greater-than>
+		<not><property>/engines/engine/cutoff</property></not>
+	    </condition>
+	    <pitch>
+		<property>/engines/engine/n1</property>
+		<type>lin</type>
+		<factor>.008</factor>
+	    </pitch>
+	    <volume>
+		<property>/engines/engine/n1</property>
+		<type>log</type>
+		<factor>0.1</factor> <!-- 10-100% rpm == 0.1 - 1 factor -->
+		<min>0.01</min>
+		<max>0.9</max>
+	    </volume>
+	    <position>
+		<x>0.35</x>
+		<y>0</y>
+		<z>-0.97</z>
+	    </position>
+	</engine>
+
+	<!-- Engine 2 -->
+	
+	<engine>
+	    <name>engine2</name>
+	    <path>Sounds/jet.wav</path>
+	    <mode>looped</mode>
+	    <condition>
+		<property>/engines/engine[1]/running</property>
+		<greater-than> <!-- to prevent interference -->
+		    <abs>
+			<diff>
+			    <property>/engines/engine[1]/n1</property>
+			    <property>/engines/engine/n1</property>\
+			</diff>
+		    </abs>
+		    <value>0.02</value>
+		</greater-than>
+	    </condition>
+	    <volume>
+		<property>/engines/engine[1]/prop-thrust</property>
+		<type>lin</type>
+		<factor>0.0002353</factor> <!-- Scales to 0-2 for 8500lb engine -->
+		<min>0.01</min>
+		<max>0.9</max>
+	    </volume>
+	    <position>
+		<x>0.35</x>
+		<y>0</y>
+		<z>-0.97</z>
+	    </position>	 
+	</engine>
+
+	<engine>
+	    <name>whine2</name>
+	    <path>Sounds/whine.wav</path>
+	    <mode>looped</mode>
+	    <condition>
+		<greater-than>
+		    <property>/engines/engine[1]/n2</property>
+		    <value>0.15</value>
+		</greater-than>
+		<not><property>/engines/engine[1]/cutoff</property></not>
+		<greater-than> <!-- to prevent interference -->
+		    <abs>
+			<diff>
+			    <property>/engines/engine[1]/n1</property>
+			    <property>/engines/engine/n1</property>\
+			</diff>
+		    </abs>
+		    <value>0.02</value>
+		</greater-than>
+	    </condition>
+	    <pitch>
+		<property>/engines/engine[1]/n1</property>
+		<type>lin</type>
+		<factor>.008</factor>
+	    </pitch>
+	    <volume>
+		<property>/engines/engine[1]/n1</property>
+		<type>log</type>
+		<factor>0.1</factor> <!-- 10-100% rpm == 0.1 - 1 factor -->
+		<min>0.01</min>
+		<max>0.9</max>
+	    </volume>
+	    <position>
+		<x>0.35</x>
+		<y>0</y>
+		<z>-0.97</z>
+	    </position>
 	</engine>
 
 	<rumble>
-		<name>rumble</name>
-		<mode>looped</mode>
-		<path>Sounds/rumble.wav</path>
-		<condition>
-			<or>
-				<property>/gear/gear[0]/wow</property>
-				<property>/gear/gear[1]/wow</property>
-				<property>/gear/gear[2]/wow</property>
-			</or>
-		</condition>
-		<volume>
-			<property>/velocities/airspeed-kt</property>
-			<type>lin</type>
-			<factor>.012</factor>
-			<min>0.1</min>
-			<max>0.9</max>
-		</volume>
+	    <name>rumble</name>
+	    <mode>looped</mode>
+	    <path>Sounds/rumble.wav</path>
+	    <condition>
+		<or>
+		    <property>/gear/gear[0]/wow</property>
+		    <property>/gear/gear[1]/wow</property>
+		    <property>/gear/gear[2]/wow</property>
+		</or>
+	    </condition>
+	    <volume>
+		<property>/velocities/airspeed-kt</property>
+		<type>lin</type>
+		<factor>.012</factor>
+		<min>0.1</min>
+		<max>0.9</max>
+	    </volume>
 	</rumble>
 
 	<gear>
-		<name>gear</name>
-		<mode>in-transit</mode>
-		<path>Sounds/gear.wav</path>
-		<property>/gear/gear[0]/position-norm</property>
-		<pitch>
-			<internal>dt_play</internal>
-			<offset>1.0</offset>
-			<factor>-0.001</factor>
-			<min>0.1</min>
-			<max>0.9</max>
-		</pitch>
+	    <name>gear</name>
+	    <mode>in-transit</mode>
+	    <path>Sounds/gear.wav</path>
+	    <property>/gear/gear[0]/position-norm</property>
+	    <pitch>
+		<internal>dt_play</internal>
+		<offset>1.0</offset>
+		<factor>-0.001</factor>
+		<min>0.1</min>
+		<max>0.9</max>
+	    </pitch>
 	</gear>
 
 	<gear>
-		<name>gear-lock-nose</name>
-		<path>Sounds/gear-lck.wav</path>
-		<condition>
-			<equals>
-				<property>/gear/gear[0]/position-norm</property>
-				<value>1</value>
-			</equals>
-		</condition>
+	    <name>gear-lock-nose</name>
+	    <path>Sounds/gear-lck.wav</path>
+	    <condition>
+		<equals>
+		    <property>/gear/gear[0]/position-norm</property>
+		    <value>1</value>
+		</equals>
+	    </condition>
 	</gear>
 
 	<gear>
-		<name>gear-lock-main</name>
-		<path>Sounds/gear-lck.wav</path>
-		<condition>
-			<equals>
-				<property>/gear/gear[1]/position-norm</property>
-				<value>0</value>
-			</equals>
-		</condition>
+	    <name>gear-lock-main</name>
+	    <path>Sounds/gear-lck.wav</path>
+	    <condition>
+		<equals>
+		    <property>/gear/gear[1]/position-norm</property>
+		    <value>0</value>
+		</equals>
+	    </condition>
 	</gear>
 
 	<squeal>
-		<name>squeal</name>
-		<path>Sounds/squeal.wav</path>
-		<condition>
-			<or>
-				<property>/gear/gear[0]/wow</property>
-				<property>/gear/gear[1]/wow</property>
-				<property>/gear/gear[2]/wow</property>
-			</or>
-		</condition>
-		<volume>
-			<property>/velocities/speed-down-fps</property>
-			<factor>0.05</factor>
-			</volume>
-		<volume>
-			<property>/velocities/airspeed-kt</property>
-			<factor>0.01</factor>
-		</volume>
-		<volume>
-			<internal>dt_stop</internal>
-			<factor>0.05</factor>
-			<max>0.9</max>
-		</volume>
-		<pitch>
-			<property>/velocities/airspeed-kt</property>
-			<factor>0.0025</factor>
-			<offset>1.2</offset>
-		</pitch>
+	    <name>squeal</name>
+	    <path>Sounds/squeal.wav</path>
+	    <condition>
+		<or>
+		    <property>/gear/gear[0]/wow</property>
+		    <property>/gear/gear[1]/wow</property>
+		    <property>/gear/gear[2]/wow</property>
+		</or>
+	    </condition>
+	    <volume>
+		<property>/velocities/speed-down-fps</property>
+		<factor>0.05</factor>
+	    </volume>
+	    <volume>
+		<property>/velocities/airspeed-kt</property>
+		<factor>0.01</factor>
+	    </volume>
+	    <volume>
+		<internal>dt_stop</internal>
+		<factor>0.05</factor>
+		<max>0.9</max>
+	    </volume>
+	    <pitch>
+		<property>/velocities/airspeed-kt</property>
+		<factor>0.0025</factor>
+		<offset>1.2</offset>
+	    </pitch>
 	</squeal>
 
 	<flap>
-		<name>flaps</name>
-		<mode>in-transit</mode>
-		<path>Sounds/flaps.wav</path>
-		<property>/surface-positions/flap-pos-norm</property>
-		<volume>
-			<factor>1</factor>
-			<offset>0.25</offset>
-			<min>0.1</min>
-			<max>0.9</max>
-		</volume>
+	    <name>flaps</name>
+	    <mode>in-transit</mode>
+	    <path>Sounds/flaps.wav</path>
+	    <property>/surface-positions/flap-pos-norm</property>
+	    <volume>
+		<factor>1</factor>
+		<offset>0.25</offset>
+		<min>0.1</min>
+		<max>0.9</max>
+	    </volume>
 	</flap>
 
 	<!-- <wind>.-->
 	<wind>
-		<name>wind</name>
-		<mode>looped</mode>
-		<path>Aircraft/f-14b/Sounds/wind.wav</path>
-		<condition>
-			<equals>
-				<property>sim/current-view/view-number</property>
-				<value>0</value>
-			</equals>
-			<greater-than>
-				<property>canopy/position-norm</property>
-				<value>0</value>
-			</greater-than>
-		</condition>
-		<volume>
-			<property>velocities/airspeed-kt</property>
-			<factor>0.005</factor>
-		</volume>
+	    <name>wind</name>
+	    <mode>looped</mode>
+	    <path>Aircraft/f-14b/Sounds/wind.wav</path>
+	    <condition>
+		<equals>
+		    <property>sim/current-view/view-number</property>
+		    <value>0</value>
+		</equals>
+		<greater-than>
+		    <property>canopy/position-norm</property>
+		    <value>0</value>
+		</greater-than>
+	    </condition>
+	    <volume>
+		<property>velocities/airspeed-kt</property>
+		<factor>0.005</factor>
+	    </volume>
 	</wind>
 
 
 	<stall>
-		<name>stall</name>
-		<path>Sounds/stall.wav</path>
-		<property>/sim/alarms/stall-warning</property>
-		<volume>
-			<property>/velocities/airspeed-kt</property>
-			<min>0.1</min>
-			<max>0.9</max>
-		</volume>
+	    <name>stall</name>
+	    <path>Sounds/stall.wav</path>
+	    <property>/sim/alarms/stall-warning</property>
+	    <volume>
+		<property>/velocities/airspeed-kt</property>
+		<min>0.1</min>
+		<max>0.9</max>
+	    </volume>
 	</stall>
 
 	<speedbrake>
-		<name>speedbrake</name>
-		<mode>in-transit</mode>
-		<path>Sounds/whine.wav</path>
-		<property>/surface-positions/speedbrake-pos-norm</property>
-		<volume>
-			<offset>0.125</offset>
-			<min>0.1</min>
-			<max>0.9</max>
-		</volume>
+	    <name>speedbrake</name>
+	    <mode>in-transit</mode>
+	    <path>Sounds/whine.wav</path>
+	    <property>/surface-positions/speedbrake-pos-norm</property>
+	    <volume>
+		<offset>0.125</offset>
+		<min>0.1</min>
+		<max>0.9</max>
+	    </volume>
 	</speedbrake>
 
 	<rumble>
-		<name>speedbrake rumble</name>
-		<mode>looped</mode>
-		<path>Sounds/rumble.wav</path>
-		<condition>
-			<property>/surface-positions/speedbrake-pos-norm</property>
-			<value>1</value>
-		</condition>
-		<volume>
-			<property>/position/altitude-ft</property>
-			<factor>-0.000015</factor>
-			<offset>1.0</offset>
-			<min>0.125</min>
-			<max>1.0</max>
-		</volume>
-		<volume>
-			<property>/velocities/airspeed-kt</property>
-			<factor>0.12</factor>
-			<min>0.125</min>
-			<max>1.0</max>
-		</volume>
+	    <name>speedbrake rumble</name>
+	    <mode>looped</mode>
+	    <path>Sounds/rumble.wav</path>
+	    <condition>
+		<property>/surface-positions/speedbrake-pos-norm</property>
+		<value>1</value>
+	    </condition>
+	    <volume>
+		<property>/position/altitude-ft</property>
+		<factor>-0.000015</factor>
+		<offset>1.0</offset>
+		<min>0.125</min>
+		<max>1.0</max>
+	    </volume>
+	    <volume>
+		<property>/velocities/airspeed-kt</property>
+		<factor>0.12</factor>
+		<min>0.125</min>
+		<max>1.0</max>
+	    </volume>
 	</rumble>
 
 
@@ -209,94 +297,91 @@
 
 	<!-- AFCS -->
 	<afcs-on-off-switch-up> 
-		<name>afcs-on-off-switch-up</name>
-		<mode>once</mode>
-		<path>Aircraft/A-6E/Sounds/click.wav</path>
-		<condition> 
-			<property>sim/model/A-6E/controls/autopilot/on-off-switch</property>
-		</condition>
-		<volume> 
-			<factor>0.4</factor>
-		</volume>
+	    <name>afcs-on-off-switch-up</name>
+	    <mode>once</mode>
+	    <path>Aircraft/A-6E/Sounds/click.wav</path>
+	    <condition> 
+		<property>sim/model/A-6E/controls/autopilot/on-off-switch</property>
+	    </condition>
+	    <volume> 
+		<factor>0.4</factor>
+	    </volume>
 	</afcs-on-off-switch-up>
 	<afcs-on-off-switch-down> 
-		<name>afcs-on-off-switch-down</name>
-		<mode>once</mode>
-		<path>Aircraft/A-6E/Sounds/click.wav</path>
-		<condition> 
-			<not>
-				<property>sim/model/A-6E/controls/autopilot/on-off-switch</property>
-			</not>
-		</condition>
-		<volume> 
-			<factor>0.6</factor>
-		</volume>
+	    <name>afcs-on-off-switch-down</name>
+	    <mode>once</mode>
+	    <path>Aircraft/A-6E/Sounds/click.wav</path>
+	    <condition> 
+		<not>
+		    <property>sim/model/A-6E/controls/autopilot/on-off-switch</property>
+		</not>
+	    </condition>
+	    <volume> 
+		<factor>0.6</factor>
+	    </volume>
 	</afcs-on-off-switch-down>
 	<afcs-auto-stab-augm-switch-up> 
-		<name>afcs-auto-stab-augm-switch-up</name>
-		<mode>once</mode>
-		<path>Aircraft/A-6E/Sounds/click.wav</path>
-		<condition> 
-			<property>sim/model/A-6E/controls/autopilot/auto-stab-augm-switch</property>
-		</condition>
-		<volume> 
-			<factor>0.4</factor>
-		</volume>
+	    <name>afcs-auto-stab-augm-switch-up</name>
+	    <mode>once</mode>
+	    <path>Aircraft/A-6E/Sounds/click.wav</path>
+	    <condition> 
+		<property>sim/model/A-6E/controls/autopilot/auto-stab-augm-switch</property>
+	    </condition>
+	    <volume> 
+		<factor>0.4</factor>
+	    </volume>
 	</afcs-auto-stab-augm-switch-up>
 	<afcs-auto-stab-augm-switch-down> 
-		<name>afcs-auto-stab-augm-switch-down</name>
-		<mode>once</mode>
-		<path>Aircraft/A-6E/Sounds/click.wav</path>
-		<condition> 
-			<not>
-				<property>sim/model/A-6E/controls/autopilot/auto-stab-augm-switch</property>
-			</not>
-		</condition>
-		<volume> 
-			<factor>0.6</factor>
-		</volume>
+	    <name>afcs-auto-stab-augm-switch-down</name>
+	    <mode>once</mode>
+	    <path>Aircraft/A-6E/Sounds/click.wav</path>
+	    <condition> 
+		<not>
+		    <property>sim/model/A-6E/controls/autopilot/auto-stab-augm-switch</property>
+		</not>
+	    </condition>
+	    <volume> 
+		<factor>0.6</factor>
+	    </volume>
 	</afcs-auto-stab-augm-switch-down>
 	<afcs-cmd-switch-up> 
-		<name>afcs-cmd-switch-up</name>
-		<mode>once</mode>
-		<path>Aircraft/A-6E/Sounds/click.wav</path>
-		<condition> 
-			<property>sim/model/A-6E/controls/autopilot/cmd-switch</property>
-		</condition>
-		<volume> 
-			<factor>0.4</factor>
-		</volume>
+	    <name>afcs-cmd-switch-up</name>
+	    <mode>once</mode>
+	    <path>Aircraft/A-6E/Sounds/click.wav</path>
+	    <condition> 
+		<property>sim/model/A-6E/controls/autopilot/cmd-switch</property>
+	    </condition>
+	    <volume> 
+		<factor>0.4</factor>
+	    </volume>
 	</afcs-cmd-switch-up>
 	<afcs-cmd-switch-down> 
-		<name>afcs-cmd-down</name>
-		<mode>once</mode>
-		<path>Aircraft/A-6E/Sounds/click.wav</path>
-		<condition> 
-			<not>
-				<property>sim/model/A-6E/controls/autopilot/cmd-switch</property>
-			</not>
-		</condition>
-		<volume> 
-			<factor>0.6</factor>
-		</volume>
+	    <name>afcs-cmd-down</name>
+	    <mode>once</mode>
+	    <path>Aircraft/A-6E/Sounds/click.wav</path>
+	    <condition> 
+		<not>
+		    <property>sim/model/A-6E/controls/autopilot/cmd-switch</property>
+		</not>
+	    </condition>
+	    <volume> 
+		<factor>0.6</factor>
+	    </volume>
 	</afcs-cmd-switch-down>
 
-		<!-- Warnings tones -->
-		<low-alt-warning>
-			<name>low-alt-warning</name>
-			<path>Aircraft/A-6E/Sounds/low-alt-warning.wav</path>
-			<mode>once</mode>
-			<volume>
-				<factor>0.25</factor>
-			</volume>
-			<condition>
-				<less-than>
-					<property>position/altitude-agl-ft</property>
-					<property>sim/model/A-6E/instrumentation/radar-altimeter/limit-bug</property>
-				</less-than>
-			</condition>
-		</low-alt-warning>
+	<!-- Warnings tones -->
+	<low-alt-warning>
+	    <name>low-alt-warning</name>
+	    <path>Aircraft/A-6E/Sounds/low-alt-warning.wav</path>
+	    <mode>once</mode>
+	    <volume>
+		<factor>0.25</factor>
+	    </volume>
+	    <condition>
+		<property>instrumentation/radar-altimeter/low-lamp</property>
+	    </condition>
+	</low-alt-warning>
 
-	</fx>
+    </fx>
 
 </PropertyList>
