@@ -1326,7 +1326,7 @@
     <animation>
 	<type>rotate</type>
 	<object-name>UC-N-CatapultStrop</object-name>
-	<property>gear/lauchbar/position-norm</property>
+	<property>gear/launchbar/position-norm</property>
 	<factor>-70.0 </factor>
 	<axis>
 	    <object-name>axis94</object-name>
