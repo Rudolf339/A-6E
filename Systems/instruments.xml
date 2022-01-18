@@ -374,13 +374,13 @@
 	<type>gain</type>
 	<input>
 	    <expression>
-		<ratio>
+		<div>
 		    <sum>
 			<property>engines/engine/egt-degf</property>
 			<value>-32</value>
 		    </sum>
 		    <value>1.8</value>
-		</ratio>
+		</div>
 	    </expression>
 	</input>
 	<gain>1</gain>

@@ -832,7 +832,7 @@
 	<object-name>UC-R-Hub</object-name>
 	<object-name>UC-R-Tyre</object-name>
 	<property>gear/gear/rollspeed-ms</property>
-	<factor>13</factor>
+	<factor>-13</factor>
 	<axis>
 	    <object-name>axis56</object-name>
 	</axis>
