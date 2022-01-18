@@ -546,6 +546,17 @@ Grumman A-6E simulation config.
 		    <property type="string">/fdm/jsbsim/systems/instrument/aoa-indexer</property>
 		    <interpolation>linear</interpolation>
 		</signal>
+		<signal>
+		    <type>float</type>
+		    <property
+			type="string">gear/tailhook/position-norm</property>
+		    <interpolation>linear</interpolation>
+		</signal>
+		<signal>
+		    <type>float</type>
+		    <property type="string">gear/launchbar/position-norm</property>
+		    <interpolation>linear</interpolation>
+		</signal>
 		<!-- More custom signals here -->
 	    </config>
 	</flight-recorder>
@@ -983,6 +994,12 @@ Grumman A-6E simulation config.
 	</radar-altimeter>
     </instrumentation>
 
+    <gear>
+	<launchbar>
+	    <position-norm alias="/fdm/jsbsim/systems/holdback/launchbar-pos-norm"/>
+	</launchbar>
+    </gear>
+    
     <nasal>
 	<A6E>
 	    <file>Aircraft/A-6E/Nasal/A-6E.nas</file>

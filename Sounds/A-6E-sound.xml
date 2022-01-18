@@ -62,15 +62,7 @@
 	    <mode>looped</mode>
 	    <condition>
 		<property>/engines/engine[1]/running</property>
-		<greater-than> <!-- to prevent interference -->
-		    <abs>
-			<diff>
-			    <property>/engines/engine[1]/n1</property>
-			    <property>/engines/engine/n1</property>\
-			</diff>
-		    </abs>
-		    <value>0.02</value>
-		</greater-than>
+		<not><property>/engines/engine/running</property></not>
 	    </condition>
 	    <volume>
 		<property>/engines/engine[1]/prop-thrust</property>
@@ -96,15 +88,7 @@
 		    <value>0.15</value>
 		</greater-than>
 		<not><property>/engines/engine[1]/cutoff</property></not>
-		<greater-than> <!-- to prevent interference -->
-		    <abs>
-			<diff>
-			    <property>/engines/engine[1]/n1</property>
-			    <property>/engines/engine/n1</property>\
-			</diff>
-		    </abs>
-		    <value>0.02</value>
-		</greater-than>
+		<not><property>/engines/engine/running</property></not>
 	    </condition>
 	    <pitch>
 		<property>/engines/engine[1]/n1</property>
