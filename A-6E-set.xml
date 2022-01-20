@@ -138,13 +138,13 @@ Grumman A-6E simulation config.
 	<view n="0">
 	    <name>Cockpit View</name>
 	    <type>lookfrom</type>
-	    <internal archive="y">true</internal>
+	    <internal type="bool">true</internal>
 	    <config>
-		<x-offset-m archive="y">-0.4</x-offset-m>
-		<y-offset-m archive="y"> 0.97</y-offset-m>
-		<z-offset-m archive="y">-1.7</z-offset-m>
-		<pitch-offset-deg>-10</pitch-offset-deg>
-		<default-field-of-view-deg>100</default-field-of-view-deg>
+		<x-offset-m type="double">-0.4</x-offset-m>
+		<y-offset-m type="double"> 0.97</y-offset-m>
+		<z-offset-m type="double">-1.7</z-offset-m>
+		<pitch-offset-deg type="double">-10</pitch-offset-deg>
+		<default-field-of-view-deg type="double">100</default-field-of-view-deg>
 		<limits>
 		    <enabled type="bool">true</enabled>
 		    <left>
@@ -162,30 +162,30 @@ Grumman A-6E simulation config.
 	</view>
 	<view n="1">
 	    <config>
-		<target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
+		<target-z-offset-m type="double">3.0</target-z-offset-m>
 		<pitch-offset-deg>0</pitch-offset-deg>
 	    </config>
 	</view>
 	<view n="2">
 	    <config>
-		<y-offset-m archive="y" type="double">6.0</y-offset-m>
-		<z-offset-m archive="y">-19.7</z-offset-m>
-		<target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
+		<y-offset-m type="double">6.0</y-offset-m>
+		<z-offset-m type="double">-19.7</z-offset-m>
+		<target-z-offset-m type="double">3.0</target-z-offset-m>
 	    </config>
 	</view>
 	<view n="3">
 	    <config>
-		<target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
+		<target-z-offset-m type="double">3.0</target-z-offset-m>
 	    </config>
 	</view>
 	<view n="5">
 	    <config>
-		<target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
+		<target-z-offset-m type="double">3.0</target-z-offset-m>
 	    </config>
 	</view>
 	<view n="6">
 	    <config>
-		<target-z-offset-m archive="y" type="double">3.0</target-z-offset-m>
+		<target-z-offset-m type="double">3.0</target-z-offset-m>
 	    </config>
 	</view>
 	<view n="100">
@@ -194,12 +194,12 @@ Grumman A-6E simulation config.
 	    <internal archive="y">true</internal>
 	    <config>
 		<from-model type="bool">true</from-model>
-		<ground-level-nearplane-m type="double">0.5f</ground-level-nearplane-m>
-		<x-offset-m archive="y">0.40</x-offset-m>
-		<y-offset-m archive="y">0.8</y-offset-m>
-		<z-offset-m archive="y">-1.46</z-offset-m>
-		<pitch-offset-deg>-10</pitch-offset-deg>
-		<default-field-of-view-deg>57</default-field-of-view-deg>
+		<ground-level-nearplane-m type="double">0.5</ground-level-nearplane-m>
+		<x-offset-m type="double">0.40</x-offset-m>
+		<y-offset-m type="double">0.8</y-offset-m>
+		<z-offset-m type="double">-1.46</z-offset-m>
+		<pitch-offset-deg type="double">-10</pitch-offset-deg>
+		<default-field-of-view-deg type="double">57</default-field-of-view-deg>
 		<limits>
 		    <enabled type="bool">true</enabled>
 		    <left>
@@ -308,11 +308,6 @@ Grumman A-6E simulation config.
 			</range-miles>
 			<brightness type="double">0.6</brightness>
 		    </VDI>
-		    <wing-fold>
-			<button-position type="int">0</button-position>
-			<handle-position type="double">0.0</handle-position>
-			<switch-position type="int">1</switch-position> <!-- 1=lock, -1=unlock -->
-		    </wing-fold>
 		</controls>
 		<instrumentation>
 		    <doppler>
@@ -937,8 +932,8 @@ Grumman A-6E simulation config.
 	    <spin-assist type="bool">0</spin-assist>
 	    <speedbrake-test type="bool">0</speedbrake-test>
 	    <wing-fold>
-		<handle-cmd type="int">0</handle-cmd>
-		<lockpin-cmd type="int">1</lockpin-cmd>
+		<handle-cmd type="int">1</handle-cmd>
+		<lockpin-cmd type="int">-1</lockpin-cmd>
 	    </wing-fold>
 	</flight>
 	<gear>
