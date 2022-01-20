@@ -246,6 +246,7 @@ Grumman A-6E simulation config.
 	
 	<model>
 	    <path>Aircraft/A-6E/Models/A-6E.xml</path>
+	    <fallback-model-index>526</fallback-model-index>
 	    <ramp>
 		<x-m type="float">-2.7</x-m>
 		<class type="int">3</class>
