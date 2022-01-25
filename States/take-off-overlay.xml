@@ -6,7 +6,10 @@
 		<elevator-trim>-0.22</elevator-trim>
 		<flaps>0.5</flaps>
 		<speedbrake>0.0</speedbrake>
-		<wing-fold>0.0</wing-fold>
+		<wing-fold>
+		    <handle-cmd>0</handle-cmd>
+		    <lockpin-cmd>1</lockpin-cmd>
+		</wing-fold>
 	    </flight>
 	    <gear>
 		<tailhook>false</tailhook>
@@ -17,7 +20,28 @@
 		<beacon>1</beacon>
 		<taxi-light>0</taxi-light>
 	    </lighting>
+	    
+	    <engines>
+o                <engine n="0">
+                    <cutoff type="bool">false</cutoff>
+                    <starter type="bool">false</starter>
+                </engine>
+		<engine n="1">
+		    <cutoff type="bool">false</cutoff>
+                    <starter type="bool">false</starter>
+                </engine>
+            </engines>
 	</controls>
+
+	<engines>
+            <engine n="0">
+                <running type="bool">true</running>
+            </engine>
+            <engine n="1">
+                <running type="bool">true</running>
+            </engine>
+        </engines>
+
 	<canopy>
 	    <position-norm>0.0</position-norm>
 	</canopy>

@@ -2,8 +2,6 @@
 <flight_control name="FCS A-6E">
   <property value="30">fcs/rate-limits/elevator</property> <!-- guestimated value. ~1 sec travel -->
   <property value="0">fcs/surfaces/flap-pos-norm</property>
-  <property value="0">fcs/wing-fold/handle</property>
-  <property value="1">fcs/wing-fold/lockpin</property>
   <channel name="Pitch">
 
     <aerosurface_scale name="fcs/elevator/pitch-trim-full">

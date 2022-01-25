@@ -6,21 +6,39 @@
 	    <engines>
 		<engine n="0">
 		    <throttle>0.75</throttle>
+		    <cutoff type="bool">false</cutoff>
+		    <starter type="bool">false</starter>
 		</engine>
 		<engine n="1">
 		    <throttle>0.75</throttle>
+		    <cutoff type="bool">false</cutoff>
+		    <starter type="bool">false</starter>
 		</engine>
 	    </engines>
 	    <flight>
 		<elevator-trim>-0.5</elevator-trim>
 		<flaps>0.5</flaps>
 		<spoilers>1.0</spoilers>
+		<wing-fold>
+		    <handle-cmd>0</handle-cmd>
+		    <lockpin-cmd>1</lockpin-cmd>
+		</wing-fold>
 	    </flight>
 	    <gear>
 		<tailhook>false</tailhook>
 		<gear-down>true</gear-down>x
 	    </gear>
 	</controls>
+
+	<engines>
+            <engine n="0">
+                <running type="bool">true</running>
+            </engine>
+            <engine n="1">
+                <running type="bool">true</running>
+            </engine>
+        </engines>
+
 	<canopy>
 	    <position-norm>0.0</position-norm>
 	</canopy>
