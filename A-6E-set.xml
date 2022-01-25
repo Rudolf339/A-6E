@@ -10,11 +10,12 @@ Grumman A-6E simulation config.
 <PropertyList>
     <sim> 
 	<flight-model>jsb</flight-model>
-	<status>alpha</status>
+	<status>beta</status>
+	<aircraft-version>0.1.1</aircraft-version>
 	<rating>
 	    <FDM>3</FDM>
-	    <systems>0</systems>
-	    <external>3</external>
+	    <systems>1</systems>
+	    <model>3</model>
 	    <cockpit>2</cockpit>
 	</rating>
 	<authors>
@@ -42,6 +43,9 @@ Grumman A-6E simulation config.
 		<nick>Rudolf</nick>
 	    </maintainer>
 	</mainatiners>
+	<urls>
+	    <code-repository>https://github.com/Rudolf339/A-6E/</code-repository>
+	</urls>
 	
 	<aero>A-6E</aero>
 	<fuel-fraction>0.66</fuel-fraction>
