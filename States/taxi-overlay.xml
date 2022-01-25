@@ -4,7 +4,6 @@
 	<controls>
 	    <flight>
 		<elevator-trim>-0.22</elevator-trim>
-		<flaps>0.5</flaps>
 		<speedbrake>0.0</speedbrake>
 		<wing-fold>
 		    <handle-cmd>0</handle-cmd>
