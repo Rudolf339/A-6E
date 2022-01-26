@@ -127,7 +127,7 @@ Grumman A-6E simulation config.
 	<state include="./States/take-off-overlay.xml" n="0"/>
 	<state include="./States/carrier-landing-overlay.xml" n="1"/>
 	<state include="./States/landing-overlay.xml" n="2"/>
-	<state include="./States/carrier-take-off-overlay.xml" n="3"/>
+	<state include="./States/taxi-overlay.xml" n="3"/>
 	<state include="./States/cruise-overlay.xml" n="4"/>
 
 	<rendering>
