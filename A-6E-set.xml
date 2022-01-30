@@ -72,6 +72,8 @@ Grumman A-6E simulation config.
 	    <tag>single-engine</tag>
 	</tags>
 
+	<expected-aircraft-dir-name>A-6E</expected-aircraft-dir-name>
+	
 	<previews>
 	    <preview>
 		<type>exterior</type>

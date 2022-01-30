@@ -6,7 +6,7 @@
 		<speedbrake>0.0</speedbrake>
 		<wing-fold>
 		    <handle-cmd>0</handle-cmd>
-		    <lockpin-cmd>1</lockpin-cmd>
+		    <lockpin-cmd>0</lockpin-cmd>
 		</wing-fold>
 	    </flight>
 	    <gear>
@@ -43,5 +43,15 @@
 	<canopy>
 	    <position-norm>0.0</position-norm>
 	</canopy>
+
+	<fdm>
+	    <jsbsim>
+		<fcs>
+		    <wing-fold>
+			<lockpin>1</lockpin>
+		    </wing-fold>
+		</fcs>
+	    </jsbsim>
+	</fdm>	
     </overlay>
 </PropertyList>
