@@ -477,6 +477,7 @@ Grumman A-6E simulation config.
 		<short n="8" alias="/systems/lighting/probe-light"/>
 		<short n="9" alias="/systems/lighting/beacon-timing"/>
 		<short n="10" alias="/sim/model/A-6E/controls/lighting/formation-lts"/>
+		<float n="0" alias="/surface-positions/slats-pos-norm"/>
 	    </generic>
 	</multiplay>
 
@@ -528,7 +529,7 @@ Grumman A-6E simulation config.
 		</signal>
 		<signal>
 		    <type>float</type>
-		    <property type="string">surface-positions/slat-pos-norm</property>
+		    <property type="string">surface-positions/slats-pos-norm</property>
 		    <interpolation>linear</interpolation>
 		</signal>
 		<signal>
@@ -555,6 +556,11 @@ Grumman A-6E simulation config.
 		<signal>
 		    <type>float</type>
 		    <property type="string">gear/launchbar/position-norm</property>
+		    <interpolation>linear</interpolation>
+		</signal>
+		<signal>
+		    <type>float</type>
+		    <property type="string">canopy/position-norm</property>
 		    <interpolation>linear</interpolation>
 		</signal>
 		<!-- More custom signals here -->
