@@ -378,8 +378,7 @@ Grumman A-6E simulation config.
 
 	<help>
 	    <title>Grumman A-6E</title>
-	    <text><![CDATA[
-Startup:
+	    <text><![CDATA[Startup:
     Either engine can be started first, but not simultaneously
     Start left engine:
       - Crank engine with "s" (no need to hold)
@@ -407,7 +406,6 @@ Catapult take off:
     Flaps:         TO (20)
     Launchbar:     Engage
     Throttle:      MIL thrust
-    Catapult grip: Engage and hold
     Catapult:      Engage
     Once cleared catapult release catapult grip
     Gears:         Up
@@ -425,8 +423,7 @@ Weight limits:
     Max catapult: 58600 lbs
     Max trap: 36000 lbs
     Field landing: 36000 lbs
-    Field landing with minimum decent rate: 45000 lbs
-       ]]></text>
+    Field landing with minimum decent rate: 45000 lbs]]></text>
 	    <key>
 		    <name>c</name>
 		    <desc>Canopy open/close command</desc>
@@ -459,10 +456,10 @@ Weight limits:
 		<name>C</name>
 		<desc>Engage catapult</desc>
 	    </key>
-	    <key>
-		<name>N</name>
-		<desc>Catapult Grip engage</desc>
-	    </key>
+	    <!-- <key> -->
+	    <!-- 	<name>N</name> -->
+	    <!-- 	<desc>Catapult Grip engage</desc> -->
+	    <!-- </key> -->
 	    <key>
 		<name>l</name>
 		<desc>Toggle taxi light</desc>
@@ -882,22 +879,22 @@ Weight limits:
                 </binding>
             </key>
 	    
-	    <key n="78">
-		<name>N</name>
-		<desc>Strut Lock engage</desc>
-		<binding>
-		    <command>property-assign</command>
-		    <property>fdm/jsbsim/systems/strut-lock/strut-lock-cmd</property>
-		    <value>1</value>
-		</binding>
-		<mod-up>
-		    <binding>
-			<command>property-assign</command>
-			<property>fdm/jsbsim/systems/strut-lock/strut-lock-cmd</property>
-			<value>0</value>
-		    </binding>
-		</mod-up>
-	    </key>
+	    <!-- <key n="78"> -->
+	    <!-- 	<name>N</name> -->
+	    <!-- 	<desc>Strut Lock engage</desc> -->
+	    <!-- 	<binding> -->
+	    <!-- 	    <command>property-assign</command> -->
+	    <!-- 	    <property>fdm/jsbsim/systems/strut-lock/strut-lock-cmd</property> -->
+	    <!-- 	    <value>1</value> -->
+	    <!-- 	</binding> -->
+	    <!-- 	<mod-up> -->
+	    <!-- 	    <binding> -->
+	    <!-- 		<command>property-assign</command> -->
+	    <!-- 		<property>fdm/jsbsim/systems/strut-lock/strut-lock-cmd</property> -->
+	    <!-- 		<value>0</value> -->
+	    <!-- 	    </binding> -->
+	    <!-- 	</mod-up> -->
+	    <!-- </key> -->
 
 	    <key n="108">
 		<name>l</name>
