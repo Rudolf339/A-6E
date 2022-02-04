@@ -302,7 +302,7 @@
 	<type>rotate</type>
 	<object-name>W-L-Ext-slat</object-name>
 	<object-name>W-L-Int-slat</object-name>
-	<property>surface-positions/slats-pos-norm</property>
+	<property>sim/multiplay/generic/float[0]</property>
 	<factor>-27.5</factor>
 	<axis>
 	    <object-name>axis14</object-name>
@@ -312,7 +312,7 @@
 	<type>rotate</type>
 	<object-name>W-L-Ext-slat</object-name>
 	<object-name>W-L-Int-slat</object-name>
-	<property>surface-positions/slats-pos-norm</property>
+	<property>sim/multiplay/generic/float[0]</property>
 	<factor>1</factor>
 	<axis>
 	    <object-name>axis15</object-name>
@@ -324,7 +324,7 @@
 	<type>rotate</type>
 	<object-name>W-R-Ext-slat</object-name>
 	<object-name>W-R-Int-slat</object-name>
-	<property>surface-positions/slats-pos-norm</property>
+	<property>sim/multiplay/generic/float[0]</property>
 	<factor>27.5</factor>
 	<axis>
 	    <object-name>axis16</object-name>
@@ -334,7 +334,7 @@
 	<type>rotate</type>
 	<object-name>W-R-Ext-slat</object-name>
 	<object-name>W-R-Int-slat</object-name>
-	<property>surface-positions/slats-pos-norm</property>
+	<property>sim/multiplay/generic/float[0]</property>
 	<factor>-1</factor>
 	<axis>
 	    <object-name>axis17</object-name>

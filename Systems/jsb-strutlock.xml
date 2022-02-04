@@ -1,4 +1,6 @@
 <?xml version="1.0"?>
+
+<!-- Currently disabled, but here for future reference -->
 <system name="Strut lock">
     <property value="0">systems/strut-lock/strut-lock-cmd</property>
     <channel name="strutlock">

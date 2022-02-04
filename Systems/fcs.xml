@@ -87,15 +87,6 @@
       <zero_centered>false</zero_centered>
       <output>fcs/elevator-pos-norm</output>
     </aerosurface_scale>
-
-    <aerosurface_scale name="fcs/surfaces/elevator-pos-rad">
-      <input>fcs/surfaces/elevator-pos-norm</input>
-      <range>
-	<min>-0.41888 </min>
-	<max> 0.02617</max>
-      </range>
-      <zero-centered>false</zero-centered>
-    </aerosurface_scale>
     
   </channel>
 
@@ -161,15 +152,6 @@
       <output>fcs/left-aileron-pos-norm</output>
     </aerosurface_scale>
 
-    <aerosurface_scale name="fcs/surfaces/left-flaperon-pos-rad">
-      <input>fcs/surfaces/left-flaperon-pos-norm</input>
-      <range>
-	<min>-0.890118</min>
-	<max>0</max>
-      </range>
-      <output>fcs/left-aileron-pos-rad</output>
-    </aerosurface_scale>
-
     <pure_gain name="fcs/flaperon/right-flaperon-cmd-deg">
       <input>fcs/flaperon/roll-trim-sum</input>
       <gain>-51</gain>
@@ -211,15 +193,6 @@
 	<max>0</max>
       </range>
       <output>fcs/right-aileron-pos-norm</output>
-    </aerosurface_scale>
-
-    <aerosurface_scale name="fcs/surfaces/right-flaperon-pos-rad">
-      <input>fcs/surfaces/right-flaperon-pos-norm</input>
-      <range>
-	<min>-0.890118</min>
-	<max>0</max>
-      </range>
-      <output>fcs/right-aileron-pos-rad</output>
     </aerosurface_scale>
 
   </channel>
@@ -303,15 +276,6 @@
         <max>  1 </max>
       </range>
       <output>fcs/rudder-pos-norm</output>
-    </aerosurface_scale>
-
-    <aerosurface_scale name="fcs/surfaces/rudder-pos-rad">
-      <input>fcs/surfaces/rudder-pos-norm</input>
-      <range>
-	<min>-0.610865</min>
-	<max> 0.610865</max>
-      </range>
-      <output>fcs/rudder-pos-rad</output>
     </aerosurface_scale>
 
   </channel>

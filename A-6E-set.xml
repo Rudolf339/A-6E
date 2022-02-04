@@ -72,6 +72,8 @@ Grumman A-6E simulation config.
 	    <tag>single-engine</tag>
 	</tags>
 
+	<expected-aircraft-dir-name>A-6E</expected-aircraft-dir-name>
+	
 	<previews>
 	    <preview>
 		<type>exterior</type>
@@ -127,7 +129,7 @@ Grumman A-6E simulation config.
 	<state include="./States/take-off-overlay.xml" n="0"/>
 	<state include="./States/carrier-landing-overlay.xml" n="1"/>
 	<state include="./States/landing-overlay.xml" n="2"/>
-	<state include="./States/carrier-take-off-overlay.xml" n="3"/>
+	<state include="./States/taxi-overlay.xml" n="3"/>
 	<state include="./States/cruise-overlay.xml" n="4"/>
 
 	<rendering>
@@ -376,36 +378,55 @@ Grumman A-6E simulation config.
 
 	<help>
 	    <title>Grumman A-6E</title>
-	    <line>Startup:</line>
-	    <line>    crank engine with s/S</line>
-	    <line>    at 15% rpm move throttle to idle with {/}</line>
-	    <line>    wait for engine to reach 60% RPM</line>
-	    <line>    repeat for other engine</line>
-	    <line>Take off:</line>
-	    <line>    Flaps:         TO (30)</line>
-	    <line>    Rotate:        ~120 kt</line>
-	    <line>    Positive rate: Gears up</line>
-	    <line>    at 175 kias:   Flaps up</line>
-	    <line></line>
-	    <line>Catapult take off:</line>
-	    <line>    Flaps:         TO (30)</line>
-	    <line>    Launchbar:     Engage</line>
-	    <line>    Throttle:      MIL thrust</line>
-	    <line>    Catapult grip: Engage and hold</line>
-	    <line>    Catapult:      Engage</line>
-	    <line>    Once cleared catapult release catapult grip</line>
-	    <line>    Gears:         Up</line>
-	    <line>    at 175 kias:   Flaps Up</line>
-	    <line></line>
-	    <line>Approach, landing:</line>
-	    <line>    Onspeed:       22 units AoA</line>
-	    <line>    Flaps:         TO (30)</line>
-	    <line>    for shore landings,</line>
-	    <line>        optionally flare by adding more power</line>
-	    <line>        aerobrake keeping onspeed AoA</line>
+	    <text><![CDATA[Startup:
+    Either engine can be started first, but not simultaneously
+    Start left engine:
+      - Crank engine with "s" (no need to hold)
+      - A white bar will appear and indicate the rising RPM
+        on the engine instrument
+      - at 15% rpm move throttle to idle with "{"
+      - wait for engine to reach 60% RPM
+    Repeat for other engine, cranking with "S" and moving
+    the throttle to idle with "}"
+
+Wing unfold:
+    MMB lowers the handle, LMB lifts it
+    Lower the handle and wait for the wing to unfold
+    Set the lockpin to locked position
+    Lower the handle fully
+    Unfolding is the same but reverse order
+
+Take off:
+    Flaps:         TO (20)
+    Rotate:        ~120 kt
+    Positive rate: Gears up
+    at 175 kias:   Flaps up
+
+Catapult take off:
+    Flaps:         TO (20)
+    Launchbar:     Engage
+    Throttle:      MIL thrust
+    Catapult:      Engage
+    Once cleared catapult release catapult grip
+    Gears:         Up
+    at 175 kias:   Flaps Up
+
+Approach, landing:
+    Onspeed:       22 units AoA
+    Flaps:         TO (30)
+    for shore landings:
+        optionally flare by adding more power
+        aerobrake keeping onspeed AoA
+
+Weight limits:
+    MTOW: 60400 lbs
+    Max catapult: 58600 lbs
+    Max trap: 36000 lbs
+    Field landing: 36000 lbs
+    Field landing with minimum decent rate: 45000 lbs]]></text>
 	    <key>
-		<name>c</name>
-		<desc>Canopy open/close command</desc>
+		    <name>c</name>
+		    <desc>Canopy open/close command</desc>
 	    </key>
 	    <key>
 		<name>k/j</name>
@@ -435,10 +456,10 @@ Grumman A-6E simulation config.
 		<name>C</name>
 		<desc>Engage catapult</desc>
 	    </key>
-	    <key>
-		<name>N</name>
-		<desc>Catapult Grip engage</desc>
-	    </key>
+	    <!-- <key> -->
+	    <!-- 	<name>N</name> -->
+	    <!-- 	<desc>Catapult Grip engage</desc> -->
+	    <!-- </key> -->
 	    <key>
 		<name>l</name>
 		<desc>Toggle taxi light</desc>
@@ -448,8 +469,20 @@ Grumman A-6E simulation config.
 		<desc>Key pylon light</desc>
 	    </key>
 	    <key>
-		<name>{/}</name>
-		<desc>toggle left/right throttle OFF/IDLE</desc>
+		<name>s</name>
+		<desc>Start cranking left engine</desc>
+	    </key>
+	    <key>
+		<name>S</name>
+		<desc>Start cranking right engine</desc>
+	    </key>
+	    <key>
+		<name>{</name>
+		<desc>toggle left throttle OFF/IDLE</desc>
+	    </key>
+	    <key>
+		<name>}</name>
+		<desc>toggle right throttle OFF/IDLE</desc>
 	    </key>
 	</help>
 	
@@ -477,6 +510,7 @@ Grumman A-6E simulation config.
 		<short n="8" alias="/systems/lighting/probe-light"/>
 		<short n="9" alias="/systems/lighting/beacon-timing"/>
 		<short n="10" alias="/sim/model/A-6E/controls/lighting/formation-lts"/>
+		<float n="0" alias="/surface-positions/slats-pos-norm"/>
 	    </generic>
 	</multiplay>
 
@@ -528,7 +562,7 @@ Grumman A-6E simulation config.
 		</signal>
 		<signal>
 		    <type>float</type>
-		    <property type="string">surface-positions/slat-pos-norm</property>
+		    <property type="string">surface-positions/slats-pos-norm</property>
 		    <interpolation>linear</interpolation>
 		</signal>
 		<signal>
@@ -555,6 +589,11 @@ Grumman A-6E simulation config.
 		<signal>
 		    <type>float</type>
 		    <property type="string">gear/launchbar/position-norm</property>
+		    <interpolation>linear</interpolation>
+		</signal>
+		<signal>
+		    <type>float</type>
+		    <property type="string">canopy/position-norm</property>
 		    <interpolation>linear</interpolation>
 		</signal>
 		<!-- More custom signals here -->
@@ -840,22 +879,22 @@ Grumman A-6E simulation config.
                 </binding>
             </key>
 	    
-	    <key n="78">
-		<name>N</name>
-		<desc>Strut Lock engage</desc>
-		<binding>
-		    <command>property-assign</command>
-		    <property>fdm/jsbsim/systems/strut-lock/strut-lock-cmd</property>
-		    <value>1</value>
-		</binding>
-		<mod-up>
-		    <binding>
-			<command>property-assign</command>
-			<property>fdm/jsbsim/systems/strut-lock/strut-lock-cmd</property>
-			<value>0</value>
-		    </binding>
-		</mod-up>
-	    </key>
+	    <!-- <key n="78"> -->
+	    <!-- 	<name>N</name> -->
+	    <!-- 	<desc>Strut Lock engage</desc> -->
+	    <!-- 	<binding> -->
+	    <!-- 	    <command>property-assign</command> -->
+	    <!-- 	    <property>fdm/jsbsim/systems/strut-lock/strut-lock-cmd</property> -->
+	    <!-- 	    <value>1</value> -->
+	    <!-- 	</binding> -->
+	    <!-- 	<mod-up> -->
+	    <!-- 	    <binding> -->
+	    <!-- 		<command>property-assign</command> -->
+	    <!-- 		<property>fdm/jsbsim/systems/strut-lock/strut-lock-cmd</property> -->
+	    <!-- 		<value>0</value> -->
+	    <!-- 	    </binding> -->
+	    <!-- 	</mod-up> -->
+	    <!-- </key> -->
 
 	    <key n="108">
 		<name>l</name>
