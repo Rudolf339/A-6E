@@ -1,0 +1,257 @@
+<?xml version="1.0"?>
+<!-- electrical system for the Grumman A-6E -->
+<!-- Author: Domokos Juttner -->
+<!-- License: GPLv2+ -->
+
+<system name="electrical">
+    <property value="1.0">systems/electrical/sources/generator[0]/drive-norm</property>
+    <property value="1.0">systems/electrical/sources/generator[1]/drive-norm</property>
+    <channel name="sources">
+	<pure_gain name="systems/electrical/sources/generator[0]/output-vac">
+	    <input>systems/electrical/sources/generator[0]/drive-norm</input>
+	    <gain>115</gain>
+	</pure_gain>
+
+	<switch name="systems/electrical/sources/generator[0]/inop">
+	    <default value="0"/>
+	    <test value="1" logic="OR">
+		systems/electrical/sources/generator[0]/serviceable == 0
+		systems/electrical/sources/generator[0]/output-vac lt 110
+		systems/electrical/sources/generator[0]/output-vac gt 120
+	    </test>
+	</switch>
+	
+	<pure_gain name="systems/electrical/sources/generator[1]/output-vac">
+	    <input>systems/electrical/sources/generator[1]/drive-norm</input>
+	    <gain>115</gain>
+	</pure_gain>
+
+	<switch name="systems/electrical/sources/generator[1]/inop">
+	    <default value="0"/>
+	    <test value="1" logic="OR">
+		systems/electrical/sources/generator[1]/serviceable == 0
+		systems/electrical/sources/generator[1]/output-vac lt 110
+		systems/electrical/sources/generator[1]/output-vac gt 120
+	    </test>
+	</switch>
+	
+	<switch name="systems/electrical/sources/external/external-vac">
+	    <default value="0"/>
+	    <test value="115">
+		systems/electrical/sources/external/external-connected == 1
+	    </test>
+	</switch>
+
+	<fcs_function name="systems/electrical/sources/battery-vdc">
+	    <function>
+		<value>22.7</value>
+	    </function>
+	</fcs_function>
+
+	<switch name="systems/electrical/sources/rat/output-vac">
+	    <default value="0"/>
+	    <test value="115" logic="AND">
+		systems/electrical/sources/rat/deployed == 1
+		systems/electrical/sources/rat/serviceable == 1
+		velocities/vc-kts gt 110
+	    </test>
+	</switch>
+
+	<switch name="systems/electrical/sources/both-gen-inop">
+	    <default value="0"/>
+	    <test value="1" logic="AND">
+		systems/electrical/sources/generator[0]/inop == 1
+		systems/electrical/sources/generator[1]/inop == 1
+	    </test>
+	</switch>
+    </channel>
+
+    <channel name="rectifiers/transformers">
+	<fcs_function name="systems/electrical/connectors/connector[0]">
+	    <function>
+		<ifthen>
+		    <property>systems/electrical/sources/generator[1]/inop</property>
+		    <value>0</value>
+		    <max>
+			<ifthen>
+			    <property>systems/electrical/sources/generator[0]/inop</property>    
+			    <value>0</value>
+			    <property>systems/electrical/sources/generator[0]/output-vac</property>
+			</ifthen>
+			<property>systems/electrical/sources/external/external-vac</property>
+		    </max>
+		</ifthen>
+	    </function>
+	</fcs_function>
+
+	<fcs_function name="systems/electrical/connectors/connector[1]">
+	    <function>
+		<max>
+		    <ifthen>
+			<property>systems/electrical/sources/generator[1]/inop</property>
+			<ifthen>
+			    <property>systems/electrical/sources/generator[0]/inop</property>
+			    <value>0</value>
+			    <property>systems/electrical/sources/generator[0]/output-vac</property>
+			</ifthen>
+			<property>systems/electrical/sources/generator[1]/output-vac</property>
+		    </ifthen>
+		    <property>systems/electrical/sources/external/external-vac</property>
+		</max>
+	    </function>
+	</fcs_function>
+	
+	<fcs_function name="systems/electrical/rectifiers/emerg-rect/output-vdc">
+	    <function>
+		<ifthen>
+		    <property>systems/electrical/rectifiers/emerg-rect/serviceable</property>
+		    <quotient>
+			<property>systems/electrical/sources/rat/output-vac</property>
+			<value>4.10714285714</value> <!-- 115 vac to 28 vdc -->
+		    </quotient>
+		    <value>0</value>
+		</ifthen>
+	    </function>
+	</fcs_function>
+
+	<fcs_function name="systems/electrical/rectifiers/pri-ess-transformer/output-vac">
+	    <function>
+		<ifthen>
+		    <and>
+			<property>systems/electrical/rectifiers/pri-ess-transformer/serviceable</property>
+			<property>systems/electrical/breakers/cockpit/prim-tr</property>
+		    </and>
+		    <quotient>
+			<ifthen>
+			    <property>systems/electrical/sources/both-gen-inop</property>
+			    <property>systems/electrical/sources/rat/output-vac</property>
+			    <property>systems/electrical/connectors/connector[1]</property>
+			</ifthen>
+			<value>4.42307692308</value> <!-- 115 vac to 26 vac -->
+		    </quotient>
+		    <value>0</value>
+		</ifthen>
+	    </function>
+	</fcs_function>
+
+	<fcs_function name="systems/electrical/rectifiers/pri-ess-rect/output-vdc">
+	    <function>
+		<ifthen>
+		    <and>
+			<property>systems/electrical/rectifiers/pri-ess-rect/serviceable</property>
+			<property>systems/electrical/breakers/cockpit/mon-tr</property>
+		    </and>
+		    <quotient>
+			<property>systems/electrical/connectors/connector[1]</property>
+			<value>4.10714285714</value> <!-- 115 vac to 28 vdc -->
+		    </quotient>
+		    <value>0</value>
+		</ifthen>
+	    </function>
+	</fcs_function>
+
+	<fcs_function name="systems/electrical/rectifiers/monitored-rect/output-vdc">
+	    <function>
+		<ifthen>
+		    <and>
+			<property>systems/electrical/rectifiers/monitored-rect/serviceable</property>
+			<property>systems/electrical/breakers/external/essential-dc-bus[2]</property>
+		    </and>
+		    <quotient>
+			<property>systems/electrical/connectors/connector[0]</property>
+			<value>4.10714285714</value> <!-- 115 vac to 28 vdc -->
+		    </quotient>
+		    <value>0</value>
+		</ifthen>
+	    </function>
+	</fcs_function>
+
+	<switch name="systems/electrical/connectors/connector[2]">
+	    <default value="systems/electrical/rectifiers/monitored-rect/output-vdc"/>
+	    <test value="0">
+		systems/electrical/rectifiers/pri-ess-rect/output-vdc le 26
+	    </test>
+	</switch>
+
+	<switch name="systems/electrical/connectors/connector[3]">
+	    <default value="systems/electrical/rectifiers/pri-ess-rect/output-vdc"/>
+	    <test value="systems/electrical/rectifiers/monitored-rect/output-vdc">
+		systems/electrical/rectifiers/pri-ess-rect/output-vdc le 26
+	    </test>
+	</switch>
+    </channel>
+    
+    <channel name="buses">
+
+	<switch name="systems/electrical/buses/essential-115-ac">
+	    <default value="systems/electrical/connectors/connector[1]"/>
+	    <test value="systems/electrical/sources/rat/output-vac">
+		systems/electrical/sources/both-gen-inop == 1
+	    </test>
+	</switch>
+
+	<pure_gain name="systems/electrical/buses/essential-26-vac">
+	    <input>systems/electrical/rectifiers/pri-ess-transformer/output-vac</input>
+	    <gain>1</gain>
+	</pure_gain>
+
+	<switch name="systems/electrical/buses/primary-26-vac">
+	    <default value="systems/electrical/rectifiers/pri-ess-transformer/output-vac"/>
+	    <test value="0" logic="OR">
+		systems/electrical/sources/both-gen-inop == 1
+		systems/electrical/breakers/external/primary-26-vac-bus == 0
+	    </test>
+	</switch>
+
+	<pure_gain name="systems/electrical/buses/primary-115-vac">
+	    <input>systems/electrical/connectors/connector[1]</input>
+	    <gain>1</gain>
+	</pure_gain>
+	
+	<pure_gain name="systems/electrical/buses/monitored-115-vac">
+	    <input>systems/electrical/connectors/connector[0]</input>
+	    <gain>1</gain>
+	</pure_gain>
+
+	<switch name="systems/electrical/buses/essential-28-vdc[0]">
+	    <default value="systems/electrical/connectors/connector[3]"/>
+	    <test value="0">
+		systems/electrical/breakers/external/essential-dc-bus[0] == 0
+	    </test>
+	    <test value="systems/electrical/rectifiers/emerg-rect/output-vdc" logic="AND">
+		systems/electrical/rectifiers/pri-ess-rect/output-vdc le 26
+		systems/electrical/rectifiers/monitored-rect/output-vdc le 26
+	    </test>
+	</switch>
+
+	<switch name="systems/electrical/buses/essential-28-vdc[1]">
+	    <default value="systems/electrical/connectors/connector[3]"/>
+	    <test value="0">
+		systems/electrical/breakers/external/essential-dc-bus[1] == 0
+	    </test>
+	    <test value="systems/electrical/rectifiers/emerg-rect/output-vdc" logic="AND">
+		systems/electrical/rectifiers/pri-ess-rect/output-vdc le 26
+		systems/electrical/rectifiers/monitored-rect/output-vdc le 26
+	    </test>
+	</switch>
+
+	<pure_gain name="systems/electrical/buses/primary-28-vdc">
+	    <input>systems/electrical/connectors/connector[3]</input>
+	    <gain>1</gain>
+	</pure_gain>
+
+	<switch name="systems/electrical/buses/monitored-28-vdc[0]">
+	    <default value="0"/>
+	    <test value="systems/electrical/connectors/connector[2]">
+		systems/electrical/breakers/external/monitored-bus-feeder[0] == 1
+	    </test>
+	</switch>
+
+	<switch name="systems/electrical/buses/monitored-28-vdc[1]">
+	    <default value="0"/>
+	    <test value="systems/electrical/connectors/connector[2]">
+		systems/electrical/breakers/external/monitored-bus-feeder[1] == 1
+	    </test>
+	</switch>
+    </channel>
+</system>

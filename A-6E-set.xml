@@ -1094,6 +1094,51 @@ Weight limits:
 		</wing-fold>
 	    </fcs>
 	    <systems>
+		<electrical>
+		    <sources>
+			<generator n="0">
+			    <serviceable type="bool">true</serviceable>
+			</generator>
+			<generator n="1">
+			    <serviceable type="bool">true</serviceable>
+			</generator>
+			<rat>
+			    <serviceable type="bool">true</serviceable>
+			    <deployed type="bool">false</deployed>
+			</rat>
+			<external>
+			    <external-connected type="bool">false</external-connected>
+			</external>
+		    </sources>
+		    <rectifiers>
+			<emerg-rect>
+			    <serviceable type="bool">true</serviceable>
+			</emerg-rect>
+			<pri-ess-transformer>
+			    <serviceable type="bool">true</serviceable>
+			</pri-ess-transformer>
+			<pri-ess-rect>
+			    <serviceable type="bool">true</serviceable>
+			</pri-ess-rect>
+			<monitored-rect>
+			    <serviceable type="bool">true</serviceable>
+			</monitored-rect>
+		    </rectifiers>
+		    <breakers>
+			<external>
+			    <monitored-bus-feeder type="bool" n="0">true</monitored-bus-feeder>
+			    <monitored-bus-feeder type="bool" n="1">true</monitored-bus-feeder>
+			    <essential-dc-bus type="bool" n="0">true</essential-dc-bus>
+			    <essential-dc-bus type="bool" n="1">true</essential-dc-bus>
+			    <essential-dc-bus type="bool" n="2">true</essential-dc-bus><!-- 20 Amp -->
+			    <primary-26-vac-bus type="bool">true</primary-26-vac-bus>
+			</external>
+			<cockpit>
+			    <prim-tr type="bool">true</prim-tr>
+			    <mon-tr type="bool">true</mon-tr>
+			</cockpit>
+		    </breakers>
+		</electrical>
 		<hook>
 		    <tailhook-cmd-norm alias="/controls/gear/tailhook"/>
 		</hook>
@@ -1106,5 +1151,4 @@ Weight limits:
 	<nsw-pos-deg alias="/fdm/jsbsim/fcs/steer-pos-deg"/>
     </surface-positions>
     
-
 </PropertyList>
