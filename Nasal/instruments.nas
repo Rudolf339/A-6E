@@ -10,7 +10,7 @@ var tacan_bit = setlistener("controls/instrumentation/tacan/BIT", func (node) {
 	    interpolate("instrumentation/tacan/BIT-range", 1.6 + rand() * 0.4, 0.5);
 		 }, 9 + rand() * 2);
 	settimer(func {
-	    var power = getprop("systems/electrical/outputs/tacan") > 24;
+	    var power = getprop("instrumentation/tacan/power");
 	    if (getprop("instrumentation/tacan/serviceable") and power)
 	    {
 		setprop("instrumentation/tacan/BIT-complete", 1);

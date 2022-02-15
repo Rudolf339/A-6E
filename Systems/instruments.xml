@@ -2,9 +2,20 @@
     <logic>
 	<input>
 	    <greater-than>
-		<property>systems/electrical/outputs/tacan</property>
-		<value>24</value>
+		<property>fdm/jsbsim/systems/electrical/breakers/cockpit/MA-1_TACAN-u</property>
+		<value>27</value>
 	    </greater-than>
+	    <greater-than>
+		<property>fdm/jsbsim/systems/electrical/breakers/external/MA-1_TACAN-u</property>
+		    <value>25</value>
+	    </greater-than>
+	</input>
+	<output>instrumentation/tacan/power</output>
+    </logic>
+    
+    <logic>
+	<input>
+	    <property>instrumentation/tacan/power</property>
 	    <or>
 		<property>controls/instrumentation/tacan/BIT</property>
 		<equals>
@@ -19,10 +30,7 @@
     <logic>
 	<input>
 	    <and>
-		<greater-than>
-		    <property>systems/electrical/outputs/tacan</property>
-		    <value>24</value>
-		</greater-than>
+		<property>instrumentation/tacan/power</property>
 		<or>
 		    <property>controls/instrumentation/tacan/BIT</property>
 		    <equals>
@@ -47,13 +55,11 @@
 			<property>systems/electrical/outputs/hsi</property>
 			<value>24</value>
 		    </greater-than>
-		    <greater-than>
-			<property>systems/electrical/outputs/tacan</property>
-			<value>24</value>
-		    </greater-than>
+		    <property>instrumentation/tacan/power</property>
 		    <property>controls/instrumentation/tacan/BIT</property>
 		</and>
 	    </or>
+	    <property>instrumentation/tacan/tacan-on</property>
 	</input>
 	<output>instrumentation/hsi/hsi-off</output>
     </logic>
@@ -75,6 +81,17 @@
 			<property>instrumentation/tacan/BIT-bearing</property>
 		    </and>
 		</not>
+		<property>instrumentation/tacan/power</property>
+		<or>
+		    <equals>
+			<property>controls/instrumentation/tacan/mode</property>
+			<value>1</value>
+		    </equals>
+		    <equals>
+			<property>controls/instrumentation/tacan/mode</property>
+			<value>2</value>
+		    </equals>
+		</or>
 	    </condition>
 	    <property>instrumentation/tacan/indicated-mag-bearing-deg</property>
 	</input>
@@ -99,6 +116,17 @@
 			<property>instrumentation/tacan/BIT-range</property>
 		    </and>
 		</not>
+		<property>instrumentation/tacan/power</property>
+		<or>
+		    <equals>
+			<property>controls/instrumentation/tacan/mode</property>
+			<value>2</value>
+		    </equals>
+		    <equals>
+			<property>controls/instrumentation/tacan/mode</property>
+			<value>3</value>
+		    </equals>
+		</or>
 	    </condition>
 	    <property>instrumentation/tacan/indicated-distance-nm</property>
 	</input>
@@ -178,10 +206,13 @@
 			<property>controls/instrumentation/tacan/mode</property>
 			<value>1</value>
 		    </greater-than>
-		    <greater-than>
-			<property>systems/electrical/outputs/tacan</property>
-			<value>24</value>
-		    </greater-than>
+		    <not>
+			<equals>
+			    <property>controls/instrumentation/tacan/mode</property>
+			    <value>4</value>
+			</equals>
+		    </not>
+		    <property>instrumentation/tacan/power</property>
 		</and>
 	    </not>
 	</input>
@@ -191,6 +222,19 @@
     <filter>
 	<type>gain</type>
 	<input>
+	    <condition>
+		<property>instrumentation/tacan/power</property>
+		<or>
+		    <equals>
+			<property>controls/instrumentation/tacan/mode</property>
+			<value>1</value>
+		    </equals>
+		    <equals>
+			<property>controls/instrumentation/tacan/mode</property>
+			<value>2</value>
+		    </equals>
+		</or>
+	    </condition>
 	    <expression>
 		<dif>
 		    <property>instrumentation/nav[1]/radials/selected-deg</property>
@@ -249,6 +293,17 @@
 			<value>-90</value>
 		    </less-than>
 		</or>
+		<property>instrumentation/tacan/power</property>
+		<or>
+		    <equals>
+			<property>controls/instrumentation/tacan/mode</property>
+			<value>1</value>
+		    </equals>
+		    <equals>
+			<property>controls/instrumentation/tacan/mode</property>
+			<value>2</value>
+		    </equals>
+		</or>
 	    </condition>
 	    <expression>
 		<sum>
@@ -271,6 +326,17 @@
 			</less-than>
 		    </or>
 		</not>
+		<property>instrumentation/tacan/power</property>
+		<or>
+		    <equals>
+			<property>controls/instrumentation/tacan/mode</property>
+			<value>1</value>
+		    </equals>
+		    <equals>
+			<property>controls/instrumentation/tacan/mode</property>
+			<value>2</value>
+		    </equals>
+		</or>
 	    </condition>
 	    <property>instrumentation/tacan/course-dif-deg</property>
 	</input>
@@ -283,7 +349,6 @@
 	<max-rate-of-change>30</max-rate-of-change>
 	<input>instrumentation/tacan/deviation-deg</input>
 	<output>instrumentation/hsi/course-dev-deg</output>
-
     </filter>
 
     <!-- RADALT -->

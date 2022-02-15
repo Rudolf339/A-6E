@@ -1132,10 +1132,12 @@ Weight limits:
 			    <essential-dc-bus type="bool" n="1">true</essential-dc-bus>
 			    <essential-dc-bus type="bool" n="2">true</essential-dc-bus><!-- 20 Amp -->
 			    <primary-26-vac-bus type="bool">true</primary-26-vac-bus>
+			    <MA-1_TACAN type="bool">true</MA-1_TACAN>
 			</external>
 			<cockpit>
 			    <prim-tr type="bool">true</prim-tr>
 			    <mon-tr type="bool">true</mon-tr>
+			    <MA-1_TACAN type="bool">true</MA-1_TACAN>
 			</cockpit>
 		    </breakers>
 		</electrical>
