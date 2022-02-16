@@ -32,7 +32,6 @@ var SpeedBrake = props.globals.getNode("controls/flight/speedbrake", 1);
 
 setlistener( "controls/flight/spoilers/", func(v){
              SpeedBrake.setValue(v.getValue());
-             print("speedbrake set to ",SpeedBrake.getValue());
 }, 1, 0);
 
 # Canopy switch animation and canopy move

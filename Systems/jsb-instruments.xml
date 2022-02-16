@@ -18,12 +18,14 @@
 	
 	<fcs_function name="systems/instrument/aoa-unit">
 	    <function>
-		<interpolate1d>
-		    <property>velocities/vtrue-kts</property>
-		    <value>0</value><value>0</value>
-		    <value>10</value><value>0</value>
-		    <value>15</value><property>systems/instrument/aoa-unit-conversion</property>
-		</interpolate1d>
+		<ifthen>
+		    <gt>
+			<property>systems/electrical/breakers/cockpit/aoa-sys-u</property>
+			<value>27</value>
+		    </gt>
+		    <property>systems/instrument/aoa-unit-conversion</property>
+		    <value>0</value>
+		</ifthen>
 	    </function>
 	    <clipto>
 		<min>-10</min>
@@ -54,40 +56,54 @@
 		systems/instrument/aoa-blip eq 1
 		systems/hook/tailhook-pos-norm lt 1
 		systems/hook/hook-override eq 0
+		systems/electrical/breakers/cockpit/aoa-sys-u gt 27
 	    </test>
 	    <test logic="AND" value="1">
 		gear/gear-pos-norm eq 1
+		systems/electrical/breakers/cockpit/aoa-sys-u gt 27
 		<test logic="OR">
 		    systems/hook/hook-override eq 1
 		    systems/hook/tailhook-pos-norm eq 1
 		</test>
 	    </test>
 	</switch>
-
+	
 	<switch name="systems/instrument/aoa-indexer">
 	    <default value="0"/> <!-- off -->
-	    <test logic="AND" value="1"> <!-- fast -->
-		systems/instrument/aoa-indexer-on eq 1
+	    <test value="0">
+		systems/instrument/aoa-indexer-on eq 0
+	    </test>
+	    <test value="1"> <!-- fast -->
 		systems/instrument/aoa-unit le 20
 	    </test>
 	    <test logic="AND" value="2"> <!--slightly fast -->
-		systems/instrument/aoa-indexer-on eq 1
 		systems/instrument/aoa-unit gt 20
 		systems/instrument/aoa-unit le 21.5
 	    </test>
 	    <test logic="AND" value="3"> <!-- onspeed -->
-		systems/instrument/aoa-indexer-on eq 1
 		systems/instrument/aoa-unit gt 21.5
 		systems/instrument/aoa-unit lt 22.5
 	    </test>
 	    <test logic="AND" value="4"> <!-- slightly slow -->
-		systems/instrument/aoa-indexer-on eq 1
 		systems/instrument/aoa-unit ge 22.5
 		systems/instrument/aoa-unit lt 24
 	    </test>
-	    <test logic="AND" value="5"> <!-- slow -->
-		systems/instrument/aoa-indexer-on eq 1
+	    <test value="5"> <!-- slow -->
 		systems/instrument/aoa-unit ge 24
+	    </test>
+	</switch>
+
+	<switch name="systems/instrument/aoa-indexer-light">
+	    <default value="0"/>
+	    <test value="systems/instrument/aoa-indexer">
+		systems/electrical/breakers/cockpit/r-speed-drive-u gt 27
+	    </test>
+	</switch>
+
+	<switch name="systems/instrument/aoa-light">
+	    <default value="0"/>
+	    <test value="systems/instrument/aoa-indexer">
+		systems/electrical/breakers/cockpit/aprch-lts-u gt 110
 	    </test>
 	</switch>
     </channel>

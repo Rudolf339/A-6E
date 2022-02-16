@@ -300,5 +300,26 @@
 		systems/electrical/breakers/external/MA-1_TACAN == 1
 	    </test>
 	</switch>
+
+	<switch name="systems/electrical/breakers/cockpit/aoa-sys-u">
+	    <default value="0"/>
+	    <test value="systems/electrical/buses/essential-28-vdc[0]">
+		systems/electrical/breakers/cockpit/aoa-sys == 1
+	    </test>
+	</switch>
+
+	<switch name="systems/electrical/breakers/cockpit/r-speed-drive-u">
+	    <default value="0"/>
+	    <test value="systems/electrical/buses/essential-28-vdc[0]">
+		systems/electrical/breakers/cockpit/r-speed-drive == 1
+	    </test>
+	</switch>
+	
+	<switch name="systems/electrical/breakers/cockpit/aprch-lts-u">
+	    <default value="0"/>
+	    <test value="systems/electrical/buses/primary-115-vac">
+		systems/electrical/breakers/cockpit/aprch-lts == 1
+	    </test>
+	</switch>
     </channel>
 </system>

@@ -9,12 +9,8 @@
 		<object-name>aoa-too-slow</object-name>
 		<condition>
 		    <equals>
-			<property>fdm/jsbsim/systems/instrument/aoa-indexer</property>
+			<property>fdm/jsbsim/systems/instrument/aoa-indexer-light</property>
 			<value>5</value>
-		    </equals>
-		    <equals>
-			<property>gear/gear[0]/position-norm</property>
-			<value>1</value>
 		    </equals>
 		</condition>
 	</animation>
@@ -24,12 +20,8 @@
 		<object-name>aoa-slow</object-name>
 		<condition>
 		    <equals>
-			<property>fdm/jsbsim/systems/instrument/aoa-indexer</property>
+			<property>fdm/jsbsim/systems/instrument/aoa-indexer-light</property>
 			<value>4</value>
-		    </equals>
-		    <equals>
-			<property>gear/gear[0]/position-norm</property>
-			<value>1</value>
 		    </equals>
 		</condition>
 	</animation>
@@ -39,12 +31,8 @@
 		<object-name>aoa-on-speed</object-name>
 		<condition>
 		    <equals>
-			<property>fdm/jsbsim/systems/instrument/aoa-indexer</property>
+			<property>fdm/jsbsim/systems/instrument/aoa-indexer-light</property>
 			<value>3</value>
-		    </equals>
-		    <equals>
-			<property>gear/gear[0]/position-norm</property>
-			<value>1</value>
 		    </equals>
 		</condition>
 	</animation>
@@ -54,12 +42,8 @@
 		<object-name>aoa-fast</object-name>
 		<condition>
 		    <equals>
-			<property>fdm/jsbsim/systems/instrument/aoa-indexer</property>
+			<property>fdm/jsbsim/systems/instrument/aoa-indexer-light</property>
 			<value>2</value>
-		    </equals>
-		    <equals>
-			<property>gear/gear[0]/position-norm</property>
-			<value>1</value>
 		    </equals>
 		</condition>
 	</animation>
@@ -69,11 +53,7 @@
 		<object-name>aoa-too-fast</object-name>
 		<condition>
 		    <equals>
-			<property>fdm/jsbsim/systems/instrument/aoa-indexer</property>
-			<value>1</value>
-		    </equals>
-		    <equals>
-			<property>gear/gear[0]/position-norm</property>
+			<property>fdm/jsbsim/systems/instrument/aoa-indexer-light</property>
 			<value>1</value>
 		    </equals>
 		</condition>
@@ -86,7 +66,7 @@
 		<object-name>wheels-lt</object-name>
 		<condition>
 			<!--<greater-than>
-				<property>systems/electrical/outputs/aoa-indexer</property>
+				<property>systems/electrical/outputs/aoa-indexer-light</property>
 				<value>23</value>
 			</greater-than>-->
 			<or>
@@ -120,7 +100,7 @@
 		<object-name>apc-stby-lt</object-name>
 		<condition>
 			<!--<greater-than>
-				<property>systems/electrical/outputs/aoa-indexer</property>
+				<property>systems/electrical/outputs/aoa-indexer-light</property>
 				<value>23</value>
 			</greater-than>-->
 				<property>sim/model/A-6E/instrumentation/APC/apc-stby-lt</property>
@@ -131,7 +111,7 @@
 		<object-name>afcs-out-lt</object-name>
 		<condition>
 			<!--<greater-than>
-				<property>systems/electrical/outputs/aoa-indexer</property>
+				<property>systems/electrical/outputs/aoa-indexer-light</property>
 				<value>23</value>
 			</greater-than>-->
 				<property>sim/model/A-6E/instrumentation/AFCS/afcs-out-lt</property>
@@ -142,7 +122,7 @@
 		<object-name>wave-off-lt</object-name>
 		<condition>
 			<!--<greater-than>
-				<property>systems/electrical/outputs/aoa-indexer</property>
+				<property>systems/electrical/outputs/aoa-indexer-light</property>
 				<value>23</value>
 			</greater-than>-->
 				<property>sim/model/A-6E/instrumentation/ACLS/wave-off-lt</property>

@@ -498,7 +498,7 @@ Weight limits:
 		<int n="5" alias="/payload/weight[2]/count"/>
 		<int n="6" alias="/payload/weight[3]/count"/>
 		<int n="7" alias="/payload/weight[4]/count"/>
-		<int n="8" alias="/fdm/jsbsim/systems/instrument/aoa-indexer"/>
+		<int n="8" alias="/fdm/jsbsim/systems/instrument/aoa-light"/>
 		<short n="0" alias="/systems/lighting/taxi-light"/>
 		<short n="1" alias="/systems/lighting/wing-light-brt"/>
 		<short n="2" alias="/systems/lighting/wing-light-dim"/>
@@ -578,6 +578,16 @@ Weight limits:
 		<signal>
 		    <type>float</type>
 		    <property type="string">/fdm/jsbsim/systems/instrument/aoa-indexer</property>
+		    <interpolation>linear</interpolation>
+		</signal>
+		<signal>
+		    <type>float</type>
+		    <property type="string">/fdm/jsbsim/systems/instrument/aoa-indexer-light</property>
+		    <interpolation>linear</interpolation>
+		</signal>
+		<signal>
+		    <type>float</type>
+		    <property type="string">/fdm/jsbsim/systems/instrument/aoa-light</property>
 		    <interpolation>linear</interpolation>
 		</signal>
 		<signal>
@@ -974,6 +984,7 @@ Weight limits:
 	    <gnd-spoiler-arm type="bool">0</gnd-spoiler-arm>
 	    <spin-assist type="bool">0</spin-assist>
 	    <speedbrake-test type="bool">0</speedbrake-test>
+	    <!-- <speedbrake alias="/controls/flight/spoilers"/> -->
 	    <wing-fold>
 		<handle-cmd type="int">1</handle-cmd>
 		<lockpin-cmd type="int">-1</lockpin-cmd>
@@ -1138,6 +1149,9 @@ Weight limits:
 			    <prim-tr type="bool">true</prim-tr>
 			    <mon-tr type="bool">true</mon-tr>
 			    <MA-1_TACAN type="bool">true</MA-1_TACAN>
+			    <aoa-sys type="bool">true</aoa-sys>
+			    <aprch-lts type="bool">true</aprch-lts>
+			    <r-speed-drive type="bool">true</r-speed-drive>
 			</cockpit>
 		    </breakers>
 		</electrical>
