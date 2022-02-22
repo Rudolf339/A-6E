@@ -14,6 +14,12 @@
 			<y>0</y>
 			<z>0</z>
 		</axis>
+		<condition>
+		    <greater-than>
+			<property>fdm/jsbsim/systems/electrical/breakers/cockpit/trim-ind-u</property>
+			<value>25</value>
+		    </greater-than>
+		</condition>
 	</animation>
 
 

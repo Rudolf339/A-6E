@@ -26,6 +26,12 @@
 	    <entry><ind>80</ind><dep>-0.245</dep></entry>
 	    <entry><ind>110</ind><dep>-0.501</dep></entry>
 	</interpolation>
+	<condition>
+	    <greater-than>
+		<property>fdm/jsbsim/systems/electrical/breakers/cockpit/trim-ind-u</property>
+		<value>25</value>
+	    </greater-than>
+	</condition>
 	<axis>
 	    <x>0</x>
 	    <y>1</y>
@@ -81,8 +87,20 @@
 	    <x>0</x>
 	    <y>1</y>
 	</axis>
+	<condition>
+	    <greater-than>
+		<property>fdm/jsbsim/systems/electrical/breakers/cockpit/trim-ind-u</property>
+		<value>25</value>
+	    </greater-than>
+	</condition>
     </animation>
-
+    <condition>
+	<greater-than>
+	    <property>fdm/jsbsim/systems/electrical/breakers/cockpit/trim-ind-u</property>
+	    <value>25</value>
+	</greater-than>
+    </condition>
+    
     <animation>
 	<type>select</type>
 	<object-name>R-egt-tape</object-name>
@@ -105,6 +123,12 @@
 	    <x>0</x>
 	    <y>1</y>
 	</axis>
+	<condition>
+	    <greater-than>
+		<property>fdm/jsbsim/systems/electrical/breakers/cockpit/trim-ind-u</property>
+		<value>25</value>
+	    </greater-than>
+	</condition>
     </animation>
 
 
@@ -122,6 +146,12 @@
 	    <x>0</x>
 	    <y>1</y>
 	</axis>
+	<condition>
+	    <greater-than>
+		<property>fdm/jsbsim/systems/electrical/breakers/cockpit/trim-ind-u</property>
+		<value>25</value>
+	    </greater-than>
+	</condition>
     </animation>
 
     <animation>
@@ -137,6 +167,12 @@
 	    <x>0</x>
 	    <y>1</y>
 	</axis>
+	<condition>
+	    <greater-than>
+		<property>fdm/jsbsim/systems/electrical/breakers/cockpit/trim-ind-u</property>
+		<value>25</value>
+	    </greater-than>
+	</condition>
     </animation>
 
 

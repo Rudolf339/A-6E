@@ -291,6 +291,9 @@
       
       <switch name="fcs/flaps/flaps-deg-cmd">
 	  <default value="0"/>
+	  <test value="0"> <!-- creep up with no lock -->
+	      systems/electrical/breakers/cockpit/flaps_slats-u le 27
+	  </test>
 	  <test value="20" logic="AND">
 	      fcs/flaps/flap-cmd ge 0.25
 	      fcs/flaps/flap-cmd le 0.75
@@ -300,6 +303,23 @@
 	  </test>
       </switch>
 
+      <fcs_function name="fcs/rate-limits/flaps">
+	  <function>
+	      <ifthen>
+		  <gt>
+		      <property>systems/electrical/breakers/cockpit/flaps_slats-u</property>
+		      <value>27</value>
+		  </gt>
+		  <value>2.666666666</value>
+		  <interpolate1d>
+		      <property>velocities/vc-kts</property>
+		      <value>150</value><value>0</value>
+		      <value>250</value><value>0.05</value>
+		  </interpolate1d>
+	      </ifthen>
+	  </function>
+      </fcs_function>
+      
       <actuator name="fcs/flaps/flaps-pos-deg">
 	  <input>fcs/flaps/flaps-deg-cmd</input>
 	  <rate_limit>fcs/rate-limits/flaps</rate_limit>
@@ -372,10 +392,14 @@
     <fcs_function name="fcs/steer-cmd">
 	<function>
 	    <ifthen>
-		<eq>
-		    <property>/controls/gear/nose-wheel-steering</property>
-		    <value>1</value>
-		</eq>
+		<and>
+		    <or>
+			<property>/controls/gear/nose-wheel-steering</property>
+			<property>systems/hook/tailhook-cmd-norm</property>
+		    </or>
+		    <property>gear/unit[1]/WOW</property>
+		    <property>gear/unit[2]/WOW</property>
+		</and>
 		<product>
 		    <property>fcs/rudder-cmd-norm</property>
 		    <value>-56</value>

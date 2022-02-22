@@ -88,11 +88,13 @@
 	    </test>
 	</switch>
 
-	<switch name="systems/electrical/sources/both-gen-inop">
+	<!-- not according to diagram, but this is more logical -->
+	<switch name="systems/electrical/sources/both-gen-inop"> 
 	    <default value="0"/>
 	    <test value="1" logic="AND">
 		systems/electrical/sources/generator[0]/inop == 1
 		systems/electrical/sources/generator[1]/inop == 1
+		systems/electrical/sources/external/external-connected == 1
 	    </test>
 	</switch>
     </channel>
@@ -100,18 +102,14 @@
     <channel name="rectifiers/transformers/connectors" execrate="8">
 	<fcs_function name="systems/electrical/connectors/connector[0]">
 	    <function>
-		<ifthen>
-		    <property>systems/electrical/sources/generator[1]/inop</property>
-		    <value>0</value>
-		    <max>
-			<ifthen>
-			    <property>systems/electrical/sources/generator[0]/inop</property>    
-			    <value>0</value>
-			    <property>systems/electrical/sources/generator[0]/output-vac</property>
-			</ifthen>
-			<property>systems/electrical/sources/external/external-vac</property>
-		    </max>
-		</ifthen>
+		<max>
+		    <property>systems/electrical/sources/external/external-vac</property>
+		    <ifthen>
+			<property>systems/electrical/sources/generator[1]/inop</property>
+			<property>systems/electrical/sources/generator[0]/output-vac</property>
+			<property>systems/electrical/sources/generator[1]/output-vac</property>
+		    </ifthen>
+		</max>
 	    </function>
 	</fcs_function>
 
@@ -319,6 +317,20 @@
 	    <default value="0"/>
 	    <test value="systems/electrical/buses/primary-115-vac">
 		systems/electrical/breakers/cockpit/aprch-lts == 1
+	    </test>
+	</switch>
+
+	<switch name="systems/electrical/breakers/cockpit/flaps_slats-u">
+	    <default value="0"/>
+	    <test value="systems/electrical/buses/essential-28-vdc[0]">
+		systems/electrical/breakers/cockpit/flaps_slats == 1
+	    </test>
+	</switch>
+
+	<switch name="systems/electrical/breakers/cockpit/trim-ind-u">
+	    <default value="0"/>
+	    <test value="systems/electrical/buses/essential-26-vac">
+		systems/electrical/breakers/cockpit/trim-ind == 1
 	    </test>
 	</switch>
     </channel>

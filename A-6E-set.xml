@@ -1152,6 +1152,8 @@ Weight limits:
 			    <aoa-sys type="bool">true</aoa-sys>
 			    <aprch-lts type="bool">true</aprch-lts>
 			    <r-speed-drive type="bool">true</r-speed-drive>
+			    <flaps_slats type="bool">true</flaps_slats>
+			    <trim-ind type="bool">true</trim-ind>
 			</cockpit>
 		    </breakers>
 		</electrical>
