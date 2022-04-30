@@ -526,6 +526,14 @@ Weight limits:
 			    <script>storesDialog.showStoresDialog();</script>
 			</binding>
 		    </item>
+		    <item>
+			<label>Ground Services</label>
+			<enabled type="bool">true</enabled>
+			<binding>
+			    <command>dialog-show</command>
+			    <dialog-name>ground_services</dialog-name>
+			</binding>
+		    </item>
 		</menu>
 	    </default>
 	</menubar>

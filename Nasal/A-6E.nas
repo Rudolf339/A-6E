@@ -213,3 +213,20 @@ aircraft.data.add(
 );
 
 
+# Ground refuelling
+var fuel_to_full = func()
+{
+    for (var i=0; i<13; i=i+1) {
+	setprop("/consumables/fuel/tank["~i~"]/level-norm", 1);
+    }
+}
+
+var fuel_to_CQ = func()
+{
+    setprop("/consumables/fuel/tank[0]/level-norm", 1);
+    setprop("/consumables/fuel/tank[1]/level-lbs", 400);
+    setprop("/consumables/fuel/tank[2]/level-norm", 1);
+    for (var i=3; i<13; i=i+1) {
+	setprop("/consumables/fuel/tank["~i~"]/level-norm", 0);
+    }
+}

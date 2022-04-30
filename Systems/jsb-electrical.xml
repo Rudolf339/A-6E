@@ -65,7 +65,14 @@
 		systems/electrical/sources/generator[1]/output-vac gt 120
 	    </test>
 	</switch>
-	
+
+	<switch name="systems/electrical/sources/external/external-connected">
+	    <default value="systems/electrical/sources/external/external-connected"/>
+	    <test value="0">
+		velocities/vg-fps > 5
+	    </test>
+	</switch>
+	    
 	<switch name="systems/electrical/sources/external/external-vac">
 	    <default value="0"/>
 	    <test value="115">
@@ -153,7 +160,10 @@
 		    <quotient>
 			<ifthen>
 			    <property>systems/electrical/sources/both-gen-inop</property>
-			    <property>systems/electrical/sources/rat/output-vac</property>
+			    <max>
+				<property>systems/electrical/sources/rat/output-vac</property>
+				<property>systems/electrical/sources/external/external-vac</property>
+			    </max>
 			    <property>systems/electrical/connectors/connector[1]</property>
 			</ifthen>
 			<value>4.42307692308</value> <!-- 115 vac to 26 vac -->
@@ -214,8 +224,13 @@
 
 	<switch name="systems/electrical/buses/essential-115-ac">
 	    <default value="systems/electrical/connectors/connector[1]"/>
-	    <test value="systems/electrical/sources/rat/output-vac">
+	    <test value="systems/electrical/sources/rat/output-vac" logic="AND">
 		systems/electrical/sources/both-gen-inop == 1
+		systems/electrical/sources/external/external-connected == 0
+	    </test>
+	    <test value="systems/electrical/sources/external/external-vac">
+		systems/electrical/sources/both-gen-inop == 1
+		systems/electrical/sources/external/external-connected == 1
 	    </test>
 	</switch>
 

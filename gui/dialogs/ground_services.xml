@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Ground services dialog -->
+<!-- Author: Domokos Juttner -->
+<!-- License: GPLv2+ -->
+
+<PropertyList>
+    <name>ground_services</name>
+    <layout>vbox</layout>
+    <group>
+	<layout>hbox</layout>
+	
+	<text>
+            <halign>left</halign>
+	    <label>Ground Services</label>
+	</text>
+
+        <button>
+            <halign>right</halign>
+            <pref-width>20</pref-width>
+            <pref-height>20</pref-height>
+            <legend>X</legend>
+            <key>Esc</key>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+	    <binding>
+		<command>dialog-apply</command>
+	    </binding>
+        </button>
+    </group>
+    <hrule/>
+
+    <group>
+	<layout>hbox</layout>
+	<text>
+	    <label>Connect external power</label>
+	</text>
+	<checkbox>
+	    <property>/fdm/jsbsim/systems/electrical/sources/external/external-connected</property>
+	    <live>true</live>
+	    <binding>
+		<command>property-toggle</command>
+		<property>/fdm/jsbsim/systems/electrical/sources/external/external-connected</property>		
+	    </binding>
+	</checkbox>
+    </group>
+    <group>
+	<text>
+	    <halign>left</halign>
+	    <label>Refuel</label>
+	</text>
+	<layout>hbox</layout>
+	<button>
+	    <legend>Full</legend>
+	    <binding>
+		<command>nasal</command>
+		<script>A6E.fuel_to_full();</script>
+	    </binding>
+	</button>
+	<button>
+	    <legend>CQ</legend>
+	    <binding>
+		<command>nasal</command>
+		<script>A6E.fuel_to_CQ();</script>
+	    </binding>
+	</button>
+    </group>
+</PropertyList>
