@@ -146,6 +146,7 @@
     <system file="jsb-hook.xml"/>
     <system file="jsb-holdback.xml"/>
     <system file="jsb-electrical"/>
+    <system file="jsb-bleed_air"/>
     <!-- <system file="jsb-strutlock.xml"/> --> 
     
     <flight_control file="Systems/fcs.xml"/>

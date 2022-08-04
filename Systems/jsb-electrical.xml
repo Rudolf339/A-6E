@@ -8,31 +8,49 @@
     <channel name="CSD/S" execrate="8">
 	<fcs_function name="systems/electrical/sources/generator[0]/drive-norm">
 	    <function>
-		<table>
-		    <independentVar lookup="row">position/h-sl-ft</independentVar>
-		    <independentVar lookup="column">propulsion/engine[0]/n2</independentVar>
-		    <tableData>
-			       0 60   65
-			0      0 1.0  1.0
-			15000  0 0.95 1.0
-			25000  0 0.8  1.0
-		    </tableData>
-		</table>
+		<max>
+		    <table>
+			<independentVar lookup="row">position/h-sl-ft</independentVar>
+			<independentVar lookup="column">propulsion/engine[0]/n2</independentVar>
+			<tableData>
+			           0 60   65
+			    0      0 1.0  1.0
+			    15000  0 0.95 1.0
+			    25000  0 0.8  1.0
+			</tableData>
+		    </table>
+		    <table>
+			<independentVar lookup="row">systems/bleed/connector/L-CSD-psi</independentVar>
+			<tableData>
+			    0    0
+			    30   1
+			</tableData>
+		    </table>
+		</max>
 	    </function>
 	</fcs_function>
 	
 	<fcs_function name="systems/electrical/sources/generator[1]/drive-norm">
 	    <function>
-		<table>
-		    <independentVar lookup="row">position/h-sl-ft</independentVar>
-		    <independentVar lookup="column">propulsion/engine[1]/n2</independentVar>
-		    <tableData>
-			      0  60   65
-			0     0  1.0  1.0
-			15000 0  0.95 1.0
-			25000 0  0.8  1.0
-		    </tableData>
-		</table>
+		<max>
+		    <table>
+			<independentVar lookup="row">position/h-sl-ft</independentVar>
+			<independentVar lookup="column">propulsion/engine[1]/n2</independentVar>
+			<tableData>
+			          0  60   65
+			    0     0  1.0  1.0
+			    15000 0  0.95 1.0
+			    25000 0  0.8  1.0
+			</tableData>
+		    </table>
+		    <table>
+			<independentVar lookup="row">systems/bleed/connector/R-CSD-psi</independentVar>
+			<tableData>
+			    0    0
+			    30   1
+			</tableData>
+		    </table>
+		</max>
 	    </function>
 	</fcs_function>
     </channel>
@@ -222,7 +240,7 @@
     
     <channel name="buses" execrate="8">
 
-	<switch name="systems/electrical/buses/essential-115-ac">
+	<switch name="systems/electrical/buses/essential-115-vac">
 	    <default value="systems/electrical/connectors/connector[1]"/>
 	    <test value="systems/electrical/sources/rat/output-vac" logic="AND">
 		systems/electrical/sources/both-gen-inop == 1
@@ -346,6 +364,13 @@
 	    <default value="0"/>
 	    <test value="systems/electrical/buses/essential-26-vac">
 		systems/electrical/breakers/cockpit/trim-ind == 1
+	    </test>
+	</switch>
+
+	<switch name="systems/electrical/breakers/cockpit/bleed-air-u">
+	    <default value="0"/>
+	    <test value="systems/electrical/buses/essential-115-vac">
+		systems/electrical/breakers/cockpit/bleed-air == 1
 	    </test>
 	</switch>
     </channel>

@@ -1162,12 +1162,30 @@ Weight limits:
 			    <r-speed-drive type="bool">true</r-speed-drive>
 			    <flaps_slats type="bool">true</flaps_slats>
 			    <trim-ind type="bool">true</trim-ind>
+			    <bleed-air type="bool">true</bleed-air>
 			</cockpit>
 		    </breakers>
 		</electrical>
 		<hook>
 		    <tailhook-cmd-norm alias="/controls/gear/tailhook"/>
 		</hook>
+		<bleed>
+		    <source>
+			<external-connected type="bool">false</external-connected>
+		    </source>
+		    <valves>
+			<crossbleed>
+			    <serviceable type="bool">true</serviceable>
+			    <crossbleed-cmd type="bool">true</crossbleed-cmd>
+			</crossbleed>
+			<eng_valve n="0">
+			    <serviceable type="bool">true</serviceable>
+			</eng_valve>
+			<eng_valve n="1">
+			    <serviceable type="bool">true</serviceable>
+			</eng_valve>
+		    </valves>
+		</bleed>    
 	    </systems>
 	</jsbsim>
     </fdm>

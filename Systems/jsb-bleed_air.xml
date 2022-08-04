@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Bleed air system for the A-6E -->
+<!-- Encorporating AFC 610 -->
+<!-- Author: Domokos Juttner -->
+<!-- license: GPLv2+ -->
+
+<!-- no data, assumes 36 PSI normal pressure -->
+<system name="bleed air">
+    <channel name="sources" execrate="8">
+	<fcs_function name="systems/bleed/source/engine-psi[0]">
+	    <function>
+		<table>
+		    <independentVar lookup="row">/engines/engine[0]/n2</independentVar>
+		    <tableData>
+			22.0    0.0
+			25.0    2.0
+			60.9   18.0
+			70.4   36.0
+			80.4   44.0
+			101.4  48.0
+		    </tableData>
+		</table>
+	    </function>
+	</fcs_function>
+	<fcs_function name="systems/bleed/source/engine-psi[1]">>
+	    <function>
+		<table>
+		    <independentVar lookup="row">/engines/engine[1]/n2</independentVar>
+		    <tableData>
+			22.0    0.0
+			25.0    2.0
+			60.9   18.0
+			70.4   36.0
+			80.4   44.0
+			101.4  48.0
+		    </tableData>
+		</table>
+	    </function>
+	</fcs_function>
+	<switch name="systems/bleed/source/external-psi">
+	    <default value="0"/>
+	    <test value="48">
+		systems/bleed/source/external-connected == 1
+	    </test>
+	</switch>
+    </channel>
+
+    <channel name="valves" execrate="8">
+	<switch name="systems/bleed/crossbleed/crossbleed-rate">
+	    <default value="0"/>
+	    <test value="2" logic="AND">
+		systems/electrical/breakers/cockpit/bleed-air-u > 113
+		systems/bleed/valves/crossbleed/serviceable == 1
+	    </test>
+	</switch>
+
+	<actuator name="systems/bleed/valves/crossbleed/crossbleed-pos-norm">
+	    <input>systems/bleed/valves/crossbleed/crossbleed-cmd</input>
+	    <rate_limit>systems/bleed/crossbleed/crossbleed-rate</rate_limit>
+	</actuator>
+
+	<switch name="systems/bleed/valves/eng_valve-cmd-norm">
+	    <default value="0"/>
+	    <test value="1">
+		gear/unit[1]/WOW == 1
+	    </test>
+	</switch>
+	<switch name="systems/bleed/valves/eng_valve[0]/eng_valve-rate">
+	    <default value="0"/>
+	    <test value="2" logic="AND">
+		systems/electrical/breakers/cockpit/bleed-air-u > 113
+		systems/bleed/valves/eng_valve[0]/serviceable == 1
+	    </test>
+	</switch>
+	<switch name="systems/bleed/valves/eng_valve[1]/eng_valve-rate">
+	    <default value="0"/>
+	    <test value="2" logic="AND">
+		systems/electrical/breakers/cockpit/bleed-air-u > 113
+		systems/bleed/valves/eng_valve[1]/serviceable == 1
+	    </test>
+	</switch>
+	<actuator name="systems/bleed/valves/eng_valve[0]-pos-norm">
+	    <input>systems/bleed/valves/eng_valve-cmd-norm</input>
+	    <rate_limit>systems/bleed/valves/eng_valve[0]/eng_valve-rate</rate_limit>
+	</actuator>
+	<actuator name="systems/bleed/valves/eng_valve[1]-pos-norm">
+	    <input>systems/bleed/valves/eng_valve-cmd-norm</input>
+	    <rate_limit>systems/bleed/valves/eng_valve[1]/eng_valve-rate</rate_limit>
+	</actuator>
+    </channel>
+    
+    <channel name="connectors" execrate="8">
+	<pure_gain name="systems/bleed/connector/L-ENG-psi">
+	    <input>systems/bleed/source/engine-psi[0]</input>
+	    <gain>systems/bleed/valves/eng_valve[0]-pos-norm</gain>
+	</pure_gain>
+	<pure_gain name="systems/bleed/connector/R-ENG-psi">
+	    <input>systems/bleed/source/engine-psi[1]</input>
+	    <gain>systems/bleed/valves/eng_valve[1]-pos-norm</gain>
+	</pure_gain>
+	
+	<pure_gain name="systems/bleed/connector/L-crossbleed-psi">
+	    <input>systems/bleed/connector/R-ENG-psi</input>
+	    <gain>systems/bleed/valves/crossbleed/crossbleed-pos-norm</gain>
+	</pure_gain>
+	<fcs_function name="systems/bleed/connector/R-crossbleed-psi">
+	    <function>
+		<product>
+		    <max>
+			<property>systems/bleed/connector/L-ENG-psi</property>
+			<property>systems/bleed/source/external-psi</property>
+		    </max>
+		    <property>systems/bleed/valves/crossbleed/crossbleed-pos-norm</property>
+		</product>
+	    </function>
+	</fcs_function>
+	
+	<fcs_function name="systems/bleed/connector/L-CSD-psi">
+	    <function>
+		<max>
+		    <property>systems/bleed/connector/L-ENG-psi</property>
+		    <property>systems/bleed/connector/L-crossbleed-psi</property>
+		</max>
+	    </function>
+	</fcs_function>
+	<fcs_function name="systems/bleed/connector/R-CSD-psi">
+	    <function>
+		<max>
+		    <property>systems/bleed/connector/R-ENG-psi</property>
+		    <property>systems/bleed/connector/R-crossbleed-psi</property>
+		    <property>systems/bleed/source/external-psi</property>
+		</max>
+	    </function>
+	</fcs_function>   
+    </channel>
+	
+</system>

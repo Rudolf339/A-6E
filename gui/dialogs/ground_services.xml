@@ -45,6 +45,20 @@
 	</checkbox>
     </group>
     <group>
+	<layout>hbox</layout>
+	<text>
+	    <label>Connect external air</label>
+	</text>
+	<checkbox>
+	    <property>/fdm/jsbsim/systems/bleed/source/external-connected</property>
+	    <live>true</live>
+	    <binding>
+		<command>property-toggle</command>
+		<property>/fdm/jsbsim/systems/bleed/source/external-connected</property>		
+	    </binding>
+	</checkbox>
+    </group>
+    <group>
 	<text>
 	    <halign>left</halign>
 	    <label>Refuel</label>
