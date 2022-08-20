@@ -14,7 +14,7 @@
 		    <tableData>
 			22.0    0.0
 			25.0    2.0
-			60.9   18.0
+			60.9   36.0
 			70.4   36.0
 			80.4   44.0
 			101.4  48.0
@@ -29,7 +29,7 @@
 		    <tableData>
 			22.0    0.0
 			25.0    2.0
-			60.9   18.0
+			60.9   36.0
 			70.4   36.0
 			80.4   44.0
 			101.4  48.0
@@ -99,15 +99,15 @@
 	    <gain>systems/bleed/valves/eng_valve[1]-pos-norm</gain>
 	</pure_gain>
 	
-	<pure_gain name="systems/bleed/connector/L-crossbleed-psi">
-	    <input>systems/bleed/connector/R-ENG-psi</input>
+	<pure_gain name="systems/bleed/connector/R-crossbleed-psi">
+	    <input>systems/bleed/connector/L-ENG-psi</input>
 	    <gain>systems/bleed/valves/crossbleed/crossbleed-pos-norm</gain>
 	</pure_gain>
-	<fcs_function name="systems/bleed/connector/R-crossbleed-psi">
+	<fcs_function name="systems/bleed/connector/L-crossbleed-psi">
 	    <function>
 		<product>
 		    <max>
-			<property>systems/bleed/connector/L-ENG-psi</property>
+			<property>systems/bleed/connector/R-ENG-psi</property>
 			<property>systems/bleed/source/external-psi</property>
 		    </max>
 		    <property>systems/bleed/valves/crossbleed/crossbleed-pos-norm</property>

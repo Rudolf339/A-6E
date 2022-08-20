@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<PropertyList>
+    <logic>
+        <name>Starter Command</name>
+        <input>
+            <equals>
+                <property>/fdm/jsbsim/systems/engine[0]/starter</property>
+                <value>1</value>
+            </equals>
+        </input>
+        <output>/controls/engines/engine[0]/starter</output>
+    </logic>
+    <logic>
+        <name>Starter Command</name>
+        <input>
+            <equals>
+                <property>/fdm/jsbsim/systems/engine[1]/starter</property>
+                <value>1</value>
+            </equals>
+        </input>
+        <output>/controls/engines/engine[1]/starter</output>
+    </logic>
+</PropertyList>

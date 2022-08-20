@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!-- engine control logic for the A-6E's J52-P8 engines -->
+<!-- Author: Domokos Juttner -->
+<!-- license: GPLv2+ -->
+
+<system name="J52-P8">
+    <channel name="starter">
+	<switch name="systems/engine[0]/starter">
+	    <default value="0"/>
+	    <test value="0" logic="OR">
+		propulsion/engine[0]/n2 ge 60
+		systems/electrical/breakers/cockpit/gear-hook-u lt 26
+		systems/bleed/connector/L-CSD-psi lt 34
+	    </test>
+	    <test value="1" logic="AND">
+		<test logic="OR">
+		    systems/engine[0]/crank eq 1
+		    systems/engine[0]/starter eq 1
+		</test>
+		systems/electrical/breakers/cockpit/gear-hook-u ge 26
+		systems/bleed/connector/L-CSD-psi ge 34
+	    </test>
+	</switch>
+	<switch name="systems/engine[1]/starter">
+	    <default value="0"/>
+	    <test value="0" logic="OR">
+		propulsion/engine[1]/n2 ge 60
+		systems/electrical/breakers/cockpit/gear-hook-u lt 26
+		systems/bleed/connector/R-CSD-psi lt 34
+	    </test>
+	    <test value="1" logic="AND">
+		<test logic="OR">
+		    systems/engine[1]/crank eq 1
+		    systems/engine[1]/starter eq 1
+		</test>
+		systems/electrical/breakers/cockpit/gear-hook-u ge 26
+		systems/bleed/connector/R-CSD-psi ge 34
+	    </test>
+	</switch>
+    </channel>
+</system>

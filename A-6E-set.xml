@@ -237,6 +237,9 @@ Grumman A-6E simulation config.
 	    <autopilot>
 		<path>Aircraft/A-6E/Systems/instruments.xml</path>
 	    </autopilot>
+	    <property-rule n="101">
+		<path>Aircraft/A-6E/Systems/propconnect.xml</path>
+	    </property-rule>		
 	</systems>
 
         <spoilers>
@@ -962,14 +965,15 @@ Weight limits:
 		<name>s</name>
 		<desc>Crank ENG 1</desc>
 		<binding>
-		    <command>nasal</command>
-		    <script>J52P8.starter(0)</script>
+		    <command>property-assign</command>
+		    <property>/fdm/jsbsim/systems/engine[0]/crank</property>
+		    <value>1</value>
 		</binding>
 		<mod-up>
 		    <binding>
 			<command>property-assign</command>
-			<property>foobar</property>
-			<value>1</value>
+			<property>/fdm/jsbsim/systems/engine[0]/crank</property>
+			<value>0</value>
 		    </binding>
 		</mod-up>
 	    </key>
@@ -978,9 +982,17 @@ Weight limits:
 		<name>S</name>
 		<desc>Crank ENG 2</desc>
 		<binding>
-		    <command>nasal</command>
-		    <script>J52P8.starter(1)</script>
+		    <command>property-assign</command>
+		    <property>/fdm/jsbsim/systems/engine[1]/crank</property>
+		    <value>1</value>
 		</binding>
+		<mod-up>
+		    <binding>
+			<command>property-assign</command>
+			<property>/fdm/jsbsim/systems/engine[1]/crank</property>
+			<value>0</value>
+		    </binding>
+		</mod-up>>
 	    </key>
 	    
   	</keyboard>
@@ -1012,7 +1024,7 @@ Weight limits:
 	<instrumentation>
 	    <tacan>
 		<BIT type="bool">false</BIT>
-		<hsi-off type="bool">false</hsi-off>
+		<hsi-off type="bool">false</hsi-off>b
 	    </tacan>
 	    <radalt>
 		<limit-bug type="int">250</limit-bug>
@@ -1163,6 +1175,7 @@ Weight limits:
 			    <flaps_slats type="bool">true</flaps_slats>
 			    <trim-ind type="bool">true</trim-ind>
 			    <bleed-air type="bool">true</bleed-air>
+			    <gear-hook type="bool">true</gear-hook>
 			</cockpit>
 		    </breakers>
 		</electrical>
@@ -1185,7 +1198,15 @@ Weight limits:
 			    <serviceable type="bool">true</serviceable>
 			</eng_valve>
 		    </valves>
-		</bleed>    
+		</bleed>
+		<engine n="0">
+		    <crank type="bool">false</crank>
+		    <starter type="double">false</starter>
+		</engine>
+		<engine n="1">
+		    <crank type="bool">false</crank>
+		    <starter type="double">false</starter>
+		</engine>
 	    </systems>
 	</jsbsim>
     </fdm>

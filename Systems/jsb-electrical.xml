@@ -373,5 +373,13 @@
 		systems/electrical/breakers/cockpit/bleed-air == 1
 	    </test>
 	</switch>
+
+	<switch name="systems/electrical/breakers/cockpit/gear-hook-u">
+	    <default value="0"/>
+	    <test value="systems/electrical/buses/monitored-28-vdc[0]">
+		systems/electrical/breakers/cockpit/gear-hook eq 1
+	    </test>
+	</switch>
+		
     </channel>
 </system>
