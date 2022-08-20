@@ -399,7 +399,7 @@
 	<type>rotate</type>
 	<object-name>W-L-Lower-airbrake</object-name>
 	<property>surface-positions/speedbrake-pos-norm</property>
-	<factor>60</factor>
+	<factor>-60</factor>
 	<axis>
 	    <object-name>axis23</object-name>
 	</axis>
@@ -419,7 +419,7 @@
 	<type>rotate</type>
 	<object-name>W-R-Lower-airbrake</object-name>
 	<property>surface-positions/speedbrake-pos-norm</property>
-	<factor>60</factor>
+	<factor>-60</factor>
 	<axis>
 	    <object-name>axis25</object-name>
 	</axis>
@@ -595,7 +595,7 @@
 	<type>rotate</type>
 	<object-name>elevator</object-name>
 	<property>fdm/jsbsim/fcs/surfaces/elevator-pos-deg</property>
-	<factor>1</factor>
+	<factor>-1</factor>
 	<offset-deg>3</offset-deg>
 	<axis>
 	    <object-name>axis42</object-name>
