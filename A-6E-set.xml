@@ -1197,6 +1197,7 @@ Weight limits:
 			<eng_valve n="1">
 			    <serviceable type="bool">true</serviceable>
 			</eng_valve>
+			<air-cond-on type="bool">true</air-cond-on>
 		    </valves>
 		</bleed>
 		<engine n="0">
